@@ -3,6 +3,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -12,6 +13,10 @@ module.exports = {
         ambit: ["var(--font-ambit)", ...fontFamily.sans],
         flyer: ["var(--font-flyer)", ...fontFamily.sans],
       },
+      fontSize: {
+        "10xl": "9rem",
+        "11xl": "10rem",
+      },
       colors: {
         "hydw-blue": "#3b2dff",
         "hydw-vanilla": "#f9f5cc",
@@ -20,6 +25,9 @@ module.exports = {
         "hydw-pink": "#FF6CF4",
         "hydw-orange": "#FF9650",
         "hydw-yellow": "#EFE145",
+      },
+      skew: {
+        40: "-40deg",
       },
     },
   },

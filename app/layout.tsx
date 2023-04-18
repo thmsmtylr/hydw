@@ -4,7 +4,7 @@ import { request } from "@/lib/datocms";
 import { Header } from "@/components/header";
 import { LAYOUT_QUERY } from "@/queries/layout-query";
 import { NAVIGATION_QUERY } from "@/queries/navigation.query";
-import { HeaderProvider } from "@/contexts/headerContext";
+import { HeaderProvider } from "@/contexts/header-context";
 import { RootLayoutQueryProps } from "@/types/root-layout";
 import { NavigationQueryProps } from "@/types/navigation";
 

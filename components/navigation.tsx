@@ -1,9 +1,11 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
 import { NavigationComponentProps } from "@/types/navigation";
-import { isEven } from "@/utils/isEven";
+import { isEven } from "@/utils/is-even";
 import { flyerFont } from "@/fonts";
-import { useHeaderContext } from "@/contexts/headerContext";
+import { useHeaderContext } from "@/contexts/header-context";
+import { useFollowPointer } from "@/hooks/use-follow-pointer";
+import { useRef } from "react";
 
 const navVariants = {
   initial: {
@@ -18,6 +20,8 @@ const navVariants = {
 export function Navigation(props: NavigationComponentProps) {
   const { navItems } = props;
   const { menuOpen, setMenuOpen, onOpenChange } = useHeaderContext();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const { x, y } = useFollowPointer(menuRef);
 
   if (menuOpen) {
     return (
@@ -25,7 +29,13 @@ export function Navigation(props: NavigationComponentProps) {
         <DialogPrimitive.Portal>
           <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-hydw-blue">
             <DialogPrimitive.Content>
-              <div className="flex h-40 w-full items-center justify-end px-11">
+              <motion.div
+                ref={menuRef}
+                animate={{ x, y }}
+                transition={{ type: "tween" }}
+                whileTap={{ scale: 0.9 }}
+                className="flex h-40 w-full items-center justify-end px-11"
+              >
                 <button
                   className={`text-2xl uppercase leading-[115%] tracking-wide text-white/40 transition-colors duration-100 hover:text-white ${flyerFont.className}`}
                   type="button"
@@ -36,8 +46,8 @@ export function Navigation(props: NavigationComponentProps) {
                 >
                   Close
                 </button>
-              </div>
-              <nav className="flex h-full flex-col items-center justify-center">
+              </motion.div>
+              <nav className="-mt-40 flex h-screen flex-col items-center justify-center">
                 {navItems.map((item, index: number) => (
                   <motion.a
                     className="inline-block h-[5.2rem] overflow-hidden px-8 will-change-transform"
@@ -54,7 +64,7 @@ export function Navigation(props: NavigationComponentProps) {
                     </motion.div>
                     <motion.div variants={navVariants}>
                       <div
-                        className={`-skew-x-[40deg] text-center text-8xl font-black uppercase tracking-normal ${
+                        className={`skew-x-40 text-center text-8xl font-black uppercase tracking-normal ${
                           isEven(index) ? "text-hydw-yellow" : "text-hydw-pink"
                         } ${flyerFont.className}`}
                       >
