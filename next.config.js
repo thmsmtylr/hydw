@@ -5,7 +5,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
   images: {
-    domains: ["www.datocms-assets.com"],
+    domains: ["www.datocms-assets.com", "i.giphy.com"],
   },
 };
 

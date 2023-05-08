@@ -3,15 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { flyerFont } from "@/fonts";
 import { Navigation } from "@/components/navigation";
 import { HeaderProps } from "@/types/header";
 import { useHeaderContext } from "@/contexts/header-context";
 import { useFollowPointer } from "@/hooks/use-follow-pointer";
+import { flyerFont } from "@/fonts";
 
 export function Header(props: HeaderProps) {
   const { logo, siteName, navItems } = props;
   const { menuOpen, setMenuOpen } = useHeaderContext();
+
   const brandRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const { x: brandX, y: brandY } = useFollowPointer(brandRef);
@@ -40,20 +41,20 @@ export function Header(props: HeaderProps) {
         ref={menuRef}
         animate={{ x: menuX, y: menuY }}
         transition={{ type: "tween" }}
+        whileTap={{ scale: 0.9 }}
       >
-        <motion.button
+        <button
           className={`text-2xl uppercase leading-[115%] tracking-wide text-hydw-charcoal ${flyerFont.className}`}
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="menu"
           aria-haspopup="menu"
           aria-expanded={menuOpen}
-          whileTap={{ scale: 0.9 }}
         >
           Menu
-        </motion.button>
+        </button>
       </motion.div>
-      <Navigation navItems={navItems} />
+      <Navigation key="navigation" navItems={navItems} />
     </header>
   );
 }
