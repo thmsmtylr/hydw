@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { classNames } from "@/utils/classnames";
+import { classNames } from "@/utils/class-names";
 import { PageImageProps } from "@/types/homepage";
 
 export function SectionImages({ images }: { images: PageImageProps }) {

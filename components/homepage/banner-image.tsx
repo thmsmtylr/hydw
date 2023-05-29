@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { classNames } from "@/utils/classnames";
+import { classNames } from "@/utils/class-names";
 import { BannerImageProps } from "@/types/homepage";
 
 const container: Variants = {

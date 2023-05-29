@@ -1,7 +1,7 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import { flyerFont } from "@/fonts";
-import { classNames } from "@/utils/classnames";
+import { classNames } from "@/utils/class-names";
 import { isEven } from "@/utils/is-even";
 
 const sentence: Variants = {
