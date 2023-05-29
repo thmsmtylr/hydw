@@ -4,25 +4,20 @@ export type BannerImageProps = {
   url: string;
 }[];
 
-export type CategoryImageProps = {
+export type PageImageProps = {
   alt: string;
   id: string;
   url: string;
 }[];
 
-export type CategoryProps = {
+export type PageProps = {
   id: string;
   title: string;
   slug: string;
-  images: CategoryImageProps;
+  images: PageImageProps;
 }[];
 
 export interface HomepageQueryProps {
-  home: {
-    description: string;
-    category: CategoryProps;
-    bannerImages: BannerImageProps;
-  };
   _site: {
     globalSeo: {
       fallbackSeo: {
@@ -31,4 +26,15 @@ export interface HomepageQueryProps {
       };
     };
   };
+  home: {
+    description: string;
+    page: PageProps;
+    bannerImages: BannerImageProps;
+  };
+  allPages: {
+    id;
+    slug;
+    title;
+    images: PageImageProps;
+  }[];
 }

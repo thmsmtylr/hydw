@@ -33,6 +33,7 @@ export function Header(props: HeaderProps) {
             height={44}
             src={logo.url}
             alt={siteName}
+            className="brightness-[94%] contrast-[81%] hue-rotate-[315deg] invert-[7%] saturate-[4%] sepia-[66%]"
           />
         </Link>
       </motion.div>

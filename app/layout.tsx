@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { ReactNode } from "react";
 import { request } from "@/lib/datocms";
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { LAYOUT_QUERY } from "@/queries/layout-query";
 import { NAVIGATION_QUERY } from "@/queries/navigation-query";
 import { HeaderProvider } from "@/contexts/header-context";
@@ -29,7 +30,7 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   const data = await getRootLayoutData();
-  const { logo } = data.props.layoutData.global;
+  const { logo, socialLinks, contactEmail } = data.props.layoutData.global;
   const { siteName } = data.props.layoutData._site.globalSeo;
   const { navigation } = data.props.navData.global;
 
@@ -40,6 +41,12 @@ export default async function RootLayout({
           <Header logo={logo} siteName={siteName} navItems={navigation} />
           {children}
         </HeaderProvider>
+        <Footer
+          logo={logo}
+          siteName={siteName}
+          socialLinks={socialLinks}
+          contactEmail={contactEmail}
+        />
       </body>
     </html>
   );

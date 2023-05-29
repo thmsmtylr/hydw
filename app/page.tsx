@@ -1,14 +1,13 @@
-import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { request } from "@/lib/datocms";
 import { HOMEPAGE_QUERY } from "@/queries/homepage-query";
 import { HomepageQueryProps } from "@/types/homepage";
 import { Description } from "@/components/homepage/description";
-import { flyerFont } from "@/fonts";
 import { BannerImages } from "@/components/homepage/banner-image";
 import { SectionImages } from "@/components/homepage/section-images";
 import { SectionHeading } from "@/components/homepage/section-heading";
+import { flyerFont, ambitFont } from "@/fonts";
 
 async function getHomePageData(): Promise<{
   props: { homepageData: HomepageQueryProps };
@@ -31,9 +30,10 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function HomePage() {
+export default async function Page() {
   const data = await getHomePageData();
-  const { description, category, bannerImages } = data.props.homepageData.home;
+  const { description, bannerImages } = data.props.homepageData.home;
+  const { allPages } = data.props.homepageData;
 
   return (
     <main>
@@ -48,22 +48,25 @@ export default async function HomePage() {
             </h1>
             <BannerImages images={bannerImages} />
           </div>
-          <Description text={description} />
+          <p
+            className={`text-center text-4xl tracking-tight text-hydw-charcoal ${ambitFont.className}`}
+          >
+            {description}
+          </p>
         </div>
       </section>
-
-      {category.map((item, index: number) => (
+      {allPages.map((page, index: number) => (
         <section
-          key={item.id}
+          key={page.id}
           className="relative flex min-h-screen w-full items-center justify-center overflow-hidden"
         >
           <Link
-            href={item.slug}
+            href={page.slug}
             className="relative flex w-full items-center justify-center"
           >
-            <SectionHeading title={item.title} index={index} />
+            <SectionHeading title={page.title} index={index} />
           </Link>
-          <SectionImages images={item.images} />
+          <SectionImages images={page.images} />
         </section>
       ))}
     </main>

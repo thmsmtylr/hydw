@@ -4,7 +4,7 @@ import { ambitFont } from "@/fonts";
 
 export function Description({ text }: { text: string }) {
   return (
-    <motion.div className="h-[48px] overflow-hidden">
+    <div className="h-[48px] overflow-hidden">
       <motion.p
         initial={{ translateY: "100%" }}
         animate={{ translateY: "0%" }}
@@ -13,6 +13,6 @@ export function Description({ text }: { text: string }) {
       >
         {text}
       </motion.p>
-    </motion.div>
+    </div>
   );
 }

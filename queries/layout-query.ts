@@ -11,6 +11,15 @@ export const LAYOUT_QUERY = gql`
       logo {
         url
       }
+      socialLinks {
+        id
+        link
+        title
+        icon {
+          url
+        }
+      }
+      contactEmail
     }
   }
 `;
