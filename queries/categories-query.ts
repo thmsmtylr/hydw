@@ -2,9 +2,7 @@ import { gql } from "graphql-request";
 
 export const CATEGORIES = gql`
   query CategoryPageQuery {
-    allCategories(
-      filter: { _status: { eq: published }, _isValid: { eq: "true" } }
-    ) {
+    allPages(filter: { _status: { eq: published }, _isValid: { eq: "true" } }) {
       id
       images {
         url

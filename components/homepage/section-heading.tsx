@@ -39,8 +39,9 @@ export function SectionHeading({
       whileTap={{ scale: 0.9 }}
       whileHover={{ scale: 1.2 }}
       className={classNames(
+        isEven(index) ? "text-hydw-yellow" : "text-hydw-orange",
         isEven(index) ? "hover:text-hydw-blue" : "hover:text-hydw-pink",
-        `flex h-36 items-center overflow-hidden text-center text-12xl uppercase leading-[0.8] text-hydw-charcoal mix-blend-multiply transition-colors duration-200 will-change-transform ${flyerFont.className}`
+        `flex h-36 items-center overflow-hidden text-center text-12xl uppercase leading-[0.8] transition-colors duration-200 ${flyerFont.className}`
       )}
     >
       {letters.map((item: string, index: number) => (

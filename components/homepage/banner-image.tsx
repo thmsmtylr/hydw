@@ -1,99 +1,74 @@
 "use client";
 import Image from "next/image";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { classNames } from "@/utils/class-names";
 import { BannerImageProps } from "@/types/homepage";
 
-const container: Variants = {
+const parentVarient: Variants = {
   initial: {
     translateY: "calc(100vh + 384px)",
   },
-  position: {
+  animate: {
     translateY: "0%",
     transition: {
       type: "spring",
       damping: 10,
       stiffness: 100,
+      staggerChildren: 0.19,
     },
   },
 };
 
-const item: Variants = {};
+function handleChildVarient(index: number) {
+  switch (index) {
+    case 0:
+      return "translate3d(2vw, 2vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-12deg) skew(0deg) translateY(-22%)";
 
-// const item: Variants = {
-//   initial: (index) => {
-//     if (index == 0) {
-//       return {
-//         bottom: 0,
-//       };
-//     }
-//     if (index == 1) {
-//       return {
-//         bottom: 0,
-//         right: 0,
-//       };
-//     }
-//     if (index == 2) {
-//       return {
-//         bottom: 0,
-//         left: 0,
-//       };
-//     }
-//     return {};
-//   },
-//   position: (index) => {
-//     if (index == 0) {
-//       return {
-//         bottom: 16,
-//         transition: {
-//           delay: 0.5,
-//         },
-//       };
-//     }
-//     if (index == 1) {
-//       return {
-//         bottom: 96,
-//         right: 16,
-//         transition: {
-//           delay: 0.7,
-//         },
-//       };
-//     }
-//     if (index == 2) {
-//       return {
-//         bottom: 96,
-//         left: 16,
-//         transition: {
-//           delay: 3,
-//         },
-//       };
-//     }
-//     return {};
-//   },
-// };
+    case 1:
+      return "translate3d(2vw, 2vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-12deg) skew(0deg) translateY(-33%)";
+
+    case 2:
+      return "translate3d(-3vw, -2vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-12deg) skew(0deg) translateY(-22%)";
+
+    case 3:
+      return "translate3d(-3vw, -2vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-12deg) skew(0deg) translateY(10%)";
+
+    default:
+      "";
+  }
+}
+
+const childVarient: Variants = {
+  initial: {
+    transform:
+      "translate3d(0vw, 0vh, 0px) scale3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg) translateY(0%)",
+  },
+  animate: (custom) => ({
+    transform: handleChildVarient(custom),
+    transition: {
+      type: "spring",
+      damping: 10,
+      stiffness: 100,
+      staggerChildren: 0.19,
+    },
+  }),
+};
 
 export function BannerImages({ images }: { images: BannerImageProps }) {
   return (
     <motion.div
-      className="absolute flex h-full w-full items-center justify-center will-change-transform"
-      variants={container}
       initial="initial"
-      animate="position"
+      animate="animate"
+      variants={parentVarient}
+      className="absolute flex h-full w-full items-center justify-center will-change-transform"
     >
-      {images.map((image, index: number) => (
-        <AnimatePresence key={image.id}>
+      <AnimatePresence>
+        {images.map((image, index: number) => (
           <motion.div
-            // className={classNames(
-            //   index === 0 ? "bottom-4" : "",
-            //   index === 1 ? "bottom-24 right-4" : "",
-            //   index === 2 ? "bottom-24 left-4" : "",
-            //   "absolute z-10 will-change-transform"
-            // )}
+            key={image.id}
             className="absolute z-10 will-change-transform"
             custom={index}
-            variants={item}
-            initial="initial"
-            animate="position"
+            variants={childVarient}
+            id={`${index}`}
           >
             <Image
               src={image.url}
@@ -103,8 +78,8 @@ export function BannerImages({ images }: { images: BannerImageProps }) {
               priority
             />
           </motion.div>
-        </AnimatePresence>
-      ))}
+        ))}
+      </AnimatePresence>
     </motion.div>
   );
 }

@@ -8,6 +8,7 @@ import { BannerImages } from "@/components/homepage/banner-image";
 import { SectionImages } from "@/components/homepage/section-images";
 import { SectionHeading } from "@/components/homepage/section-heading";
 import { flyerFont, ambitFont } from "@/fonts";
+import { Fragment } from "react";
 
 async function getHomePageData(): Promise<{
   props: { homepageData: HomepageQueryProps };
@@ -56,18 +57,19 @@ export default async function Page() {
         </div>
       </section>
       {allPages.map((page, index: number) => (
-        <section
-          key={page.id}
-          className="relative flex min-h-screen w-full items-center justify-center overflow-hidden"
-        >
-          <Link
-            href={page.slug}
-            className="relative flex w-full items-center justify-center"
-          >
-            <SectionHeading title={page.title} index={index} />
-          </Link>
-          <SectionImages images={page.images} />
-        </section>
+        <Fragment key={page.id}>
+          <section className="relative flex h-[720px] w-full items-center justify-center">
+            <div className="flex h-full w-full items-center justify-center">
+              <Link
+                href={page.slug}
+                className="relative flex items-center justify-center"
+              >
+                <SectionHeading title={page.title} index={index} />
+              </Link>
+              <SectionImages images={page.images} />
+            </div>
+          </section>
+        </Fragment>
       ))}
     </main>
   );

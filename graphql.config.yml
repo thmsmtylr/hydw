@@ -1,0 +1,25 @@
+schema:
+  - https://graphql.datocms.com:
+      headers:
+        Authorization: "a4d7d0e9f388a761ce5335fb8f8552"
+        X-Exclude-Invalid: true
+        X-Include-Drafts: true
+documents: "./queries/**/*.ts"
+generates:
+  types/generated.d.ts:
+    plugins:
+      - typescript
+      - typescript-operations:
+          strictScalars: true
+          scalars:
+            BooleanType: boolean
+            CustomData: Record<string, unknown>
+            Date: string
+            DateTime: string
+            FloatType: number
+            IntType: number
+            ItemId: string
+            JsonField: unknown
+            MetaTagAttributes: Record<string, string>
+            UploadId: string
+      - typed-document-node

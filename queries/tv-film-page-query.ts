@@ -1,7 +1,7 @@
 import { gql } from "graphql-request";
 
 export const TV_FILM_QUERY = gql`
-  query TVFilmPageQuery {
+  query TVFilmPage {
     page(
       filter: {
         _isValid: { eq: "true" }
@@ -16,6 +16,7 @@ export const TV_FILM_QUERY = gql`
       work {
         id
         title
+        description
         image {
           url
         }

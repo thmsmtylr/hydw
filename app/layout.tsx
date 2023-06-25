@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { Metadata } from "next";
 import { ReactNode } from "react";
 import { request } from "@/lib/datocms";
 import { Header } from "@/components/header";
@@ -23,6 +24,13 @@ async function getRootLayoutData(): Promise<{
     props: { navData, layoutData },
   };
 }
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Haven't You Done Well Productions",
+    default: "Haven't You Done Well Productions",
+  },
+};
 
 export default async function RootLayout({
   children,

@@ -45,7 +45,7 @@ export function Header(props: HeaderProps) {
         whileTap={{ scale: 0.9 }}
       >
         <button
-          className={`text-2xl uppercase leading-[115%] tracking-wide text-hydw-charcoal ${flyerFont.className}`}
+          className={`text-2xl uppercase leading-[115%] tracking-wide text-hydw-charcoal transition-colors duration-150 hover:text-hydw-blue ${flyerFont.className}`}
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="menu"

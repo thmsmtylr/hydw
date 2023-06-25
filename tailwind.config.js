@@ -14,9 +14,9 @@ module.exports = {
         flyer: ["var(--font-flyer)", ...fontFamily.sans],
       },
       fontSize: {
-        "10xl": "9rem",
-        "11xl": "10rem",
-        "12xl": "11rem",
+        "10xl": ["9rem", "1rem"],
+        "11xl": ["10rem", "1rem"],
+        "12xl": ["11rem", "1rem"],
       },
       colors: {
         "hydw-blue": "#3b2dff",
