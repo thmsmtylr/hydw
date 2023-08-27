@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
-import { TV_FILM_QUERY } from "@/queries/tv-film-page-query";
-import { TvFilmPageQuery } from "@/types/generated";
+import { GROUSE_HOUSE_QUERY } from "@/queries/grouse-house-page-query";
+import { GrouseHousePageQuery } from "@/types/generated";
 import { PageLayout } from "@/components/page-layout";
 
-async function getPageData(): Promise<TvFilmPageQuery> {
-  const data = await request({ query: TV_FILM_QUERY });
-  return { ...(data as TvFilmPageQuery) };
+async function getPageData(): Promise<GrouseHousePageQuery> {
+  const data = await request({ query: GROUSE_HOUSE_QUERY });
+  return { ...(data as GrouseHousePageQuery) };
 }
 
 export async function generateMetadata(): Promise<Metadata> {

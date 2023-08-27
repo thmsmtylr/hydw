@@ -7,6 +7,7 @@ type ParallaxProps = {
   offset?: number;
   clampInitial?: boolean;
   clampFinal?: boolean;
+  className?: string;
 };
 
 export const Parallax = ({
@@ -14,6 +15,7 @@ export const Parallax = ({
   offset = 50,
   clampInitial,
   clampFinal,
+  className = "",
 }: ParallaxProps): JSX.Element => {
   const ref = useRef<HTMLDivElement>(null);
   const [elementTop, setElementTop] = useState(0);
@@ -48,7 +50,7 @@ export const Parallax = ({
   }, [ref]);
 
   return (
-    <motion.div ref={ref} style={{ y }}>
+    <motion.div ref={ref} style={{ y }} className={className}>
       {children}
     </motion.div>
   );

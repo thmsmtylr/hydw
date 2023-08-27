@@ -40,10 +40,12 @@ export type AboutModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   bodyDescription?: InputMaybe<TextFilter>;
+  bodyTitle?: InputMaybe<StringFilter>;
   description?: InputMaybe<TextFilter>;
   id?: InputMaybe<ItemIdFilter>;
   section?: InputMaybe<LinksFilter>;
   seo?: InputMaybe<SeoFilter>;
+  skewBodyTitle?: InputMaybe<StringFilter>;
   slug?: InputMaybe<SlugFilter>;
   title?: InputMaybe<StringFilter>;
 };
@@ -65,8 +67,12 @@ export enum AboutModelOrderBy {
   UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
   UpdatedAtAsc = '_updatedAt_ASC',
   UpdatedAtDesc = '_updatedAt_DESC',
+  BodyTitleAsc = 'bodyTitle_ASC',
+  BodyTitleDesc = 'bodyTitle_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  SkewBodyTitleAsc = 'skewBodyTitle_ASC',
+  SkewBodyTitleDesc = 'skewBodyTitle_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
 }
@@ -88,10 +94,12 @@ export type AboutRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   bodyDescription?: Maybe<Scalars['String']['output']>;
+  bodyTitle?: Maybe<Scalars['String']['output']>;
   description: Scalars['String']['output'];
   id: Scalars['ItemId']['output'];
   section: Array<SectionRecord>;
   seo?: Maybe<SeoField>;
+  skewBodyTitle?: Maybe<Scalars['String']['output']>;
   slug: Scalars['String']['output'];
   title: Scalars['String']['output'];
 };
@@ -229,6 +237,50 @@ export type ColorField = {
   red: Scalars['IntType']['output'];
 };
 
+export type ContactModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ContactModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ContactModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  description?: InputMaybe<StringFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+};
+
+export enum ContactModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** Record of type Contact (contact) */
 export type ContactRecord = RecordInterface & {
   __typename?: 'ContactRecord';
@@ -245,7 +297,10 @@ export type ContactRecord = RecordInterface & {
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
+  description: Scalars['String']['output'];
   id: Scalars['ItemId']['output'];
+  subtitle?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
 };
 
 
@@ -2366,6 +2421,8 @@ export type PublishedAtFilter = {
 export type Query = {
   __typename?: 'Query';
   /** Returns meta information regarding a record collection */
+  _allContactsMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
   _allHomesMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata;
@@ -2380,6 +2437,8 @@ export type Query = {
   /** Returns the single instance record */
   about?: Maybe<AboutRecord>;
   /** Returns a collection of records */
+  allContacts: Array<ContactRecord>;
+  /** Returns a collection of records */
   allHomes: Array<HomeRecord>;
   /** Returns a collection of records */
   allPages: Array<PageRecord>;
@@ -2389,7 +2448,7 @@ export type Query = {
   allUploads: Array<FileField>;
   /** Returns a collection of records */
   allWorks: Array<WorkRecord>;
-  /** Returns the single instance record */
+  /** Returns a specific record */
   contact?: Maybe<ContactRecord>;
   /** Returns the single instance record */
   global?: Maybe<GlobalRecord>;
@@ -2403,6 +2462,14 @@ export type Query = {
   upload?: Maybe<FileField>;
   /** Returns a specific record */
   work?: Maybe<WorkRecord>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllContactsMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ContactModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
 };
 
 
@@ -2456,6 +2523,17 @@ export type Query_SiteArgs = {
 export type QueryAboutArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type QueryAllContactsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ContactModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContactModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
 
@@ -2517,7 +2595,9 @@ export type QueryAllWorksArgs = {
 /** The query root for this schema */
 export type QueryContactArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ContactModelFilter>;
   locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ContactModelOrderBy>>>;
 };
 
 
@@ -2644,6 +2724,7 @@ export type SectionModelFilter = {
   imageBottom?: InputMaybe<FileFilter>;
   imageTop?: InputMaybe<FileFilter>;
   position?: InputMaybe<PositionFilter>;
+  skewTitle?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
 };
 
@@ -2668,6 +2749,8 @@ export enum SectionModelOrderBy {
   IdDesc = 'id_DESC',
   PositionAsc = 'position_ASC',
   PositionDesc = 'position_DESC',
+  SkewTitleAsc = 'skewTitle_ASC',
+  SkewTitleDesc = 'skewTitle_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
 }
@@ -2696,6 +2779,7 @@ export type SectionRecord = RecordInterface & {
   imageBottom: AltFileField;
   imageTop: AltFileField;
   position?: Maybe<Scalars['IntType']['output']>;
+  skewTitle?: Maybe<Scalars['String']['output']>;
   title: Scalars['String']['output'];
 };
 
@@ -3269,14 +3353,12 @@ export type WorkModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   category?: InputMaybe<LinkFilter>;
-  channel?: InputMaybe<StringFilter>;
   credits?: InputMaybe<TextFilter>;
   description?: InputMaybe<TextFilter>;
   id?: InputMaybe<ItemIdFilter>;
   image?: InputMaybe<FileFilter>;
   title?: InputMaybe<StringFilter>;
   videoLink?: InputMaybe<VideoFilter>;
-  year?: InputMaybe<StringFilter>;
 };
 
 export enum WorkModelOrderBy {
@@ -3296,14 +3378,10 @@ export enum WorkModelOrderBy {
   UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
   UpdatedAtAsc = '_updatedAt_ASC',
   UpdatedAtDesc = '_updatedAt_DESC',
-  ChannelAsc = 'channel_ASC',
-  ChannelDesc = 'channel_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-  YearAsc = 'year_ASC',
-  YearDesc = 'year_DESC'
+  TitleDesc = 'title_DESC'
 }
 
 /** Record of type Work (work) */
@@ -3326,14 +3404,12 @@ export type WorkRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   category: PageRecord;
-  channel?: Maybe<Scalars['String']['output']>;
   credits?: Maybe<Scalars['String']['output']>;
   description: Scalars['String']['output'];
   id: Scalars['ItemId']['output'];
   image?: Maybe<AltFileField>;
   title: Scalars['String']['output'];
   videoLink?: Maybe<VideoField>;
-  year?: Maybe<Scalars['String']['output']>;
 };
 
 
@@ -3383,12 +3459,27 @@ export type FocalPoint = {
 export type AboutQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AboutQuery = { __typename?: 'Query', about?: { __typename?: 'AboutRecord', title: string, description: string, bodyDescription?: string | null, _status: ItemStatus, seo?: { __typename?: 'SeoField', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string } | null } | null, section: Array<{ __typename?: 'SectionRecord', title: string, id: string, description: string, imageTop: { __typename?: 'AltFileField', url: string, alt: string }, imageBottom: { __typename?: 'AltFileField', alt: string, url: string } }> } | null };
+export type AboutQuery = { __typename?: 'Query', about?: { __typename?: 'AboutRecord', title: string, description: string, bodyTitle?: string | null, skewBodyTitle?: string | null, bodyDescription?: string | null, _status: ItemStatus, seo?: { __typename?: 'SeoField', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string } | null } | null, section: Array<{ __typename?: 'SectionRecord', title: string, skewTitle?: string | null, id: string, description: string, imageTop: { __typename?: 'AltFileField', url: string, alt: string }, imageBottom: { __typename?: 'AltFileField', alt: string, url: string } }> } | null };
 
 export type CategoryPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type CategoryPageQueryQuery = { __typename?: 'Query', allPages: Array<{ __typename?: 'PageRecord', id: string, slug: string, title: string, images: Array<{ __typename?: 'AltFileField', url: string, alt: string }>, work: Array<{ __typename?: 'WorkRecord', id: string, title: string, image?: { __typename?: 'AltFileField', url: string } | null }> }> };
+
+export type CommercialPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CommercialPageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', id: string, slug: string, title: string, description?: string | null, work: Array<{ __typename?: 'WorkRecord', id: string, title: string, description: string, credits?: string | null, image?: { __typename?: 'AltFileField', url: string } | null, videoLink?: { __typename?: 'VideoField', url: string } | null }>, seo?: { __typename?: 'SeoField', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string } | null } | null } | null };
+
+export type ContactQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ContactQuery = { __typename?: 'Query', contact?: { __typename?: 'ContactRecord', title: string, subtitle?: string | null, description: string } | null };
+
+export type GrouseHousePageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GrouseHousePageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', id: string, slug: string, title: string, description?: string | null, work: Array<{ __typename?: 'WorkRecord', id: string, title: string, description: string, credits?: string | null, image?: { __typename?: 'AltFileField', url: string } | null, videoLink?: { __typename?: 'VideoField', url: string } | null }>, seo?: { __typename?: 'SeoField', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string } | null } | null } | null };
 
 export type HomepageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3408,12 +3499,21 @@ export type NavigationQueryQuery = { __typename?: 'Query', global?: { __typename
 export type TvFilmPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type TvFilmPageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', id: string, slug: string, title: string, description?: string | null, work: Array<{ __typename?: 'WorkRecord', id: string, title: string, description: string, year?: string | null, image?: { __typename?: 'AltFileField', url: string } | null, videoLink?: { __typename?: 'VideoField', url: string } | null }>, seo?: { __typename?: 'SeoField', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string } | null } | null } | null };
+export type TvFilmPageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', id: string, slug: string, title: string, description?: string | null, work: Array<{ __typename?: 'WorkRecord', id: string, title: string, description: string, credits?: string | null, image?: { __typename?: 'AltFileField', url: string } | null, videoLink?: { __typename?: 'VideoField', url: string } | null }>, seo?: { __typename?: 'SeoField', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string } | null } | null } | null };
+
+export type WebSeriesPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export const AboutDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"About"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"about"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"bodyDescription"}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"_status"}},{"kind":"Field","name":{"kind":"Name","value":"section"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"imageTop"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"imageBottom"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<AboutQuery, AboutQueryVariables>;
+export type WebSeriesPageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', id: string, slug: string, title: string, description?: string | null, work: Array<{ __typename?: 'WorkRecord', id: string, title: string, description: string, credits?: string | null, image?: { __typename?: 'AltFileField', url: string } | null, videoLink?: { __typename?: 'VideoField', url: string } | null }>, seo?: { __typename?: 'SeoField', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string } | null } | null } | null };
+
+
+export const AboutDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"About"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"about"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"bodyTitle"}},{"kind":"Field","name":{"kind":"Name","value":"skewBodyTitle"}},{"kind":"Field","name":{"kind":"Name","value":"bodyDescription"}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"_status"}},{"kind":"Field","name":{"kind":"Name","value":"section"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"skewTitle"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"imageTop"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"imageBottom"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<AboutQuery, AboutQueryVariables>;
 export const CategoryPageQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"CategoryPageQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allPages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"_status"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"EnumValue","value":"published"}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"_isValid"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"true","block":false}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"work"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<CategoryPageQueryQuery, CategoryPageQueryQueryVariables>;
+export const CommercialPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"CommercialPage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"_isValid"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"true","block":false}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"_status"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"EnumValue","value":"published"}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"commercial","block":false}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"work"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"credits"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"videoLink"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<CommercialPageQuery, CommercialPageQueryVariables>;
+export const ContactDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Contact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"contact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<ContactQuery, ContactQueryVariables>;
+export const GrouseHousePageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GrouseHousePage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"_isValid"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"true","block":false}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"_status"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"EnumValue","value":"published"}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"grouse-house","block":false}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"work"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"credits"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"videoLink"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GrouseHousePageQuery, GrouseHousePageQueryVariables>;
 export const HomepageQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"HomepageQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_site"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"globalSeo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"fallbackSeo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"home"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"bannerImages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"allPages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"position_ASC"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<HomepageQueryQuery, HomepageQueryQueryVariables>;
 export const LayoutQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"LayoutQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_site"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"globalSeo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"siteName"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"global"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"logo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"socialLinks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"link"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"contactEmail"}}]}}]}}]} as unknown as DocumentNode<LayoutQueryQuery, LayoutQueryQueryVariables>;
 export const NavigationQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"NavigationQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"global"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"navigation"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]}}]} as unknown as DocumentNode<NavigationQueryQuery, NavigationQueryQueryVariables>;
-export const TvFilmPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"TVFilmPage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"_isValid"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"true","block":false}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"_status"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"EnumValue","value":"published"}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"tv-film","block":false}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"work"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"year"}},{"kind":"Field","name":{"kind":"Name","value":"videoLink"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<TvFilmPageQuery, TvFilmPageQueryVariables>;
+export const TvFilmPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"TVFilmPage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"_isValid"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"true","block":false}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"_status"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"EnumValue","value":"published"}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"tv-film","block":false}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"work"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"credits"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"videoLink"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<TvFilmPageQuery, TvFilmPageQueryVariables>;
+export const WebSeriesPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"WebSeriesPage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"_isValid"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"true","block":false}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"_status"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"EnumValue","value":"published"}}]}},{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"StringValue","value":"web-series","block":false}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"work"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"credits"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"videoLink"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<WebSeriesPageQuery, WebSeriesPageQueryVariables>;

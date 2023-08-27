@@ -7,7 +7,7 @@ export function Footer(props: FooterProps) {
   const { logo, siteName, socialLinks, contactEmail } = props;
 
   return (
-    <footer className="mt-20 grid grid-cols-3 items-center gap-4 bg-hydw-blue px-11 py-11">
+    <footer className="mt-40 grid grid-cols-3 items-center gap-4 bg-hydw-blue px-11 py-11">
       <Link href="/" aria-label="home">
         <Image
           className="invert"
@@ -45,10 +45,24 @@ export function Footer(props: FooterProps) {
         </div>
       </div>
       <p className="col-start-2 text-center text-xs tracking-tight text-white">
-        Website by{" "}
-        <a target="_blank" href="https://srrycmpny.com/">
+        Creative direction by{" "}
+        <a
+          className="transition-colors duration-150 hover:text-hydw-pink"
+          href="https://susustudio.com/"
+        >
+          Susu Studio
+        </a>
+        .
+        <br />
+        Development by{" "}
+        <a
+          className="transition-colors duration-150 hover:text-hydw-pink"
+          target="_blank"
+          href="https://srrycmpny.com/"
+        >
           Sorry Company
         </a>
+        .
       </p>
     </footer>
   );

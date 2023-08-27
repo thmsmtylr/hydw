@@ -5,6 +5,8 @@ export const ABOUT_QUERY = gql`
     about {
       title
       description
+      bodyTitle
+      skewBodyTitle
       bodyDescription
       seo {
         title
@@ -16,6 +18,7 @@ export const ABOUT_QUERY = gql`
       _status
       section {
         title
+        skewTitle
         id
         description
         imageTop {

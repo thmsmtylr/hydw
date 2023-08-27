@@ -1,12 +1,12 @@
 import { gql } from "graphql-request";
 
-export const TV_FILM_QUERY = gql`
-  query TVFilmPage {
+export const COMMERCIAL_QUERY = gql`
+  query CommercialPage {
     page(
       filter: {
         _isValid: { eq: "true" }
         _status: { eq: published }
-        slug: { eq: "tv-film" }
+        slug: { eq: "commercial" }
       }
     ) {
       id

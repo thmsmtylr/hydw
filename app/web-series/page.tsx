@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
-import { TV_FILM_QUERY } from "@/queries/tv-film-page-query";
-import { TvFilmPageQuery } from "@/types/generated";
+import { WEB_SERIES_QUERY } from "@/queries/web-series-page-query";
+import { WebSeriesPageQuery } from "@/types/generated";
 import { PageLayout } from "@/components/page-layout";
 
-async function getPageData(): Promise<TvFilmPageQuery> {
-  const data = await request({ query: TV_FILM_QUERY });
-  return { ...(data as TvFilmPageQuery) };
+async function getPageData(): Promise<WebSeriesPageQuery> {
+  const data = await request({ query: WEB_SERIES_QUERY });
+  return { ...(data as WebSeriesPageQuery) };
 }
 
 export async function generateMetadata(): Promise<Metadata> {

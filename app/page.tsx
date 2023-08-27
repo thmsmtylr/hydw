@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { request } from "@/lib/datocms";
 import { HOMEPAGE_QUERY } from "@/queries/homepage-query";
 import { HomepageQueryProps } from "@/types/homepage";
-import { Description } from "@/components/homepage/description";
-import { BannerImages } from "@/components/homepage/banner-image";
-import { SectionImages } from "@/components/homepage/section-images";
-import { SectionHeading } from "@/components/homepage/section-heading";
+import { BannerImages } from "@/components/banner-image";
+import { Section } from "@/components/section";
+import { Skew } from "@/components/skew";
 import { flyerFont, ambitFont } from "@/fonts";
-import { Fragment } from "react";
 
 async function getHomePageData(): Promise<{
   props: { homepageData: HomepageQueryProps };
@@ -44,7 +41,10 @@ export default async function Page() {
             <h1
               className={`text-center text-11xl uppercase leading-[0.8] text-hydw-charcoal ${flyerFont.className}`}
             >
-              Haven&apos;t <span className="inline-block skew-x-40">You</span>{" "}
+              Haven&apos;t{" "}
+              <Skew delay={0.79} className="inline-block">
+                You
+              </Skew>{" "}
               Done Well Productions
             </h1>
             <BannerImages images={bannerImages} />
@@ -57,19 +57,14 @@ export default async function Page() {
         </div>
       </section>
       {allPages.map((page, index: number) => (
-        <Fragment key={page.id}>
-          <section className="relative flex h-[720px] w-full items-center justify-center">
-            <div className="flex h-full w-full items-center justify-center">
-              <Link
-                href={page.slug}
-                className="relative flex items-center justify-center"
-              >
-                <SectionHeading title={page.title} index={index} />
-              </Link>
-              <SectionImages images={page.images} />
-            </div>
-          </section>
-        </Fragment>
+        <Section
+          key={page.id}
+          id={page.id}
+          slug={page.slug}
+          title={page.title}
+          images={page.images}
+          index={index}
+        />
       ))}
     </main>
   );

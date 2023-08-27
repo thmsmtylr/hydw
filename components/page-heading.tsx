@@ -2,7 +2,7 @@
 import { motion, Variants } from "framer-motion";
 import { flyerFont } from "@/fonts";
 
-const sentence: Variants = {
+const variants: Variants = {
   visible: {
     transition: {
       type: "spring",
@@ -13,7 +13,7 @@ const sentence: Variants = {
   },
 };
 
-const letter: Variants = {
+const childVariants: Variants = {
   hidden: { translateY: "100%" },
   visible: {
     translateY: 0,
@@ -26,14 +26,14 @@ export function PageHeading({ title }: { title: string }) {
     <motion.h1
       initial="hidden"
       whileInView="visible"
-      variants={sentence}
+      variants={variants}
       viewport={{ once: true }}
       className={`mx-auto flex h-36 items-center overflow-hidden text-center text-12xl uppercase leading-[0.8] text-hydw-charcoal transition-colors duration-200 will-change-transform ${flyerFont.className}`}
     >
       {letters.map((item: string, index: number) => (
         <motion.span
           key={index}
-          variants={letter}
+          variants={childVariants}
           className="inline-block will-change-transform"
         >
           {item === " " ? "\u00A0" : item}

@@ -2,8 +2,9 @@
 import Image from "next/image";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { BannerImageProps } from "@/types/homepage";
+import { absurd } from "@/utils/absurd";
 
-const parentVarient: Variants = {
+const parentVariant: Variants = {
   initial: {
     translateY: "calc(100vh + 384px)",
   },
@@ -16,6 +17,22 @@ const parentVarient: Variants = {
       staggerChildren: 0.19,
     },
   },
+};
+
+const childVariant: Variants = {
+  initial: {
+    transform:
+      "translate3d(0vw, 0vh, 0px) scale3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg) translateY(0%)",
+  },
+  animate: (custom) => ({
+    transform: handleChildVarient(custom),
+    transition: {
+      type: "spring",
+      damping: 10,
+      stiffness: 100,
+      staggerChildren: 0.19,
+    },
+  }),
 };
 
 function handleChildVarient(index: number) {
@@ -33,32 +50,16 @@ function handleChildVarient(index: number) {
       return "translate3d(-3vw, -2vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-12deg) skew(0deg) translateY(10%)";
 
     default:
-      "";
+      absurd;
   }
 }
-
-const childVarient: Variants = {
-  initial: {
-    transform:
-      "translate3d(0vw, 0vh, 0px) scale3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg) translateY(0%)",
-  },
-  animate: (custom) => ({
-    transform: handleChildVarient(custom),
-    transition: {
-      type: "spring",
-      damping: 10,
-      stiffness: 100,
-      staggerChildren: 0.19,
-    },
-  }),
-};
 
 export function BannerImages({ images }: { images: BannerImageProps }) {
   return (
     <motion.div
       initial="initial"
       animate="animate"
-      variants={parentVarient}
+      variants={parentVariant}
       className="absolute flex h-full w-full items-center justify-center will-change-transform"
     >
       <AnimatePresence>
@@ -67,8 +68,7 @@ export function BannerImages({ images }: { images: BannerImageProps }) {
             key={image.id}
             className="absolute z-10 will-change-transform"
             custom={index}
-            variants={childVarient}
-            id={`${index}`}
+            variants={childVariant}
           >
             <Image
               src={image.url}
