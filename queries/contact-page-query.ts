@@ -6,6 +6,18 @@ export const CONTACT_QUERY = gql`
       title
       subtitle
       description
+      legals
+    }
+    global {
+      socialLinks {
+        id
+        link
+        title
+        icon {
+          url
+        }
+      }
+      contactEmail
     }
   }
 `;

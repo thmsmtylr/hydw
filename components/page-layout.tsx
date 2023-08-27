@@ -3,7 +3,7 @@ import { buildMDX } from "@/utils/build-mdx";
 import { ambitFont, flyerFont } from "@/fonts";
 import { PageHeading } from "@/components/page-heading";
 import { VideoPlayer } from "@/components/video-player";
-import { ScrollDownButton } from "./scroll-down-button";
+import { ScrollDownButton } from "@/components/scroll-down-button";
 
 export function PageLayout({
   title,
@@ -40,12 +40,16 @@ export function PageLayout({
             key={id}
             className="mx-auto w-full max-w-6xl [&:not(:last-child)]:mb-20"
           >
-            {url ? (
+            {videoLink?.url ? (
+              <VideoPlayer
+                url={videoLink.url}
+                imgURL={url?.url || ""}
+                title={title}
+              />
+            ) : (
               <div className="mb-8">
                 <Image src={url.url} alt={title} width={1152} height={648} />
               </div>
-            ) : (
-              <VideoPlayer url={videoLink.url} />
             )}
             <div className="grid grid-cols-2 gap-4">
               <div>

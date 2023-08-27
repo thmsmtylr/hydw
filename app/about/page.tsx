@@ -7,6 +7,7 @@ import { buildMDX } from "@/utils/build-mdx";
 import { classNames } from "@/utils/class-names";
 import { Parallax } from "@/components/parallax";
 import { SkewedText } from "@/components/skewed-text";
+import { ScrollDownButton } from "@/components/scroll-down-button";
 import { request } from "@/lib/datocms";
 import { isEven } from "@/utils/is-even";
 import { ambitFont, flyerFont } from "@/fonts";
@@ -55,8 +56,12 @@ export default async function Page() {
               />
             )}
           </div>
+          <div className="lef-1/2 absolute bottom-12">
+            <ScrollDownButton target="scrollTarget" />
+          </div>
         </div>
       </section>
+      <span id="scrollTarget" />
       <section className="relative mx-auto mb-20 max-w-6xl">
         {bodyTitle && (
           <h2
