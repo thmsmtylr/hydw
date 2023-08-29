@@ -1,9 +1,6 @@
-type Sitemap = Array<{
-  url: string;
-  lastModified?: string | Date;
-}>;
+import { MetadataRoute } from "next";
 
-export default function sitemap(): Sitemap {
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://haventyoudonewell.com",

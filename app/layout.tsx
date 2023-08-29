@@ -26,6 +26,7 @@ async function getRootLayoutData(): Promise<{
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://haventyoudonewell.com"),
   title: {
     template: "%s | Haven't You Done Well Productions",
     default: "Haven't You Done Well Productions",
