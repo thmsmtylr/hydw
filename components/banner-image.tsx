@@ -75,7 +75,6 @@ export function BannerImages({ images }: { images: BannerImageProps }) {
               alt={image.alt}
               width={500}
               height={300}
-              quality={50}
               priority
             />
           </motion.div>
