@@ -1,6 +1,6 @@
-import "@/styles/globals.css";
-import { Metadata } from "next";
 import { ReactNode } from "react";
+import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { request } from "@/lib/datocms";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -9,6 +9,8 @@ import { NAVIGATION_QUERY } from "@/queries/navigation-query";
 import { HeaderProvider } from "@/contexts/header-context";
 import { RootLayoutQueryProps } from "@/types/root-layout";
 import { NavigationQueryProps } from "@/types/navigation";
+
+import "@/styles/globals.css";
 
 async function getRootLayoutData(): Promise<{
   props: { navData: any; layoutData: RootLayoutQueryProps };
@@ -56,6 +58,7 @@ export default async function RootLayout({
           socialLinks={socialLinks}
           contactEmail={contactEmail}
         />
+        <Analytics />
       </body>
     </html>
   );

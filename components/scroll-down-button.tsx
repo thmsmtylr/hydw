@@ -12,7 +12,9 @@ export function ScrollDownButton({ target }: { target: string }) {
   const scrollToElement = () => {
     const targetElement = document.getElementById(target);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
+      const y =
+        targetElement.getBoundingClientRect().top + window.pageYOffset + 15;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -21,6 +23,7 @@ export function ScrollDownButton({ target }: { target: string }) {
       onClick={scrollToElement}
       aria-label="Scroll to next section"
       className="group flex p-4"
+      whileTap={{ scale: 0.9 }}
       whileHover={{
         scale: 1.2,
         transition: {

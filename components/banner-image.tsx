@@ -60,7 +60,7 @@ export function BannerImages({ images }: { images: BannerImageProps }) {
       initial="initial"
       animate="animate"
       variants={parentVariant}
-      className="absolute flex h-full w-full items-center justify-center will-change-transform"
+      className="absolute mt-20 flex h-full w-full items-center justify-center will-change-transform sm:mt-0"
     >
       <AnimatePresence>
         {images.map((image, index: number) => (

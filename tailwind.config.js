@@ -14,8 +14,9 @@ module.exports = {
         flyer: ["var(--font-flyer)", ...fontFamily.sans],
       },
       fontSize: {
+        "6xl": ["3.75rem", 0.8],
         "10xl": ["9rem", "1rem"],
-        "11xl": ["10rem", "1rem"],
+        "11xl": ["10rem", 0.8],
         "12xl": ["11rem", "1rem"],
       },
       colors: {

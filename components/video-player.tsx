@@ -20,7 +20,6 @@ export function VideoPlayer({
         width="100%"
         height="100%"
         className="absolute left-0 top-0 h-full w-full"
-        light={<Image src={imgURL} alt={title} width={1152} height={648} />}
       />
     </div>
   );

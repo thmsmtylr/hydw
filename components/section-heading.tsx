@@ -43,7 +43,7 @@ export function SectionHeading({
       className={classNames(
         isEven(index) ? "text-hydw-yellow" : "text-hydw-orange",
         isEven(index) ? "hover:text-hydw-blue" : "hover:text-hydw-pink",
-        `z-50 flex h-36 items-center overflow-hidden text-center text-12xl uppercase leading-[0.8] transition-colors duration-200 ${flyerFont.className}`
+        `z-50 flex h-36 items-center overflow-hidden text-center text-6xl uppercase leading-[0.8] transition-colors duration-200 sm:text-12xl ${flyerFont.className}`
       )}
     >
       {letters.map((item: string, index: number) => (

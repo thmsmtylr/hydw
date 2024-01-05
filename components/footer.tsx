@@ -7,8 +7,8 @@ export function Footer(props: FooterProps) {
   const { logo, siteName, socialLinks, contactEmail } = props;
 
   return (
-    <footer className="mt-40 grid grid-cols-3 items-center gap-4 bg-hydw-blue px-11 py-11">
-      <Link href="/" aria-label="home">
+    <footer className="mt-40 flex flex-col items-center gap-4 bg-hydw-blue px-11 py-11 sm:grid sm:grid-cols-3">
+      <Link href="/" aria-label="Home">
         <Image
           className="invert"
           width={90}
@@ -30,7 +30,7 @@ export function Footer(props: FooterProps) {
         ))}
       </div>
       <div className="flex items-center justify-end">
-        <div className="flex flex-col">
+        <div className="flex flex-col text-center sm:text-left">
           <a
             className={`text-sm text-white transition-colors duration-150 hover:text-hydw-pink ${ambitFont.className}`}
             href={`mailto:${contactEmail}`}

@@ -24,7 +24,7 @@ export function Navigation(props: NavigationComponentProps) {
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-hydw-blue">
           <DialogPrimitive.Content>
-            <div className="flex h-40 w-full items-center justify-end px-11">
+            <div className="flex min-h-[134.85px] w-full items-center justify-end p-11">
               <motion.button
                 className={`text-2xl uppercase leading-[115%] tracking-wide text-white/40 transition-colors duration-100 hover:text-white ${flyerFont.className}`}
                 type="button"

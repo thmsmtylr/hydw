@@ -37,10 +37,10 @@ export default async function Page() {
   return (
     <main>
       <section className="mb-40 bg-hydw-vanilla">
-        <div className="-mt-40 flex h-screen w-full flex-col items-center justify-center gap-32 overflow-hidden">
-          <div className="relative mx-auto flex max-w-3xl flex-col items-center pt-20">
+        <div className="-mt-[134.85px] flex h-screen w-full flex-col items-center justify-center gap-32 overflow-hidden">
+          <div className="relative mx-auto flex max-w-3xl flex-col items-center">
             <h1
-              className={`text-center text-11xl uppercase leading-[0.8] text-hydw-charcoal ${flyerFont.className}`}
+              className={`text-center text-6xl uppercase text-hydw-charcoal sm:text-11xl sm:leading-[0.8] ${flyerFont.className}`}
             >
               Haven&apos;t{" "}
               <Skew delay={0.79} className="inline-block">
@@ -54,8 +54,8 @@ export default async function Page() {
             <ScrollDownButton target="scrollTarget" />
           </div>
         </div>
+        <span id="scrollTarget" />
       </section>
-      <span id="scrollTarget" />
       <p
         className={`text-center text-4xl tracking-tight text-hydw-charcoal ${ambitFont.className}`}
       >

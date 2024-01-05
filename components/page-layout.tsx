@@ -60,14 +60,14 @@ export function PageLayout({
                 </h2>
                 {credits && (
                   <p
-                    className={`text-hydw-charcoal ${ambitFont.className} text-base tracking-[-0.02em]`}
+                    className={`text-hydw-charcoal ${ambitFont.className} whitespace-pre-line text-base tracking-[-0.02em]`}
                     dangerouslySetInnerHTML={{ __html: credits }}
                   />
                 )}
               </div>
               <div>
                 <p
-                  className={`text-xl tracking-[-0.02em] text-hydw-charcoal ${ambitFont.className}`}
+                  className={`text-lg tracking-[-0.02em] text-hydw-charcoal ${ambitFont.className}`}
                 >
                   {description}
                 </p>
