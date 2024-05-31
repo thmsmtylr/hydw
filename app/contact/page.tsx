@@ -32,42 +32,28 @@ export default async function Page() {
   const legals = data.contact?.legals || "";
 
   return (
-    <main>
-      <div className="mb-40 bg-hydw-vanilla">
-        <div className="relative mx-auto -mt-40 flex h-screen max-w-3xl items-center justify-center">
-          <div className="flex flex-col gap-20">
+    <main className="bg-hydw-yellow wrapper largepadding">
+      <section className="page-grid">
+          <div className="col-span-12 md:col-span-10 md:col-start-2 largespace largepadding">
             <PageHeading title={title} />
-            <p
-              className={`text-center text-3xl tracking-[0.02em] text-hydw-charcoal ${ambitFont.className}`}
-            >
-              {subtitle}
-            </p>
-          </div>
-          <div className="lef-1/2 absolute bottom-12">
-            <ScrollDownButton target="scrollTarget" />
-          </div>
-        </div>
-      </div>
-      <div
-        id="scrollTarget"
-        className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-8"
-      >
-        <div>
-          <h2
-            className={`mb-4 text-3xl uppercase text-hydw-charcoal ${flyerFont.className}`}
-          >
-            Contact
-          </h2>
+            </div>
+      </section>
+      <div className="page-grid">
+        <div className="col-span-12 md:col-span-10 md:col-start-2 xl:col-span-5 xl:col-start-2">
+        <h4
+                className={`heading4 text-hydw-blue leading-[100%]`}>
+                {subtitle}
+              </h4>
           <p
-            className={`text-hydw-charcoal ${ambitFont.className} mb-4 text-xl tracking-[-0.02em]`}
+            className={`body text-hydw-blue`}
           >
             {description}
           </p>
         </div>
-        <div>
+        <div className="col-span-12 md:col-span-10 md:col-start-2 xl:col-span-4 xl:col-start-8 mt-14 xl:mt-0">
           <ContactForm />
           <p
-            className={`text-hydw-charcoal ${ambitFont.className} mb-4 text-base tracking-[-0.02em]`}
+            className={`smallbody text-hydw-blue smallestspace`}
           >
             {legals}
           </p>

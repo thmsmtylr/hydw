@@ -44,47 +44,38 @@ export default async function Page() {
   const sections = data.about?.section;
 
   return (
-    <main>
-      <section className="mb-40 bg-hydw-vanilla">
-        <div className="relative mx-auto -mt-40 flex h-screen max-w-3xl items-center justify-center">
-          <div className="flex flex-col items-center">
+    <main className="bg-hydw-orange wrapper largepadding">
+      <section className="page-grid">
+          <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
             {title && <PageHeading title={title} />}
-            {description && (
-              <p
-                className={`mt-20 text-center text-4xl tracking-[-0.02em] text-hydw-charcoal ${ambitFont.className}`}
+          </div>
+          {description && (
+              <h4
+                className={`largespace col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2 heading4 text-hydw-blue leading-[100%]`}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
             )}
-          </div>
-          <div className="lef-1/2 absolute bottom-12">
-            <ScrollDownButton target="scrollTarget" />
-          </div>
-        </div>
       </section>
-      <span id="scrollTarget" />
-      <section className="relative mx-auto mb-20 max-w-6xl">
+      <section className="page-grid text-hydw-blue">
         {bodyTitle && (
-          <h2
-            className={`mb-8 text-center text-9xl uppercase leading-[0.8] text-hydw-charcoal ${flyerFont.className}`}
-          >
-            <SkewedText text={bodyTitle} skewedWord={skewedBodyTitle} />
-          </h2>
+          <h3 className={`smallspace heading3 col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2`}>{bodyTitle}</h3>
         )}
         {bodyDescription && (
           <p
-            className={`mx-auto max-w-3xl text-center text-2xl tracking-[-0.02em] text-hydw-charcoal ${ambitFont.className}`}
+            className={`body col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2`}
             dangerouslySetInnerHTML={{ __html: bodyDescription }}
           />
         )}
-      </section>
+      
+      
       {sections?.map((section, index: number) => {
         const description = buildMDX(section.description);
         return (
-          <section
+          <div
             key={section.id}
             className={classNames(
               index === sections.length - 1 ? "mb-28" : "",
-              "relative mx-auto grid w-full max-w-6xl grid-cols-2 py-20"
+              "smallspace col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2"
             )}
           >
             <div
@@ -94,33 +85,32 @@ export default async function Page() {
               )}
             >
               <div className="relative flex h-full w-full items-center justify-center">
-                <Parallax className="absolute left-0 -z-10 flex h-full w-full items-center justify-center">
+                {/* <Parallax className="">
                   <Image
                     src={section.imageTop.url}
                     alt={section.imageTop.alt}
                     width={480}
                     height={480}
                   />
-                </Parallax>
+                </Parallax> */}
               </div>
             </div>
-            <div className="flex flex-col justify-center">
-              <h3
-                className={`mb-4 text-7xl uppercase text-hydw-charcoal ${flyerFont.className}`}
+            <div className="">
+              <h5
+                className={`heading5 text-hydw-blue`}
               >
-                <SkewedText
-                  text={section.title}
-                  skewedWord={section.skewTitle || ""}
-                />
-              </h3>
+                {section.title}
+              </h5>
               <p
-                className="max-w-3xl text-xl tracking-[-0.02em] text-hydw-charcoal"
+                className="body text-hydw-blue"
                 dangerouslySetInnerHTML={{ __html: description }}
               />
             </div>
-          </section>
+          </div>
+          
         );
       })}
+      </section>
     </main>
   );
 }

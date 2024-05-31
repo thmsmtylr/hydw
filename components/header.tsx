@@ -19,7 +19,7 @@ export function Header(props: HeaderProps) {
   const { x: menuX, y: menuY } = useFollowPointer(menuRef);
 
   return (
-    <header className="sticky left-0 top-0 z-40 flex w-full items-center justify-between wrapper">
+    <header className="fixed left-0 top-0 z-40 flex w-full items-center justify-between wrapper">
       <motion.div
         ref={brandRef}
         animate={{ x: brandX, y: brandY }}

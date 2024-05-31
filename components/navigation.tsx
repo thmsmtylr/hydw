@@ -26,7 +26,7 @@ export function Navigation(props: NavigationComponentProps) {
           <DialogPrimitive.Content>
             <div className="flex min-h-[134.85px] w-full items-center justify-end p-11">
               <motion.button
-                className={`text-2xl uppercase leading-[115%] tracking-wide text-white/40 transition-colors duration-100 hover:text-white ${flyerFont.className}`}
+                className={`heading5 uppercase text-white transition-colors duration-150 hover:text-hydw-yellow`}
                 type="button"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="menu"
@@ -49,7 +49,7 @@ export function Navigation(props: NavigationComponentProps) {
                   <Link href={item.path} onClick={() => setMenuOpen(!menuOpen)}>
                     <motion.div
                       variants={navVariants}
-                      className={`text-center text-8xl font-black uppercase tracking-normal text-white ${flyerFont.className}`}
+                      className={`text-center heading2 text-white no-underline uppercase`}
                     >
                       {item.title}
                     </motion.div>

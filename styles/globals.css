@@ -33,39 +33,39 @@
       /* Spacing */
 
       .largestspace{
-        @apply mt-96;
+        @apply mt-28 md:mt-96;
       }
       
       .largespace{
-        @apply mt-52;
+        @apply mt-28 md:mt-52;
       }
 
       .midspace{
-        @apply mt-28;
+        @apply mt-14 md:mt-28;
       }
 
       .smallspace{
-        @apply mt-14;
+        @apply mt-7 md:mt-14;
       }
 
-      .smallerspace{
-        @apply mt-3.5;
+      .smallerspace, .heading4 + .body{
+        @apply mt-2.5 md:mt-3.5;
       }
 
       .largestpadding{
-        @apply pb-96;
+        @apply pb-28 md:pb-96;
       }
       
       .largepadding{
-        @apply pb-52;
+        @apply pb-28 md:pb-52;
       }
 
       .midpadding{
-        @apply pb-28;
+        @apply pb-14 md:pb-28;
       }
 
       .smallpadding{
-        @apply pb-14;
+        @apply pb-7 md:pb-14;
       }
 
       /* Typography */
@@ -76,23 +76,23 @@
       }
 
       .heading1{
-        @apply text-dt2xl;
+        @apply text-mb2xl md:text-dt2xl;
       }
 
       .heading2{
-        @apply text-dtxl;
+        @apply text-mbxl md:text-dtxl;
       }
 
       .heading3{
-        @apply text-dtlg;
+        @apply text-mblg md:text-dtlg;
       }
 
       .heading4{
-        @apply text-dtmed;
+        @apply text-mbmed md:text-dtmed;
       }
 
       .heading5{
-        @apply text-dtbase leading-[85%];
+        @apply text-mbbase md:text-dtbase leading-[85%];
       }
 
       p, ul, o, .body{
@@ -100,7 +100,7 @@
       }
 
       .body{
-        @apply text-dtbase;
+        @apply text-mbbase md:text-dtbase;
       }
 
       i, em{
@@ -115,10 +115,13 @@
         @apply text-dtsxml;
       }
 
-      a{
-        @apply underline duration-300;
+      .body a, .smallbody a, .smallestbody a, .heading4 a{
+        @apply underline duration-300 hover:text-hydw-pink;
       }
 
+    .thumbnail:hover .hoverthumb{
+      opacity:100;
+    }
       
 
 }
