@@ -1,3 +1,124 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+
+    /* Setup */
+
+    /* html {
+        scroll-behavior: smooth !important;
+      }
+      
+      body{
+        @apply break-words antialiased;
+      } */
+
+    .page-grid {
+        @apply grid grid-cols-12 gap-x-2.5 md:gap-x-5 auto-rows-min;
+      }
+
+      .grid-gap {
+        @apply gap-x-2.5 md:gap-x-5;
+      }
+
+      .wrapper{
+        @apply p-2.5 md:p-10;
+      }
+
+      img, svg{
+        @apply w-[100%] h-auto;
+      }
+
+      /* Spacing */
+
+      .largestspace{
+        @apply mt-96;
+      }
+      
+      .largespace{
+        @apply mt-52;
+      }
+
+      .midspace{
+        @apply mt-28;
+      }
+
+      .smallspace{
+        @apply mt-14;
+      }
+
+      .smallerspace{
+        @apply mt-3.5;
+      }
+
+      .largestpadding{
+        @apply pb-96;
+      }
+      
+      .largepadding{
+        @apply pb-52;
+      }
+
+      .midpadding{
+        @apply pb-28;
+      }
+
+      .smallpadding{
+        @apply pb-14;
+      }
+
+      /* Typography */
+
+
+      .heading1, .heading2, .heading3, .heading4, .heading5{
+        @apply font-flyer;
+      }
+
+      .heading1{
+        @apply text-dt2xl;
+      }
+
+      .heading2{
+        @apply text-dtxl;
+      }
+
+      .heading3{
+        @apply text-dtlg;
+      }
+
+      .heading4{
+        @apply text-dtmed;
+      }
+
+      .heading5{
+        @apply text-dtbase leading-[85%];
+      }
+
+      p, ul, o, .body{
+        @apply font-ambit;
+      }
+
+      .body{
+        @apply text-dtbase;
+      }
+
+      i, em{
+        @apply italic;
+      }
+
+      .smallbody{
+        @apply text-dtsml;
+      }
+
+      .smallestbody{
+        @apply text-dtsxml;
+      }
+
+      a{
+        @apply underline duration-300;
+      }
+
+      
+
+}

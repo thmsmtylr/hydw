@@ -35,42 +35,46 @@ export default async function Page() {
   const { allPages } = data.props.homepageData;
 
   return (
-    <main>
-      <section className="mb-40 bg-hydw-vanilla">
-        <div className="-mt-[134.85px] flex h-screen w-full flex-col items-center justify-center gap-32 overflow-hidden">
-          <div className="relative mx-auto flex max-w-3xl flex-col items-center">
-            <h1
-              className={`text-center text-6xl uppercase text-hydw-charcoal sm:text-11xl sm:leading-[0.8] ${flyerFont.className}`}
-            >
-              Haven&apos;t{" "}
-              <Skew delay={0.79} className="inline-block">
-                You
-              </Skew>{" "}
-              Done Well Productions
-            </h1>
-            <BannerImages images={bannerImages} />
-          </div>
-          <div className="lef-1/2 absolute bottom-12">
-            <ScrollDownButton target="scrollTarget" />
-          </div>
-        </div>
-        <span id="scrollTarget" />
+    <main className="relative -mt-[126.84px]">
+      <section className="bg-test-grey h-screen w-full overflow-hidden">
+            {/* data needed: video, poster image and video title */}
+            {/* <video class="w-full" playsinline muted autoplay loop poster="" title ="">
+                <source src="" type="video/mp4">
+                <source src="<?= $src ?>" type="video/ogg">
+                Your browser does not support the video tag.
+            </video> */}
       </section>
-      <p
-        className={`text-center text-4xl tracking-tight text-hydw-charcoal ${ambitFont.className}`}
-      >
-        {description}
-      </p>
-      {allPages.map((page, index: number) => (
-        <Section
-          key={page.id}
-          id={page.id}
-          slug={page.slug}
-          title={page.title}
-          images={page.images}
-          index={index}
-        />
-      ))}
+      <section className="bg-hydw-vanilla page-grid largepadding">
+        <div class="col-span-12 md:col-span-8 md:col-start-3 largespace">
+          <p
+          className={`heading3 text-center text-hydw-blue`}
+          >
+          {description}
+          </p>
+          <p
+          className={`body text-center text-hydw-blue smallspace`}
+            >
+          <a href="/">More About Us</a>
+          {/* Needs to link to about page */}
+          </p>
+        </div>
+
+        <div class="col-span-12 md:col-span-8 md:col-start-3 largespace">
+          <p
+          className={`heading3 text-center text-hydw-blue`}
+          >
+          Some sort of title here
+          {/* data needed: title */}
+          </p>
+          <p
+          className={`body text-center text-hydw-blue smallspace`}
+            >
+          <a href="/">Explore More of Our Work</a>
+          {/* Needs to link to commercial page */}
+          </p>
+        </div>    
+      
+      </section>
     </main>
   );
 }

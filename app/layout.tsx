@@ -11,6 +11,7 @@ import { RootLayoutQueryProps } from "@/types/root-layout";
 import { NavigationQueryProps } from "@/types/navigation";
 
 import "@/styles/globals.css";
+import "@/fonts/fonts.css";
 
 async function getRootLayoutData(): Promise<{
   props: { navData: any; layoutData: RootLayoutQueryProps };
