@@ -122,6 +122,10 @@
     .thumbnail:hover .hoverthumb{
       opacity:100;
     }
+
+    .circletext{
+      @apply min-w-[120px] max-w-[205px] absolute top-1/2 -translate-y-1/2;
+    }
       
 
 }
