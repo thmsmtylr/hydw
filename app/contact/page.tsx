@@ -32,7 +32,7 @@ export default async function Page() {
   const legals = data.contact?.legals || "";
 
   return (
-    <main className="bg-hydw-yellow wrapper largepadding">
+    <main className="leftheader bg-hydw-yellow wrapper largepadding">
       <section className="page-grid">
           <div className="col-span-12 md:col-span-10 md:col-start-2 largespace largepadding">
             <PageHeading title={title} />
@@ -45,7 +45,7 @@ export default async function Page() {
                 {subtitle}
               </h4>
           <p
-            className={`body text-hydw-blue`}
+            className={`body text-hydw-blue smallerspace`}
           >
             {description}
           </p>
@@ -53,7 +53,7 @@ export default async function Page() {
         <div className="col-span-12 md:col-span-10 md:col-start-2 xl:col-span-4 xl:col-start-8 mt-14 xl:mt-0">
           <ContactForm />
           <p
-            className={`smallbody text-hydw-blue smallestspace`}
+            className={`smallbody text-hydw-blue smallerspace`}
           >
             {legals}
           </p>

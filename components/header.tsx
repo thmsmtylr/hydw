@@ -19,7 +19,7 @@ export function Header(props: HeaderProps) {
   const { x: menuX, y: menuY } = useFollowPointer(menuRef);
 
   return (
-    <header className="fixed left-0 top-0 z-40 flex w-full items-center justify-between wrapper">
+    <header className="fixed left-0 top-0 z-40 flex w-full items-center justify-between wrapper pointer-events-none">
       <motion.div
         ref={brandRef}
         animate={{ x: brandX, y: brandY }}
@@ -33,7 +33,7 @@ export function Header(props: HeaderProps) {
             height={44}
             src={logo.url}
             alt={siteName}
-            className="brightness-[94%] contrast-[81%] hue-rotate-[315deg] invert-[7%] saturate-[4%] sepia-[66%] w-[120px]"
+            className="brightness-[94%] contrast-[81%] hue-rotate-[315deg] invert-[7%] saturate-[4%] sepia-[66%] w-[120px] pointer-events-auto"
           />
         </Link>
       </motion.div>
@@ -45,7 +45,7 @@ export function Header(props: HeaderProps) {
         whileTap={{ scale: 0.9 }}
       >
         <button
-          className={`heading5 uppercase text-hydw-charcoal transition-colors duration-150 hover:text-hydw-blue`}
+          className={`heading5 uppercase text-hydw-charcoal transition-colors duration-150 hover:text-hydw-blue pointer-events-auto`}
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="menu"

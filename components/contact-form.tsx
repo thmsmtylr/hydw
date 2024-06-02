@@ -31,7 +31,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className={`flex flex-col gap-4 text-xl ${ambitFont.className} mb-4`}
+      className={`flex flex-col gap-6`}
     >
       <input
         className="flex border-[5px] border-solid border-hydw-blue p-4 text-hydw-blue placeholder:text-hydw-blue smallbody bg-[unset]"
@@ -58,7 +58,7 @@ export function ContactForm() {
         whileTap={{ scale: 0.9 }}
         type="submit"
         disabled={isLoading}
-        className={`${flyerFont.className} flex items-center justify-center bg-hydw-blue p-5 uppercase leading-[0.8] text-white transition-colors duration-150 hover:bg-hydw-pink`}
+        className={`heading5 flex items-center justify-center bg-hydw-blue p-5 leading-[0.8] text-white transition-colors duration-150 hover:bg-hydw-pink`}
       >
         {isLoading ? "Loading..." : "Submit"}
       </motion.button>

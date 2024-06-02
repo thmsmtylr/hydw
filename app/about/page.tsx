@@ -44,7 +44,7 @@ export default async function Page() {
   const sections = data.about?.section;
 
   return (
-    <main className="bg-hydw-orange wrapper largepadding">
+    <main className="leftheader bg-hydw-orange wrapper largepadding">
       <section className="page-grid">
           <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
             {title && <PageHeading title={title} />}
@@ -62,7 +62,7 @@ export default async function Page() {
         )}
         {bodyDescription && (
           <p
-            className={`body col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2`}
+            className={`body col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2 smallerspace`}
             dangerouslySetInnerHTML={{ __html: bodyDescription }}
           />
         )}

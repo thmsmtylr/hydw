@@ -16,20 +16,16 @@ export function PageLayout({
 }) {
   return (
     <main>
-      <section className="mb-40 bg-hydw-vanilla">
-        <div className="relative mx-auto -mt-40 flex h-screen max-w-3xl items-center justify-center">
-          <div className="flex flex-col gap-20">
+      <section className="wrapper page-grid min-h-screen bg-hydw-yellow">
+        <div className="largespace col-span-12 xl:col-span-10 xl:col-start-2 text-center items-center justify-center">
             <PageHeading title={title} />
-            <p
-              className={`text-center text-3xl tracking-[0.02em] text-hydw-charcoal ${ambitFont.className}`}
-            >
-              {description}
-            </p>
-          </div>
-          <div className="lef-1/2 absolute bottom-12">
-            <ScrollDownButton target="scrollTarget" />
-          </div>
         </div>
+        <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 text-center">
+        <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
+        {/* Note: Need Subtitle */}
+          <p className={`body smallestspace`}>{description}</p>
+        </div>
+            
       </section>
       {items.map((item, index) => {
         const { id, videoLink, title, description, image: url } = item;

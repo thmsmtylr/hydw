@@ -48,7 +48,7 @@
         @apply mt-7 md:mt-14;
       }
 
-      .smallerspace, .heading4 + .body{
+      .smallerspace, .heading4 + .body, .heading5 + .body{
         @apply mt-2.5 md:mt-3.5;
       }
 
@@ -76,23 +76,23 @@
       }
 
       .heading1{
-        @apply text-mb2xl md:text-dt2xl;
+        @apply text-mb2xl lg:text-dt2xl;
       }
 
       .heading2{
-        @apply text-mbxl md:text-dtxl;
+        @apply text-mbxl lg:text-dtxl;
       }
 
       .heading3{
-        @apply text-mblg md:text-dtlg;
+        @apply text-mblg lg:text-dtlg;
       }
 
       .heading4{
-        @apply text-mbmed md:text-dtmed;
+        @apply text-mbmed lg:text-dtmed;
       }
 
       .heading5{
-        @apply text-mbbase md:text-dtbase leading-[85%];
+        @apply text-mbbase lg:text-dtbase leading-[85%];
       }
 
       p, ul, o, .body{
@@ -100,7 +100,7 @@
       }
 
       .body{
-        @apply text-mbbase md:text-dtbase;
+        @apply text-mbbase lg:text-dtbase;
       }
 
       i, em{
@@ -119,12 +119,24 @@
         @apply underline duration-300 hover:text-hydw-pink;
       }
 
+      .bg-hydw-orange a{
+        @apply hover:text-hydw-yellow;
+      }
+
     .thumbnail:hover .hoverthumb{
       opacity:100;
     }
 
+    /* Homepage */
+
     .circletext{
       @apply min-w-[120px] max-w-[205px] absolute top-1/2 -translate-y-1/2;
+    }
+
+
+    /* About */
+    .leftheader h1 {
+      @apply justify-normal;
     }
       
 
