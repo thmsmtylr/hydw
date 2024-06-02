@@ -34,21 +34,21 @@ export function ContactForm() {
       className={`flex flex-col gap-4 text-xl ${ambitFont.className} mb-4`}
     >
       <input
-        className="flex border-2 border-solid border-hydw-charcoal p-4 text-hydw-charcoal placeholder:text-hydw-charcoal/60"
+        className="flex border-[5px] border-solid border-hydw-blue p-4 text-hydw-blue placeholder:text-hydw-blue smallbody bg-[unset]"
         type="text"
         name="name"
         aria-label="Name"
         placeholder="Name"
       />
       <input
-        className="flex border-2 border-solid border-hydw-charcoal p-4 text-hydw-charcoal placeholder:text-hydw-charcoal/60"
+        className="flex border-[5px] border-solid border-hydw-blue p-4 text-hydw-blue placeholder:text-hydw-blue smallbody bg-[unset]"
         type="email"
         name="email"
         aria-label="Email"
         placeholder="Email"
       />
       <textarea
-        className="flex border-2 border-solid border-hydw-charcoal p-4 text-hydw-charcoal placeholder:text-hydw-charcoal/60"
+        className="flex border-[5px] border-solid border-hydw-blue p-4 text-hydw-blue placeholder:text-hydw-blue smallbody bg-[unset]"
         name="message"
         aria-label="Message"
         placeholder="Message"
