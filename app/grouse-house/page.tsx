@@ -4,6 +4,9 @@ import { buildMDX } from "@/utils/build-mdx";
 import { GROUSE_HOUSE_QUERY } from "@/queries/grouse-house-page-query";
 import { GrouseHousePageQuery } from "@/types/generated";
 import { PageLayout } from "@/components/page-layout";
+import { Parallax } from "@/components/parallax";
+import Image from "next/image";
+import { PageHeading } from "@/components/page-heading";
 
 async function getPageData(): Promise<GrouseHousePageQuery> {
   const data = await request({ query: GROUSE_HOUSE_QUERY });
@@ -32,5 +35,19 @@ export default async function Page() {
   const description = buildMDX(data.page?.description || "");
   const works = data.page?.work || [];
 
-  return <PageLayout title={title} description={description} items={works} />;
+  return (
+    <main>
+      <section className="wrapper page-grid min-h-screen bg-hydw-yellow">
+        <div className="largespace col-span-12 xl:col-span-10 xl:col-start-2 text-center items-center justify-center">
+            <PageHeading title={title} />
+        </div>
+        <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 text-center">
+        <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
+        {/* Note: Need Subtitle */}
+          <p className={`body smallestspace`}>{description}</p>
+        </div>
+      </section>
+      <PageLayout title={title} description={description} items={works} />
+    </main>
+  );
 }
