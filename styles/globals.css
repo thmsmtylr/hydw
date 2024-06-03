@@ -80,7 +80,7 @@
       }
 
       .heading1{
-        @apply text-mb2xl lg:text-dt2xl;
+        @apply text-mbxl md:text-mb2xl lg:text-dt2xl;
       }
 
       .heading2{
@@ -138,9 +138,13 @@
     }
 
 
-    /* About */
+    /* Type Details */
     .leftheader h1 {
       @apply justify-normal;
+    }
+
+    .description{
+      @apply col-span-10 col-start-2 md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 text-center;
     }
       
 
