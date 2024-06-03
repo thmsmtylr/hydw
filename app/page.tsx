@@ -85,8 +85,8 @@ export default async function Page() {
           <div className="col-span-12 page-grid largestspace">
               <div className="col-span-3 md:col-span-2 col-start-9 md:col-start-10 lg:col-start-11 2xl:col-start-10 relative z-20">
                 <Image className="circletext"
-                  src="/img/latestcommercials.png"
-                  alt="Latest Commercials"
+                  src="/img/latesttv.svg"
+                  alt="Latest Television"
                   width={205}
                   height={205}
                 />
@@ -105,8 +105,8 @@ export default async function Page() {
           <div className="col-span-12 page-grid largespace">
             <div className="col-span-3 md:col-span-2 relative z-20">
               <Image className="circletext"
-                  src="/img/latestcommercials.png"
-                  alt="Latest Commercials"
+                  src="/img/latestwebseries.svg"
+                  alt="Latest Web Series"
                   width={205}
                   height={205}
                 />
@@ -125,8 +125,8 @@ export default async function Page() {
           <div className="col-span-12 page-grid largespace">
             <div className="col-span-3 md:col-span-2 col-start-8 md:col-start-6 xl:col-start-5 relative z-20">
                 <Image className="circletext"
-                  src="/img/latestcommercials.png"
-                  alt="Latest Commercials"
+                  src="/img/latestpodcast.svg"
+                  alt="Latest Podcast"
                   width={205}
                   height={205}
                 />
@@ -145,8 +145,8 @@ export default async function Page() {
           <div className="col-span-12 page-grid largestspace">
             <div className="col-span-3 md:col-span-2 col-start-9 md:col-start-10 lg:col-start-4 relative z-20">
               <Image className="circletext"
-                  src="/img/latestcommercials.png"
-                  alt="Latest Commercials"
+                  src="/img/latestfilm.svg"
+                  alt="Latest Film"
                   width={205}
                   height={205}
                 />
@@ -156,6 +156,7 @@ export default async function Page() {
                 <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
                 <a href="/">{/* img thumnail to go here here */}</a>
               </div>
+              <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">A Film</a></h4>
              <p className="body text-hydw-blue text-center smallerspace"><a href="/">See all our Films</a></p>
             </div>
           </div>
