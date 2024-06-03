@@ -73,68 +73,93 @@ export default async function Page() {
                   height={130}
                 />
           </div>
-          {description && (
-              <h4
-                className={`largespace col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2 heading4 text-hydw-blue leading-[100%]`}
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            )}
+  
             
       </section>
-      <section className="page-grid text-hydw-blue">
-        {bodyTitle && (
-          <h3 className={`smallspace heading3 col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2`}>{bodyTitle}</h3>
-        )}
-        {bodyDescription && (
-          <p
-            className={`body col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2 smallerspace`}
-            dangerouslySetInnerHTML={{ __html: bodyDescription }}
-          />
-        )}
-      
-      
-      {sections?.map((section, index: number) => {
-        const description = buildMDX(section.description);
-        return (
-          <div
-            key={section.id}
-            className={classNames(
-              index === sections.length - 1 ? "mb-28" : "",
-              "smallspace col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2"
-            )}
-          >
-            <div
-              className={classNames(
-                isEven(index) ? "order-last" : "order-first",
-                "relative"
+      <section className="page-grid text-hydw-blue largespace">
+        <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2">
+        {description && (
+                <h4
+                  className={` heading4 text-hydw-blue leading-[100%]`}
+                  dangerouslySetInnerHTML={{ __html: description }}
+                />
               )}
-            >
-              <div className="relative flex h-full w-full items-center justify-center">
-                {/* <Parallax className="">
-                  <Image
-                    src={section.imageTop.url}
-                    alt={section.imageTop.alt}
-                    width={480}
-                    height={480}
+          {bodyTitle && (
+            <h3 className={`smallspace heading3`}>{bodyTitle}</h3>
+          )}
+          {bodyDescription && (
+            <p
+              className={`body smallerspace`}
+              dangerouslySetInnerHTML={{ __html: bodyDescription }}
+            />
+          )}
+
+        {sections?.map((section, index: number) => {
+                const description = buildMDX(section.description);
+                return (
+                  <div
+                    key={section.id}
+                    className={classNames(
+                      index === sections.length - 1 ? "mb-28" : "",
+                      "smallspace col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2"
+                    )}
+                  >
+                    <div
+                      className={classNames(
+                        isEven(index) ? "order-last" : "order-first",
+                        "relative"
+                      )}
+                    >
+                      <div className="relative flex h-full w-full items-center justify-center">
+                        {/* <Parallax className="">
+                          <Image
+                            src={section.imageTop.url}
+                            alt={section.imageTop.alt}
+                            width={480}
+                            height={480}
+                          />
+                        </Parallax> */}
+                      </div>
+                    </div>
+                    <div className="">
+                      <h5
+                        className={`heading5 text-hydw-blue`}
+                      >
+                        {section.title}
+                      </h5>
+                      <p
+                        className="body text-hydw-blue"
+                        dangerouslySetInnerHTML={{ __html: description }}
+                      />
+                    </div>
+                  </div>
+                  
+                );
+              })}
+      </div>
+      <div className="col-span-4 lg:col-span-4 lg:col-start-9 flex">
+            <Parallax className="relative flex">
+              <Image className="max-w-[450px] h-[auto] self-center"
+                    src="/img/toreplace/HYDWP_Website_3.png"
+                    alt="alt here"
+                    width={398}
+                    height={399}
                   />
-                </Parallax> */}
-              </div>
-            </div>
-            <div className="">
-              <h5
-                className={`heading5 text-hydw-blue`}
-              >
-                {section.title}
-              </h5>
-              <p
-                className="body text-hydw-blue"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            </div>
-          </div>
-          
-        );
-      })}
+              </Parallax>
+        </div>
+
+        <div className="col-span-5 col-start-8 lg:col-span-5 lg:col-start-2">
+            <Parallax className="">
+              <Image className="max-w-[450px]"
+                    src="/img/toreplace/HYDWP_Website_6.png"
+                    alt="alt here"
+                    width={555}
+                    height={321}
+                  />
+              </Parallax>
+        </div>
+      
+      
       </section>
     </main>
   );

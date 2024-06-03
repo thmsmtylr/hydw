@@ -8,6 +8,7 @@ import { Skew } from "@/components/skew";
 import { ScrollDownButton } from "@/components/scroll-down-button";
 import { flyerFont, ambitFont } from "@/fonts";
 import Image from 'next/image';
+import { Parallax } from "@/components/parallax";
 
 async function getHomePageData(): Promise<{
   props: { homepageData: HomepageQueryProps };
@@ -95,12 +96,14 @@ export default async function Page() {
 
               {/* note: should these be entered via dato? */}
               <div className="col-span-4 col-start-9 lg:col-start-8 2xl:col-start-7 relative">
-                <Image className="max-w-[450px] absolute top-0 -translate-y-[150%] right-0 lg:top-1/2 lg:-translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2 2xl:lg:-translate-y-2/3 2xl:-translate-x-3/4"
-                  src="/img/toreplace/HYDWP_Website_5.png"
-                  alt="alt here"
-                  width={450}
-                  height={388}
-                />
+              <Parallax className="">
+                  <Image className="max-w-[450px] absolute top-0 -translate-y-[150%] right-0 lg:top-1/2 lg:-translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2 2xl:lg:-translate-y-2/3 2xl:-translate-x-3/4"
+                    src="/img/toreplace/HYDWP_Website_5.png"
+                    alt="alt here"
+                    width={450}
+                    height={388}
+                  />
+                </Parallax>
               </div>
           </div>
 
@@ -125,12 +128,14 @@ export default async function Page() {
 
             {/* note: should these be entered via dato? */}
             <div className="col-span-4 col-start-1 lg:col-start-2 relative">
+              <Parallax className="">
                 <Image className="max-w-[450px] absolute top-0 -translate-y-[150%] right-0"
                   src="/img/toreplace/MB_EP06_Spilt-Milk.png"
                   alt="alt here"
                   width={496}
                   height={643}
                 />
+                </Parallax>
               </div>
           </div>
 
@@ -155,12 +160,14 @@ export default async function Page() {
 
             {/* note: should these be entered via dato? */}
             <div className="col-span-3 col-start-10 2xl:col-span-2 2xl:col-start-9 relative">
+              <Parallax className="">
                 <Image className="max-w-[450px] absolute top-0 -translate-y-[150%] md:top-1/2 md:-translate-y-1/2 right-0"
                   src="/img/toreplace/HYDWP_HeapsNormal-min.png"
                   alt="alt here"
                   width={340}
                   height={406}
                 />
+              </Parallax>
               </div>
 
           </div>  
