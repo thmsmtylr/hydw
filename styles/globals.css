@@ -33,39 +33,43 @@
       /* Spacing */
 
       .largestspace{
-        @apply mt-28 md:mt-96;
+        @apply mt-28 lg:mt-96;
       }
       
       .largespace{
-        @apply mt-28 md:mt-52;
+        @apply mt-28 lg:mt-52;
       }
 
       .midspace{
-        @apply mt-14 md:mt-28;
+        @apply mt-14 lg:mt-28;
       }
 
       .smallspace{
-        @apply mt-7 md:mt-14;
+        @apply mt-7 lg:mt-14;
       }
 
       .smallerspace, .heading4 + .body, .heading5 + .body{
-        @apply mt-2.5 md:mt-3.5;
+        @apply mt-2.5 lg:mt-3.5;
       }
 
       .largestpadding{
-        @apply pb-28 md:pb-96;
+        @apply pb-28 lg:pb-96;
       }
       
       .largepadding{
-        @apply pb-28 md:pb-52;
+        @apply pb-28 lg:pb-52;
       }
 
       .midpadding{
-        @apply pb-14 md:pb-28;
+        @apply pb-14 lg:pb-28;
       }
 
       .smallpadding{
-        @apply pb-7 md:pb-14;
+        @apply pb-7 lg:pb-14;
+      }
+
+      .largeheight{
+        @apply h-28 lg:h-52;
       }
 
       /* Typography */

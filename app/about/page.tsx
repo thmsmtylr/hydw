@@ -44,10 +44,34 @@ export default async function Page() {
   const sections = data.about?.section;
 
   return (
-    <main className="leftheader bg-hydw-orange wrapper largepadding">
+    <main className="bg-hydw-orange wrapper largepadding">
       <section className="page-grid">
-          <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
+          <div className="rotate-12 col-span-6 col-start-4 md:col-span-3 md:col-start-7 largeheight">
+              <Image className="max-w-[140px] lg:max-w-[200px] m-auto mt-4 lg:mb-0"
+                  src="/img/auntydonna.png"
+                  alt="Aunty Donna"
+                  width={227}
+                  height={138}
+                />
+          </div>
+          <div className="col-span-12 md:col-span-10 md:col-start-2">
             {title && <PageHeading title={title} />}
+          </div>
+          <div className="col-span-6 md:col-span-3 md:col-start-1 relative">
+              <Image className="max-w-[140px] lg:max-w-[221px] m-auto lg:mt-0 lg:absolute lg:top-1/2 lg:-translate-y-full lg:left-1/2 lg:-translate-x-1/2"
+                  src="/img/largearm.png"
+                  alt="Large Arm"
+                  width={221}
+                  height={120}
+                />
+          </div>
+          <div className="col-span-6 col-start-7 md:col-span-2 md:col-start-10 relative">
+              <Image className="-rotate-12 max-w-[90px] lg:max-w-[161px] m-auto lg:absolute lg:top-1/2 lg:translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2"
+                  src="/img/drum.png"
+                  alt="Everything's a drum"
+                  width={161}
+                  height={130}
+                />
           </div>
           {description && (
               <h4
@@ -55,6 +79,7 @@ export default async function Page() {
                 dangerouslySetInnerHTML={{ __html: description }}
               />
             )}
+            
       </section>
       <section className="page-grid text-hydw-blue">
         {bodyTitle && (
