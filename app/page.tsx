@@ -83,19 +83,30 @@ export default async function Page() {
                   height={205}
                 />
               </div>
+              
               <div className="col-span-11 md:col-span-9 md:col-start-1 lg:col-start-2 lg:col-span-8 2xl:col-span-6 2xl:col-start-2 relative">
                 <div className="thumbnail aspect-video bg-test-grey relative">
                   <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
-                  <a href="/">{/* img thumnail to go here here */}</a>
+                  <a href="/">{/* img thumbnail to go here here */}</a>
                 </div>
                 <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">HEAPS Normal</a></h4>
                 <p className="body text-hydw-blue text-center smallerspace"><a href="/">See all our Commercials</a></p>
+              </div>
+
+              {/* note: should these be entered via dato? */}
+              <div className="col-span-4 col-start-9 lg:col-start-8 2xl:col-start-7 relative">
+                <Image className="max-w-[450px] absolute top-0 -translate-y-[150%] right-0 lg:top-1/2 lg:-translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2 2xl:lg:-translate-y-2/3 2xl:-translate-x-3/4"
+                  src="/img/toreplace/HYDWP_Website_5.png"
+                  alt="alt here"
+                  width={450}
+                  height={388}
+                />
               </div>
           </div>
 
           {/* Latest television */}
           <div className="col-span-12 page-grid largestspace">
-              <div className="col-span-3 md:col-span-2 col-start-9 md:col-start-10 lg:col-start-11 2xl:col-start-10 relative z-20">
+              <div className="col-span-3 md:col-span-2 col-start-10 md:col-start-10 lg:col-start-11 2xl:col-start-10 relative z-20">
                 <Image className="circletext"
                   src="/img/latesttv.svg"
                   alt="Latest Television"
@@ -106,11 +117,21 @@ export default async function Page() {
             <div className="col-span-11 col-start-2 md:col-span-9 md:col-start-2 lg:col-start-4 lg:col-span-8 2xl:col-span-6 2xl:col-start-5">
               <div className="thumbnail aspect-video bg-test-grey relative">
                 <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
-                <a href="/">{/* img thumnail to go here here */}</a>
+                <a href="/">{/* img thumbnail to go here here */}</a>
               </div>
               <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Aunty Donna’s Coffee Cafe</a></h4>
               <p className="body text-hydw-blue text-center smallerspace"><a href="/">See all our TV Shows</a></p>
             </div>
+
+            {/* note: should these be entered via dato? */}
+            <div className="col-span-4 col-start-1 lg:col-start-2 relative">
+                <Image className="max-w-[450px] absolute top-0 -translate-y-[150%] right-0"
+                  src="/img/toreplace/MB_EP06_Spilt-Milk.png"
+                  alt="alt here"
+                  width={496}
+                  height={643}
+                />
+              </div>
           </div>
 
           {/* Latest web series */}
@@ -126,11 +147,22 @@ export default async function Page() {
             <div className="col-span-11 md:col-span-9 md:col-start-1 lg:col-start-2 lg:col-span-8 2xl:col-span-6 2xl:col-start-2">
               <div className="thumbnail aspect-video bg-test-grey relative">
                 <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
-                <a href="/">{/* img thumnail to go here here */}</a>
+                <a href="/">{/* img thumbnail to go here here */}</a>
               </div>
               <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Finding Yeezus</a></h4>
               <p className="body text-hydw-blue text-center smallerspace"><a href="/">See all our Web Series</a></p>
             </div>
+
+            {/* note: should these be entered via dato? */}
+            <div className="col-span-3 col-start-10 2xl:col-span-2 2xl:col-start-9 relative">
+                <Image className="max-w-[450px] absolute top-0 -translate-y-[150%] md:top-1/2 md:-translate-y-1/2 right-0"
+                  src="/img/toreplace/HYDWP_HeapsNormal-min.png"
+                  alt="alt here"
+                  width={340}
+                  height={406}
+                />
+              </div>
+
           </div>  
 
           {/* Latest podcast */}
@@ -146,7 +178,7 @@ export default async function Page() {
             <div className="col-span-8 col-start-2 md:col-span-6 md:col-start-1 lg:col-start-2 lg:col-span-5 xl:col-span-4 xl:col-start-2">
               <div className="thumbnail aspect-square bg-test-grey relative">
                 <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
-                <a href="/">{/* img thumnail to go here here */}</a>
+                <a href="/">{/* img thumbnail to go here here */}</a>
               </div>
               <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">The Aunty Donna Podcast</a></h4>
               <p className="body text-hydw-blue text-center smallerspace"><a href="/">See all our Podcasts</a></p>
@@ -174,7 +206,7 @@ export default async function Page() {
             <div className="col-span-11 md:col-span-9 md:col-start-2 lg:col-start-5 lg:col-span-8 2xl:col-span-6 2xl:col-start-5">
               <div className="thumbnail aspect-video bg-test-grey relative">
                 <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
-                <a href="/">{/* img thumnail to go here here */}</a>
+                <a href="/">{/* img thumbnail to go here here */}</a>
               </div>
               <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">A Film</a></h4>
              <p className="body text-hydw-blue text-center smallerspace"><a href="/">See all our Films</a></p>
