@@ -47,18 +47,30 @@ export default async function Page() {
             </video> */}
       </section>
       <section className="wrapper bg-hydw-vanilla page-grid">
-        <div className="col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4 largespace">
-          <p
-          className={`heading3 text-center text-hydw-blue`}
-          >
-          {description}
-          </p>
-          <p
-          className={`body text-center text-hydw-blue smallspace`}
-            >
-          <a href="/">More About Us</a>
-          {/* Needs to link to about page */}
-          </p>
+            <div className="col-span-12 page-grid">
+              <div className="col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4 largespace">
+              <p
+              className={`heading3 text-center text-hydw-blue`}
+              >
+              {description}
+              </p>
+              <p
+              className={`body text-center text-hydw-blue smallspace`}
+                >
+              <a href="/">More About Us</a>
+              {/* Needs to link to about page */}
+              </p>
+              </div>
+              <div className="col-span-6 col-start-4 lg:col-span-2 lg:col-start-11 relative">
+                  <Image className="max-w-[90px] lg:max-w-[129px] m-auto mt-7 lg:mb-0 lg:absolute lg:top-0 lg:translate-y-[200%] lg:left-1/2 lg:-translate-x-1/2"
+                    src="/img/puppet.png"
+                    alt="Puppet"
+                    width={129}
+                    height={197}
+                  />
+                </div>
+           
+          
         </div>
 
           {/* Latest commercial */}
@@ -139,6 +151,14 @@ export default async function Page() {
               <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">The Aunty Donna Podcast</a></h4>
               <p className="body text-hydw-blue text-center smallerspace"><a href="/">See all our Podcasts</a></p>
             </div>
+            <div className="col-span-6 col-start-5 md:col-span-6 relative">
+                <Image className="rotate-45 max-w-[110px] lg:max-w-[168px] m-auto mt-7 md:mt-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2"
+                  src="/img/manbost.png"
+                  alt="Manbost"
+                  width={160}
+                  height={275}
+                />
+            </div>
           </div>
 
           {/* Latest film */}
@@ -162,19 +182,29 @@ export default async function Page() {
           </div>
 
 
-        <div className="col-span-12 lg:col-span-8 lg:col-start-3 largespace">
-          <p
-          className={`heading3 text-center text-hydw-blue`}
-          >
-          Some sort of title here
-          {/* data needed: title */}
-          </p>
-          <p
-          className={`body text-center text-hydw-blue smallspace`}
+        <div className="col-span-12 page-grid largespace">
+          <div className="col-span-6 col-start-4 lg:col-span-2 relative">
+              <Image className="-rotate-12 max-w-[110px] lg:max-w-[168px] m-auto mb-7 lg:mb-0 lg:absolute lg:top-0 lg:-translate-y-full lg:left-1/2 lg:-translate-x-1/2"
+                  src="/img/computerface.png"
+                  alt="Computerface"
+                  width={168}
+                  height={168}
+                />
+          </div>
+          <div className="col-span-12 lg:col-span-8 lg:col-start-3">
+            <p
+            className={`heading3 text-center text-hydw-blue`}
             >
-          <a href="/">Explore More of Our Work</a>
-          {/* Needs to link to commercial page */}
-          </p>
+            Some sort of title here
+            {/* data needed: title */}
+            </p>
+            <p
+            className={`body text-center text-hydw-blue smallspace`}
+              >
+            <a href="/">Explore More of Our Work</a>
+            {/* Needs to link to commercial page */}
+            </p>
+          </div>
         </div>    
       
       </section>
