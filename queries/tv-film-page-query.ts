@@ -6,7 +6,7 @@ export const TV_FILM_QUERY = gql`
       filter: {
         _isValid: { eq: "true" }
         _status: { eq: published }
-        slug: { eq: "television" }
+        slug: { eq: "tv-film" }
       }
     ) {
       id

@@ -37,14 +37,49 @@ export default async function Page() {
 
   return (
     <main>
-      <section className="wrapper page-grid min-h-screen bg-hydw-pink">
-        <div className="largespace col-span-12 xl:col-span-10 xl:col-start-2 text-center items-center justify-center">
+      <section className="wrapper parentcover bg-hydw-pink">
+          <div className="order-1 -rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-9 largeheight">
+              <Image className="max-w-[120px] md:max-w-[150px] lg:max-w-[190px] m-auto mt-4 lg:mb-0 relative md:top-[100px]"
+                src="/img/camera.png"
+                alt="camera"
+                width={190}
+                height={160}
+              />
+            </div>
+          <div className="order-4 lg:order-2 -rotate-12 col-span-6 col-start-1 md:col-span-3 md:col-start-2 mt-14 lg:mt-0">
+            <Image className="max-w-[120px] md:max-w-[150px] lg:max-w-[184px] m-auto mt-4 lg:mb-0"
+              src="/img/ticket.png"
+              alt="Film ticket"
+              width={184}
+              height={85}
+           />
+        </div>
+        <div className="pageheading order-2 lg:order-3 text-center items-center justify-center">
             <PageHeading title={title} />
         </div>
-        <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 text-center">
-        <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
-        {/* Note: Need Subtitle */}
-          <p className={`body smallestspace`}>{description}</p>
+        <div className="order-3 lg:order-4 description">
+          <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
+          {/* Note: Need Subtitle */}
+            <p className={`body smallestspace`}>{description}</p>
+        </div>
+        
+        <div className="order-5 rotate-12 col-span-6 col-start-7 md:col-span-2 md:col-start-11">
+            <Image className="max-w-[55px] md:max-w-[80px] lg:max-w-[97px] m-auto mt-4 lg:mb-0 relative md:mt-[100px]"
+              src="/img/popcorn.png"
+              alt="popcorn"
+              width={97}
+              height={172}
+           />
+        </div>
+        <div className="order-6 col-span-6 col-start-4 lg:col-span-5 lg:col-start-1 relative mt-14 lg:mt-0">
+              <Parallax className="">
+                  <Image className="rotate-12 max-w-[450px] m-auto lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2"
+                    src="/img/toreplace/HYDWP_Nippers_2-min.png"
+                    alt="alt here"
+                    width={450}
+                    height={388}
+                  />
+              </Parallax>
         </div>
       </section>
       <PageLayoutB title={title} description={description} items={works} />
