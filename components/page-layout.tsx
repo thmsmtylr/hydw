@@ -14,9 +14,46 @@ export function PageLayout({
   items: any[];
 }) {
   return (
-  <div className="">
+  <section className="wrapper bg-hydw-vanilla">
+      <div className="page-grid -translate-y-14 lg:-translate-y-28">
+        <div className="layoutathumbs largespace">
+          <div className="thumbnail">
+            <div className="hoverthumb">{/* hover sequence to go here */}</div>
+            <a href="/">{/* img thumbnail to go here here */}</a>
+          </div> 
+          <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Web Title</a></h4>
+        </div>
+        <div className="layoutathumbs largespace">
+          <div className="thumbnail">
+            <div className="hoverthumb">{/* hover sequence to go here */}</div>
+            <a href="/">{/* img thumbnail to go here here */}</a>
+          </div> 
+          <h4 className="heading4 text-hydw-blue text-center smallerspace relative z-[50]"><a href="/">Web Title</a></h4> 
+        </div>
+        <div className="layoutathumbs largespace">
+          <div className="thumbnail">
+            <div className="hoverthumb">{/* hover sequence to go here */}</div>
+            <a href="/">{/* img thumbnail to go here here */}</a>
+          </div> 
+          <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Web Title</a></h4> 
+        </div>
+        <div className="layoutathumbs largespace">
+          <div className="thumbnail">
+            <div className="hoverthumb">{/* hover sequence to go here */}</div>
+            <a href="/">{/* img thumbnail to go here here */}</a>
+          </div> 
+          <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Web Title</a></h4> 
+        </div>
+        <div className="layoutathumbs largespace">
+          <div className="thumbnail">
+            <div className="hoverthumb">{/* hover sequence to go here */}</div>
+            <a href="/">{/* img thumbnail to go here here */}</a>
+          </div> 
+          <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Web Title</a></h4>
+        </div>
+      </div>
     
-      {items.map((item, index) => {
+      {/* {items.map((item, index) => {
         const { id, videoLink, title, description, image: url } = item;
         const credits = buildMDX(item.credits || "");
         return (
@@ -60,7 +97,9 @@ export function PageLayout({
             </div>
           </section>
         );
-      })}
-    </div>
+      })} */}
+
+
+    </section>
   );
 }

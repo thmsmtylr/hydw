@@ -36,8 +36,8 @@ export default async function Page() {
   const works = data.page?.work || [];
 
   return (
-    <main className="overflow-hidden">
-      <section className="wrapper page-grid min-h-1/2 md:min-h-screen bg-hydw-pink py-10">
+    <main className="overflow-hidden largepadding bg-hydw-vanilla">
+      <section className="wrapper page-grid min-h-screen bg-hydw-pink py-10">
           <div className="order-1 rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-7 largeheight">
               <Image className="max-w-[120px] lg:max-w-[190px] m-auto mt-4 lg:mb-0"
                 src="/img/sun.png"
@@ -46,7 +46,7 @@ export default async function Page() {
                 height={160}
               />
             </div>
-          <div className="order-4 md:order-2 -rotate-12 col-span-6 col-start-1 md:col-span-2 md:col-start-1 mt-14 md:mt-0">
+          <div className="order-4 lg:order-2 -rotate-12 col-span-6 col-start-1 md:col-span-2 md:col-start-1 mt-14 md:mt-0">
             <Image className="max-w-[80px] lg:max-w-[102px] m-auto mt-4 lg:mb-0"
               src="/img/youtube.png"
               alt="Youtube"
@@ -54,10 +54,10 @@ export default async function Page() {
               height={102}
            />
         </div>
-        <div className="order-2 md:order-3 col-span-12 xl:col-span-10 xl:col-start-2 text-center items-center justify-center">
+        <div className="pageheading order-2 lg:order-3 text-center items-center justify-center">
             <PageHeading title={title} />
         </div>
-        <div className="order-3 md:order-4 description">
+        <div className="order-3 lg:order-4 description">
           <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
           {/* Note: Need Subtitle */}
             <p className={`body smallestspace`}>{description}</p>

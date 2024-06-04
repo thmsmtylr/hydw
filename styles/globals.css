@@ -143,10 +143,32 @@
       @apply justify-normal;
     }
 
+    .pageheading{
+      @apply col-span-12 xl:col-span-10 xl:col-start-2;
+    }
+
     .description{
       @apply col-span-10 col-start-2 md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 text-center;
     }
-      
 
+    .thumbnail{
+      @apply aspect-video bg-test-grey;
+    }
+
+    .hoverthumb{
+      @apply w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300;
+    }
+
+    /* Layout One */
+    .layoutathumbs{
+      @apply relative col-span-11 md:col-span-9 md:col-start-1 lg:col-start-2 lg:col-span-8 2xl:col-span-6 2xl:col-start-2 first:col-start-2 first:md:col-start-4 first:lg:col-start-5 first:2xl:col-start-7 first:mt-0 [&:nth-child(2)]:col-start-1 [&:nth-child(2)]:md:col-start-2 [&:nth-child(3)]:col-start-2 [&:nth-child(3)]:md:col-start-3 [&:nth-child(4)]:col-start-1 [&:nth-child(4)]:md:col-start-1 [&:nth-child(5)]:col-start-2 [&:nth-child(5)]:md:col-start-6 after:bg-contain after:bg-no-repeat after:block after:absolute [&:nth-child(2)]:after:bg-[url('/img/scribble2_orange.png')] [&:nth-child(2)]:after:w-[337px] [&:nth-child(2)]:after:h-[281px] [&:nth-child(2)]:after:md:w-[450px] [&:nth-child(2)]:after:md:h-[375px] [&:nth-child(2)]:after:xl:w-[675px] [&:nth-child(2)]:after:xl:h-[560px] [&:nth-child(2)]:after:-top-[40px] [&:nth-child(2)]:after:-right-[40px] [&:nth-child(2)]:after:lg:-top-[80px] [&:nth-child(2)]:after:lg:-right-[80px] [&:nth-child(3)]:after:bg-[url('/img/scribble1_yellow.png')] [&:nth-child(3)]:after:w-[371px] [&:nth-child(3)]:after:h-[267px] [&:nth-child(3)]:after:md:w-[495px] [&:nth-child(3)]:after:md:h-[356px] [&:nth-child(3)]:after:xl:w-[743px] [&:nth-child(3)]:after:xl:h-[535px] [&:nth-child(3)]:after:-top-[40px] [&:nth-child(3)]:after:-right-[40px] [&:nth-child(3)]:after:lg:-top-[80px] [&:nth-child(3)]:after:lg:-right-[80px] [&:nth-child(4)]:after:bg-[url('/img/scribble2_pink.png')] [&:nth-child(4)]:after:w-[337px] [&:nth-child(4)]:after:h-[281px] [&:nth-child(4)]:after:md:w-[450px] [&:nth-child(4)]:after:md:h-[375px] [&:nth-child(4)]:after:xl:w-[675px] [&:nth-child(4)]:after:xl:h-[560px] [&:nth-child(4)]:after:-bottom-[40px] [&:nth-child(4)]:after:-right-[40px] [&:nth-child(4)]:after:lg:-bottom-[80px] [&:nth-child(4)]:after:lg:-right-[80px];
+    }
+
+    .layoutathumbs .thumbnail, .layoutathumbs .heading4{
+      @apply relative z-[50];
+    }
+
+
+    
 }
 
