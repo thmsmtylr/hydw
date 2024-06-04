@@ -86,8 +86,8 @@ export default async function Page() {
               </div>
               
               <div className="col-span-11 md:col-span-9 md:col-start-1 lg:col-start-2 lg:col-span-8 2xl:col-span-6 2xl:col-start-2 relative">
-                <div className="thumbnail aspect-video bg-test-grey relative">
-                  <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
+                <div className="thumbnail">
+                  <div className="hoverthumb">{/* hover sequence to go here */}</div>
                   <a href="/">{/* img thumbnail to go here here */}</a>
                 </div>
                 <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">HEAPS Normal</a></h4>
@@ -118,8 +118,8 @@ export default async function Page() {
                 />
               </div>
             <div className="col-span-11 col-start-2 md:col-span-9 md:col-start-2 lg:col-start-4 lg:col-span-8 2xl:col-span-6 2xl:col-start-5">
-              <div className="thumbnail aspect-video bg-test-grey relative">
-                <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
+              <div className="thumbnail">
+                <div className="hoverthumb">{/* hover sequence to go here */}</div>
                 <a href="/">{/* img thumbnail to go here here */}</a>
               </div>
               <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Aunty Donna’s Coffee Cafe</a></h4>
@@ -150,8 +150,8 @@ export default async function Page() {
                 />
               </div>
             <div className="col-span-11 md:col-span-9 md:col-start-1 lg:col-start-2 lg:col-span-8 2xl:col-span-6 2xl:col-start-2">
-              <div className="thumbnail aspect-video bg-test-grey relative">
-                <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
+              <div className="thumbnail">
+                <div className="hoverthumb">{/* hover sequence to go here */}</div>
                 <a href="/">{/* img thumbnail to go here here */}</a>
               </div>
               <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Finding Yeezus</a></h4>
@@ -183,8 +183,8 @@ export default async function Page() {
                 />
               </div>
             <div className="col-span-8 col-start-2 md:col-span-6 md:col-start-1 lg:col-start-2 lg:col-span-5 xl:col-span-4 xl:col-start-2">
-              <div className="thumbnail aspect-square bg-test-grey relative">
-                <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
+              <div className="thumbnail aspect-square">
+                <div className="hoverthumb">{/* hover sequence to go here */}</div>
                 <a href="/">{/* img thumbnail to go here here */}</a>
               </div>
               <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">The Aunty Donna Podcast</a></h4>
@@ -211,8 +211,8 @@ export default async function Page() {
                 />
               </div>
             <div className="col-span-11 md:col-span-9 md:col-start-2 lg:col-start-5 lg:col-span-8 2xl:col-span-6 2xl:col-start-5">
-              <div className="thumbnail aspect-video bg-test-grey relative">
-                <div className="hoverthumb w-full h-full absolute top-0 left-0 bg-hydw-pink opacity-0 duration-300">{/* hover sequence to go here */}</div>
+              <div className="thumbnail">
+                <div className="hoverthumb">{/* hover sequence to go here */}</div>
                 <a href="/">{/* img thumbnail to go here here */}</a>
               </div>
               <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">A Film</a></h4>

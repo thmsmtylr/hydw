@@ -152,7 +152,7 @@
     }
 
     .thumbnail{
-      @apply aspect-video bg-test-grey;
+      @apply aspect-video bg-test-grey relative;
     }
 
     .hoverthumb{
