@@ -133,13 +133,7 @@
       @apply justify-normal;
     }
 
-    .pageheading{
-      @apply col-span-12 xl:col-span-10 xl:col-start-2;
-    }
-
-    .description{
-      @apply col-span-10 col-start-2 md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4 2xl:col-start-5 text-center;
-    }
+    
 
     /* Homepage */
 
@@ -182,7 +176,15 @@
     }
 
     .parentcover{
-      @apply page-grid min-h-screen bg-hydw-pink py-10;
+      @apply page-grid min-h-screen py-10;
+    }
+
+    .pageheading{
+      @apply col-span-12 xl:col-span-10 xl:col-start-2;
+    }
+
+    .description{
+      @apply col-span-10 col-start-2 md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4 2xl:col-start-5 text-center text-hydw-charcoal;
     }
 
 
