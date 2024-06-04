@@ -24,23 +24,23 @@ export function Navigation(props: NavigationComponentProps) {
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-hydw-blue">
           <DialogPrimitive.Content>
-            <div className="flex min-h-[134.85px] w-full items-center justify-end p-11">
+            <div className="flex w-full items-center justify-end p-11">
               <motion.button
-                className={`heading5 uppercase text-white transition-colors duration-150 hover:text-hydw-yellow`}
+                className={`heading5 uppercase text-white transition-colors duration-150 hover:text-hydw-yellow relative z-50`}
                 type="button"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="menu"
                 aria-haspopup="menu"
                 aria-expanded={menuOpen}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 1 }}
               >
                 Close
               </motion.button>
             </div>
-            <nav className="-mt-40 flex h-screen flex-col items-center justify-center">
+            <nav className="wrapper absolute top-0 left-0 flex w-full h-screen flex-col items-center justify-center">
               {navItems.map((item, index: number) => (
                 <motion.div
-                  className="inline-block h-[5.2rem] overflow-hidden px-8 will-change-transform"
+                  className="inline-block h-[51px] lg:h-[79.9px] overflow-hidden px-8 will-change-transform"
                   key={item.id}
                   initial="initial"
                   whileHover="hover"
@@ -55,9 +55,9 @@ export function Navigation(props: NavigationComponentProps) {
                     </motion.div>
                     <motion.div variants={navVariants}>
                       <div
-                        className={`skew-x-40 text-center text-8xl font-black uppercase tracking-normal ${
+                        className={`skew-x-40 text-center heading2 font-white uppercase tracking-normal ${
                           isEven(index) ? "text-hydw-yellow" : "text-hydw-pink"
-                        } ${flyerFont.className}`}
+                        }`}
                       >
                         {item.title}
                       </div>
