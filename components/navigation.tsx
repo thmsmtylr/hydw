@@ -32,7 +32,7 @@ export function Navigation(props: NavigationComponentProps) {
                 aria-label="menu"
                 aria-haspopup="menu"
                 aria-expanded={menuOpen}
-                whileTap={{ scale: 1 }}
+                whileTap={{ scale: 0.9 }}
               >
                 Close
               </motion.button>
