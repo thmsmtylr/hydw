@@ -4,7 +4,7 @@ import { ambitFont, flyerFont } from "@/fonts";
 import { VideoPlayer } from "@/components/video-player";
 import { ScrollDownButton } from "@/components/scroll-down-button";
 
-export function PageLayout({
+export function PageLayoutB({
   title,
   description,
   items,
@@ -14,37 +14,37 @@ export function PageLayout({
   items: any[];
 }) {
   return (
-  <section className="bg-hydw-vanilla">
-      <div className="page-grid wrapper -translate-y-14 lg:-translate-y-28">
-        <div className="layoutthumbs layoutathumbs largespace">
+  <section className="wrapper bg-hydw-vanilla">
+      <div className="page-grid -translate-y-14 lg:-translate-y-28">
+        <div className="layoutthumbs layoutbthumbs largespace">
           <div className="thumbnail">
             <div className="hoverthumb">{/* hover sequence to go here */}</div>
             <a href="/">{/* img thumbnail to go here here */}</a>
           </div> 
           <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Web Title</a></h4>
         </div>
-        <div className="layoutthumbs layoutathumbs largespace">
+        <div className="layoutthumbs layoutbthumbs largespace">
           <div className="thumbnail">
             <div className="hoverthumb">{/* hover sequence to go here */}</div>
             <a href="/">{/* img thumbnail to go here here */}</a>
           </div> 
           <h4 className="heading4 text-hydw-blue text-center smallerspace relative z-[50]"><a href="/">Web Title</a></h4> 
         </div>
-        <div className="layoutthumbs layoutathumbs largespace">
+        <div className="layoutthumbs layoutbthumbs largespace">
           <div className="thumbnail">
             <div className="hoverthumb">{/* hover sequence to go here */}</div>
             <a href="/">{/* img thumbnail to go here here */}</a>
           </div> 
           <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Web Title</a></h4> 
         </div>
-        <div className="layoutthumbs layoutathumbs largespace">
+        <div className="layoutthumbs layoutbthumbs largespace">
           <div className="thumbnail">
             <div className="hoverthumb">{/* hover sequence to go here */}</div>
             <a href="/">{/* img thumbnail to go here here */}</a>
           </div> 
           <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">Web Title</a></h4> 
         </div>
-        <div className="layoutthumbs layoutathumbs largespace">
+        <div className="layoutthumbs layoutbthumbs largespace">
           <div className="thumbnail">
             <div className="hoverthumb">{/* hover sequence to go here */}</div>
             <a href="/">{/* img thumbnail to go here here */}</a>

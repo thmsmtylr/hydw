@@ -3,7 +3,7 @@ import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
 import { GROUSE_HOUSE_QUERY } from "@/queries/grouse-house-page-query";
 import { GrouseHousePageQuery } from "@/types/generated";
-import { PageLayout } from "@/components/page-layout";
+import { PageLayoutB } from "@/components/page-layout-b";
 import { Parallax } from "@/components/parallax";
 import Image from "next/image";
 import { PageHeading } from "@/components/page-heading";
@@ -47,7 +47,7 @@ export default async function Page() {
           <p className={`body smallestspace`}>{description}</p>
         </div>
       </section>
-      <PageLayout title={title} description={description} items={works} />
+      <PageLayoutB title={title} description={description} items={works} />
     </main>
   );
 }
