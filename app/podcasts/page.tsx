@@ -3,7 +3,7 @@ import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
 import { PODCASTS_QUERY } from "@/queries/podcasts-page-query";
 import { PodcastsPageQuery } from "@/types/generated";
-import { PageLayoutB } from "@/components/page-layout-b";
+import { PageLayout } from "@/components/page-layout";
 import { Parallax } from "@/components/parallax";
 import Image from "next/image";
 import { PageHeading } from "@/components/page-heading";
@@ -36,7 +36,7 @@ export default async function Page() {
   const works = data.page?.work || [];
 
   return (
-    <main>
+    <main className="podcastlayout">
       <section className="wrapper parentcover  bg-hydw-pink">
           <div className="order-1 rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-7 largeheight">
               <Image className="max-w-[120px] lg:max-w-[190px] m-auto mt-4 lg:mb-0"
@@ -72,7 +72,7 @@ export default async function Page() {
            />
         </div>
       </section>
-      <PageLayoutB title={title} description={description} items={works} />
+      <PageLayout title={title} description={description} items={works} />
     </main>
   );
 }

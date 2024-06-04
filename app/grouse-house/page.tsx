@@ -3,7 +3,7 @@ import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
 import { GROUSE_HOUSE_QUERY } from "@/queries/grouse-house-page-query";
 import { GrouseHousePageQuery } from "@/types/generated";
-import { PageLayoutB } from "@/components/page-layout-b";
+import { PageLayout } from "@/components/page-layout";
 import { Parallax } from "@/components/parallax";
 import Image from "next/image";
 import { PageHeading } from "@/components/page-heading";
@@ -36,8 +36,8 @@ export default async function Page() {
   const works = data.page?.work || [];
 
   return (
-    <main>
-      <section className="wrapper parentcover  bg-hydw-yellow">
+    <main className="layoutb">
+      <section className="wrapper parentcover bg-hydw-yellow ">
           <div className="order-1 rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-7 largeheight">
               <Image className="max-w-[120px] lg:max-w-[190px] m-auto mt-4 lg:mb-0"
                 src="/img/sun.png"
@@ -72,7 +72,7 @@ export default async function Page() {
            />
         </div>
       </section>
-      <PageLayoutB title={title} description={description} items={works} />
+      <PageLayout title={title} description={description} items={works} />
     </main>
   );
 }

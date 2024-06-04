@@ -22,7 +22,7 @@ export function PageLayout({
         const credits = buildMDX(item.credits || "");
         return (
             
-              <div className="layoutthumbs layoutathumbs largespace">
+              <div className="layoutthumbs largespace">
                 <div className="thumbnail">
                   <div className="hoverthumb">{/* hover sequence to go here */}</div>
                   {/* <a href="/"><Image src={url.url} alt={title} width={1152} height={648} /></a> */}
