@@ -3754,6 +3754,12 @@ export type TvFilmPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type TvFilmPageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', id: string, slug: string, title: string, description?: string | null, work: Array<{ __typename?: 'WorkRecord', id: string, title: string, description: string, credits?: string | null, image?: { __typename?: 'AltFileField', url: string } | null, videoLink?: { __typename?: 'VideoField', url: string } | null }>, seo?: { __typename?: 'SeoField', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string } | null } | null } | null };
 
+export type FilmVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FilmPageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', id: string, slug: string, title: string, description?: string | null, work: Array<{ __typename?: 'WorkRecord', id: string, title: string, description: string, credits?: string | null, image?: { __typename?: 'AltFileField', url: string } | null, videoLink?: { __typename?: 'VideoField', url: string } | null }>, seo?: { __typename?: 'SeoField', title?: string | null, description?: string | null, image?: { __typename?: 'FileField', url: string } | null } | null } | null };
+
+
 export type WebSeriesPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
