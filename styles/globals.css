@@ -138,7 +138,7 @@
     }
 
     .description{
-      @apply col-span-10 col-start-2 md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 text-center;
+      @apply col-span-10 col-start-2 md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4 2xl:col-start-5 text-center;
     }
 
     /* Homepage */
@@ -179,6 +179,10 @@
      /* Layout Two */
      .layoutbthumbs{
       @apply 2xl:col-span-6 2xl:col-start-2 first:col-start-1 first:md:col-start-2 first:mt-0 [&:nth-child(2)]:col-start-2 [&:nth-child(2)]:md:col-start-4 [&:nth-child(2)]:2xl:col-start-5 [&:nth-child(3)]:col-start-1 [&:nth-child(4)]:col-start-3 [&:nth-child(5)]:md:col-start-2 [&:nth-child(2)]:after:bg-[url('/img/scribble2_yellow.png')] [&:nth-child(2)]:after:w-[337px] [&:nth-child(2)]:after:h-[281px] [&:nth-child(2)]:after:md:w-[450px] [&:nth-child(2)]:after:md:h-[375px] [&:nth-child(2)]:after:xl:w-[675px] [&:nth-child(2)]:after:xl:h-[560px] [&:nth-child(2)]:after:-bottom-[40px] [&:nth-child(2)]:after:-right-[40px] [&:nth-child(2)]:after:lg:-bottom-[80px] [&:nth-child(2)]:after:lg:-right-[80px] [&:nth-child(4)]:after:bg-[url('/img/scribble2_orange.png')] [&:nth-child(4)]:after:w-[337px] [&:nth-child(4)]:after:h-[281px] [&:nth-child(4)]:after:md:w-[450px] [&:nth-child(4)]:after:md:h-[375px] [&:nth-child(4)]:after:xl:w-[675px] [&:nth-child(4)]:after:xl:h-[560px] [&:nth-child(4)]:after:top-1/2 [&:nth-child(4)]:after:-translate-y-1/2 [&:nth-child(4)]:after:-right-[40px] [&:nth-child(4)]:after:lg:-right-[80px] [&:nth-child(5)]:after:bg-[url('/img/scribble1_blue.png')] [&:nth-child(5)]:after:w-[371px] [&:nth-child(5)]:after:h-[267px] [&:nth-child(5)]:after:md:w-[495px] [&:nth-child(5)]:after:md:h-[356px] [&:nth-child(5)]:after:xl:w-[743px] [&:nth-child(5)]:after:xl:h-[535px] [&:nth-child(5)]:after:-top-[40px] [&:nth-child(5)]:after:-left-[40px] [&:nth-child(5)]:after:lg:-top-[80px] [&:nth-child(5)]:after:lg:-left-[80px];
+    }
+
+    .parentcover{
+      @apply page-grid min-h-screen bg-hydw-pink py-10;
     }
 
 

@@ -37,7 +37,7 @@ export default async function Page() {
 
   return (
     <main className="overflow-hidden largepadding bg-hydw-vanilla">
-      <section className="wrapper page-grid min-h-screen bg-hydw-pink py-10">
+      <section className="wrapper parentcover">
           <div className="order-1 rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-7 largeheight">
               <Image className="max-w-[120px] lg:max-w-[190px] m-auto mt-4 lg:mb-0"
                 src="/img/sun.png"

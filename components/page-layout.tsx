@@ -30,8 +30,6 @@ export function PageLayout({
                 <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">{title}</a></h4>
               </div>
            
-            
-    
         );
       })}
     </div>
