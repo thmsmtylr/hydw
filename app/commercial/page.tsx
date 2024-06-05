@@ -38,41 +38,47 @@ export default async function Page() {
   return (
     <main className="overflow-hidden largepadding bg-hydw-vanilla">
       <section className="wrapper parentcover bg-hydw-yellow">
-          <div className="order-1 rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-7 largeheight">
-              <Image className="max-w-[120px] lg:max-w-[190px] m-auto mt-4 lg:mb-0"
-                src="/img/sun.png"
-                alt="Sun"
-                width={190}
-                height={160}
+          <div className="order-1 col-span-6 col-start-6 md:col-span-3 md:col-start-6 lg:col-start-6 largeheight">
+              <Image className="rotate-45 max-w-[50px] lg:max-w-[100px] m-auto mt-4 lg:mb-0"
+                src="/img/beer.png"
+                alt="beer"
+                width={100}
+                height={170}
               />
             </div>
-          <div className="order-4 lg:order-2 -rotate-12 col-span-6 col-start-1 md:col-span-2 md:col-start-1 mt-14 md:mt-0">
-            <Image className="max-w-[80px] lg:max-w-[102px] m-auto mt-4 lg:mb-0"
-              src="/img/youtube.png"
-              alt="Youtube"
-              width={102}
-              height={102}
+          <div className="order-4 lg:order-2 col-span-6 col-start-1 md:col-span-2 md:col-start-1 mt-14 md:mt-0">
+            <Image className="-rotate-12 max-w-[90px] lg:max-w-[177px] m-auto mt-4 lg:mb-0"
+              src="/img/console.png"
+              alt="Gaming controller"
+              width={177}
+              height={123}
            />
         </div>
         <div className="pageheading order-2 lg:order-3 text-center items-center justify-center">
             <PageHeading title={title} />
         </div>
-        <div className="order-3 lg:order-4 description">
+        <div className="order-5 lg:order-4 col-span-6 col-start-7 md:col-span-2 md:col-start-7 lg:col-start-1 xl:col-start-2 mt-14 md:mt-0">
+            <Image className="max-w-[80px] lg:max-w-[135px] m-auto mt-14 md:mt-32 lg:mb-0"
+              src="/img/bag.png"
+              alt="Takeaway Bag"
+              width={135}
+              height={216}
+           />
+        </div>
+        <div className="order-3 lg:order-5 description">
           <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
           {/* Note: Need Subtitle */}
             <p className={`body smallestspace`}>{description}</p>
         </div>
         
-        <div className="order-5 rotate-12 col-span-6 col-start-7 md:col-span-2 md:col-start-9">
-            <Image className="max-w-[102px] lg:max-w-[170px] m-auto mt-4 lg:mb-0"
-              src="/img/yeezus.png"
-              alt="Finding Yeezus"
-              width={170}
-              height={126}
-           />
-        </div>
+        
       </section>
-      <PageLayout title={title} description={description} items={works} />
+      
+      <ul className="wrapper page-grid">
+        <li className="heading5 underline col-start-2 md:col-start-3">Directors</li>
+        <li className="heading5 col-start-6 md:col-start-5 xl:col-start-4">Studio</li>
+      </ul>
+      {/* <PageLayout title={title} description={description} items={works} /> */}
     </main>
   );
 }

@@ -69,7 +69,14 @@
       }
 
       .largeheight{
-        @apply h-28 lg:h-52;
+        @apply h-28;
+      }
+
+      @media screen and ( min-width: 1024px ) and ( min-height: 1000px )
+      {
+        .largeheight{
+          @apply h-28 lg:h-52;
+        }
       }
 
       /* Typography */
