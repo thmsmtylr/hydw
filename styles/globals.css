@@ -92,7 +92,7 @@
       }
 
       .heading4{
-        @apply text-mbmed lg:text-dtmed;
+        @apply text-mbmed lg:text-dtmed leading-[95%];
       }
 
       .heading5{
@@ -169,8 +169,26 @@
     .layouta .layoutthumbs{
       @apply 2xl:col-span-6 2xl:col-start-2 first:col-start-2 first:md:col-start-4 first:lg:col-start-5 first:2xl:col-start-7 first:mt-0 [&:nth-child(2n)]:col-start-1 [&:nth-child(2n)]:md:col-start-2 [&:nth-child(3n)]:col-start-2 [&:nth-child(3n)]:md:col-start-3 [&:nth-child(4n)]:col-start-1 [&:nth-child(4n)]:md:col-start-1 [&:nth-child(5n)]:col-start-2 [&:nth-child(5n)]:md:col-start-5 [&:nth-child(2n)]:after:bg-[url('/img/scribble2_orange.png')] [&:nth-child(2n)]:after:w-[337px] [&:nth-child(2n)]:after:h-[281px] [&:nth-child(2n)]:after:md:w-[450px] [&:nth-child(2n)]:after:md:h-[375px] [&:nth-child(2n)]:after:xl:w-[675px] [&:nth-child(2n)]:after:xl:h-[560px] [&:nth-child(2n)]:after:-top-[40px] [&:nth-child(2n)]:after:-right-[40px] [&:nth-child(2n)]:after:lg:-top-[80px] [&:nth-child(2n)]:after:lg:-right-[80px] [&:nth-child(3n)]:after:bg-[url('/img/scribble1_yellow.png')] [&:nth-child(3n)]:after:w-[371px] [&:nth-child(3n)]:after:h-[267px] [&:nth-child(3n)]:after:md:w-[495px] [&:nth-child(3n)]:after:md:h-[356px] [&:nth-child(3n)]:after:xl:w-[743px] [&:nth-child(3n)]:after:xl:h-[535px] [&:nth-child(3n)]:after:-top-[40px] [&:nth-child(3n)]:after:-right-[40px] [&:nth-child(3n)]:after:lg:-top-[80px] [&:nth-child(3n)]:after:lg:-right-[80px] [&:nth-child(4n)]:after:bg-[url('/img/scribble2_pink.png')] [&:nth-child(4n)]:after:w-[337px] [&:nth-child(4n)]:after:h-[281px] [&:nth-child(4n)]:after:md:w-[450px] [&:nth-child(4n)]:after:md:h-[375px] [&:nth-child(4n)]:after:xl:w-[675px] [&:nth-child(4n)]:after:xl:h-[560px] [&:nth-child(4n)]:after:-bottom-[40px] [&:nth-child(4n)]:after:-right-[40px] [&:nth-child(4n)]:after:lg:-bottom-[80px] [&:nth-child(4n)]:after:lg:-right-[80px];
     }
+    
+    
 
-    .image1, .image2{
+     /* Layout Two */
+     .layoutb .layoutthumbs{
+      @apply 2xl:col-span-6 2xl:col-start-2 [&:nth-child(1n)]:col-start-1 [&:nth-child(1n)]:md:col-start-2 first:mt-0 [&:nth-child(2n)]:col-start-2 [&:nth-child(2n)]:md:col-start-4 [&:nth-child(2n)]:2xl:col-start-5 [&:nth-child(3n)]:col-start-1 [&:nth-child(4n)]:col-start-3 [&:nth-child(5n)]:md:col-start-2 [&:nth-child(2n)]:after:bg-[url('/img/scribble2_yellow.png')] [&:nth-child(2n)]:after:w-[337px] [&:nth-child(2n)]:after:h-[281px] [&:nth-child(2n)]:after:md:w-[450px] [&:nth-child(2n)]:after:md:h-[375px] [&:nth-child(2n)]:after:xl:w-[675px] [&:nth-child(2n)]:after:xl:h-[560px] [&:nth-child(2n)]:after:-bottom-[40px] [&:nth-child(2n)]:after:-right-[40px] [&:nth-child(2n)]:after:lg:-bottom-[80px] [&:nth-child(2n)]:after:lg:-right-[80px] [&:nth-child(4n)]:after:bg-[url('/img/scribble2_orange.png')] [&:nth-child(4n)]:after:w-[337px] [&:nth-child(4n)]:after:h-[281px] [&:nth-child(4n)]:after:md:w-[450px] [&:nth-child(4n)]:after:md:h-[375px] [&:nth-child(4n)]:after:xl:w-[675px] [&:nth-child(4n)]:after:xl:h-[560px] [&:nth-child(4n)]:after:top-1/2 [&:nth-child(4n)]:after:-translate-y-1/2 [&:nth-child(4n)]:after:-right-[40px] [&:nth-child(4n)]:after:lg:-right-[80px] [&:nth-child(5n)]:after:bg-[url('/img/scribble1_blue.png')] [&:nth-child(5n)]:after:w-[371px] [&:nth-child(5n)]:after:h-[267px] [&:nth-child(5n)]:after:md:w-[495px] [&:nth-child(5n)]:after:md:h-[356px] [&:nth-child(5n)]:after:xl:w-[743px] [&:nth-child(5n)]:after:xl:h-[535px] [&:nth-child(5n)]:after:-top-[40px] [&:nth-child(5n)]:after:-left-[40px] [&:nth-child(5n)]:after:lg:-top-[80px] [&:nth-child(5n)]:after:lg:-left-[80px];
+    }
+
+     /* Podcast Layout */
+
+     .podcastlayout .layoutthumbs .thumbnail{
+      @apply aspect-square;
+     }
+
+     .podcastlayout .layoutthumbs{
+      @apply col-span-8 md:col-span-6 lg:col-span-4 [&:nth-child(1n)]:col-start-4 [&:nth-child(1n)]:md:col-start-7 [&:nth-child(2n)]:col-start-2 [&:nth-child(2n)]:md:col-start-4 [&:nth-child(3n)]:col-start-7 [&:nth-child(4n)]:col-start-2 [&:nth-child(5n)]:col-start-5 [&:nth-child(2n)]:after:bg-[url('/img/scribble1_yellow.png')] [&:nth-child(2n)]:after:w-[337px] [&:nth-child(2n)]:after:h-[281px] [&:nth-child(2n)]:after:md:w-[450px] [&:nth-child(2n)]:after:md:h-[375px] [&:nth-child(2n)]:after:xl:w-[675px] [&:nth-child(2n)]:after:xl:h-[560px] [&:nth-child(2n)]:after:-top-[20px] [&:nth-child(2n)]:after:-right-[20px] [&:nth-child(2n)]:after:lg:-top-[40px] [&:nth-child(2n)]:after:lg:-right-[40px] [&:nth-child(3n)]:after:bg-[url('/img/scribble2_blue.png')] [&:nth-child(3n)]:after:w-[337px] [&:nth-child(3n)]:after:h-[281px] [&:nth-child(3n)]:after:md:w-[450px] [&:nth-child(3n)]:after:md:h-[375px] [&:nth-child(3n)]:after:xl:w-[675px] [&:nth-child(3n)]:after:xl:h-[560px] [&:nth-child(3n)]:after:-top-[20px] [&:nth-child(3n)]:after:-right-[20px] [&:nth-child(3n)]:after:lg:-top-[40px] [&:nth-child(3n)]:after:lg:-right-[40px] [&:nth-child(5n)]:after:bg-[url('/img/scribble1_pink.png')] [&:nth-child(5n)]:after:md:w-[450px] [&:nth-child(5n)]:after:md:h-[375px] [&:nth-child(5n)]:after:xl:w-[675px] [&:nth-child(5n)]:after:xl:h-[560px] [&:nth-child(5n)]:after:-top-[20px] [&:nth-child(5n)]:after:-right-[20px] [&:nth-child(5n)]:after:lg:-top-[40px] [&:nth-child(5n)]:after:lg:-right-[40px];
+     }
+
+
+     .image1, .image2{
       @apply hidden;
     }
     
@@ -194,13 +212,6 @@
 
     .layoutb.addimage1 .layoutthumbs{
       @apply md:[&:nth-child(2)]:order-3;
-    }
-    
-    
-
-     /* Layout Two */
-     .layoutb .layoutthumbs{
-      @apply 2xl:col-span-6 2xl:col-start-2 [&:nth-child(1n)]:col-start-1 [&:nth-child(1n)]:md:col-start-2 first:mt-0 [&:nth-child(2n)]:col-start-2 [&:nth-child(2n)]:md:col-start-4 [&:nth-child(2n)]:2xl:col-start-5 [&:nth-child(3n)]:col-start-1 [&:nth-child(4n)]:col-start-3 [&:nth-child(5n)]:md:col-start-2 [&:nth-child(2n)]:after:bg-[url('/img/scribble2_yellow.png')] [&:nth-child(2n)]:after:w-[337px] [&:nth-child(2n)]:after:h-[281px] [&:nth-child(2n)]:after:md:w-[450px] [&:nth-child(2n)]:after:md:h-[375px] [&:nth-child(2n)]:after:xl:w-[675px] [&:nth-child(2n)]:after:xl:h-[560px] [&:nth-child(2n)]:after:-bottom-[40px] [&:nth-child(2n)]:after:-right-[40px] [&:nth-child(2n)]:after:lg:-bottom-[80px] [&:nth-child(2n)]:after:lg:-right-[80px] [&:nth-child(4n)]:after:bg-[url('/img/scribble2_orange.png')] [&:nth-child(4n)]:after:w-[337px] [&:nth-child(4n)]:after:h-[281px] [&:nth-child(4n)]:after:md:w-[450px] [&:nth-child(4n)]:after:md:h-[375px] [&:nth-child(4n)]:after:xl:w-[675px] [&:nth-child(4n)]:after:xl:h-[560px] [&:nth-child(4n)]:after:top-1/2 [&:nth-child(4n)]:after:-translate-y-1/2 [&:nth-child(4n)]:after:-right-[40px] [&:nth-child(4n)]:after:lg:-right-[80px] [&:nth-child(5n)]:after:bg-[url('/img/scribble1_blue.png')] [&:nth-child(5n)]:after:w-[371px] [&:nth-child(5n)]:after:h-[267px] [&:nth-child(5n)]:after:md:w-[495px] [&:nth-child(5n)]:after:md:h-[356px] [&:nth-child(5n)]:after:xl:w-[743px] [&:nth-child(5n)]:after:xl:h-[535px] [&:nth-child(5n)]:after:-top-[40px] [&:nth-child(5n)]:after:-left-[40px] [&:nth-child(5n)]:after:lg:-top-[80px] [&:nth-child(5n)]:after:lg:-left-[80px];
     }
 
     .parentcover{
