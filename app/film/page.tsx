@@ -36,7 +36,7 @@ export default async function Page() {
   const works = data.page?.work || [];
 
   return (
-    <main className="layouta">
+    <main className="overflow-hidden largepadding bg-hydw-vanilla layouta">
       <section className="wrapper parentcover bg-hydw-pink">
           <div className="order-1 -rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-9 largeheight">
               <Image className="max-w-[120px] md:max-w-[150px] lg:max-w-[190px] m-auto mt-4 lg:mb-0 relative md:top-[100px]"

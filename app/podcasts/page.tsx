@@ -36,7 +36,7 @@ export default async function Page() {
   const works = data.page?.work || [];
 
   return (
-    <main className="podcastlayout">
+    <main className="overflow-hidden largepadding bg-hydw-vanilla podcastlayout">
       <section className="wrapper parentcover  bg-hydw-pink">
           <div className="order-1 rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-7 largeheight">
               <Image className="max-w-[120px] lg:max-w-[190px] m-auto mt-4 lg:mb-0"
