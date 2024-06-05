@@ -36,7 +36,7 @@ export default async function Page() {
   const works = data.page?.work || [];
 
   return (
-    <main className="overflow-hidden largepadding bg-hydw-vanilla">
+    <main className="largepadding bg-hydw-vanilla">
       <section className="wrapper parentcover bg-hydw-yellow">
           <div className="order-1 col-span-6 col-start-6 md:col-span-3 md:col-start-6 lg:col-start-6 largeheight">
               <Image className="rotate-45 max-w-[50px] lg:max-w-[100px] m-auto mt-4 lg:mb-0"
@@ -70,14 +70,72 @@ export default async function Page() {
           {/* Note: Need Subtitle */}
             <p className={`body smallestspace`}>{description}</p>
         </div>
-        
-        
+      </section>
+      <div className="smallerspace wrapper page-grid sticky top-[66px] md:top-[16px] lg:top-[8px]">
+        <ul className="col-span-12 col-start-1 md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3 flex flex-wrap text-hydw-charcoal">
+          <li className="heading5 mr-3"><a href="/" className="underline">Directors</a></li>
+          <li className="heading5 ml-3"><a href="/" className="no-underline hover:underline duration-300">Studio</a></li>
+        </ul>
+      </div>
+
+      <section className="wrapper largespace">
+        <div className="director page-grid text-left relative">
+          <div className="directorthumb col-span-12 page-grid md:absolute md:top-[100px] md:left-0 w-full">
+            <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-7 aspect-video bg-test-grey "></div>
+          </div>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4"><a href="/">Max Miller</a></h2>
+        </div>
+        <div className="page-grid text-left relative mt-14 md:mt-0">
+          <div className="directorthumb col-span-12 page-grid md:absolute md:top-[100px] md:left-0 w-full">
+            <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-4 lg:col-span-6 lg:col-start-6 aspect-video bg-test-grey"></div>
+          </div>
+          <h2 className="director relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">Fjord</h2>
+        </div>
+        <div className="director page-grid text-left relative mt-14 md:mt-0">
+          <div className="directorthumb col-span-12 page-grid md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 w-full">
+            <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-1 lg:col-span-6 lg:col-start-1 aspect-video bg-test-grey "></div>
+          </div>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">THE PERLORIANS</h2>
+        </div> 
+        <div className="director page-grid text-left relative mt-14 md:mt-0">
+          <div className="directorthumb col-span-12 page-grid md:absolute md:-top-[10px] md:left-0 w-full">
+            <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-3 lg:col-span-6 lg:col-start-3 aspect-video bg-test-grey "></div>
+          </div>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">TINY BULLET</h2>
+        </div> 
+        <div className="director page-grid text-left relative mt-14 md:mt-0">
+          <div className="directorthumb col-span-12 page-grid md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 w-full">
+            <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-6 lg:col-span-6 lg:col-start-7 aspect-video bg-test-grey "></div>
+          </div>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">LIZZY BAILEY</h2>
+        </div>
+        <div className="director page-grid text-left relative mt-14 md:mt-0">
+          <div className="directorthumb col-span-12 page-grid md:absolute md:-bottom-[200px] md:left-0 w-full">
+            <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-6 lg:col-span-6 lg:col-start-7 aspect-video bg-test-grey "></div>
+          </div>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">MACFARLANE BROTHERS</h2>
+        </div>
+        <div className="director page-grid text-left relative mt-14 md:mt-0">
+          <div className="directorthumb col-span-12 page-grid md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 w-full">
+            <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-6 aspect-video bg-test-grey "></div>
+          </div>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">STEPH SMITH</h2>
+        </div>
+        <div className="director page-grid text-left relative mt-14 md:mt-0">
+          <div className="directorthumb col-span-12 page-grid md:absolute md:-bottom-[22px] md:left-0 w-full">
+            <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-1 lg:col-span-6 lg:col-start-1 aspect-video bg-test-grey "></div>
+          </div>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">SHANKS</h2>
+        </div>
+        <div className="director page-grid text-left relative mt-14 md:mt-0">
+          <div className="directorthumb col-span-12 page-grid md:absolute md:-bottom-[22px] md:left-0 w-full">
+            <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-3 lg:col-span-6 lg:col-start-3 aspect-video bg-test-grey "></div>
+          </div>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">PATTO</h2>
+        </div>
+
       </section>
       
-      <ul className="wrapper page-grid">
-        <li className="heading5 underline col-start-2 md:col-start-3">Directors</li>
-        <li className="heading5 col-start-6 md:col-start-5 xl:col-start-4">Studio</li>
-      </ul>
       {/* <PageLayout title={title} description={description} items={works} /> */}
     </main>
   );

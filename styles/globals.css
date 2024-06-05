@@ -63,24 +63,24 @@
     @apply pb-28 lg:pb-52;
   }
 
-      .largeheight{
-        @apply h-28;
-      }
-
-      @media screen and ( min-width: 1024px ) and ( min-height: 1000px )
-      {
-        .largeheight{
-          @apply h-28 lg:h-52;
-        }
-      }
-
   .smallpadding {
     @apply pb-7 lg:pb-14;
   }
 
-  .largeheight {
-    @apply h-28 lg:h-52;
+  .largeheight{
+    @apply h-28;
   }
+
+  @media screen and ( min-width: 1024px ) and ( min-height: 1000px )
+  {
+    .largeheight{
+          @apply h-28 lg:h-52;
+        }
+      }
+
+  
+
+
 
   /* Typography */
 
@@ -238,4 +238,15 @@
   .description {
     @apply col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5;
   }
+
+
+    /* Commercial */
+  .directorthumb{
+    @apply md:opacity-0 duration-200;
+  }
+
+  .director:hover .directorthumb{
+    @apply opacity-100;
+  }
+
 }
