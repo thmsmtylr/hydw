@@ -69,6 +69,30 @@ module.exports = {
             marginTop: '3.5rem',
           },
         },
+        '.largestpadding': {
+          paddingBottom: '7rem', 
+          '@screen lg': {
+            paddingBottom: '24rem',
+          },
+        },
+        '.largepadding': {
+          paddingBottom: '7rem', 
+          '@screen lg': {
+            paddingBottom: '13rem', 
+          },
+        },
+        '.smallpadding': {
+          paddingBottom: '1.75rem', 
+          '@screen lg': {
+            paddingBottom: '3.5rem',
+          },
+        },
+        '.smallerspace, .heading4 + .body, .heading5 + .body, .body p + p': {
+          marginTop: '0.625rem', // equivalent to mt-2.5
+          '@screen lg': {
+            marginTop: '0.875rem', // equivalent to lg:mt-3.5
+          },
+        },
       };
 
       addComponents(newComponents);

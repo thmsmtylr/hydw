@@ -23,42 +23,12 @@
     @apply h-auto w-[100%];
   }
 
-  /* Spacing */
-
-  /* .largestspace {
-    @apply mt-28 lg:mt-96;
-  } */
-
-  /* .largespace {
-    @apply mt-28 lg:mt-52;
-  } */
-
-  .midspace {
-    @apply mt-14 lg:mt-28;
-  }
-
-  .smallspace {
-    @apply mt-7 lg:mt-14;
-  }
-
-  .smallerspace,
+  /* .smallerspace,
   .heading4 + .body,
   .heading5 + .body,
   .body p + p {
     @apply mt-2.5 lg:mt-3.5;
-  }
-
-  .largestpadding {
-    @apply pb-28 lg:pb-96;
-  }
-
-  .largepadding {
-    @apply pb-28 lg:pb-52;
-  }
-
-  .smallpadding {
-    @apply pb-7 lg:pb-14;
-  }
+  } */
 
   .largeheight{
     @apply h-28;
