@@ -71,14 +71,15 @@ export default async function Page() {
             <p className={`body smallestspace`}>{description}</p>
         </div>
       </section>
-      <div className="smallerspace wrapper page-grid sticky top-[66px] md:top-[16px] lg:top-[8px]">
+
+      <div className="smallerspace wrapper page-grid sticky top-[66px] md:top-[16px] lg:top-[8px] z-[30]">
         <ul className="col-span-12 col-start-1 md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3 flex flex-wrap text-hydw-charcoal">
-          <li className="heading5 mr-3"><a href="/" className="underline">Directors</a></li>
+          <li className="heading5 mr-3"><a href="#directors" className="underline">Directors</a></li>
           <li className="heading5 ml-3"><a href="/" className="no-underline hover:underline duration-300">Studio</a></li>
         </ul>
       </div>
 
-      <section className="wrapper largespace">
+      <section id="directors" className="wrapper largespace">
         <div className="director page-grid text-left relative">
           <div className="directorthumb col-span-12 page-grid md:absolute md:top-[100px] md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-7 aspect-video bg-test-grey "></div>
