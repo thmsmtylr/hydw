@@ -46,15 +46,15 @@ export default async function Page() {
   return (
     <main className="bg-hydw-orange wrapper largepadding">
       <section className="page-grid">
-          <div className="rotate-12 col-span-6 col-start-4 md:col-span-3 md:col-start-7 largeheight">
-              <Image className="max-w-[140px] lg:max-w-[200px] m-auto mt-4 lg:mb-0"
+          <div className="col-span-6 col-start-4 md:col-span-3 md:col-start-7 largeheight">
+              <Image className="rotate-12 max-w-[140px] lg:max-w-[200px] m-auto mt-4 lg:mb-0"
                   src="/img/auntydonna.png"
                   alt="Aunty Donna"
                   width={227}
                   height={138}
                 />
           </div>
-          <div className="col-span-12 md:col-span-10 md:col-start-2">
+          <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
             {title && <PageHeading title={title} />}
           </div>
           <div className="col-span-6 md:col-span-3 md:col-start-1 relative">
