@@ -15,56 +15,58 @@ export function PageLayout({
   items: any[];
 }) {
   return (
-  <section className="bg-hydw-vanilla">
-      <div className="page-grid wrapper -translate-y-14 lg:-translate-y-28 -mb-14 lg:-mb-28">
-    
-      {items.map((item, index) => {
-        const { id, videoLink, title, description, image: url } = item;
-        const credits = buildMDX(item.credits || "");
-        return (
-            
-              <div className="layoutthumbs largespace">
-                <div className="thumbnail">
-                  <div className="hoverthumb">{/* hover sequence to go here */}</div>
-                  {/* <a href="/"><Image src={url.url} alt={title} width={1152} height={648} /></a> */}
-                </div> 
-                <h4 className="heading4 text-hydw-blue text-center smallerspace"><a href="/">{title}</a></h4>
+    <section className="bg-hydw-vanilla">
+      <div className="page-grid wrapper -mb-14 -translate-y-14 lg:-mb-28 lg:-translate-y-28">
+        {items.map((item, index) => {
+          const { id, videoLink, title, description, image: url } = item;
+          const credits = buildMDX(item.credits || "");
+          return (
+            <div className="layoutthumbs largespace" key={id}>
+              <div className="thumbnail">
+                <div className="hoverthumb">
+                  {/* hover sequence to go here */}
+                </div>
+                {/* <a href="/"><Image src={url.url} alt={title} width={1152} height={648} /></a> */}
               </div>
-           
-        );
-      })}
-      {/* 
+              <h4 className="heading4 smallerspace text-center text-hydw-blue">
+                <a href="/">{title}</a>
+              </h4>
+            </div>
+          );
+        })}
+        {/* 
       User should be able to upload iamge from dato, if uploaded, it adds class "addimage1" to main className
       For .layouta if there are less than 5 entries it doesnt appear and .layoutb if there are less than two entries it doesnt appear 
       For .layoutb we also need something written that adds +1 to order in the css for child folowing 2
       */}
-      
-      <div className="image1">
+
+        <div className="image1">
           <Parallax className="relative">
-              <Image className="max-w-[450px] h-[auto] self-center"
-                src="/img/toreplace/HYDWP_Website_3.png"
-                alt="alt here"
-                width={400}
-                height={400}
-                />
+            <Image
+              className="h-[auto] max-w-[450px] self-center"
+              src="/img/toreplace/HYDWP_Website_3.png"
+              alt="alt here"
+              width={400}
+              height={400}
+            />
           </Parallax>
-      </div>
-      {/* 
+        </div>
+        {/* 
             User should be able to upload iamge from dato, if uploaded, it adds class "addimage2" to main className
             Should only appear on pages using .layoutb and should only appear if there are 5 or more projects
             */}
-      <div className="image2">
+        <div className="image2">
           <Parallax className="relative">
-              <Image className="max-w-[450px] h-[auto] self-center"
-                src="/img/toreplace/HYDWP_Website_3.png"
-                alt="alt here"
-                width={400}
-                height={400}
-                />
+            <Image
+              className="h-[auto] max-w-[450px] self-center"
+              src="/img/toreplace/HYDWP_Website_3.png"
+              alt="alt here"
+              width={400}
+              height={400}
+            />
           </Parallax>
+        </div>
       </div>
-
-    </div>
-  </section>
+    </section>
   );
 }
