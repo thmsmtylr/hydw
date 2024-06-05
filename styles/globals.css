@@ -25,13 +25,13 @@
 
   /* Spacing */
 
-  .largestspace {
+  /* .largestspace {
     @apply mt-28 lg:mt-96;
-  }
+  } */
 
-  .largespace {
+  /* .largespace {
     @apply mt-28 lg:mt-52;
-  }
+  } */
 
   .midspace {
     @apply mt-14 lg:mt-28;

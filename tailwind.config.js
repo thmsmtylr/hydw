@@ -42,5 +42,36 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addComponents }) {
+      const newComponents = {
+        '.largestspace': {
+          marginTop: '7rem', 
+          '@screen lg': {
+            marginTop: '24rem',
+          },
+        },
+        '.largespace': {
+          marginTop: '7rem', 
+          '@screen lg': {
+            marginTop: '13rem', 
+          },
+        },
+        '.midspace': {
+          marginTop: '3.5rem', 
+          '@screen lg': {
+            marginTop: '7rem',
+          },
+        },
+        '.smallspace': {
+          marginTop: '1.75rem', 
+          '@screen lg': {
+            marginTop: '3.5rem',
+          },
+        },
+      };
+
+      addComponents(newComponents);
+    }
+  ],
 };

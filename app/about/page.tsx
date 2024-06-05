@@ -54,7 +54,7 @@ export default async function Page() {
                   height={138}
                 />
           </div>
-          <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
+          <div className="col-span-12 md:col-span-10 md:col-start-2">
             {title && <PageHeading title={title} />}
           </div>
           <div className="col-span-6 md:col-span-3 md:col-start-1 relative">
