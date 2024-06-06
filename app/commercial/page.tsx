@@ -46,9 +46,9 @@ export default async function Page() {
           {/* Note: Need Subtitle */}
             <p className={`body smallestspace`}>{description}</p>
         </div>
-        <div className="mt-7 lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
+        <div className="lg:wrapper mt-7 lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
             <div className="md:order-1 lg:order-1 col-span-6 col-start-6 md:col-span-3 md:col-start-4 lg:col-start-6">
-                <Image className="rotate-45 max-w-[50px] md:max-w-[80px] xl:max-w-[100px] m-auto md:mt-4 lg:mb-0"
+                <Image className="rotate-45 max-w-[50px] md:max-w-[80px] xl:max-w-[100px] m-auto md:mt-4 lg:-mt-2"
                   src="/img/beer.png"
                   alt="beer"
                   width={100}
@@ -56,7 +56,7 @@ export default async function Page() {
                 />
             </div>
             <div className="md:order-3 lg:order-2 col-span-6 col-start-1 md:col-span-3 md:col-start-1">
-              <Image className="-rotate-12 max-w-[90px] md:max-w-[140px] xl:max-w-[177px] lg:m-auto -mt-8 lg:-mt-14"
+              <Image className="-rotate-12 max-w-[90px] md:max-w-[140px] xl:max-w-[177px] lg:m-auto -mt-8 lg:-mt-20 xl:-mt-32"
                 src="/img/console.png"
                 alt="Gaming controller"
                 width={177}
@@ -64,7 +64,7 @@ export default async function Page() {
             />
             </div>
             <div className="md:order-4 lg:order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-5 lg:col-start-1 xl:col-start-2 mt-14 md:mt-0">
-              <Image className="max-w-[80px] md:max-w-[120px] xl:max-w-[135px] m-auto lg:mt-80"
+              <Image className="max-w-[80px] md:max-w-[120px] xl:max-w-[135px] m-auto lg:mt-96"
                 src="/img/bag.png"
                 alt="Takeaway Bag"
                 width={135}

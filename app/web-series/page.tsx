@@ -37,39 +37,41 @@ export default async function Page() {
 
   return (
     <main className="overflow-hidden largepadding bg-hydw-vanilla layouta addimage1">
-      <section className="wrapper parentcover  bg-hydw-pink">
-          <div className="order-1 rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-7 largeheight">
-              <Image className="max-w-[120px] lg:max-w-[190px] m-auto mt-4 lg:mb-0"
-                src="/img/sun.png"
-                alt="Sun"
-                width={190}
-                height={160}
-              />
-            </div>
-          <div className="order-4 lg:order-2 -rotate-12 col-span-6 col-start-1 md:col-span-2 md:col-start-1 mt-14 md:mt-0">
-            <Image className="max-w-[80px] lg:max-w-[102px] m-auto mt-4 lg:mb-0"
-              src="/img/youtube.png"
-              alt="Youtube"
-              width={102}
-              height={102}
-           />
-        </div>
-        <div className="pageheading order-2 lg:order-3 text-center items-center justify-center">
+      <section className="wrapper parentcover  bg-hydw-pink">    
+        <div className="pageheading text-center items-center justify-center largespace">
             <PageHeading title={title} />
         </div>
-        <div className="order-3 lg:order-4 description">
+        <div className="description">
           <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
           {/* Note: Need Subtitle */}
             <p className={`body smallestspace`}>{description}</p>
         </div>
-        
-        <div className="order-5 rotate-12 col-span-6 col-start-7 md:col-span-2 md:col-start-9">
-            <Image className="max-w-[102px] lg:max-w-[170px] m-auto mt-4 lg:mb-0"
-              src="/img/yeezus.png"
-              alt="Finding Yeezus"
-              width={170}
-              height={126}
-           />
+
+        <div className="lg:wrapper lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
+          <div className="col-span-6 col-start-6 md:col-span-3 md:col-start-7">
+                <Image className="rotate-12 max-w-[120px] md:max-w-[160px] lg:max-w-[190px] m-auto mt-14 lg:mt-4"
+                  src="/img/sun.png"
+                  alt="Sun"
+                  width={190}
+                  height={160}
+                />
+              </div>
+            <div className="col-span-6 col-start-1 md:col-span-2 md:col-start-1">
+              <Image className="-rotate-12 max-w-[80px] md:max-w-[90px] lg:max-w-[102px] m-auto mt-14"
+                src="/img/youtube.png"
+                alt="Youtube"
+                width={102}
+                height={102}
+            />
+          </div>
+            <div className="col-span-6 col-start-7 md:col-span-2 md:col-start-9 lg:col-start-11">
+                <Image className="rotate-12 max-w-[102px] md:max-w-[140px] lg:max-w-[170px] m-auto lg:text-right xl:mx-auto relative mt-32 lg:mt-80"
+                  src="/img/yeezus.png"
+                  alt="Finding Yeezus"
+                  width={170}
+                  height={126}
+              />
+            </div>
         </div>
       </section>
       <PageLayout title={title} description={description} items={works} />

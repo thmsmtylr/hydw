@@ -47,7 +47,7 @@ export default async function Page() {
             <p className={`body smallestspace`}>{description}</p>
         </div>
 
-        <div className="mt-7 lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
+        <div className="lg:wrapper mt-7 lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
           <div className="order-2 lg:order-1 col-span-6 col-start-7 lg:col-span-3 lg:col-start-9">
                 <Image className="-rotate-12 max-w-[120px] md:max-w-[150px] lg:max-w-[190px] m-auto mt-4 lg:mb-0 relative md:top-[100px]"
                   src="/img/camera.png"
