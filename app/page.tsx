@@ -72,7 +72,7 @@ export default async function Page() {
         <div className="page-grid largespace col-span-12">
           <div className="relative z-20 col-span-3 md:col-span-2">
             <Image
-              className="circletext"
+              className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
               src="/img/latestcommercials.svg"
               alt="Latest Commercials"
               width={205}
@@ -113,7 +113,7 @@ export default async function Page() {
         <div className="page-grid largestspace col-span-12">
           <div className="relative z-20 col-span-3 col-start-10 md:col-span-2 md:col-start-10 lg:col-start-11 2xl:col-start-10">
             <Image
-              className="circletext"
+              className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
               src="/img/latesttv.svg"
               alt="Latest Television"
               width={205}
@@ -153,7 +153,7 @@ export default async function Page() {
         <div className="page-grid largespace col-span-12">
           <div className="relative z-20 col-span-3 md:col-span-2">
             <Image
-              className="circletext"
+              className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
               src="/img/latestwebseries.svg"
               alt="Latest Web Series"
               width={205}
@@ -193,7 +193,7 @@ export default async function Page() {
         <div className="page-grid largespace col-span-12">
           <div className="relative z-20 col-span-3 col-start-8 md:col-span-2 md:col-start-6 xl:col-start-5">
             <Image
-              className="circletext"
+              className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
               src="/img/latestpodcast.svg"
               alt="Latest Podcast"
               width={205}
@@ -229,7 +229,7 @@ export default async function Page() {
         <div className="page-grid largestspace col-span-12">
           <div className="relative z-20 col-span-3 col-start-9 md:col-span-2 md:col-start-10 lg:col-start-4">
             <Image
-              className="circletext"
+              className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
               src="/img/latestfilm.svg"
               alt="Latest Film"
               width={205}

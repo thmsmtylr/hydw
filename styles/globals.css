@@ -96,9 +96,7 @@
 
   /* Homepage */
 
-  .circletext {
-    @apply absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2;
-  }
+  
 
   /* Thumbnail layouts */
 
@@ -190,5 +188,7 @@
   .director:hover .directorthumb{
     @apply opacity-100;
   }
+
+
 
 }

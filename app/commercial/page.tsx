@@ -87,10 +87,10 @@ export default async function Page() {
       </div>
       
 
-      <div className="smallerspace wrapper page-grid sticky top-[66px] md:top-[16px] lg:top-[8px] z-[30]">
+      <div className="pointer-events-none smallerspace wrapper page-grid sticky top-[66px] md:top-[16px] lg:top-[8px] z-[30]">
         <ul className="col-span-12 col-start-1 md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3 flex flex-wrap text-hydw-charcoal">
-          <li className="heading5 mr-3"><a href="#directors" className="underline">Directors</a></li>
-          <li className="heading5 ml-3"><a href="/" className="no-underline hover:underline duration-300">Studio</a></li>
+          <li className="pointer-events-auto heading5 mr-3"><a href="#directors" className="underline">Directors</a></li>
+          <li className="heading5 pointer-events-auto ml-3"><a href="/" className="no-underline hover:underline duration-300">Studio</a></li>
         </ul>
       </div>
 
@@ -99,55 +99,55 @@ export default async function Page() {
           <div className="directorthumb col-span-12 page-grid md:absolute md:top-[100px] md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-7 aspect-video bg-test-grey "></div>
           </div>
-          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4"><a href="/">Max Miller</a></h2>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4 hover:text-hydw-pink"><a href="/">Max Miller</a></h2>
         </div>
-        <div className="page-grid text-left relative mt-14 md:mt-0">
+        <div className="director page-grid text-left relative mt-14 md:mt-0">
           <div className="directorthumb col-span-12 page-grid md:absolute md:top-[100px] md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-4 lg:col-span-6 lg:col-start-6 aspect-video bg-test-grey"></div>
           </div>
-          <h2 className="director relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">Fjord</h2>
+          <h2 className="director relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4  hover:text-hydw-orange"><a href="/">Fjord</a></h2>
         </div>
         <div className="director page-grid text-left relative mt-14 md:mt-0">
           <div className="directorthumb col-span-12 page-grid md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-1 lg:col-span-6 lg:col-start-1 aspect-video bg-test-grey "></div>
           </div>
-          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">THE PERLORIANS</h2>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4 hover:text-hydw-pink"><a href="/">THE PERLORIANS</a></h2>
         </div> 
         <div className="director page-grid text-left relative mt-14 md:mt-0">
           <div className="directorthumb col-span-12 page-grid md:absolute md:-top-[10px] md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-3 lg:col-span-6 lg:col-start-3 aspect-video bg-test-grey "></div>
           </div>
-          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">TINY BULLET</h2>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4 hover:text-hydw-orange"><a href="/">TINY BULLET</a></h2>
         </div> 
         <div className="director page-grid text-left relative mt-14 md:mt-0">
           <div className="directorthumb col-span-12 page-grid md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-6 lg:col-span-6 lg:col-start-7 aspect-video bg-test-grey "></div>
           </div>
-          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">LIZZY BAILEY</h2>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4 hover:text-hydw-pink"><a href="/">LIZZY BAILEY</a></h2>
         </div>
         <div className="director page-grid text-left relative mt-14 md:mt-0">
           <div className="directorthumb col-span-12 page-grid md:absolute md:-bottom-[200px] md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-6 lg:col-span-6 lg:col-start-7 aspect-video bg-test-grey "></div>
           </div>
-          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">MACFARLANE BROTHERS</h2>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4 hover:text-hydw-orange"><a href="/">MACFARLANE BROTHERS</a></h2>
         </div>
         <div className="director page-grid text-left relative mt-14 md:mt-0">
           <div className="directorthumb col-span-12 page-grid md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-6 aspect-video bg-test-grey "></div>
           </div>
-          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">STEPH SMITH</h2>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4 hover:text-hydw-pink"><a href="/">STEPH SMITH</a></h2>
         </div>
         <div className="director page-grid text-left relative mt-14 md:mt-0">
           <div className="directorthumb col-span-12 page-grid md:absolute md:-bottom-[22px] md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-1 lg:col-span-6 lg:col-start-1 aspect-video bg-test-grey "></div>
           </div>
-          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">SHANKS</h2>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4 hover:text-hydw-orange"><a href="/">SHANKS</a></h2>
         </div>
         <div className="director page-grid text-left relative mt-14 md:mt-0">
           <div className="directorthumb col-span-12 page-grid md:absolute md:-bottom-[22px] md:left-0 w-full">
             <div className="col-span-10 col-start-1 md:col-span-8 md:col-start-3 lg:col-span-6 lg:col-start-3 aspect-video bg-test-grey "></div>
           </div>
-          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4">PATTO</h2>
+          <h2 className="relative z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 heading2 uppercase text-hydw-blue mt-4 hover:text-hydw-pink"><a href="/">PATTO</a></h2>
         </div>
 
       </section>
