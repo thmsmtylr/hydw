@@ -37,40 +37,55 @@ export default async function Page() {
 
   return (
     <main className="largepadding bg-hydw-vanilla">
-      <section className="wrapper parentcover bg-hydw-yellow">
-          <div className="order-1 col-span-6 col-start-6 md:col-span-3 md:col-start-6 lg:col-start-6 largeheight">
-              <Image className="rotate-45 max-w-[50px] lg:max-w-[100px] m-auto mt-4 lg:mb-0"
-                src="/img/beer.png"
-                alt="beer"
-                width={100}
-                height={170}
-              />
-            </div>
-          <div className="order-4 lg:order-2 col-span-6 col-start-1 md:col-span-2 md:col-start-1 mt-14 md:mt-0">
-            <Image className="-rotate-12 max-w-[90px] lg:max-w-[177px] m-auto mt-4 lg:mb-0"
-              src="/img/console.png"
-              alt="Gaming controller"
-              width={177}
-              height={123}
-           />
-        </div>
-        <div className="pageheading order-2 lg:order-3 text-center items-center justify-center">
+      <section className="wrapper parentcover bg-hydw-yellow relative overflow-hidden">
+        <div className="pageheading text-center items-center justify-center largespace">
             <PageHeading title={title} />
         </div>
-        <div className="order-5 lg:order-4 col-span-6 col-start-7 md:col-span-2 md:col-start-7 lg:col-start-1 xl:col-start-2 mt-14 md:mt-0">
-            <Image className="max-w-[80px] lg:max-w-[135px] m-auto mt-14 md:mt-32 lg:mb-0"
-              src="/img/bag.png"
-              alt="Takeaway Bag"
-              width={135}
-              height={216}
-           />
-        </div>
-        <div className="order-3 lg:order-5 description">
+        <div className="description">
           <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
           {/* Note: Need Subtitle */}
             <p className={`body smallestspace`}>{description}</p>
         </div>
+        <div className="mt-7 lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
+            <div className="md:order-1 lg:order-1 col-span-6 col-start-6 md:col-span-3 md:col-start-4 lg:col-start-6">
+                <Image className="rotate-45 max-w-[50px] md:max-w-[80px] xl:max-w-[100px] m-auto md:mt-4 lg:mb-0"
+                  src="/img/beer.png"
+                  alt="beer"
+                  width={100}
+                  height={170}
+                />
+            </div>
+            <div className="md:order-3 lg:order-2 col-span-6 col-start-1 md:col-span-3 md:col-start-1">
+              <Image className="-rotate-12 max-w-[90px] md:max-w-[140px] xl:max-w-[177px] lg:m-auto -mt-8 lg:-mt-14"
+                src="/img/console.png"
+                alt="Gaming controller"
+                width={177}
+                height={123}
+            />
+            </div>
+            <div className="md:order-4 lg:order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-5 lg:col-start-1 xl:col-start-2 mt-14 md:mt-0">
+              <Image className="max-w-[80px] md:max-w-[120px] xl:max-w-[135px] m-auto lg:mt-80"
+                src="/img/bag.png"
+                alt="Takeaway Bag"
+                width={135}
+                height={216}
+                />
+            </div>
+          </div>
       </section>
+      <div className="page-grid wrapper w-full h-[0px] relative">
+      <div className="md:order-2 lg:order-4 col-span-4 col-start-9 relative z-[40]">
+              <Parallax className="relative">
+                  <Image className="rotate-12 max-w-[450px] m-auto absolute -top-[300px] md:-top-[450px] lg:-top-[300px] left-0"
+                    src="/img/toreplace/HYDWP_HeapsNormal-min.png"
+                    alt="alt here"
+                    width={450}
+                    height={388}
+                  />
+              </Parallax>
+            </div>
+      </div>
+      
 
       <div className="smallerspace wrapper page-grid sticky top-[66px] md:top-[16px] lg:top-[8px] z-[30]">
         <ul className="col-span-12 col-start-1 md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3 flex flex-wrap text-hydw-charcoal">

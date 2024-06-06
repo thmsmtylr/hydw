@@ -28,7 +28,7 @@ export function PageHeading({ title }: { title: string }) {
       whileInView="visible"
       variants={variants}
       viewport={{ once: true }}
-      className={`heading1 mx-auto flex h-36 justify-center items-center overflow-hidden text-12xl uppercase text-hydw-charcoal transition-colors duration-200 will-change-transform`}
+      className={`heading1 mx-auto flex justify-center items-center overflow-hidden uppercase text-hydw-charcoal transition-colors duration-200 will-change-transform`}
     >
       {letters.map((item: string, index: number) => (
         <motion.span

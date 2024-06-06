@@ -101,7 +101,7 @@ module.exports = {
         },
         '.page-grid': {
           display: 'grid',
-          gridAutoRows: 'min',
+          gridAutoRows: 'min-content',
           gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
           gap: '0.625rem', // 2.5 in Tailwind CSS
           '@screen md': {

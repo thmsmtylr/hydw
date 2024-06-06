@@ -157,7 +157,7 @@
   }
 
   .parentcover {
-    @apply page-grid min-h-screen overflow-hidden py-10;
+    @apply page-grid min-h-screen py-10;
   }
 
   .pageheading {
