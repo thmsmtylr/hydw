@@ -37,39 +37,50 @@ export default async function Page() {
 
   return (
     <main className="overflow-hidden largepadding bg-hydw-vanilla layoutb">
-      <section className="wrapper parentcover bg-hydw-yellow ">
-          <div className="order-1 rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-7 largeheight">
-              <Image className="max-w-[120px] lg:max-w-[190px] m-auto mt-4 lg:mb-0"
-                src="/img/sun.png"
-                alt="Sun"
-                width={190}
-                height={160}
-              />
-            </div>
-          <div className="order-4 lg:order-2 -rotate-12 col-span-6 col-start-1 md:col-span-2 md:col-start-1 mt-14 md:mt-0">
-            <Image className="max-w-[80px] lg:max-w-[102px] m-auto mt-4 lg:mb-0"
-              src="/img/youtube.png"
-              alt="Youtube"
-              width={102}
-              height={102}
-           />
-        </div>
-        <div className="pageheading order-2 lg:order-3 text-center items-center justify-center">
+      <section className="wrapper parentcover bg-hydw-yellow relative">
+        <div className="pageheading text-center items-center justify-center largespace">
             <PageHeading title={title} />
         </div>
-        <div className="order-3 lg:order-4 description">
+        <div className="description">
           <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
           {/* Note: Need Subtitle */}
             <p className={`body smallestspace`}>{description}</p>
         </div>
-        
-        <div className="order-5 rotate-12 col-span-6 col-start-7 md:col-span-2 md:col-start-9">
-            <Image className="max-w-[102px] lg:max-w-[170px] m-auto mt-4 lg:mb-0"
-              src="/img/yeezus.png"
-              alt="Finding Yeezus"
-              width={170}
-              height={126}
-           />
+        <div className="lg:wrapper lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
+          <div className="order-3 lg:order-1 col-span-6 col-start-1 md:col-span-3 md:col-start-3 lg:col-span-3 lg:col-start-7">
+                <Image className="rotate-[24deg] max-w-[100px] md:max-w-[110px] lg:max-w-[120px] ml-4 md:mx-auto mt-7 md:mt-9 lg:mt-0"
+                  src="/img/grousehouse.png"
+                  alt="Grouse House logo"
+                  width={137}
+                  height={179}
+                />
+              </div>
+            <div className="order-1 lg:order-2 col-span-6 col-start-1 md:col-span-3 md:col-start-1">
+              <Image className="max-w-[120px] md:max-w-[150px] lg:max-w-[175px] m-auto mt-14 md:-mt-3 lg:mt-80"
+                src="/img/computer.png"
+                alt="Laptop with youtube"
+                width={188}
+                height={175}
+            />
+          </div>
+            <div className="order-2 lg:order-3 col-span-6 col-start-7 lg:col-span-3 md:col-start-10 lg:col-start-11">
+                <Image className="rotate-[17deg] max-w-[120px] md:max-w-[140px] lg:max-w-[166px] m-auto lg:text-right xl:mx-auto relative mt-7 lg:mt-80"
+                  src="/img/subscribers.png"
+                  alt="Subscriber count"
+                  width={166}
+                  height={92}
+              />
+            </div>
+            <div className="order-4 col-span-6 col-start-7 md:col-span-5 md:col-start-8 lg:col-span-5 lg:col-start-8 z-30">
+                <Parallax className="relative">
+                    <Image className="rotate-12 max-w-[300px] md:max-w-[400px] m-auto md:absolute md:-bottom-[400px] lg:-bottom-[400px] xl:left-0 xl:translate-x-1/2"
+                      src="/img/toreplace/HYDWP_Website_4.png"
+                      alt="alt here"
+                      width={450}
+                      height={388}
+                    />
+                </Parallax>
+          </div>
         </div>
       </section>
       <PageLayout title={title} description={description} items={works} />

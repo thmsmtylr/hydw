@@ -37,7 +37,7 @@ export default async function Page() {
 
   return (
     <main className="overflow-hidden largepadding bg-hydw-vanilla podcastlayout">
-      <section className="wrapper parentcover bg-hydw-pink">
+      <section className="wrapper parentcover bg-hydw-pink relative">
         <div className="pageheading text-center items-center justify-center largespace">
             <PageHeading title={title} />
         </div>

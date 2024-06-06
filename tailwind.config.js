@@ -14,7 +14,7 @@ module.exports = {
         'ambit': ['ambit', 'sans-serif'],
       },
       fontSize: {
-        "dt2xl": ["160px", "85%"],
+        "dt2xl": ["150px", "85%"],
         "dtxl": ["94px", "85%"],
         "dtlg": ["60px", "95%"],
         "dtmed": ["32px", "85%"],
