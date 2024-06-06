@@ -38,49 +38,53 @@ export default async function Page() {
   return (
     <main className="overflow-hidden largepadding bg-hydw-vanilla layouta">
       <section className="wrapper parentcover bg-hydw-pink">
-          <div className="order-1 -rotate-12 col-span-6 col-start-6 md:col-span-3 md:col-start-9 largeheight">
-              <Image className="max-w-[120px] md:max-w-[150px] lg:max-w-[190px] m-auto mt-4 lg:mb-0 relative md:top-[100px]"
-                src="/img/camera.png"
-                alt="camera"
-                width={190}
-                height={160}
-              />
-            </div>
-          <div className="order-4 lg:order-2 -rotate-12 col-span-6 col-start-1 md:col-span-3 md:col-start-2 mt-14 lg:mt-0">
-            <Image className="max-w-[120px] md:max-w-[150px] lg:max-w-[184px] m-auto mt-4 lg:mb-0"
-              src="/img/ticket.png"
-              alt="Film ticket"
-              width={184}
-              height={85}
-           />
-        </div>
-        <div className="pageheading order-2 lg:order-3 text-center items-center justify-center">
+        <div className="pageheading text-center items-center justify-center largespace">
             <PageHeading title={title} />
         </div>
-        <div className="order-3 lg:order-4 description">
+        <div className="description">
           <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
           {/* Note: Need Subtitle */}
             <p className={`body smallestspace`}>{description}</p>
         </div>
+
+        <div className="mt-7 lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
+          <div className="order-2 lg:order-1 col-span-6 col-start-7 lg:col-span-3 lg:col-start-9">
+                <Image className="-rotate-12 max-w-[120px] md:max-w-[150px] lg:max-w-[190px] m-auto mt-4 lg:mb-0 relative md:top-[100px]"
+                  src="/img/camera.png"
+                  alt="camera"
+                  width={190}
+                  height={160}
+                />
+              </div>
+            <div className="order-1 lg:order-2 col-span-6 col-start-1 lg:col-span-3 lg:col-start-2 mt-14 lg:mt-0">
+              <Image className="-rotate-12 max-w-[120px] md:max-w-[150px] lg:max-w-[184px] m-auto mt-4 lg:mb-0"
+                src="/img/ticket.png"
+                alt="Film ticket"
+                width={184}
+                height={85}
+            />
+          </div>
+          <div className="order-3 md:order-4 col-span-6 col-start-7 lg:col-span-2 lg:col-start-11">
+              <Image className="rotate-12 max-w-[55px] md:max-w-[80px] lg:max-w-[97px] m-auto mt-4 relative md:mt-[100px] lg:mt-[200px]"
+                src="/img/popcorn.png"
+                alt="popcorn"
+                width={97}
+                height={172}
+            />
+          </div>
+          <div className="order-4 md:order-3 col-span-6 col-start-4 md:col-start-1 lg:col-span-5 lg:col-start-1 relative lg:mt-0">
+                <Parallax className="relative">
+                    <Image className="rotate-12 max-w-[450px] m-auto lg:absolute lg:-bottom-[600px]"
+                      src="/img/toreplace/HYDWP_Nippers_2-min.png"
+                      alt="alt here"
+                      width={450}
+                      height={388}
+                    />
+                </Parallax>
+          </div>
+        </div>
         
-        <div className="order-5 rotate-12 col-span-6 col-start-7 md:col-span-2 md:col-start-11">
-            <Image className="max-w-[55px] md:max-w-[80px] lg:max-w-[97px] m-auto mt-4 lg:mb-0 relative md:mt-[100px]"
-              src="/img/popcorn.png"
-              alt="popcorn"
-              width={97}
-              height={172}
-           />
-        </div>
-        <div className="order-6 col-span-6 col-start-4 lg:col-span-5 lg:col-start-1 relative mt-14 lg:mt-0">
-              <Parallax className="">
-                  <Image className="rotate-12 max-w-[450px] m-auto lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2"
-                    src="/img/toreplace/HYDWP_Nippers_2-min.png"
-                    alt="alt here"
-                    width={450}
-                    height={388}
-                  />
-              </Parallax>
-        </div>
+        
       </section>
       <PageLayout title={title} description={description} items={works} />
     </main>
