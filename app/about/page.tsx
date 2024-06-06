@@ -46,9 +46,14 @@ export default async function Page() {
   return (
     <main className="bg-hydw-orange wrapper largepadding">
       <section className="page-grid relative">
-          <div className="pointer-events-none col-span-12 absolute w-full h-full top-0 left-0 page-grid">
-            <div className="col-span-6 col-start-5 md:col-span-3 md:col-start-7 largeheight">
-                <Image className="rotate-12 max-w-[140px] lg:max-w-[200px] m-auto mt-4 lg:mb-0"
+          
+
+          <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
+            {title && <PageHeading title={title} />}
+          </div>
+        <div className="wrapper pointer-events-none col-span-12 absolute w-full h-full top-0 left-0 page-grid">
+            <div className="col-span-6 col-start-5 md:col-span-3 md:col-start-7">
+                <Image className="rotate-12 max-w-[120px] md:max-w-[150px] lg:max-w-[200px] m-auto md:-mt-14 lg:-mt-4"
                     src="/img/auntydonna.png"
                     alt="Aunty Donna"
                     width={227}
@@ -56,15 +61,15 @@ export default async function Page() {
                   />
             </div>
             <div className="col-span-6 md:col-span-3 md:col-start-1 relative">
-              <Image className="max-w-[140px] mt-28 lg:max-w-[221px] m-auto lg:mt-0 lg:absolute lg:top-1/2 lg:-translate-y-full lg:left-1/2 lg:-translate-x-1/2"
+              <Image className="-rotate-[16deg] max-w-[140px] md:max-w-[180px] lg:max-w-[221px] lg:mx-auto mt-[30px] md:-mt-[10px] lg:mt-4 lg:absolute lg:top-1/2 lg:-translate-y-full lg:left-1/2 lg:-translate-x-1/2"
                   src="/img/largearm.png"
                   alt="Large Arm"
                   width={221}
                   height={120}
                 />
             </div>
-            <div className="col-span-6 col-start-7 md:col-span-2 md:col-start-10 relative">
-              <Image className="mt-28 -rotate-12 max-w-[90px] lg:max-w-[161px] m-auto lg:absolute lg:top-1/2 lg:translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2"
+            <div className="col-span-6 col-start-7 md:col-span-2 md:col-start-11 relative">
+              <Image className="-rotate-12 max-w-[90px] md:max-w-[120px] lg:max-w-[161px] mt-7 mx-auto lg:absolute lg:top-1/2 lg:translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2"
                   src="/img/drum.png"
                   alt="Everything's a drum"
                   width={161}
@@ -72,11 +77,6 @@ export default async function Page() {
                 />
             </div>
           </div>
-
-          <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
-            {title && <PageHeading title={title} />}
-          </div>
-        
   
             
       </section>
