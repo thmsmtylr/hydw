@@ -21,7 +21,7 @@
   }
 
   .heading1 {
-    @apply text-mbsmxl md:text-mbxl md:text-mb2xl lg:text-dt2xl;
+    @apply text-mbsmxl md:text-mb2xl lg:text-dt2xl;
   }
 
   .heading2 {
@@ -94,9 +94,7 @@
   
 }
 
-  /* Homepage */
 
-  
 
   /* Thumbnail layouts */
 
@@ -104,21 +102,8 @@
     opacity: 100;
   }
 
-  .thumbnail {
-    @apply relative aspect-video bg-test-grey;
-  }
-
   .hoverthumb {
-    @apply absolute left-0 top-0 h-full w-full bg-hydw-pink opacity-0 duration-300;
-  }
-
-  .layoutthumbs {
-    @apply relative col-span-11 after:absolute after:block after:bg-contain after:bg-no-repeat md:col-span-9 md:col-start-1 lg:col-span-8 lg:col-start-2;
-  }
-
-  .layoutthumbs .thumbnail,
-  .layoutthumbs .heading4 {
-    @apply relative z-[50];
+    @apply opacity-0;
   }
 
   /* Layout One */
@@ -141,6 +126,8 @@
   .podcastlayout .layoutthumbs {
     @apply largespace first:mt-0 col-span-8 md:col-span-6 lg:col-span-4 [&:nth-child(1n)]:col-start-4 [&:nth-child(1n)]:md:col-start-7 [&:nth-child(2n)]:col-start-2 [&:nth-child(2n)]:after:-right-[20px] [&:nth-child(2n)]:after:-top-[20px] [&:nth-child(2n)]:after:h-[281px] [&:nth-child(2n)]:after:w-[337px] [&:nth-child(2n)]:after:bg-[url('/img/scribble1_yellow.png')] [&:nth-child(2n)]:md:col-start-4 [&:nth-child(2n)]:after:md:h-[375px] [&:nth-child(2n)]:after:md:w-[450px] [&:nth-child(2n)]:after:lg:-right-[40px] [&:nth-child(2n)]:after:lg:-top-[40px] [&:nth-child(2n)]:after:xl:h-[560px] [&:nth-child(2n)]:after:xl:w-[675px] [&:nth-child(3n)]:col-start-7 [&:nth-child(3n)]:after:-right-[20px] [&:nth-child(3n)]:after:-top-[20px] [&:nth-child(3n)]:after:h-[281px] [&:nth-child(3n)]:after:w-[337px] [&:nth-child(3n)]:after:bg-[url('/img/scribble2_blue.png')] [&:nth-child(3n)]:after:md:h-[375px] [&:nth-child(3n)]:after:md:w-[450px] [&:nth-child(3n)]:after:lg:-right-[40px] [&:nth-child(3n)]:after:lg:-top-[40px] [&:nth-child(3n)]:after:xl:h-[560px] [&:nth-child(3n)]:after:xl:w-[675px] [&:nth-child(4n)]:col-start-2 [&:nth-child(5n)]:col-start-5 [&:nth-child(5n)]:after:-right-[20px] [&:nth-child(5n)]:after:-top-[20px] [&:nth-child(5n)]:after:bg-[url('/img/scribble1_pink.png')] [&:nth-child(5n)]:after:md:h-[375px] [&:nth-child(5n)]:after:md:w-[450px] [&:nth-child(5n)]:after:lg:-right-[40px] [&:nth-child(5n)]:after:lg:-top-[40px] [&:nth-child(5n)]:after:xl:h-[560px] [&:nth-child(5n)]:after:xl:w-[675px];
   }
+
+    /* Adding images to layout */
 
   .image1,
   .image2 {
@@ -165,18 +152,6 @@
 
   .layoutb.addimage1 .layoutthumbs {
     @apply md:[&:nth-child(2)]:order-3;
-  }
-
-  .parentcover {
-    @apply page-grid min-h-screen py-10;
-  }
-
-  .pageheading {
-    @apply col-span-12 xl:col-span-10 xl:col-start-2;
-  }
-
-  .description {
-    @apply col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5;
   }
 
 

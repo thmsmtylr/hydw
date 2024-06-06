@@ -81,8 +81,8 @@ export default async function Page() {
           </div>
 
           <div className="relative col-span-11 md:col-span-9 md:col-start-1 lg:col-span-8 lg:col-start-2 2xl:col-span-6 2xl:col-start-2">
-            <div className="thumbnail">
-              <div className="hoverthumb">
+            <div className="thumbnail relative aspect-video bg-test-grey">
+              <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
                 {/* hover sequence to go here */}
               </div>
               <a href="/">{/* img thumbnail to go here here */}</a>
@@ -121,8 +121,8 @@ export default async function Page() {
             />
           </div>
           <div className="col-span-11 col-start-2 md:col-span-9 md:col-start-2 lg:col-span-8 lg:col-start-4 2xl:col-span-6 2xl:col-start-5">
-            <div className="thumbnail">
-              <div className="hoverthumb">
+            <div className="thumbnail relative aspect-video bg-test-grey">
+              <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
                 {/* hover sequence to go here */}
               </div>
               <a href="/">{/* img thumbnail to go here here */}</a>
@@ -161,8 +161,8 @@ export default async function Page() {
             />
           </div>
           <div className="col-span-11 md:col-span-9 md:col-start-1 lg:col-span-8 lg:col-start-2 2xl:col-span-6 2xl:col-start-2">
-            <div className="thumbnail">
-              <div className="hoverthumb">
+            <div className="thumbnail relative aspect-video bg-test-grey">
+              <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
                 {/* hover sequence to go here */}
               </div>
               <a href="/">{/* img thumbnail to go here here */}</a>
@@ -201,8 +201,8 @@ export default async function Page() {
             />
           </div>
           <div className="col-span-8 col-start-2 md:col-span-6 md:col-start-1 lg:col-span-5 lg:col-start-2 xl:col-span-4 xl:col-start-2">
-            <div className="thumbnail aspect-square">
-              <div className="hoverthumb">
+            <div className="thumbnail relative bg-test-grey aspect-square">
+              <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
                 {/* hover sequence to go here */}
               </div>
               <a href="/">{/* img thumbnail to go here here */}</a>
@@ -237,8 +237,8 @@ export default async function Page() {
             />
           </div>
           <div className="col-span-11 md:col-span-9 md:col-start-2 lg:col-span-8 lg:col-start-5 2xl:col-span-6 2xl:col-start-5">
-            <div className="thumbnail">
-              <div className="hoverthumb">
+            <div className="thumbnail relative aspect-video bg-test-grey">
+              <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
                 {/* hover sequence to go here */}
               </div>
               <a href="/">{/* img thumbnail to go here here */}</a>

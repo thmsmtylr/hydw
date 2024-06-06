@@ -37,11 +37,11 @@ export default async function Page() {
 
   return (
     <main className="overflow-hidden largepadding bg-hydw-vanilla layoutb">
-      <section className="wrapper parentcover bg-hydw-yellow relative">
-        <div className="pageheading text-center items-center justify-center largespace">
+      <section className="wrapper page-grid min-h-screen py-10 bg-hydw-yellow relative">
+        <div className="col-span-12 xl:col-span-10 xl:col-start-2 text-center items-center justify-center largespace">
             <PageHeading title={title} />
         </div>
-        <div className="description">
+        <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
           <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
           {/* Note: Need Subtitle */}
             <p className={`body smallestspace`}>{description}</p>

@@ -46,7 +46,6 @@ export default async function Page() {
   return (
     <main className="bg-hydw-orange wrapper largepadding">
       <section className="page-grid relative">
-          
 
           <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
             {title && <PageHeading title={title} />}
