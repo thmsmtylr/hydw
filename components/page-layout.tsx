@@ -21,7 +21,7 @@ export function PageLayout({
           const { id, videoLink, title, description, image: url } = item;
           const credits = buildMDX(item.credits || "");
           return (
-            <div className="layoutthumbs largespace" key={id}>
+            <div className="layoutthumbs" key={id}>
               <div className="thumbnail">
                 <div className="hoverthumb">
                   {/* hover sequence to go here */}

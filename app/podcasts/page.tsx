@@ -47,28 +47,28 @@ export default async function Page() {
             <p className={`body smallestspace`}>{description}</p>
         </div>
         <div className="lg:wrapper lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
-          <div className="col-span-6 col-start-6 md:col-span-3 md:col-start-7">
-                <Image className="rotate-12 max-w-[120px] md:max-w-[160px] lg:max-w-[190px] m-auto mt-14 lg:mt-4"
-                  src="/img/sun.png"
-                  alt="Sun"
-                  width={190}
-                  height={160}
+          <div className="order-2 lg:order-1 col-span-6 col-start-7 md:col-span-3 md:col-start-9 lg:col-span-3 lg:col-start-9">
+                <Image className="rotate-12 max-w-[100px] md:max-w-[120px] lg:max-w-[140px] m-auto mt-14 lg:mt-4"
+                  src="/img/thefooty.png"
+                  alt="The Footy"
+                  width={127}
+                  height={140}
                 />
               </div>
-            <div className="col-span-6 col-start-1 md:col-span-2 md:col-start-1">
-              <Image className="-rotate-12 max-w-[80px] md:max-w-[90px] lg:max-w-[102px] m-auto mt-14"
-                src="/img/youtube.png"
-                alt="Youtube"
-                width={102}
-                height={102}
+            <div className="order-1 lg:order-2 col-span-6 col-start-1 md:col-span-3 md:col-start-3 lg:col-span-3 lg:col-start-2">
+              <Image className="-rotate-12 max-w-[160px] md:max-w-[180px] lg:max-w-[200px] m-auto mt-7 md:mt-0 lg:mt-96"
+                src="/img/lancomp.png"
+                alt="Lan Party"
+                width={201}
+                height={197}
             />
           </div>
-            <div className="col-span-6 col-start-7 md:col-span-2 md:col-start-9 lg:col-start-11">
-                <Image className="rotate-12 max-w-[102px] md:max-w-[140px] lg:max-w-[170px] m-auto lg:text-right xl:mx-auto relative mt-32 lg:mt-80"
-                  src="/img/yeezus.png"
-                  alt="Finding Yeezus"
-                  width={170}
-                  height={126}
+            <div className="order-3 lg:order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-2 lg:col-span-2 lg:col-start-11">
+                <Image className="-rotate-45 max-w-[120px] md:max-w-[140px] lg:max-w-[160px] m-auto lg:text-right xl:mx-auto relative mt-24 lg:mt-80"
+                  src="/img/ham.png"
+                  alt="Bertocchi Ham"
+                  width={160}
+                  height={150}
               />
             </div>
             

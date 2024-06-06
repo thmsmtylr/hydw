@@ -48,7 +48,7 @@ export default async function Page() {
         </div>
         <div className="lg:wrapper lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
           <div className="-rotate-[9deg] col-span-6 col-start-5 md:col-span-3 md:col-start-7">
-                <Image className="max-w-[120px] md:max-w-[140px] lg:max-w-[150px] m-auto mt-7"
+                <Image className="max-w-[120px] md:max-w-[140px] lg:max-w-[150px] m-auto mt-7 lg:mt-0"
                   src="/img/frog.png"
                   alt="Frog"
                   width={168}
