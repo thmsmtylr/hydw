@@ -23,6 +23,7 @@ module.exports = {
         "dtsxml": ["14px", "120%"],
         "mb2xl": ["80px", "85%"],
         "mbxl": ["60px", "85%"],
+        "mbsmxl": ["40px", "85%"],
         "mblg": ["32px", "95%"],
         "mbmed": ["24px", "85%"],
         "mbbase": ["18px", "120%"],

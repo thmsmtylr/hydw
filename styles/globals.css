@@ -5,7 +5,6 @@
 @layer base {
   /* Setup */
 
-
   img,
   svg {
     @apply h-auto w-[100%];
@@ -22,11 +21,11 @@
   }
 
   .heading1 {
-    @apply text-mbxl md:text-mb2xl lg:text-dt2xl;
+    @apply text-mbsmxl md:text-mbxl md:text-mb2xl lg:text-dt2xl;
   }
 
   .heading2 {
-    @apply text-mbxl lg:text-dtxl;
+    @apply text-mbsmxl md:text-mbxl lg:text-dtxl;
   }
 
   .heading3 {
@@ -52,11 +51,6 @@
     @apply text-mbbase lg:text-dtbase;
   }
 
-  i,
-  em {
-    @apply italic;
-  }
-
   .smallbody {
     @apply text-dtsml;
   }
@@ -80,6 +74,25 @@
   .leftheader h1 {
     @apply justify-normal;
   }
+
+  .heading1, .heading2, .heading3, .heading4, .heading5, .heading6, .font-flyer{
+    word-spacing:-5px;
+  }
+
+  .heading4, .heading5{
+    word-spacing:-2.5px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+  .heading1, .heading2, .heading3, .font-flyer{
+    word-spacing:-10px;
+  }
+
+  .heading4, .heading5{
+    word-spacing:-5px;
+  }
+  
+}
 
   /* Homepage */
 

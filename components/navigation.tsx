@@ -40,7 +40,7 @@ export function Navigation(props: NavigationComponentProps) {
             <nav className="wrapper absolute top-0 left-0 flex w-full h-screen flex-col items-center justify-center">
               {navItems.map((item, index: number) => (
                 <motion.div
-                  className="inline-block h-[51px] lg:h-[79.9px] overflow-hidden px-8 will-change-transform"
+                  className="inline-block h-[34px] md:h-[51px] lg:h-[79.9px] overflow-hidden px-8 will-change-transform"
                   key={item.id}
                   initial="initial"
                   whileHover="hover"
