@@ -93,6 +93,33 @@ module.exports = {
             marginTop: '0.875rem', // equivalent to lg:mt-3.5
           },
         },
+        '.largeheight': {
+          height: '7rem', // 28 in Tailwind CSS is 7rem
+          '@media (min-width: 1024px) and (min-height: 1000px)': {
+            height: '13rem', // 52 in Tailwind CSS is 13rem
+          },
+        },
+        '.page-grid': {
+          display: 'grid',
+          gridAutoRows: 'min',
+          gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
+          gap: '0.625rem', // 2.5 in Tailwind CSS
+          '@screen md': {
+            gap: '1.25rem', // 5 in Tailwind CSS
+          },
+        },
+        '.grid-gap': {
+          gap: '0.625rem', // 2.5 in Tailwind CSS
+          '@screen md': {
+            gap: '1.25rem', // 5 in Tailwind CSS
+          },
+        },
+        '.wrapper': {
+          padding: '0.625rem', // 2.5 in Tailwind CSS
+          '@screen md': {
+            padding: '2.5rem', // 10 in Tailwind CSS
+          },
+        },
       };
 
       addComponents(newComponents);

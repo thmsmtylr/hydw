@@ -6,44 +6,10 @@
   /* Setup */
 
 
-  .page-grid {
-    @apply grid auto-rows-min grid-cols-12 gap-x-2.5 md:gap-x-5;
-  }
-
-  .grid-gap {
-    @apply gap-x-2.5 md:gap-x-5;
-  }
-
-  .wrapper {
-    @apply p-2.5 md:p-10;
-  }
-
   img,
   svg {
     @apply h-auto w-[100%];
   }
-
-  /* .smallerspace,
-  .heading4 + .body,
-  .heading5 + .body,
-  .body p + p {
-    @apply mt-2.5 lg:mt-3.5;
-  } */
-
-  .largeheight{
-    @apply h-28;
-  }
-
-  @media screen and ( min-width: 1024px ) and ( min-height: 1000px )
-  {
-    .largeheight{
-          @apply h-28 lg:h-52;
-        }
-      }
-
-  
-
-
 
   /* Typography */
 
