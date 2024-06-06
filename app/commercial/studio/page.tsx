@@ -20,7 +20,7 @@ export default async function Page() {
       </div>
     
     <section id="studio" className="midspace wrapper page-grid overflow-x-hidden overflow-y-auto largepadding">
-      <h1 className="heading3 col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3 text-hydw-blue">
+      <h1 className="mt-7 md:mt-0 heading3 col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3 text-hydw-blue">
         Our Studio
       </h1>
       <p className="body midspace col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3 text-hydw-blue">
