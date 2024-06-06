@@ -45,34 +45,38 @@ export default async function Page() {
 
   return (
     <main className="bg-hydw-orange wrapper largepadding">
-      <section className="page-grid">
-          <div className="col-span-6 col-start-4 md:col-span-3 md:col-start-7 largeheight">
-              <Image className="rotate-12 max-w-[140px] lg:max-w-[200px] m-auto mt-4 lg:mb-0"
-                  src="/img/auntydonna.png"
-                  alt="Aunty Donna"
-                  width={227}
-                  height={138}
-                />
-          </div>
-          <div className="col-span-12 md:col-span-10 md:col-start-2">
-            {title && <PageHeading title={title} />}
-          </div>
-          <div className="col-span-6 md:col-span-3 md:col-start-1 relative">
-              <Image className="max-w-[140px] lg:max-w-[221px] m-auto lg:mt-0 lg:absolute lg:top-1/2 lg:-translate-y-full lg:left-1/2 lg:-translate-x-1/2"
+      <section className="page-grid relative">
+          <div className="pointer-events-none col-span-12 absolute w-full h-full top-0 left-0 page-grid">
+            <div className="col-span-6 col-start-5 md:col-span-3 md:col-start-7 largeheight">
+                <Image className="rotate-12 max-w-[140px] lg:max-w-[200px] m-auto mt-4 lg:mb-0"
+                    src="/img/auntydonna.png"
+                    alt="Aunty Donna"
+                    width={227}
+                    height={138}
+                  />
+            </div>
+            <div className="col-span-6 md:col-span-3 md:col-start-1 relative">
+              <Image className="max-w-[140px] mt-28 lg:max-w-[221px] m-auto lg:mt-0 lg:absolute lg:top-1/2 lg:-translate-y-full lg:left-1/2 lg:-translate-x-1/2"
                   src="/img/largearm.png"
                   alt="Large Arm"
                   width={221}
                   height={120}
                 />
-          </div>
-          <div className="col-span-6 col-start-7 md:col-span-2 md:col-start-10 relative">
-              <Image className="-rotate-12 max-w-[90px] lg:max-w-[161px] m-auto lg:absolute lg:top-1/2 lg:translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2"
+            </div>
+            <div className="col-span-6 col-start-7 md:col-span-2 md:col-start-10 relative">
+              <Image className="mt-28 -rotate-12 max-w-[90px] lg:max-w-[161px] m-auto lg:absolute lg:top-1/2 lg:translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2"
                   src="/img/drum.png"
                   alt="Everything's a drum"
                   width={161}
                   height={130}
                 />
+            </div>
           </div>
+
+          <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
+            {title && <PageHeading title={title} />}
+          </div>
+        
   
             
       </section>
