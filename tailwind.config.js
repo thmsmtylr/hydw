@@ -120,15 +120,15 @@ module.exports = {
           display: "grid",
           gridAutoRows: "min-content",
           gridTemplateColumns: "repeat(12, minmax(0, 1fr))",
-          gap: "0.625rem", // 2.5 in Tailwind CSS
+          columnGap: "0.625rem", // 2.5 in Tailwind CSS
           "@screen md": {
-            gap: "1.25rem", // 5 in Tailwind CSS
+            columnGap: "1.25rem", // 5 in Tailwind CSS
           },
         },
         ".grid-gap": {
-          gap: "0.625rem", // 2.5 in Tailwind CSS
+          columnGap: "0.625rem", // 2.5 in Tailwind CSS
           "@screen md": {
-            gap: "1.25rem", // 5 in Tailwind CSS
+            columnGap: "1.25rem", // 5 in Tailwind CSS
           },
         },
         ".wrapper": {

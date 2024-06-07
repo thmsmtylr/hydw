@@ -698,6 +698,8 @@ export type HomeModelFilter = {
   category?: InputMaybe<LinksFilter>;
   description?: InputMaybe<StringFilter>;
   id?: InputMaybe<ItemIdFilter>;
+  posterImage?: InputMaybe<FileFilter>;
+  showreel?: InputMaybe<VideoFilter>;
 };
 
 export enum HomeModelOrderBy {
@@ -743,6 +745,8 @@ export type HomeRecord = RecordInterface & {
   category: Array<PageRecord>;
   description: Scalars['String']['output'];
   id: Scalars['ItemId']['output'];
+  posterImage: AltFileField;
+  showreel: VideoField;
 };
 
 

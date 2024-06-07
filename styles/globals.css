@@ -42,7 +42,7 @@
     @apply underline duration-300 hover:text-hydw-pink;
   }
 
-  .bg-hydw-orange a {
+  .bg-hydw-orange a, .bg-hydw-pink a {
     @apply hover:text-hydw-yellow;
   }
 
