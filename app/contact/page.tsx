@@ -34,7 +34,7 @@ export default async function Page() {
   const legals = data.contact?.legals || "";
 
   return (
-    <main className="leftheader bg-hydw-yellow wrapper largepadding">
+    <main className="leftheader bg-hydw-yellow wrapper largepadding overflow-hidden">
       <section className="page-grid largepadding">
           <div className="col-span-12 md:col-span-8 md:col-start-2 xl:col-span-6 xl:col-start-2 largespace">
             <PageHeading title={title} />
@@ -71,7 +71,7 @@ export default async function Page() {
             {legals}
           </p>
         </div>
-        <div className="col-span-6 col-start-4 lg:col-span-5 lg:col-start-2 lg:h-[130px] 2xl:h-[80px] mt-7 lg:mt-0">
+        <div className="col-span-6 col-start-4 lg:col-span-5 lg:col-start-2 lg:h-[130px] 2xl:h-[80px] mt-7 lg:mt-0 2xl:mb-[120px]">
             <Parallax className="">
               <Image className="max-w-[450px] relative lg:-top-[50px] xl:-top-[120px] 2xl:-top-[180px]"
                     src="/img/toreplace/HYDWP_CoffeeCafe-min.png"
