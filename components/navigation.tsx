@@ -26,7 +26,7 @@ export function Navigation(props: NavigationComponentProps) {
           <DialogPrimitive.Content>
             <div className="flex w-full items-center justify-end p-11">
               <motion.button
-                className={`heading5 uppercase text-white transition-colors duration-150 hover:text-hydw-yellow relative z-50`}
+                className={`heading5 relative z-50 uppercase text-white transition-colors duration-150 hover:text-hydw-yellow`}
                 type="button"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="menu"
@@ -37,10 +37,10 @@ export function Navigation(props: NavigationComponentProps) {
                 Close
               </motion.button>
             </div>
-            <nav className="wrapper absolute top-0 left-0 flex w-full h-screen flex-col items-center justify-center">
+            <nav className="wrapper absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center">
               {navItems.map((item, index: number) => (
                 <motion.div
-                  className="inline-block h-[34px] md:h-[51px] lg:h-[79.9px] overflow-hidden px-8 will-change-transform"
+                  className="inline-block h-[34px] overflow-hidden px-8 will-change-transform md:h-[51px] lg:h-[79.9px]"
                   key={item.id}
                   initial="initial"
                   whileHover="hover"
@@ -49,13 +49,13 @@ export function Navigation(props: NavigationComponentProps) {
                   <Link href={item.path} onClick={() => setMenuOpen(!menuOpen)}>
                     <motion.div
                       variants={navVariants}
-                      className={`text-center heading2 text-white no-underline uppercase`}
+                      className={`heading2 text-center uppercase text-white no-underline`}
                     >
                       {item.title}
                     </motion.div>
                     <motion.div variants={navVariants}>
                       <div
-                        className={`skew-x-40 text-center heading2 font-white uppercase tracking-normal ${
+                        className={`font-white heading2 skew-x-40 text-center uppercase tracking-normal ${
                           isEven(index) ? "text-hydw-yellow" : "text-hydw-pink"
                         }`}
                       >

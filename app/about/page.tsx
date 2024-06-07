@@ -44,52 +44,50 @@ export default async function Page() {
   const sections = data.about?.section;
 
   return (
-    <main className="bg-hydw-orange wrapper largepadding">
+    <main className="largepadding wrapper bg-hydw-orange">
       <section className="page-grid relative">
-
-          <div className="col-span-12 md:col-span-10 md:col-start-2 largespace">
-            {title && <PageHeading title={title} />}
+        <div className="largespace col-span-12 md:col-span-10 md:col-start-2">
+          {title && <PageHeading title={title} />}
+        </div>
+        <div className="page-grid wrapper pointer-events-none absolute left-0 top-0 col-span-12 h-full w-full">
+          <div className="col-span-6 col-start-5 md:col-span-3 md:col-start-7">
+            <Image
+              className="m-auto max-w-[120px] rotate-12 md:-mt-14 md:max-w-[150px] lg:-mt-4 lg:max-w-[200px]"
+              src="/img/auntydonna.png"
+              alt="Aunty Donna"
+              width={227}
+              height={138}
+            />
           </div>
-        <div className="wrapper pointer-events-none col-span-12 absolute w-full h-full top-0 left-0 page-grid">
-            <div className="col-span-6 col-start-5 md:col-span-3 md:col-start-7">
-                <Image className="rotate-12 max-w-[120px] md:max-w-[150px] lg:max-w-[200px] m-auto md:-mt-14 lg:-mt-4"
-                    src="/img/auntydonna.png"
-                    alt="Aunty Donna"
-                    width={227}
-                    height={138}
-                  />
-            </div>
-            <div className="col-span-6 md:col-span-3 md:col-start-1 relative">
-              <Image className="-rotate-[16deg] max-w-[140px] md:max-w-[180px] lg:max-w-[221px] lg:mx-auto mt-[30px] md:-mt-[10px] lg:mt-4 lg:absolute lg:top-1/2 lg:-translate-y-full lg:left-1/2 lg:-translate-x-1/2"
-                  src="/img/largearm.png"
-                  alt="Large Arm"
-                  width={221}
-                  height={120}
-                />
-            </div>
-            <div className="col-span-6 col-start-7 md:col-span-2 md:col-start-11 relative">
-              <Image className="-rotate-12 max-w-[90px] md:max-w-[120px] lg:max-w-[161px] mt-7 mx-auto lg:absolute lg:top-1/2 lg:translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2"
-                  src="/img/drum.png"
-                  alt="Everything's a drum"
-                  width={161}
-                  height={130}
-                />
-            </div>
+          <div className="relative col-span-6 md:col-span-3 md:col-start-1">
+            <Image
+              className="mt-[30px] max-w-[140px] -rotate-[16deg] md:-mt-[10px] md:max-w-[180px] lg:absolute lg:left-1/2 lg:top-1/2 lg:mx-auto lg:mt-4 lg:max-w-[221px] lg:-translate-x-1/2 lg:-translate-y-full"
+              src="/img/largearm.png"
+              alt="Large Arm"
+              width={221}
+              height={120}
+            />
           </div>
-  
-            
+          <div className="relative col-span-6 col-start-7 md:col-span-2 md:col-start-11">
+            <Image
+              className="mx-auto mt-7 max-w-[90px] -rotate-12 md:max-w-[120px] lg:absolute lg:left-1/2 lg:top-1/2 lg:max-w-[161px] lg:-translate-x-1/2 lg:translate-y-1/2"
+              src="/img/drum.png"
+              alt="Everything's a drum"
+              width={161}
+              height={130}
+            />
+          </div>
+        </div>
       </section>
-      <section className="page-grid text-hydw-blue largespace">
+      <section className="largespace page-grid text-hydw-blue">
         <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2">
-        {description && (
-                <h4
-                  className={` heading4 text-hydw-blue leading-[100%]`}
-                  dangerouslySetInnerHTML={{ __html: description }}
-                />
-              )}
-          {bodyTitle && (
-            <h3 className={`smallspace heading3`}>{bodyTitle}</h3>
+          {description && (
+            <h4
+              className={` heading4 leading-[100%] text-hydw-blue`}
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
           )}
+          {bodyTitle && <h3 className={`heading3 smallspace`}>{bodyTitle}</h3>}
           {bodyDescription && (
             <p
               className={`body smallerspace`}
@@ -97,24 +95,24 @@ export default async function Page() {
             />
           )}
 
-        {sections?.map((section, index: number) => {
-                const description = buildMDX(section.description);
-                return (
-                  <div
-                    key={section.id}
-                    className={classNames(
-                      index === sections.length - 1 ? "mb-28" : "",
-                      "smallspace col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2"
-                    )}
-                  >
-                    <div
-                      className={classNames(
-                        isEven(index) ? "order-last" : "order-first",
-                        "relative"
-                      )}
-                    >
-                      <div className="relative flex h-full w-full items-center justify-center">
-                        {/* <Parallax className="">
+          {sections?.map((section, index: number) => {
+            const description = buildMDX(section.description);
+            return (
+              <div
+                key={section.id}
+                className={classNames(
+                  index === sections.length - 1 ? "mb-28" : "",
+                  "smallspace col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2"
+                )}
+              >
+                <div
+                  className={classNames(
+                    isEven(index) ? "order-last" : "order-first",
+                    "relative"
+                  )}
+                >
+                  <div className="relative flex h-full w-full items-center justify-center">
+                    {/* <Parallax className="">
                           <Image
                             src={section.imageTop.url}
                             alt={section.imageTop.alt}
@@ -122,47 +120,42 @@ export default async function Page() {
                             height={480}
                           />
                         </Parallax> */}
-                      </div>
-                    </div>
-                    <div className="">
-                      <h5
-                        className={`heading5 text-hydw-blue`}
-                      >
-                        {section.title}
-                      </h5>
-                      <p
-                        className="body text-hydw-blue"
-                        dangerouslySetInnerHTML={{ __html: description }}
-                      />
-                    </div>
                   </div>
-                  
-                );
-              })}
-      </div>
-      <div className="col-span-4 lg:col-span-4 lg:col-start-9 flex">
-            <Parallax className="relative flex">
-              <Image className="max-w-[450px] h-[auto] self-center"
-                    src="/img/toreplace/HYDWP_Website_3.png"
-                    alt="alt here"
-                    width={398}
-                    height={399}
+                </div>
+                <div className="">
+                  <h5 className={`heading5 text-hydw-blue`}>{section.title}</h5>
+                  <p
+                    className="body text-hydw-blue"
+                    dangerouslySetInnerHTML={{ __html: description }}
                   />
-              </Parallax>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="col-span-4 flex lg:col-span-4 lg:col-start-9">
+          <Parallax className="relative flex">
+            <Image
+              className="h-[auto] max-w-[450px] self-center"
+              src="/img/toreplace/HYDWP_Website_3.png"
+              alt="alt here"
+              width={398}
+              height={399}
+            />
+          </Parallax>
         </div>
 
         <div className="col-span-5 col-start-8 lg:col-span-5 lg:col-start-2">
-            <Parallax className="">
-              <Image className="max-w-[450px]"
-                    src="/img/toreplace/HYDWP_Website_6.png"
-                    alt="alt here"
-                    width={555}
-                    height={321}
-                  />
-              </Parallax>
+          <Parallax className="">
+            <Image
+              className="max-w-[450px]"
+              src="/img/toreplace/HYDWP_Website_6.png"
+              alt="alt here"
+              width={555}
+              height={321}
+            />
+          </Parallax>
         </div>
-      
-      
       </section>
     </main>
   );

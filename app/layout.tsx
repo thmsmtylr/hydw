@@ -4,9 +4,9 @@ import { Analytics } from "@vercel/analytics/react";
 import { request } from "@/lib/datocms";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { HeaderProvider } from "@/contexts/header-context";
 import { LAYOUT_QUERY } from "@/queries/layout-query";
 import { NAVIGATION_QUERY } from "@/queries/navigation-query";
-import { HeaderProvider } from "@/contexts/header-context";
 import { RootLayoutQueryProps } from "@/types/root-layout";
 import { NavigationQueryProps } from "@/types/navigation";
 
@@ -48,7 +48,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body>
+      <body className="font-ambit text-mbbase lg:text-dtbase">
         <HeaderProvider>
           <Header logo={logo} siteName={siteName} navItems={navigation} />
           {children}

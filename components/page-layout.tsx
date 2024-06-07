@@ -21,14 +21,17 @@ export function PageLayout({
           const { id, videoLink, title, description, image: url } = item;
           const credits = buildMDX(item.credits || "");
           return (
-            <div className="layoutthumbs relative col-span-11 after:absolute after:block after:bg-contain after:bg-no-repeat md:col-span-9 md:col-start-1 lg:col-span-8 lg:col-start-2 " key={id}>
-              <div className="thumbnail relative aspect-video bg-test-grey z-[50]">
+            <div
+              className="layoutthumbs relative col-span-11 after:absolute after:block after:bg-contain after:bg-no-repeat md:col-span-9 md:col-start-1 lg:col-span-8 lg:col-start-2 "
+              key={id}
+            >
+              <div className="thumbnail relative z-[50] aspect-video bg-test-grey">
                 <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink opacity-0 duration-300">
                   {/* hover sequence to go here */}
                 </div>
                 {/* <a href="/"><Image src={url.url} alt={title} width={1152} height={648} /></a> */}
               </div>
-              <h4 className="heading4 smallerspace text-center text-hydw-blue relative z-[50]">
+              <h4 className="heading4 smallerspace relative z-[50] text-center text-hydw-blue">
                 <a href="/">{title}</a>
               </h4>
             </div>

@@ -56,13 +56,13 @@ export default async function Page() {
                 Your browser does not support the video tag.
             </video> */}
       </section>
-      <section className="wrapper page-grid bg-hydw-vanilla">
+      <section className="page-grid wrapper bg-hydw-vanilla">
         <div className="page-grid col-span-12">
           <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
             <p className={`heading3 text-center text-hydw-blue`}>
               {description}
             </p>
-            <p className={`body smallspace text-center text-hydw-blue`}>
+            <p className={`smallspace body text-center text-hydw-blue`}>
               <a href="/">More About Us</a>
               {/* Needs to link to about page */}
             </p>
@@ -79,7 +79,7 @@ export default async function Page() {
         </div>
 
         {/* Latest commercial */}
-        <div className="page-grid largespace col-span-12">
+        <div className="largespace page-grid col-span-12">
           <div className="relative z-20 col-span-3 md:col-span-2">
             <Image
               className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
@@ -120,7 +120,7 @@ export default async function Page() {
         </div>
 
         {/* Latest television */}
-        <div className="page-grid largestspace col-span-12">
+        <div className="largestspace page-grid col-span-12">
           <div className="relative z-20 col-span-3 col-start-10 md:col-span-2 md:col-start-10 lg:col-start-11 2xl:col-start-10">
             <Image
               className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
@@ -160,7 +160,7 @@ export default async function Page() {
         </div>
 
         {/* Latest web series */}
-        <div className="page-grid largespace col-span-12">
+        <div className="largespace page-grid col-span-12">
           <div className="relative z-20 col-span-3 md:col-span-2">
             <Image
               className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
@@ -200,7 +200,7 @@ export default async function Page() {
         </div>
 
         {/* Latest podcast */}
-        <div className="page-grid largespace col-span-12">
+        <div className="largespace page-grid col-span-12">
           <div className="relative z-20 col-span-3 col-start-8 md:col-span-2 md:col-start-6 xl:col-start-5">
             <Image
               className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
@@ -211,7 +211,7 @@ export default async function Page() {
             />
           </div>
           <div className="col-span-8 col-start-2 md:col-span-6 md:col-start-1 lg:col-span-5 lg:col-start-2 xl:col-span-4 xl:col-start-2">
-            <div className="thumbnail relative bg-test-grey aspect-square">
+            <div className="thumbnail relative aspect-square bg-test-grey">
               <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
                 {/* hover sequence to go here */}
               </div>
@@ -236,7 +236,7 @@ export default async function Page() {
         </div>
 
         {/* Latest film */}
-        <div className="page-grid largestspace col-span-12">
+        <div className="largestspace page-grid col-span-12">
           <div className="relative z-20 col-span-3 col-start-9 md:col-span-2 md:col-start-10 lg:col-start-4">
             <Image
               className="absolute top-1/2 min-w-[120px] max-w-[205px] -translate-y-1/2"
@@ -262,7 +262,7 @@ export default async function Page() {
           </div>
         </div>
 
-        <div className="page-grid largespace col-span-12">
+        <div className="largespace page-grid col-span-12">
           <div className="relative col-span-6 col-start-4 lg:col-span-2">
             <Image
               className="m-auto mb-7 max-w-[110px] -rotate-12 lg:absolute lg:left-1/2 lg:top-0 lg:mb-0 lg:max-w-[168px] lg:-translate-x-1/2 lg:-translate-y-full"

@@ -10,23 +10,23 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'flyer': ['flyer', 'sans-serif'],
-        'ambit': ['ambit', 'sans-serif'],
+        flyer: ["flyer", "sans-serif"],
+        ambit: ["ambit", "sans-serif"],
       },
       fontSize: {
-        "dt2xl": ["150px", "85%"],
-        "dtxl": ["94px", "85%"],
-        "dtlg": ["60px", "95%"],
-        "dtmed": ["32px", "85%"],
-        "dtbase": ["24px", "120%"],
-        "dtsml": ["16px", "120%"],
-        "dtsxml": ["14px", "120%"],
-        "mb2xl": ["80px", "85%"],
-        "mbxl": ["60px", "85%"],
-        "mbsmxl": ["40px", "85%"],
-        "mblg": ["32px", "95%"],
-        "mbmed": ["24px", "85%"],
-        "mbbase": ["18px", "120%"],
+        dt2xl: ["150px", "85%"],
+        dtxl: ["94px", "85%"],
+        dtlg: ["60px", "95%"],
+        dtmed: ["32px", "85%"],
+        dtbase: ["24px", "120%"],
+        dtsml: ["16px", "120%"],
+        dtsxml: ["14px", "120%"],
+        mb2xl: ["80px", "85%"],
+        mbxl: ["60px", "85%"],
+        mbsmxl: ["40px", "85%"],
+        mblg: ["32px", "95%"],
+        mbmed: ["24px", "85%"],
+        mbbase: ["18px", "120%"],
       },
       colors: {
         "hydw-blue": "#3b2dff",
@@ -36,7 +36,7 @@ module.exports = {
         "hydw-pink": "#FF6CF4",
         "hydw-orange": "#FF9650",
         "hydw-yellow": "#EFE145",
-        "test-grey" : "#c1c1c1",
+        "test-grey": "#c1c1c1",
       },
       skew: {
         40: "-20deg",
@@ -44,86 +44,102 @@ module.exports = {
     },
   },
   plugins: [
-    function({ addComponents }) {
+    function ({ addComponents }) {
       const newComponents = {
-        '.largestspace': {
-          marginTop: '7rem', 
-          '@screen lg': {
-            marginTop: '24rem',
+        // Typography
+        ".heading1": {
+          fontFamily: "flyer",
+        },
+        ".heading2": {
+          fontFamily: "flyer",
+        },
+        ".heading3": {
+          fontFamily: "flyer",
+        },
+        ".heading4": {
+          fontFamily: "flyer",
+        },
+        ".heading5": {
+          fontFamily: "flyer",
+        },
+        ".largestspace": {
+          marginTop: "7rem",
+          "@screen lg": {
+            marginTop: "24rem",
           },
         },
-        '.largespace': {
-          marginTop: '7rem', 
-          '@screen lg': {
-            marginTop: '13rem', 
+        ".largespace": {
+          marginTop: "7rem",
+          "@screen lg": {
+            marginTop: "13rem",
           },
         },
-        '.midspace': {
-          marginTop: '3.5rem', 
-          '@screen lg': {
-            marginTop: '7rem',
+        ".midspace": {
+          marginTop: "3.5rem",
+          "@screen lg": {
+            marginTop: "7rem",
           },
         },
-        '.smallspace': {
-          marginTop: '1.75rem', 
-          '@screen lg': {
-            marginTop: '3.5rem',
+        ".smallspace": {
+          marginTop: "1.75rem",
+          "@screen lg": {
+            marginTop: "3.5rem",
           },
         },
-        '.largestpadding': {
-          paddingBottom: '7rem', 
-          '@screen lg': {
-            paddingBottom: '24rem',
+        ".largestpadding": {
+          paddingBottom: "7rem",
+          "@screen lg": {
+            paddingBottom: "24rem",
           },
         },
-        '.largepadding': {
-          paddingBottom: '7rem', 
-          '@screen lg': {
-            paddingBottom: '13rem', 
+        ".largepadding": {
+          paddingBottom: "7rem",
+          "@screen lg": {
+            paddingBottom: "13rem",
           },
         },
-        '.smallpadding': {
-          paddingBottom: '1.75rem', 
-          '@screen lg': {
-            paddingBottom: '3.5rem',
+        ".smallpadding": {
+          paddingBottom: "1.75rem",
+          "@screen lg": {
+            paddingBottom: "3.5rem",
           },
         },
-        '.smallerspace, .heading4 + .body, .heading5 + .body, .body p + p': {
-          marginTop: '0.625rem', // equivalent to mt-2.5
-          '@screen lg': {
-            marginTop: '0.875rem', // equivalent to lg:mt-3.5
+        ".smallerspace, .heading4 + .body, .heading5 + .body, .body p + p": {
+          marginTop: "0.625rem", // equivalent to mt-2.5
+          "@screen lg": {
+            marginTop: "0.875rem", // equivalent to lg:mt-3.5
           },
         },
-        '.largeheight': {
-          height: '7rem', // 28 in Tailwind CSS is 7rem
-          '@media (min-width: 1024px) and (min-height: 1000px)': {
-            height: '13rem', // 52 in Tailwind CSS is 13rem
+        ".largeheight": {
+          height: "7rem", // 28 in Tailwind CSS is 7rem
+          "@media (min-width: 1024px) and (min-height: 1000px)": {
+            height: "13rem", // 52 in Tailwind CSS is 13rem
           },
         },
-        '.page-grid': {
-          display: 'grid',
-          gridAutoRows: 'min-content',
-          gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
-          gap: '0.625rem', // 2.5 in Tailwind CSS
-          '@screen md': {
-            gap: '1.25rem', // 5 in Tailwind CSS
+        ".page-grid": {
+          display: "grid",
+          gridAutoRows: "min-content",
+          gridTemplateColumns: "repeat(12, minmax(0, 1fr))",
+          gap: "0.625rem", // 2.5 in Tailwind CSS
+          "@screen md": {
+            gap: "1.25rem", // 5 in Tailwind CSS
           },
         },
-        '.grid-gap': {
-          gap: '0.625rem', // 2.5 in Tailwind CSS
-          '@screen md': {
-            gap: '1.25rem', // 5 in Tailwind CSS
+        ".grid-gap": {
+          gap: "0.625rem", // 2.5 in Tailwind CSS
+          "@screen md": {
+            gap: "1.25rem", // 5 in Tailwind CSS
           },
         },
-        '.wrapper': {
-          padding: '0.625rem', // 2.5 in Tailwind CSS
-          '@screen md': {
-            padding: '2.5rem', // 10 in Tailwind CSS
+        ".wrapper": {
+          padding: "0.625rem", // 2.5 in Tailwind CSS
+          "@screen md": {
+            padding: "2.5rem", // 10 in Tailwind CSS
           },
         },
       };
 
       addComponents(newComponents);
-    }
+    },
   ],
 };

@@ -36,39 +36,42 @@ export default async function Page() {
   const works = data.page?.work || [];
 
   return (
-    <main className="overflow-hidden largepadding bg-hydw-vanilla layoutb addimage1">
-      <section className="wrapper page-grid min-h-screen py-10 bg-hydw-yellow relative">
-        <div className="col-span-12 xl:col-span-10 xl:col-start-2 text-center items-center justify-center largespace">
-            <PageHeading title={title} />
+    <main className="layoutb addimage1 largepadding overflow-hidden bg-hydw-vanilla">
+      <section className="page-grid wrapper relative min-h-screen bg-hydw-yellow py-10">
+        <div className="largespace col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
+          <PageHeading title={title} />
         </div>
         <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
-          <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
+          <h4 className={`smallspace heading4`}>Subtitle.</h4>
           {/* Note: Need Subtitle */}
-            <p className={`body smallestspace`}>{description}</p>
+          <p className={`smallestspace body`}>{description}</p>
         </div>
-        <div className="lg:wrapper lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
-          <div className="-rotate-[9deg] col-span-6 col-start-5 md:col-span-3 md:col-start-7">
-                <Image className="max-w-[120px] md:max-w-[140px] lg:max-w-[150px] m-auto mt-7 lg:mt-0"
-                  src="/img/frog.png"
-                  alt="Frog"
-                  width={168}
-                  height={206}
-                />
-              </div>
-            <div className="col-span-6 col-start-1 md:col-span-2 md:col-start-1 mt-14 md:mt-0">
-              <Image className="rotate-12 max-w-[80px] md:max-w-[100px] lg:max-w-[111px] m-auto lg:mt-[100px]"
-                src="/img/egg.png"
-                alt="Egg"
-                width={111}
-                height={173}
+        <div className="page-grid pointer-events-none left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
+          <div className="col-span-6 col-start-5 -rotate-[9deg] md:col-span-3 md:col-start-7">
+            <Image
+              className="m-auto mt-7 max-w-[120px] md:max-w-[140px] lg:mt-0 lg:max-w-[150px]"
+              src="/img/frog.png"
+              alt="Frog"
+              width={168}
+              height={206}
+            />
+          </div>
+          <div className="col-span-6 col-start-1 mt-14 md:col-span-2 md:col-start-1 md:mt-0">
+            <Image
+              className="m-auto max-w-[80px] rotate-12 md:max-w-[100px] lg:mt-[100px] lg:max-w-[111px]"
+              src="/img/egg.png"
+              alt="Egg"
+              width={111}
+              height={173}
             />
           </div>
           <div className="col-span-6 col-start-7 md:col-span-3 md:col-start-10">
-              <Image className="rotate-[25deg] max-w-[150px] md:max-w-[170px] lg:max-w-[210px] m-auto lg:mt-[300px]"
-                src="/img/cowdoy.png"
-                alt="Cowdoy"
-                width={210}
-                height={227}
+            <Image
+              className="m-auto max-w-[150px] rotate-[25deg] md:max-w-[170px] lg:mt-[300px] lg:max-w-[210px]"
+              src="/img/cowdoy.png"
+              alt="Cowdoy"
+              width={210}
+              height={227}
             />
           </div>
         </div>
@@ -77,6 +80,3 @@ export default async function Page() {
     </main>
   );
 }
-
-
-
