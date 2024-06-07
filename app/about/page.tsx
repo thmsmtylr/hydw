@@ -44,9 +44,9 @@ export default async function Page() {
   const sections = data.about?.section;
 
   return (
-    <main className="largepadding wrapper bg-hydw-orange">
+    <main className="largepadding wrapper bg-hydw-vanilla">
       <section className="page-grid relative">
-        <div className="largespace col-span-12 md:col-span-10 md:col-start-2">
+        <div className="largespace col-span-12 md:col-span-10 md:col-start-2 text-hydw-blue">
           {title && <PageHeading title={title} />}
         </div>
         <div className="page-grid wrapper pointer-events-none absolute left-0 top-0 col-span-12 h-full w-full">
