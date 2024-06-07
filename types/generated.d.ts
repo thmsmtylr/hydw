@@ -19,6 +19,7 @@ export type Scalars = {
   FloatType: { input: any; output: any; }
   IntType: { input: any; output: any; }
   ItemId: { input: any; output: any; }
+  JsonField: { input: any; output: any; }
   MetaTagAttributes: { input: any; output: any; }
   UploadId: { input: any; output: any; }
 };
@@ -363,6 +364,91 @@ export type CreatedAtFilter = {
   lte?: InputMaybe<Scalars['DateTime']['input']>;
   /** Filter records with a value that's outside the specified minute range. Seconds and milliseconds are truncated from the argument. */
   neq?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type DirectorModelDescriptionField = {
+  __typename?: 'DirectorModelDescriptionField';
+  blocks: Array<Scalars['String']['output']>;
+  links: Array<Scalars['String']['output']>;
+  value: Scalars['JsonField']['output'];
+};
+
+/** Linking fields */
+export enum DirectorModelFieldsReferencingWorkModel {
+  DirectorFeaturedWork = 'director_featuredWork',
+  DirectorWork = 'director_work'
+}
+
+export type DirectorModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<DirectorModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<DirectorModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  description?: InputMaybe<StructuredTextFilter>;
+  featuredWork?: InputMaybe<LinkFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  name?: InputMaybe<StringFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  work?: InputMaybe<LinksFilter>;
+};
+
+export enum DirectorModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC'
+}
+
+/** Record of type Director (director) */
+export type DirectorRecord = RecordInterface & {
+  __typename?: 'DirectorRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  description: DirectorModelDescriptionField;
+  featuredWork?: Maybe<WorkRecord>;
+  id: Scalars['ItemId']['output'];
+  name: Scalars['String']['output'];
+  slug: Scalars['String']['output'];
+  work: Array<WorkRecord>;
+};
+
+
+/** Record of type Director (director) */
+export type DirectorRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
 };
 
 export enum FaviconType {
@@ -2316,6 +2402,14 @@ export type InverseRelationshipFieldFilterBetweenAboutAndSection = {
 };
 
 /** Specifies how to filter by linking fields */
+export type InverseRelationshipFieldFilterBetweenDirectorAndWork = {
+  /** Filter linking records that reference current record in at least one of the specified fields */
+  anyIn?: InputMaybe<Array<DirectorModelFieldsReferencingWorkModel>>;
+  /** Filter linking records that do not reference current record in any of the specified fields */
+  notIn?: InputMaybe<Array<DirectorModelFieldsReferencingWorkModel>>;
+};
+
+/** Specifies how to filter by linking fields */
 export type InverseRelationshipFieldFilterBetweenHomeAndPage = {
   /** Filter linking records that reference current record in at least one of the specified fields */
   anyIn?: InputMaybe<Array<HomeModelFieldsReferencingPageModel>>;
@@ -2343,6 +2437,14 @@ export type InverseRelationshipFieldFilterBetweenWorkAndPage = {
 export type InverseRelationshipFilterBetweenAboutAndSection = {
   /** Specifies how to filter by linking fields */
   fields?: InputMaybe<InverseRelationshipFieldFilterBetweenAboutAndSection>;
+  /** Specifies how to filter by linking locales */
+  locales?: InputMaybe<LinkingLocalesFilter>;
+};
+
+/** Specifies how to filter linking records */
+export type InverseRelationshipFilterBetweenDirectorAndWork = {
+  /** Specifies how to filter by linking fields */
+  fields?: InputMaybe<InverseRelationshipFieldFilterBetweenDirectorAndWork>;
   /** Specifies how to filter by linking locales */
   locales?: InputMaybe<LinkingLocalesFilter>;
 };
@@ -2651,6 +2753,8 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allContactsMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
+  _allDirectorsMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
   _allHomesMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
   _allPagesMeta: CollectionMetadata;
@@ -2667,6 +2771,8 @@ export type Query = {
   /** Returns a collection of records */
   allContacts: Array<ContactRecord>;
   /** Returns a collection of records */
+  allDirectors: Array<DirectorRecord>;
+  /** Returns a collection of records */
   allHomes: Array<HomeRecord>;
   /** Returns a collection of records */
   allPages: Array<PageRecord>;
@@ -2678,6 +2784,8 @@ export type Query = {
   allWorks: Array<WorkRecord>;
   /** Returns a specific record */
   contact?: Maybe<ContactRecord>;
+  /** Returns a specific record */
+  director?: Maybe<DirectorRecord>;
   /** Returns the single instance record */
   global?: Maybe<GlobalRecord>;
   /** Returns a specific record */
@@ -2697,6 +2805,14 @@ export type Query = {
 export type Query_AllContactsMetaArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   filter?: InputMaybe<ContactModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllDirectorsMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<DirectorModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -2766,6 +2882,17 @@ export type QueryAllContactsArgs = {
 
 
 /** The query root for this schema */
+export type QueryAllDirectorsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<DirectorModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<DirectorModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
+};
+
+
+/** The query root for this schema */
 export type QueryAllHomesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   filter?: InputMaybe<HomeModelFilter>;
@@ -2826,6 +2953,15 @@ export type QueryContactArgs = {
   filter?: InputMaybe<ContactModelFilter>;
   locale?: InputMaybe<SiteLocale>;
   orderBy?: InputMaybe<Array<InputMaybe<ContactModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryDirectorArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<DirectorModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<DirectorModelOrderBy>>>;
 };
 
 
@@ -3160,6 +3296,20 @@ export type StringMatchesFilter = {
   caseSensitive?: InputMaybe<Scalars['BooleanType']['input']>;
   pattern: Scalars['String']['input'];
   regexp?: InputMaybe<Scalars['BooleanType']['input']>;
+};
+
+/** Specifies how to filter Structured Text fields values */
+export type StructuredTextFilter = {
+  /** Filter records with the specified field defined (i.e. with any value) or not [DEPRECATED] */
+  exists?: InputMaybe<Scalars['BooleanType']['input']>;
+  /** Filter records with the specified field set as blank (null or single empty paragraph) */
+  isBlank?: InputMaybe<Scalars['BooleanType']['input']>;
+  /** Filter records with the specified field present (neither null, nor empty string) */
+  isPresent?: InputMaybe<Scalars['BooleanType']['input']>;
+  /** Filter records based on a regular expression */
+  matches?: InputMaybe<StringMatchesFilter>;
+  /** Exclude records based on a regular expression */
+  notMatches?: InputMaybe<StringMatchesFilter>;
 };
 
 export type Tag = {
@@ -3644,6 +3794,9 @@ export enum WorkModelOrderBy {
 /** Record of type Work (work) */
 export type WorkRecord = RecordInterface & {
   __typename?: 'WorkRecord';
+  _allReferencingDirectors: Array<DirectorRecord>;
+  /** Returns meta information regarding a record collection */
+  _allReferencingDirectorsMeta: CollectionMetadata;
   _allReferencingPages: Array<PageRecord>;
   /** Returns meta information regarding a record collection */
   _allReferencingPagesMeta: CollectionMetadata;
@@ -3667,6 +3820,26 @@ export type WorkRecord = RecordInterface & {
   image?: Maybe<AltFileField>;
   title: Scalars['String']['output'];
   videoLink?: Maybe<VideoField>;
+};
+
+
+/** Record of type Work (work) */
+export type WorkRecord_AllReferencingDirectorsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<DirectorModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<DirectorModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
+  through?: InputMaybe<InverseRelationshipFilterBetweenDirectorAndWork>;
+};
+
+
+/** Record of type Work (work) */
+export type WorkRecord_AllReferencingDirectorsMetaArgs = {
+  filter?: InputMaybe<DirectorModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  through?: InputMaybe<InverseRelationshipFilterBetweenDirectorAndWork>;
 };
 
 

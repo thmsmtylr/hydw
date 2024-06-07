@@ -38,7 +38,17 @@ export default async function Page() {
 
   return (
     <main className="largepadding overflow-hidden bg-hydw-vanilla">
-      <section className="h-screen w-full overflow-hidden bg-test-grey">
+      <section className="h-screen w-full overflow-hidden bg-test-grey relative">
+
+        <Image
+              className="w-[200px] lg:w-[400px] -rotate-45 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              src="/img/logo.svg"
+              alt="Haven't You Done Well logo"
+              width={400}
+              height={144}
+            />
+
+      
         {/* data needed: video, poster image and video title */}
         {/* <video playsinline muted autoplay loop poster="" title ="">
                 <source src="" type="video/mp4">
