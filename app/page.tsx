@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { request } from "@/lib/datocms";
 import { HOMEPAGE_QUERY } from "@/queries/homepage-query";
 import { HomepageQueryProps } from "@/types/homepage";
@@ -9,6 +10,7 @@ import { ScrollDownButton } from "@/components/scroll-down-button";
 import { flyerFont, ambitFont } from "@/fonts";
 import Image from "next/image";
 import { Parallax } from "@/components/parallax";
+import { VideoPlayer } from "@/components/video-player";
 
 async function getHomePageData(): Promise<{
   props: { homepageData: HomepageQueryProps };
@@ -33,28 +35,36 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const data = await getHomePageData();
-  const { description, bannerImages } = data.props.homepageData.home;
-  const { allPages } = data.props.homepageData;
+  const {
+    posterImage,
+    showreel,
+    description,
+    descriptionLink,
+    descriptionLinkText,
+  } = data.props.homepageData.home;
 
   return (
     <main className="largepadding overflow-hidden bg-hydw-vanilla">
-      <section className="h-screen w-full overflow-hidden bg-test-grey relative">
-
+      <section className="relative z-20 h-screen w-full overflow-hidden bg-test-grey">
+        <div className="pointer-events-none">
+          <VideoPlayer
+            // Test link
+            url="https://trucefilms.b-cdn.net/Short%20Videos/short_carousel_tradiebeer.mp4"
+            // url={showreel.url}
+            posterImage={posterImage?.url || ""}
+            playing={true}
+            controls={false}
+            muted={true}
+            loop={true}
+          />
+        </div>
         <Image
-              className="w-[200px] lg:w-[400px] -rotate-45 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              src="/img/logo.svg"
-              alt="Haven't You Done Well logo"
-              width={400}
-              height={144}
-            />
-
-      
-        {/* data needed: video, poster image and video title */}
-        {/* <video playsinline muted autoplay loop poster="" title ="">
-                <source src="" type="video/mp4">
-                <source src="<?= $src ?>" type="video/ogg">
-                Your browser does not support the video tag.
-            </video> */}
+          className="absolute left-1/2 top-1/2 w-[200px] -translate-x-1/2 -translate-y-1/2 -rotate-45 lg:w-[400px]"
+          src="/img/logo.svg"
+          alt="Haven't You Done Well logo"
+          width={400}
+          height={144}
+        />
       </section>
       <section className="page-grid wrapper bg-hydw-vanilla">
         <div className="page-grid col-span-12">
@@ -63,8 +73,7 @@ export default async function Page() {
               {description}
             </p>
             <p className={`smallspace body text-center text-hydw-blue`}>
-              <a href="/">More About Us</a>
-              {/* Needs to link to about page */}
+              <Link href={descriptionLink}>{descriptionLinkText}</Link>
             </p>
           </div>
           <div className="relative col-span-6 col-start-4 lg:col-span-2 lg:col-start-11">

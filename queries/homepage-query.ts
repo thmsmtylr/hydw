@@ -11,22 +11,15 @@ export const HOMEPAGE_QUERY = gql`
       }
     }
     home {
+      posterImage {
+        url
+      }
+      showreel {
+        url
+      }
       description
-      bannerImages {
-        id
-        alt
-        url
-      }
-    }
-    allPages(orderBy: position_ASC) {
-      id
-      slug
-      title
-      images {
-        alt
-        id
-        url
-      }
+      descriptionLink
+      descriptionLinkText
     }
   }
 `;
