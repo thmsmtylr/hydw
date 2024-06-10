@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+
+  img, svg{
+    @apply w-[100%] h-auto;
+  }
+  
   .heading1 {
     @apply text-mbsmxl md:text-mb2xl lg:text-dt2xl;
   }

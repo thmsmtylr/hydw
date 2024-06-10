@@ -46,7 +46,7 @@ export default async function Page() {
   return (
     <main className="largepadding overflow-hidden bg-hydw-vanilla">
       <section className="relative z-20 h-screen w-full overflow-hidden bg-test-grey">
-        <div className="pointer-events-none">
+        <div className="pointer-events-none h-full">
           <VideoPlayer
             // Test link
             url="https://trucefilms.b-cdn.net/Short%20Videos/short_carousel_tradiebeer.mp4"
