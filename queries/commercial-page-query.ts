@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 
-export const COMMERCIAL_QUERY = gql`
+export const COMMERCIAL_PAGE_QUERY = gql`
   query CommercialPage {
     page(
       filter: {

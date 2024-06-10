@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
-import { COMMERCIAL_QUERY } from "@/queries/commercial-page-query";
+import { COMMERCIAL_PAGE_QUERY } from "@/queries/commercial-page-query";
 import { CommercialPageQuery } from "@/types/generated";
 import { PageLayout } from "@/components/page-layout";
 import { Parallax } from "@/components/parallax";

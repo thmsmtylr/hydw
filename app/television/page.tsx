@@ -1,16 +1,15 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
-import { TV_FILM_QUERY } from "@/queries/tv-film-page-query";
-import { TvFilmPageQuery } from "@/types/generated";
+import { TV_QUERY } from "@/queries/tv-film-page-query";
+import { TvPageQuery } from "@/types/generated";
 import { PageLayout } from "@/components/page-layout";
-import { Parallax } from "@/components/parallax";
-import Image from "next/image";
 import { PageHeading } from "@/components/page-heading";
 
-async function getPageData(): Promise<TvFilmPageQuery> {
-  const data = await request({ query: TV_FILM_QUERY });
-  return { ...(data as TvFilmPageQuery) };
+async function getPageData(): Promise<TvPageQuery> {
+  const data = await request({ query: TV_QUERY });
+  return { ...(data as TvPageQuery) };
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -32,6 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
   const data = await getPageData();
   const title = data.page?.title || "";
+  const subtitle = data.page?.subtitle || "";
   const description = buildMDX(data.page?.description || "");
   const works = data.page?.work || [];
 
@@ -42,9 +42,8 @@ export default async function Page() {
           <PageHeading title={title} />
         </div>
         <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
-          <h4 className={`smallspace heading4`}>Subtitle.</h4>
-          {/* Note: Need Subtitle */}
-          <p className={`smallestspace body`}>{description}</p>
+          <h4 className="smallspace heading4">{subtitle}</h4>
+          <p className="smallestspace body">{description}</p>
         </div>
         <div className="page-grid pointer-events-none left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="col-span-6 col-start-5 -rotate-[9deg] md:col-span-3 md:col-start-7">

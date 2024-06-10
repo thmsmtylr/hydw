@@ -22,13 +22,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const description = data.director?.description || "";
   const featuredWork = data.director?.featuredWork;
   const work = data?.director?.work || [];
-  return (  
-     
-
-    <main className="overflow-hidden largepadding bg-hydw-yellow wrapper text-hydw-blue">
+  return (
+    <main className="largepadding wrapper overflow-hidden bg-hydw-yellow text-hydw-blue">
       <section className="page-grid">
-        <div className="col-span-11 md:col-span-9 xl:col-span-8 text-left midspace">
-            <h1 className="mt-7 lg:mt-0 heading2 uppercase">{name}</h1>
+        <div className="midspace col-span-11 text-left md:col-span-9 xl:col-span-8">
+          <h1 className="heading2 mt-7 uppercase lg:mt-0">{name}</h1>
         </div>
         <div className="smallspace col-span-12 aspect-video">
           <VideoPlayer
@@ -38,28 +36,30 @@ export default async function Page({ params }: { params: { slug: string } }) {
           />
         </div>
       </section>
-      <section className="page-grid smallspace">
-        <div className="col-span-12 md:col-span-10 lg:col-span-7 body">
+      <section className="smallspace page-grid">
+        <div className="body col-span-12 md:col-span-10 lg:col-span-7">
           <p dangerouslySetInnerHTML={{ __html: description }}></p>
         </div>
-        <div className="col-span-12 lg:col-span-3 lg:col-start-9 relative">
+        <div className="relative col-span-12 lg:col-span-3 lg:col-start-9">
           {/* to replace */}
           <Image
-              className="m-auto mt-7 max-w-[300px]"
-              src="/img/puppet.png"
-              alt="Puppet"
-              width={129}
-              height={197}
-            />
+            className="m-auto mt-7 max-w-[300px]"
+            src="/img/puppet.png"
+            alt="Puppet"
+            width={129}
+            height={197}
+          />
         </div>
       </section>
       <section className="largespace">
         {/* note to tom: we're going to work out how to generate the below properly grammatically. Eg when its more appropriate for "have" be used */}
-        <h4 className="heading4 uppercase mb-7">More Tv that {name} has made</h4>
+        <h4 className="heading4 mb-7 uppercase">
+          More Tv that {name} has made
+        </h4>
         <div className="page-grid gap-2.5 md:gap-5">
-        {work.map((work) => (
-          <a className="col-span-6 lg:col-span-4 aspect-video thumbnail relative">
-              <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300 z-20">
+          {work.map((work) => (
+            <a className="thumbnail relative col-span-6 aspect-video lg:col-span-4">
+              <div className="hoverthumb absolute left-0 top-0 z-20 h-full w-full bg-hydw-pink duration-300">
                 {/* hover sequence to go here */}
               </div>
               {/* note to tom: these should be cover images */}
@@ -72,11 +72,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   />
                 </Fragment>
               </div>
-          </a>
-          ))} 
-          
+            </a>
+          ))}
         </div>
       </section>
-  </main>
+    </main>
   );
 }
