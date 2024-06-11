@@ -29,11 +29,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <h1 className="heading2 mt-7 uppercase lg:mt-0">{name}</h1>
         </div>
         <div className="smallspace col-span-12 aspect-video">
-          <VideoPlayer
-            url={featuredWork?.videoLink?.url || ""}
-            title={featuredWork?.title || ""}
-            imgURL=""
-          />
+          <VideoPlayer url={featuredWork?.videoLink?.url || ""} />
         </div>
       </section>
       <section className="smallspace page-grid">

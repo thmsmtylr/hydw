@@ -10,12 +10,12 @@ export function PageLayout({
   title,
   description,
   items,
-  pageSlug,
+  pageSlug = "",
 }: {
   title: string;
   description: string;
   items: any[];
-  pageSlug: string;
+  pageSlug?: string;
 }) {
   return (
     <section className="bg-hydw-vanilla">

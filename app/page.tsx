@@ -35,13 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const data = await getHomePageData();
-  const {
-    posterImage,
-    showreel,
-    description,
-    descriptionLink,
-    descriptionLinkText,
-  } = data.props.homepageData.home;
+  const { description } = data.props.homepageData.home;
 
   return (
     <main className="largepadding overflow-hidden bg-hydw-vanilla">
@@ -51,7 +45,6 @@ export default async function Page() {
             // Test link
             url="https://trucefilms.b-cdn.net/Short%20Videos/short_carousel_tradiebeer.mp4"
             // url={showreel.url}
-            posterImage={posterImage?.url || ""}
             playing={true}
             controls={false}
             muted={true}
@@ -73,7 +66,7 @@ export default async function Page() {
               {description}
             </p>
             <p className={`smallspace body text-center text-hydw-blue`}>
-              <Link href={descriptionLink}>{descriptionLinkText}</Link>
+              {/* <Link href={descriptionLink}>{descriptionLinkText}</Link> */}
             </p>
           </div>
           <div className="relative col-span-6 col-start-4 lg:col-span-2 lg:col-start-11">

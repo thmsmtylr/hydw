@@ -4,7 +4,6 @@ const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 export function VideoPlayer({
   url,
-  posterImage,
   playing = false,
   loop = false,
   muted = false,
@@ -14,14 +13,12 @@ export function VideoPlayer({
   playing?: boolean;
   loop?: boolean;
   muted?: boolean;
-  posterImage?: string | null;
   controls?: boolean;
 }) {
   return (
     <div className="pointer-events-none relative mb-8 pt-[56.25%]">
       <ReactPlayer
         controls={controls}
-        poster={posterImage}
         playing={playing}
         loop={loop}
         muted={muted}
