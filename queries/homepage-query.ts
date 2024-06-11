@@ -1,7 +1,7 @@
 import { gql } from "graphql-request";
 
 export const HOMEPAGE_QUERY = gql`
-  query HomepageQuery {
+  query Homepage {
     _site {
       globalSeo {
         fallbackSeo {
@@ -20,6 +20,20 @@ export const HOMEPAGE_QUERY = gql`
       description
       descriptionLink
       descriptionLinkText
+      featuredWork {
+        id
+        title
+        slug
+        category {
+          slug
+        }
+        featuredImages {
+          id
+          image {
+            url
+          }
+        }
+      }
     }
   }
 `;

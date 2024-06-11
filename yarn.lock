@@ -1324,6 +1324,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-scroll-rotate@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@types/react-scroll-rotate/-/react-scroll-rotate-0.0.5.tgz#62b7e58847be93332dd3453308a3dd752be39b36"
+  integrity sha512-DJJlrsKUJA+LscauEZBFIVSFlpK3FTDUhsmD4zphw5MFUXOjz10nSDc7jjyFpw7dSez7TIu6DsD7RL5GTqi7hQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@18.0.33":
   version "18.0.33"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.33.tgz#a1575160cb4376787c2f5fe0312302f824baa61e"
@@ -4306,6 +4313,11 @@ react-remove-scroll@2.5.5:
     tslib "^2.1.0"
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
+
+react-scroll-rotate@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-scroll-rotate/-/react-scroll-rotate-0.0.7.tgz#54b8ab7b8d0ea8f8f4e64ed0c672170f11b05a36"
+  integrity sha512-Sfjlo5CnzRjQ/Dl5jticKqs/sNUjNsTwNQTmh8DFb6x+sh3xNT8cdIBzyT93hryJ08gpdaEqFsCyxD3Z+9E2VA==
 
 react-string-replace@^1.1.0:
   version "1.1.0"
