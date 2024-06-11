@@ -36,7 +36,7 @@ export default async function Page() {
   return (
     <main className="leftheader bg-hydw-yellow wrapper largepadding overflow-hidden">
       <section className="page-grid largepadding">
-          <div className="col-span-12 md:col-span-8 md:col-start-2 xl:col-span-6 xl:col-start-2 largespace">
+          <div className="col-span-12 md:col-span-8 md:col-start-2 xl:col-span-6 xl:col-start-2 largespace extraheight">
             <PageHeading title={title} />
           </div>
           <div className="col-span-4 col-start-9 md:col-span-3 md:col-start-10 xl:col-span-4 xl:col-start-8 md:mt-28 lg:mt-52">

@@ -38,7 +38,7 @@ export default async function Page() {
   return (
     <main className="layoutb addimage1 largepadding overflow-hidden bg-hydw-vanilla">
       <section className="page-grid wrapper relative min-h-screen bg-hydw-yellow py-10">
-        <div className="largespace col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
+        <div className="largespace extraheight col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
           <PageHeading title={title} />
         </div>
         <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">

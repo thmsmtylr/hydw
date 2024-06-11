@@ -116,6 +116,11 @@ module.exports = {
             height: "13rem", // 52 in Tailwind CSS is 13rem
           },
         },
+        ".extraheight": {
+          "@media (min-width: 1280px) and (min-height: 1000px)": {
+            marginTop: "18rem", // 52 in Tailwind CSS is 13rem
+          },
+        },
         ".page-grid": {
           display: "grid",
           gridAutoRows: "min-content",
