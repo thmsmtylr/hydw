@@ -38,9 +38,9 @@ export default async function Page() {
   const { description } = data.props.homepageData.home;
 
   return (
-    <main className="largepadding overflow-hidden bg-hydw-vanilla">
-      <section className="relative z-20 h-screen w-full overflow-hidden bg-test-grey">
-        <div className="pointer-events-none h-full">
+    <main className="home largepadding overflow-hidden bg-hydw-vanilla">
+      <section className="relative z-20 h-[60vh] lg:h-screen w-full overflow-hidden">
+        
           <VideoPlayer
             // Test link
             url="https://trucefilms.b-cdn.net/Short%20Videos/short_carousel_tradiebeer.mp4"
@@ -50,7 +50,7 @@ export default async function Page() {
             muted={true}
             loop={true}
           />
-        </div>
+        
         <Image
           className="absolute left-1/2 top-1/2 w-[200px] -translate-x-1/2 -translate-y-1/2 -rotate-45 lg:w-[400px]"
           src="/img/logo.svg"
