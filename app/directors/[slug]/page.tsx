@@ -1,9 +1,9 @@
+import Link from "next/link";
+import Image from "next/image";
 import { request } from "@/lib/datocms";
 import { VideoPlayer } from "@/components/video-player";
 import { DirectorBySlugQuery } from "@/types/generated";
 import { DIRECTORS_QUERY } from "@/queries/directors-page-query";
-import { Fragment } from "react";
-import Image from "next/image";
 
 async function getPageData(slug: string): Promise<DirectorBySlugQuery> {
   const data = await request({
@@ -58,21 +58,24 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </h4>
         <div className="page-grid gap-2.5 md:gap-5">
           {work.map((work) => (
-            <a className="thumbnail relative col-span-6 aspect-video lg:col-span-4">
+            <Link
+              key={work.id}
+              href=""
+              className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
+            >
               <div className="hoverthumb absolute left-0 top-0 z-20 h-full w-full bg-hydw-pink duration-300">
                 {/* hover sequence to go here */}
               </div>
               {/* note to tom: these should be cover images */}
               <div className="h-full w-full">
-                <Fragment key={work.id}>
-                  <VideoPlayer
-                    url={work?.videoLink?.url || ""}
-                    title={work?.title || ""}
-                    imgURL=""
-                  />
-                </Fragment>
+                <Image
+                  src={work?.image?.url || ""}
+                  alt={work.title}
+                  width={1152}
+                  height={648}
+                />
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

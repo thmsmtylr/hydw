@@ -7,7 +7,6 @@ import { Navigation } from "@/components/navigation";
 import { HeaderProps } from "@/types/header";
 import { useHeaderContext } from "@/contexts/header-context";
 import { useFollowPointer } from "@/hooks/use-follow-pointer";
-import { flyerFont } from "@/fonts";
 
 export function Header(props: HeaderProps) {
   const { logo, siteName, navItems } = props;
@@ -19,7 +18,7 @@ export function Header(props: HeaderProps) {
   const { x: menuX, y: menuY } = useFollowPointer(menuRef);
 
   return (
-    <header className="fixed left-0 top-0 z-40 flex w-full items-center justify-between wrapper pointer-events-none">
+    <header className="wrapper pointer-events-none fixed left-0 top-0 z-40 flex w-full items-center justify-between">
       <motion.div
         ref={brandRef}
         animate={{ x: brandX, y: brandY }}
@@ -33,7 +32,7 @@ export function Header(props: HeaderProps) {
             height={44}
             src={logo.url}
             alt={siteName}
-            className="w-[120px] pointer-events-auto"
+            className="pointer-events-auto w-[120px]"
           />
         </Link>
       </motion.div>
@@ -45,7 +44,7 @@ export function Header(props: HeaderProps) {
         whileTap={{ scale: 0.9 }}
       >
         <button
-          className={`heading5 uppercase text-hydw-charcoal transition-colors duration-150 hover:text-hydw-blue pointer-events-auto`}
+          className={`heading5 pointer-events-auto uppercase text-hydw-charcoal transition-colors duration-150 hover:text-hydw-blue`}
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="menu"

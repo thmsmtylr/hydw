@@ -17,6 +17,7 @@ export const TV_QUERY = gql`
       work {
         id
         title
+        slug
         description
         credits
         image {

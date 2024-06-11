@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
-import { TV_QUERY } from "@/queries/tv-film-page-query";
+import { TV_QUERY } from "@/queries/tv-page-query";
 import { TvPageQuery } from "@/types/generated";
 import { PageLayout } from "@/components/page-layout";
 import { PageHeading } from "@/components/page-heading";
@@ -30,6 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const data = await getPageData();
+  const slug = data.page?.slug || "";
   const title = data.page?.title || "";
   const subtitle = data.page?.subtitle || "";
   const description = buildMDX(data.page?.description || "");
@@ -42,7 +43,7 @@ export default async function Page() {
           <PageHeading title={title} />
         </div>
         <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
-          <h4 className="smallspace heading4">{subtitle}</h4>
+          <h4 className="heading4 smallspace">{subtitle}</h4>
           <p className="smallestspace body">{description}</p>
         </div>
         <div className="page-grid pointer-events-none left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
@@ -75,7 +76,12 @@ export default async function Page() {
           </div>
         </div>
       </section>
-      <PageLayout title={title} description={description} items={works} />
+      <PageLayout
+        title={title}
+        description={description}
+        items={works}
+        pageSlug={slug}
+      />
     </main>
   );
 }
