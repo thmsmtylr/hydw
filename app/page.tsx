@@ -350,6 +350,59 @@ export default async function Page() {
                 </section>
               );
             }
+            if (category.slug === "television" && featuredImages.length > 0) {
+              return (
+                <section
+                  key={id}
+                  className="largestspace page-grid col-span-12"
+                >
+                  <div className="relative z-20 col-span-3 col-start-10 md:col-span-2 md:col-start-10 lg:col-start-11 2xl:col-start-10" />
+                  <div className="col-span-11 col-start-2 md:col-span-9 md:col-start-2 lg:col-span-8 lg:col-start-4 2xl:col-span-6 2xl:col-start-5">
+                    <div className="thumbnail group relative aspect-video">
+                      <Link
+                        href={`${category.slug}/${slug}`}
+                        className="relative inline-flex h-full w-full bg-hydw-pink"
+                      >
+                        <div className="absolute right-0 z-20 -mr-[104px] -mt-[104px] h-52 w-52">
+                          <FeaturedScrollRotate>
+                            <Image
+                              src="/img/latesttv.svg"
+                              alt="Latest Television"
+                              width={208}
+                              height={208}
+                              className="h-52 w-52"
+                            />
+                          </FeaturedScrollRotate>
+                        </div>
+                        <FeaturedThumbnails
+                          index={index}
+                          images={featuredImages}
+                        />
+                      </Link>
+                      <h4 className="heading4 smallerspace text-center text-hydw-blue group-hover:text-hydw-pink">
+                        <Link href={`${category.slug}/${slug}`}>{title}</Link>
+                      </h4>
+                    </div>
+                    <p className="body smallerspace text-center text-hydw-blue">
+                      <Link href="/television">See all our TV shows</Link>
+                    </p>
+                  </div>
+
+                  {/* note: should these be entered via dato? */}
+                  <div className="relative col-span-4 col-start-1 lg:col-start-2">
+                    <Parallax>
+                      <Image
+                        className="absolute right-0 top-0 max-w-[450px] -translate-y-[150%]"
+                        src="/img/toreplace/MB_EP06_Spilt-Milk.png"
+                        alt="Spilt milk illustration"
+                        width={496}
+                        height={643}
+                      />
+                    </Parallax>
+                  </div>
+                </section>
+              );
+            }
             return null;
           })}
         </div>
