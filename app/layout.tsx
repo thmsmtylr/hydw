@@ -48,7 +48,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="font-ambit text-mbbase lg:text-dtbase">
+      <body className="font-ambit text-mbbase lg:text-dtbase bg-hydw-vanilla">
         <HeaderProvider>
           <Header logo={logo} siteName={siteName} navItems={navigation} />
           {children}
