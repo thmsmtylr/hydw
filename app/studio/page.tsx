@@ -14,7 +14,7 @@ export default async function Page() {
       <div className="page-grid wrapper sticky top-[66px] z-[30] md:top-[16px] lg:top-[8px]">
         <ul className="col-span-12 col-start-1 flex flex-wrap text-hydw-charcoal md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3">
           <li className="heading5 mr-3">
-            <a href="" className="no-underline duration-300 hover:underline">
+            <a href="commercial#directors" className="no-underline duration-300 hover:underline">
               Directors
             </a>
           </li>

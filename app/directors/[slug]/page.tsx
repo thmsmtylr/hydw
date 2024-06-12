@@ -23,10 +23,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const featuredWork = data.director?.featuredWork;
   const work = data?.director?.work || [];
   return (
-    <main className="largepadding wrapper overflow-hidden bg-hydw-yellow text-hydw-blue">
+    <main className="largepadding wrapper overflow-hidden bg-hydw-yellow text-hydw-charcoal">
       <section className="page-grid">
         <div className="midspace col-span-11 text-left md:col-span-9 xl:col-span-8">
-          <h1 className="heading2 mt-7 uppercase lg:mt-0">{name}</h1>
+          <h1 className="heading2 mt-7 uppercase lg:mt-0 text-hydw-blue">{name}</h1>
         </div>
         <div className="smallspace col-span-12 aspect-video">
           <VideoPlayer url={featuredWork?.videoLink?.url || ""} />
@@ -49,8 +49,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </section>
       <section className="largespace">
         {/* note to tom: we're going to work out how to generate the below properly grammatically. Eg when its more appropriate for "have" be used */}
-        <h4 className="heading4 mb-7 uppercase">
-          More Tv that {name} has made
+        <h4 className="heading4 mb-7 uppercase text-hydw-blue">
+          More work that {name} has made
         </h4>
         <div className="page-grid gap-2.5 md:gap-5">
           {work.map((work) => (

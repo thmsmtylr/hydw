@@ -290,6 +290,9 @@ export default async function Page() {
         <div className="page-grid col-span-12">
           <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
             <p className="heading3 text-center text-hydw-blue">{description}</p>
+            <p className={`smallspace body text-center text-hydw-blue`}>
+              {/* <Link href={descriptionLink}>{descriptionLinkText}</Link> */}
+            </p>
           </div>
           <div className="relative col-span-6 col-start-4 lg:col-span-2 lg:col-start-11">
             <Image

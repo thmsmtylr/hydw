@@ -40,7 +40,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
         </section>
         <section className="largespace">
-          <h4 className="heading4 uppercase mb-7">More commercials that we've made</h4>
+          <h4 className="heading4 uppercase mb-7 text-hydw-blue">More commercials that we've made</h4>
           <div className="page-grid gap-2.5 md:gap-5">
             <div className="col-span-6 lg:col-span-4 bg-test-grey aspect-video thumbnail relative">
                 <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
