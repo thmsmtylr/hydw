@@ -29,6 +29,8 @@ module.exports = {
         mbbase: ["18px", "120%"],
       },
       screens:{
+        'shortsml': { 'raw': '(max-height: 400px)' },
+        'shortmd': { 'raw': '(max-height: 600px) and (min-width: 768px)' },
         'shortlg': { 'raw': '(max-height: 800px) and (min-width: 1024px)' },
         'tallsml': { 'raw': '(min-height: 1000px)' },
         'talllg': { 'raw': '(min-height: 1000px) and (min-width: 1024px)' },

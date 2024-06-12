@@ -22,7 +22,7 @@ export function Navigation(props: NavigationComponentProps) {
   return (
     <DialogPrimitive.Root open={menuOpen} onOpenChange={onOpenChange}>
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-hydw-blue">
+        <DialogPrimitive.Overlay className="overflow-scroll fixed inset-0 z-50 bg-hydw-blue">
           <DialogPrimitive.Content>
             <div className="flex w-full items-center justify-end p-11">
               <motion.button
@@ -37,7 +37,7 @@ export function Navigation(props: NavigationComponentProps) {
                 Close
               </motion.button>
             </div>
-            <nav className="wrapper absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center">
+            <nav className="wrapper absolute left-0 top-0 flex h-screen shortsml:h-[unset] shortmd:h-[unset] shortlg:h-[unset]  w-full flex-col items-center justify-center mt-0 shortsml:mt-10 shortmd:mt-6 shortlg:mt-8">
               {navItems.map((item, index: number) => (
                 <motion.div
                   className="inline-block h-[34px] overflow-hidden px-8 will-change-transform md:h-[51px] lg:h-[79.9px]"
