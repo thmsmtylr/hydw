@@ -6,5 +6,5 @@ export function FeaturedScrollRotate({
 }: {
   children: React.ReactNode;
 }) {
-  return <ScrollRotate animationDuration={0.5}>{children}</ScrollRotate>;
+  return <ScrollRotate animationDuration={0.5} loops={1}>{children}</ScrollRotate>;
 }
