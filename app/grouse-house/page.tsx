@@ -37,7 +37,7 @@ export default async function Page() {
 
   return (
     <main className="layoutb largepadding overflow-hidden bg-hydw-vanilla">
-      <section className="page-grid wrapper relative min-h-screen bg-hydw-yellow py-10">
+      <section className="page-grid wrapper relative min-h-screen bg-hydw-yellow py-10 shortlg:pb-80">
         <div className="largespace extraheight col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
           <PageHeading title={title} />
         </div>
@@ -58,7 +58,7 @@ export default async function Page() {
           </div>
           <div className="order-1 col-span-6 col-start-1 md:col-span-3 md:col-start-1 lg:order-2">
             <Image
-              className="m-auto mt-14 max-w-[120px] md:-mt-3 md:max-w-[150px] lg:mt-80 lg:max-w-[175px]"
+              className="m-auto mt-14 max-w-[120px] md:-mt-3 md:max-w-[150px] lg:mt-96 xl:mt-80 lg:max-w-[175px] talllg:-ml-[25px] tallxl:-ml-0"
               src="/img/computer.png"
               alt="Laptop with youtube"
               width={188}
@@ -67,7 +67,7 @@ export default async function Page() {
           </div>
           <div className="order-2 col-span-6 col-start-7 md:col-start-10 lg:order-3 lg:col-span-3 lg:col-start-11">
             <Image
-              className="relative m-auto mt-7 max-w-[120px] rotate-[17deg] md:max-w-[140px] lg:mt-80 lg:max-w-[166px] lg:text-right xl:mx-auto"
+              className="relative m-auto mt-7 max-w-[120px] rotate-[17deg] md:max-w-[140px] lg:mt-80 lg:max-w-[166px] lg:text-right xl:mx-auto talllg:-mr-[25px] tallxl:mx-auto"
               src="/img/subscribers.png"
               alt="Subscriber count"
               width={166}

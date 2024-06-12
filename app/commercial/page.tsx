@@ -38,7 +38,7 @@ export default async function Page() {
 
   return (
     <main className="largepadding bg-hydw-vanilla">
-      <section className="page-grid wrapper relative min-h-screen overflow-hidden bg-hydw-yellow py-10">
+      <section className="page-grid wrapper relative min-h-screen overflow-hidden bg-hydw-yellow py-10 shortlg:pb-80">
         <div className="largespace extraheight col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
           <PageHeading title={title} />
         </div>

@@ -38,7 +38,7 @@ export default async function Page() {
 
   return (
     <main className="layoutb addimage1 largepadding overflow-hidden bg-hydw-vanilla">
-      <section className="page-grid wrapper relative min-h-screen bg-hydw-yellow py-10">
+      <section className="page-grid wrapper relative min-h-screen bg-hydw-yellow py-10 shortlg:pb-80">
         <div className="largespace extraheight col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
           <PageHeading title={title} />
         </div>
@@ -67,7 +67,7 @@ export default async function Page() {
           </div>
           <div className="col-span-6 col-start-7 md:col-span-3 md:col-start-10">
             <Image
-              className="m-auto max-w-[150px] rotate-[25deg] md:max-w-[170px] lg:mt-[300px] lg:max-w-[210px]"
+              className="m-auto max-w-[150px] rotate-[25deg] md:max-w-[170px] lg:mt-[300px] lg:max-w-[210px] talllg:mt-96"
               src="/img/cowdoy.png"
               alt="Cowdoy"
               width={210}

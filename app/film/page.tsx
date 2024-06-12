@@ -36,7 +36,7 @@ export default async function Page() {
 
   return (
     <main className="layouta largepadding overflow-hidden bg-hydw-vanilla">
-      <section className="page-grid wrapper min-h-screen bg-hydw-pink py-10">
+      <section className="page-grid wrapper min-h-screen bg-hydw-pink py-10 shortlg:pb-80">
         <div className="largespace extraheight col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
           <PageHeading title={title} />
         </div>
@@ -76,7 +76,7 @@ export default async function Page() {
           <div className="relative order-4 col-span-6 col-start-4 md:order-3 md:col-start-1 lg:col-span-5 lg:col-start-1 lg:mt-0">
             <Parallax className="relative">
               <Image
-                className="m-auto max-w-[450px] rotate-12 lg:absolute lg:-bottom-[550px]"
+                className="m-auto max-w-[450px] rotate-12 lg:absolute lg:-bottom-[600px] talllg:-bottom-[700px]"
                 src="/img/toreplace/HYDWP_Nippers_2-min.png"
                 alt="alt here"
                 width={450}

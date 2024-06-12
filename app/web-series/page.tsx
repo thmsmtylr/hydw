@@ -37,7 +37,7 @@ export default async function Page() {
 
   return (
     <main className="overflow-hidden largepadding bg-hydw-vanilla layouta addimage1">
-      <section className="wrapper page-grid min-h-screen py-10  bg-hydw-pink">    
+      <section className="wrapper page-grid min-h-screen py-10  bg-hydw-pink shortlg:pb-80">    
         <div className="col-span-12 xl:col-span-10 xl:col-start-2 text-center items-center justify-center largespace extraheight">
             <PageHeading title={title} />
         </div>
@@ -74,7 +74,7 @@ export default async function Page() {
             </div>
             <div className="order-3 lg:order-4 col-span-6 col-start-1 md:col-start-1 lg:col-span-5 lg:col-start-1 z-30">
                 <Parallax className="relative">
-                    <Image className="rotate-12 max-w-[400px] m-auto md:absolute md:-bottom-[300px] lg:-bottom-[400px] xl:left-0 xl:translate-x-1/2"
+                    <Image className="rotate-12 max-w-[400px] m-auto md:absolute md:-bottom-[350px] lg:-bottom-[400px] xl:left-0 xl:translate-x-1/2"
                       src="/img/toreplace/HYDWP_Hot_2-min.png"
                       alt="alt here"
                       width={450}
