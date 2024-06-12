@@ -312,14 +312,14 @@ export default async function Page() {
                         href={`${category.slug}/${slug}`}
                         className="relative inline-flex h-full w-full bg-hydw-pink"
                       >
-                        <div className="absolute z-20 -ml-[104px] -mt-[104px] h-52 w-52">
+                        <div className="absolute z-20 h-28 w-28 left-0 -top-[52px] md:-left-[30px] lg:-left-[104px] lg:-top-[104px] lg:h-52 lg:w-52">
                           <FeaturedScrollRotate>
                             <Image
                               src="/img/latestcommercials.svg"
                               alt="Latest Commercials"
                               width={208}
                               height={208}
-                              className="h-52 w-52"
+                              className="h-28 w-28 lg:h-52 lg:w-52"
                             />
                           </FeaturedScrollRotate>
                         </div>
@@ -363,7 +363,7 @@ export default async function Page() {
                         href={`${category.slug}/${slug}`}
                         className="relative inline-flex h-full w-full bg-hydw-pink"
                       >
-                        <div className="absolute right-0 z-20 -mr-[104px] -mt-[104px] h-52 w-52">
+                        <div className="absolute z-20 h-28 w-28 -top-[100px] right-0 md:-right-[30px] lg:-right-[104px] lg:-top-[104px] lg:h-52 lg:w-52">
                           <FeaturedScrollRotate>
                             <Image
                               src="/img/latesttv.svg"
