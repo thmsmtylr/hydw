@@ -110,7 +110,6 @@ export default async function Page() {
       </div>
 
       <section id="directors" className="largespace wrapper">
-        \
         <div className="director page-grid relative text-left">
           <div className="directorthumb page-grid col-span-12 w-full md:absolute md:left-0 md:top-[100px]">
             <div className="col-span-10 col-start-1 aspect-video bg-test-grey md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-7 "></div>

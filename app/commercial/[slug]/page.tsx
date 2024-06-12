@@ -8,7 +8,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <main className="overflow-hidden largepadding bg-hydw-yellow wrapper text-hydw-charcoal">
         <section className="page-grid">
           <div className="col-span-11 md:col-span-9 xl:col-span-8 text-left midspace">
-              <h1 className="mt-7 lg:mt-0 heading2 uppercase">title</h1>
+              <h1 className="mt-7 lg:mt-0 heading2 uppercase text-hydw-blue">title</h1>
               <p className="mt-3 body">hydw credit here eg: Production, Writing, Directing & Performance</p>
           </div>
           <div className="smallspace col-span-12 aspect-video bg-test-grey">
@@ -17,20 +17,25 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </section>
         <section className="page-grid smallspace">
           <p className="col-span-12 md:col-span-10 lg:col-span-6 body">
-          To celebrate the launch of the next generation of virtual reality gaming, the PlayStation®VR2, creative PR agency Poem has created an earned-first campaign spearheaded by a content piece featuring Aussie larrikin comedians, TV and social media stars, Aunty Donna.
+          Description here.
           </p>
           <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
+            {/* dev note: should this be some kind of repeater that they can add any credit line for? */}
             <div className="mt-7 lg:mt-0">
                 <h6 className="smallbody uppercase">Client</h6>
-                <p className="body">Playstation VR2</p>
+                <p className="body">Client name</p>
             </div>
             <div className="mt-7">
                 <h6 className="smallbody uppercase">Agency</h6>
-                <p className="body"><a href="">Poem</a></p>
+                <p className="body"><a href="">Agency Name</a></p>
             </div>
             <div className="mt-7">
                 <h6 className="smallbody uppercase">Director</h6>
-                <p className="body"><a href="">Max Miller</a></p>
+                <p className="body"><a href="">Director Name</a></p>
+            </div>
+            <div className="mt-7">
+                <h6 className="smallbody uppercase">Writer</h6>
+                <p className="body">Writer Name</p>
             </div>
           </div>
         </section>
