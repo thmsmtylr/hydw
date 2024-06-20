@@ -12,6 +12,7 @@ export const COMMERCIAL_PAGE_QUERY = gql`
       id
       slug
       title
+      subtitle
       description
       work {
         id
