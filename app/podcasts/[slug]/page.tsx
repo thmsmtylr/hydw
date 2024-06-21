@@ -7,7 +7,7 @@ export default async function Page() {
               <p className="mt-3 body">Disrtibutor Year eg Listnr 2016 – 2024</p>
           </div>
           <div className="smallspace col-span-12 aspect-video bg-test-grey">
-            {/* vimeo link to go in here */}
+            {/* 16:9 hero to go in here */}
           </div>
         </section>
         <section className="page-grid smallspace">
