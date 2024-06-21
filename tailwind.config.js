@@ -49,6 +49,10 @@ module.exports = {
       skew: {
         40: "-20deg",
       },
+      cursor: {
+        default: "url(../public/pud.cur), default",
+        pointer: "url(../public/eatenpud.cur), pointer",
+      },
     },
   },
   plugins: [

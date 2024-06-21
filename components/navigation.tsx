@@ -49,13 +49,13 @@ export function Navigation(props: NavigationComponentProps) {
                   <Link href={item.path} onClick={() => setMenuOpen(!menuOpen)}>
                     <motion.div
                       variants={navVariants}
-                      className={`heading2 text-center uppercase text-white no-underline`}
+                      className={`cursor-pointer heading2 text-center uppercase text-white no-underline`}
                     >
                       {item.title}
                     </motion.div>
                     <motion.div variants={navVariants}>
                       <div
-                        className={`font-white heading2 skew-x-40 text-center uppercase tracking-normal ${
+                        className={`cursor-pointer font-white heading2 skew-x-40 text-center uppercase tracking-normal ${
                           isEven(index) ? "text-hydw-yellow" : "text-hydw-pink"
                         }`}
                       >

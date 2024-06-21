@@ -4,6 +4,18 @@
 
 @layer base {
 
+  /* body{
+     cursor: url('../public/pointer.png'), auto; 
+  } */
+
+    *, *:before, *:after {
+    @apply cursor-default;
+  }
+
+  a, button {
+    @apply cursor-pointer;
+  }
+
   img, svg{
     @apply w-[100%] h-auto;
   }
