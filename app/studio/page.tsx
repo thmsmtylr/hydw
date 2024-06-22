@@ -1,14 +1,38 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
-import { buildMDX } from "@/utils/build-mdx";
-import { COMMERCIAL_PAGE_QUERY } from "@/queries/commercial-page-query";
-import { CommercialPageQuery } from "@/types/generated";
-import { PageLayout } from "@/components/page-layout";
 import { Parallax } from "@/components/parallax";
-import Image from "next/image";
-import { PageHeading } from "@/components/page-heading";
+import { PageLayout } from "@/components/page-layout";
+import { STUDIO_QUERY } from "@/queries/studio-query";
+import { StudioPageQuery } from "@/types/generated";
+
+async function getPageData(): Promise<any> {
+  const data = await request({ query: STUDIO_QUERY });
+
+  return { ...(data as StudioPageQuery) };
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await getPageData();
+  const title = data.page?.seo?.title || data.page?.title || "";
+  const description =
+    data.page?.seo?.description || data.page?.description || "";
+  const url = data.page.seo?.image?.url || "";
+
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      images: url,
+    },
+  };
+}
 
 export default async function Page() {
+  const data = await getPageData();
+  const title = data.page?.title || "";
+  const description = data.page?.description || "";
+  const works = data.page?.work || [];
   return (
     <main className="layoutb bg-hydw-vanilla">
       <nav
@@ -34,34 +58,19 @@ export default async function Page() {
           </li>
         </ul>
       </nav>
-
       <section
         id="studio"
         className="midspace largepadding page-grid wrapper overflow-y-auto overflow-x-hidden"
       >
         <h1 className="heading3 col-span-12 mt-7 text-hydw-blue md:col-span-10 md:col-start-2 md:mt-0 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3">
-          Our Studio
+          {title}
         </h1>
-        <p className="midspace body col-span-12 text-hydw-blue md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at
-          felis in erat porta rutrum. Donec ultrices euismod rhoncus. Sed dolor
-          massa, tincidunt quis magna quis, dapibus egestas lorem. Aliquam ac
-          dignissim felis. Fusce vulputate leo nulla, sed euismod sapien posuere
-          quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-          posuere cubilia curae; Vestibulum in congue nulla. Aliquam aliquet sed
-          metus id gravida. Aliquam lobortis posuere sapien.
-          <br></br>
-          Pellentesque iaculis, arcu nec interdum vehicula, justo ex varius
-          nisl, quis mollis sapien neque vitae sem. Donec convallis purus sit
-          amet mi vehicula, a consectetur urna rutrum. Maecenas efficitur eu ex
-          vel molestie. Phasellus luctus rutrum venenatis. Sed ut augue et
-          mauris finibus blandit malesuada sit amet erat. Ut fermentum turpis
-          non ligula cursus sollicitudin. Nam ultrices fermentum diam, bibendum
-          congue quam blandit id. Morbi hendrerit sem sed ornare elementum. Ut
-          scelerisque porttitor mattis. Etiam non accumsan massa, non varius
-          purus.
-        </p>
-
+        {description && (
+          <div
+            className="midspace body col-span-12 text-hydw-blue md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+        )}
         <h4 className="largespace heading4 col-span-5 text-hydw-blue md:col-start-2">
           Our Work
         </h4>
@@ -77,8 +86,7 @@ export default async function Page() {
           </Parallax>
         </div>
       </section>
-
-      {/* <PageLayout title={title} description={description} items={works} /> */}
+      <PageLayout title={title} description={description} items={works} />
     </main>
   );
 }
