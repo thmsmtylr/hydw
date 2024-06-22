@@ -18,8 +18,6 @@ export function Navigation(props: NavigationComponentProps) {
   const { navItems } = props;
   const { menuOpen, setMenuOpen, onOpenChange } = useHeaderContext();
 
-  console.log(navItems);
-
   return (
     <DialogPrimitive.Root open={menuOpen} onOpenChange={onOpenChange}>
       <DialogPrimitive.Portal>
