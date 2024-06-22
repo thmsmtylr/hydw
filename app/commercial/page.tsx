@@ -94,10 +94,12 @@ export default async function Page() {
           </Parallax>
         </div>
       </div>
-
-      <div className="smallerspace page-grid wrapper pointer-events-none sticky top-[66px] z-[30] md:top-[16px] lg:top-[8px]">
+      <nav
+        role="navigation"
+        className="smallerspace page-grid wrapper pointer-events-none sticky top-[66px] z-[30] md:top-[16px] lg:top-[8px]"
+      >
         <ul
-          role="navigation"
+          role="list"
           className="col-span-12 col-start-1 flex flex-wrap text-hydw-charcoal md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3"
         >
           <li className="heading5 pointer-events-auto mr-3">
@@ -114,8 +116,7 @@ export default async function Page() {
             </Link>
           </li>
         </ul>
-      </div>
-
+      </nav>
       <section id="directors" className="largespace wrapper">
         {directors.map((director, index) => {
           return (
@@ -126,15 +127,17 @@ export default async function Page() {
               <div className="directorthumb page-grid col-span-12 w-full md:absolute md:left-0 md:top-[100px]">
                 <div className="col-span-10 col-start-1 aspect-video md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-7 "></div>
               </div>
-              <h2 className="heading2 relative z-[10] col-span-12 mt-4 uppercase text-hydw-blue hover:text-hydw-pink md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4">
+              <h2 className="group heading2 relative z-[10] col-span-12 mt-4 uppercase text-hydw-blue hover:text-hydw-pink md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4">
                 <Link href={`directors/${director.slug}`}>{director.name}</Link>
+                <div className="opacity-0 group-hover:opacity-100">
+                  {(director.featuredWork?.featuredImages?.length ?? 0) > 0 && (
+                    <FeaturedThumbnails
+                      index={index}
+                      images={director.featuredWork?.featuredImages || []}
+                    />
+                  )}
+                </div>
               </h2>
-              {(director.featuredWork?.featuredImages?.length ?? 0) > 0 && (
-                <FeaturedThumbnails
-                  index={index}
-                  images={director.featuredWork?.featuredImages || []}
-                />
-              )}
             </div>
           );
         })}
