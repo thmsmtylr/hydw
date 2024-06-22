@@ -18,7 +18,7 @@ export function PageLayout({
   pageSlug?: string;
 }) {
   return (
-    <section className="bg-hydw-vanilla">
+    <section className="bg-hydw-vanilla thumbnaillayout">
       <div className="page-grid wrapper -mb-14 -translate-y-14 lg:-mb-28 lg:-translate-y-28">
         {items.map((item) => {
           const { id, slug, videoLink, title, description, image: url } = item;

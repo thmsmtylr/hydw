@@ -34,10 +34,10 @@ export default async function Page() {
   const description = data.page?.description || "";
   const works = data.page?.work || [];
   return (
-    <main className="layoutb bg-hydw-vanilla">
+    <main className="layoutb studio bg-hydw-vanilla overflow-hidden largepadding">
       <nav
         role="navigation"
-        className="page-grid wrapper sticky top-[66px] z-[30] md:top-[16px] lg:top-[8px]"
+        className="page-grid wrapper fixed top-[66px] z-[30] md:top-[16px] lg:top-[8px] w-full"
       >
         <ul
           role="list"
@@ -46,13 +46,13 @@ export default async function Page() {
           <li className="heading5 mr-3">
             <a
               href="commercial#directors"
-              className="no-underline duration-300 hover:underline"
+              className="no-underline duration-300 hover:underline hover:text-hydw-blue"
             >
               Directors
             </a>
           </li>
           <li className="heading5 ml-3">
-            <a href="#studio" className="underline">
+            <a href="#studio" className="underline hover:text-hydw-blue">
               Studio
             </a>
           </li>
@@ -60,7 +60,7 @@ export default async function Page() {
       </nav>
       <section
         id="studio"
-        className="midspace largepadding page-grid wrapper overflow-y-auto overflow-x-hidden"
+        className="pt-14 md:pt-[108px] midspace largepadding page-grid wrapper"
       >
         <h1 className="heading3 col-span-12 mt-7 text-hydw-blue md:col-span-10 md:col-start-2 md:mt-0 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3">
           {title}
@@ -74,7 +74,7 @@ export default async function Page() {
         <h4 className="largespace heading4 col-span-5 text-hydw-blue md:col-start-2">
           Our Work
         </h4>
-        <div className="largespace relative col-span-5 col-start-6 md:col-span-4 md:col-start-8 lg:col-span-5 lg:col-start-9">
+        <div className="largespace relative col-span-5 col-start-6 md:col-span-4 md:col-start-8 lg:col-span-5 lg:col-start-9 z-10">
           <Parallax className="relative h-[50px]">
             <Image
               className="absolute -top-[100px] right-0 max-w-[450px] rotate-12 md:-top-[100px] lg:-top-[200px] xl:-top-[400px]"
