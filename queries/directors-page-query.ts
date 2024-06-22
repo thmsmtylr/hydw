@@ -11,9 +11,6 @@ export const DIRECTORS_QUERY = gql`
           url
           title
         }
-        image {
-          url
-        }
         title
       }
     }

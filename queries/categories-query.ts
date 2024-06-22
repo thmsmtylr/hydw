@@ -9,9 +9,6 @@ export const CATEGORIES = gql`
       work {
         id
         title
-        image {
-          url
-        }
       }
     }
   }
