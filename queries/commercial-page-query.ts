@@ -14,6 +14,10 @@ export const COMMERCIAL_PAGE_QUERY = gql`
       title
       subtitle
       description
+      featuredImage {
+        url
+        alt
+      }
       work {
         id
         title
@@ -31,6 +35,23 @@ export const COMMERCIAL_PAGE_QUERY = gql`
         description
         image {
           url
+        }
+      }
+    }
+    allDirectors(
+      filter: { _status: { eq: published }, _isValid: { eq: "true" } }
+    ) {
+      id
+      name
+      slug
+      featuredWork {
+        id
+        featuredImages {
+          id
+          image {
+            url
+            alt
+          }
         }
       }
     }

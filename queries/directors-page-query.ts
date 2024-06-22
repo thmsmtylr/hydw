@@ -6,18 +6,6 @@ export const DIRECTORS_QUERY = gql`
       id
       description
       name
-      work {
-        title
-        image {
-          alt
-          url
-        }
-        videoLink {
-          url
-          title
-        }
-        id
-      }
       featuredWork {
         videoLink {
           url
@@ -27,13 +15,6 @@ export const DIRECTORS_QUERY = gql`
           url
         }
         title
-      }
-      work {
-        title
-        videoLink {
-          url
-        }
-        id
       }
     }
   }

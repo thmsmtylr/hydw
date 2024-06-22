@@ -38,6 +38,11 @@ export default async function Page() {
   const bodyTitle = data.about?.bodyTitle || "";
   const bodyDescription = buildMDX(data.about?.bodyDescription || "");
   const sections = data.about?.section;
+  const imageRight = data.about?.imageRight || { url: "", alt: "" };
+  const imageBottom = data.about?.imageBottom || {
+    url: "",
+    alt: "",
+  };
 
   return (
     <main className="largepadding wrapper bg-hydw-vanilla">
@@ -107,8 +112,8 @@ export default async function Page() {
                     "relative"
                   )}
                 ></div>
-                <div className="">
-                  <h5 className={`heading5 text-hydw-blue`}>{section.title}</h5>
+                <div>
+                  <h5 className="heading5 text-hydw-blue">{section.title}</h5>
                   <p
                     className="body text-hydw-blue"
                     dangerouslySetInnerHTML={{ __html: description }}
@@ -122,8 +127,8 @@ export default async function Page() {
           <Parallax className="relative flex">
             <Image
               className="h-[auto] max-w-[450px] self-center"
-              src="/img/toreplace/HYDWP_Website_3.png"
-              alt="alt here"
+              src={imageRight?.url}
+              alt={imageRight.alt}
               width={398}
               height={399}
             />
@@ -131,11 +136,11 @@ export default async function Page() {
         </div>
 
         <div className="col-span-5 col-start-8 lg:col-span-5 lg:col-start-2">
-          <Parallax className="">
+          <Parallax>
             <Image
               className="max-w-[450px]"
-              src="/img/toreplace/HYDWP_Website_6.png"
-              alt="alt here"
+              src={imageBottom?.url}
+              alt={imageBottom.alt}
               width={555}
               height={321}
             />
