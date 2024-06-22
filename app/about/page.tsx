@@ -1,16 +1,13 @@
-import type { Metadata } from "next";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { PageHeading } from "@/components/page-heading";
 import { ABOUT_QUERY } from "@/queries/about-query";
 import { AboutQuery } from "@/types/generated";
 import { buildMDX } from "@/utils/build-mdx";
 import { classNames } from "@/utils/class-names";
 import { Parallax } from "@/components/parallax";
-import { SkewedText } from "@/components/skewed-text";
-import { ScrollDownButton } from "@/components/scroll-down-button";
 import { request } from "@/lib/datocms";
 import { isEven } from "@/utils/is-even";
-import { ambitFont, flyerFont } from "@/fonts";
 
 async function getAboutPageData(): Promise<AboutQuery> {
   const data = await request({ query: ABOUT_QUERY });
@@ -39,20 +36,19 @@ export default async function Page() {
   const title = data.about?.title || "";
   const description = buildMDX(data.about?.description || "");
   const bodyTitle = data.about?.bodyTitle || "";
-  const skewedBodyTitle = data.about?.skewBodyTitle || "";
   const bodyDescription = buildMDX(data.about?.bodyDescription || "");
   const sections = data.about?.section;
 
   return (
     <main className="largepadding wrapper bg-hydw-vanilla">
       <section className="page-grid relative">
-        <div className="largespace extraheight col-span-12 md:col-span-10 md:col-start-2 text-hydw-blue">
+        <div className="largespace extraheight col-span-12 text-hydw-blue md:col-span-10 md:col-start-2">
           {title && <PageHeading title={title} />}
         </div>
-        <div className="page-grid wrapper pointer-events-none md:absolute mt-7 md:mt-0 left-0 top-0 col-span-12 h-full w-full">
+        <div className="page-grid wrapper pointer-events-none left-0 top-0 col-span-12 mt-7 h-full w-full md:absolute md:mt-0">
           <div className="col-span-6 md:col-span-3 md:col-start-7">
             <Image
-              className="md:m-auto max-w-[120px] rotate-12 md:-mt-14 md:max-w-[150px] lg:-mt-4 lg:max-w-[200px]"
+              className="max-w-[120px] rotate-12 md:m-auto md:-mt-14 md:max-w-[150px] lg:-mt-4 lg:max-w-[200px]"
               src="/img/auntydonna.png"
               alt="Aunty Donna"
               width={227}
@@ -70,7 +66,7 @@ export default async function Page() {
           </div>
           <div className="relative col-span-4 col-start-5 md:col-span-2 md:col-start-11">
             <Image
-              className="m-auto mt-4 md:mx-auto md:mt-7 max-w-[90px] -rotate-12 md:max-w-[120px] lg:absolute lg:left-1/2 lg:top-1/2 lg:max-w-[161px] lg:-translate-x-1/2 lg:translate-y-1/2"
+              className="m-auto mt-4 max-w-[90px] -rotate-12 md:mx-auto md:mt-7 md:max-w-[120px] lg:absolute lg:left-1/2 lg:top-1/2 lg:max-w-[161px] lg:-translate-x-1/2 lg:translate-y-1/2"
               src="/img/drum.png"
               alt="Everything's a drum"
               width={161}
@@ -83,14 +79,14 @@ export default async function Page() {
         <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2">
           {description && (
             <h4
-              className={` heading4 leading-[100%] text-hydw-blue`}
+              className="heading4 leading-[100%] text-hydw-blue"
               dangerouslySetInnerHTML={{ __html: description }}
             />
           )}
-          {bodyTitle && <h3 className={`heading3 smallspace`}>{bodyTitle}</h3>}
+          {bodyTitle && <h3 className="heading3 smallspace">{bodyTitle}</h3>}
           {bodyDescription && (
             <p
-              className={`body smallerspace`}
+              className="body smallerspace"
               dangerouslySetInnerHTML={{ __html: bodyDescription }}
             />
           )}
@@ -110,18 +106,7 @@ export default async function Page() {
                     isEven(index) ? "order-last" : "order-first",
                     "relative"
                   )}
-                >
-                  <div className="relative flex h-full w-full items-center justify-center">
-                    {/* <Parallax className="">
-                          <Image
-                            src={section.imageTop.url}
-                            alt={section.imageTop.alt}
-                            width={480}
-                            height={480}
-                          />
-                        </Parallax> */}
-                  </div>
-                </div>
+                ></div>
                 <div className="">
                   <h5 className={`heading5 text-hydw-blue`}>{section.title}</h5>
                   <p

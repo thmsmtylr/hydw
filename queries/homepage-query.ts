@@ -10,7 +10,7 @@ export const HOMEPAGE_QUERY = gql`
         }
       }
     }
-    home {
+    home(filter: { _isValid: { eq: "true" }, _status: { eq: published } }) {
       posterImage {
         url
       }
