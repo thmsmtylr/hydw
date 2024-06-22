@@ -122,20 +122,19 @@ export default async function Page() {
           return (
             <div
               key={director.id}
-              className="director page-grid relative text-left"
+              className="director page-grid relative text-left mt-14 first:mt-0 md:mt-0"
             >
-              <div className="directorthumb page-grid col-span-12 w-full md:absolute md:left-0 md:top-[100px]">
-                <div className="col-span-10 col-start-1 aspect-video md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-7 "></div>
-              </div>
-              <h2 className="group heading2 relative z-[10] col-span-12 mt-4 uppercase text-hydw-blue hover:text-hydw-pink md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4">
-                <Link href={`directors/${director.slug}`}>{director.name}</Link>
-                <div className="opacity-0 group-hover:opacity-100">
+              <h2 className="group heading2 relative z-[10] col-span-12 mt-4 uppercase text-hydw-blue hover:text-hydw-pink page-grid">
+                <Link className="z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 order-2 md:order-1 mt-7" href={`directors/${director.slug}`}>{director.name}</Link>
+                <div className="pointer-events-none directorthumbwrap relative md:absolute md:left-0 w-full duration-200 md:opacity-0 md:group-hover:opacity-100 order-1 md:order-2 col-span-12 page-grid">
+                  <div className="directorthumb aspect-video col-span-12 md:col-span-8 lg:col-span-6 relative">
                   {(director.featuredWork?.featuredImages?.length ?? 0) > 0 && (
                     <FeaturedThumbnails
                       index={index}
                       images={director.featuredWork?.featuredImages || []}
                     />
                   )}
+                  </div>
                 </div>
               </h2>
             </div>
