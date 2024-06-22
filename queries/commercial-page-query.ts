@@ -23,9 +23,6 @@ export const COMMERCIAL_PAGE_QUERY = gql`
         title
         description
         credits
-        image {
-          url
-        }
         videoLink {
           url
         }

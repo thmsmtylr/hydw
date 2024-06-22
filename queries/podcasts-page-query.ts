@@ -18,9 +18,6 @@ export const PODCASTS_QUERY = gql`
         title
         description
         credits
-        image {
-          url
-        }
         videoLink {
           url
         }

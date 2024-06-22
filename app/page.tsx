@@ -229,7 +229,7 @@ export default async function Page() {
             }
             if (category.slug === "podcasts" && featuredImages.length > 0) {
               return (
-                <section className="largespace page-grid col-span-12">
+                <section key={id} className="largespace page-grid col-span-12">
                   <div className="relative z-20 col-span-3 col-start-8 md:col-span-2 md:col-start-6 xl:col-start-5">
                     <div className="absolute -top-[52px] right-0 z-20 h-28 w-28 md:right-[26px] lg:-top-[104px] lg:right-[26px] lg:h-52 lg:w-52">
                       <FeaturedScrollRotate>
@@ -278,7 +278,7 @@ export default async function Page() {
             }
             if (category.slug === "film" && featuredImages.length > 0) {
               return (
-                <section className="largespace page-grid col-span-12">
+                <section key={id} className="largespace page-grid col-span-12">
                   <div className="relative z-20 col-span-3 col-start-8 md:col-span-2 md:col-start-6 xl:col-start-5">
                     <div className="absolute -top-[52px] right-0 z-20 h-28 w-28 md:right-[26px] lg:-top-[104px] lg:right-[26px] lg:h-52 lg:w-52">
                       <FeaturedScrollRotate>

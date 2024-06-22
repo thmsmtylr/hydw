@@ -21,12 +21,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const name = data.director?.name || "";
   const description = data.director?.description || "";
   const featuredWork = data.director?.featuredWork;
-  const work = data?.director?.work || [];
   return (
     <main className="largepadding wrapper overflow-hidden bg-hydw-yellow text-hydw-charcoal">
       <section className="page-grid">
         <div className="midspace col-span-11 text-left md:col-span-9 xl:col-span-8">
-          <h1 className="heading2 mt-7 uppercase lg:mt-0 text-hydw-blue">{name}</h1>
+          <h1 className="heading2 mt-7 uppercase text-hydw-blue lg:mt-0">
+            {name}
+          </h1>
         </div>
         <div className="smallspace col-span-12 aspect-video">
           <VideoPlayer url={featuredWork?.videoLink?.url || ""} />
@@ -52,29 +53,29 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <h4 className="heading4 mb-7 uppercase text-hydw-blue">
           More work that {name} has made
         </h4>
-        <div className="page-grid gap-2.5 md:gap-5">
-          {work.map((work) => (
-            <Link
-              key={work.id}
-              href=""
-              className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
-            >
-              <div className="hoverthumb absolute left-0 top-0 z-20 h-full w-full bg-hydw-pink duration-300">
-                {/* hover sequence to go here */}
-              </div>
-              {/* note to tom: these should be cover images */}
-              <div className="h-full w-full">
-                <Image
-                  src={work?.image?.url || ""}
-                  alt={work.title}
-                  width={1152}
-                  height={648}
-                />
-              </div>
-            </Link>
-          ))}
-        </div>
+        <div className="page-grid gap-2.5 md:gap-5"></div>
       </section>
     </main>
   );
 }
+
+// {work.map((work) => (
+//   <Link
+//     key={work.id}
+//     href=""
+//     className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
+//   >
+//     <div className="hoverthumb absolute left-0 top-0 z-20 h-full w-full bg-hydw-pink duration-300">
+//       {/* hover sequence to go here */}
+//     </div>
+//     {/* note to tom: these should be cover images */}
+//     <div className="h-full w-full">
+//       <Image
+//         src={work?.image?.url || ""}
+//         alt={work.title}
+//         width={1152}
+//         height={648}
+//       />
+//     </div>
+//   </Link>
+// ))}

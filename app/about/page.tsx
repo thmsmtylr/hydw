@@ -9,14 +9,14 @@ import { Parallax } from "@/components/parallax";
 import { request } from "@/lib/datocms";
 import { isEven } from "@/utils/is-even";
 
-async function getAboutPageData(): Promise<AboutQuery> {
+async function getPageData(): Promise<AboutQuery> {
   const data = await request({ query: ABOUT_QUERY });
 
   return { ...(data as AboutQuery) };
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await getAboutPageData();
+  const data = await getPageData();
   const title = data.about?.seo?.title || data.about?.title || "";
   const description =
     data.about?.seo?.description || data.about?.description || "";
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const data = await getAboutPageData();
+  const data = await getPageData();
   const title = data.about?.title || "";
   const description = buildMDX(data.about?.description || "");
   const bodyTitle = data.about?.bodyTitle || "";

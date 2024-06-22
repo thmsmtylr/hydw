@@ -20,9 +20,6 @@ export const TV_QUERY = gql`
         slug
         description
         credits
-        image {
-          url
-        }
         videoLink {
           url
         }
