@@ -18,7 +18,7 @@ export const WEB_SERIES_QUERY = gql`
         id
         title
         description
-        credits
+        distributor
         videoLink {
           url
         }

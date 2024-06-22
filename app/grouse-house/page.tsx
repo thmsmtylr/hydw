@@ -42,9 +42,9 @@ export default async function Page() {
           <PageHeading title={title} />
         </div>
         <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
-          <h4 className={`smallspace heading4`}>Subtitle.</h4>
+          <h4 className="smallspace heading4">Subtitle.</h4>
           {/* Note: Need Subtitle */}
-          <p className={`smallestspace body`}>{description}</p>
+          <p className="smallestspace body">{description}</p>
         </div>
         <div className="page-grid pointer-events-none left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-3 lg:order-1 lg:col-span-3 lg:col-start-7">
@@ -58,7 +58,7 @@ export default async function Page() {
           </div>
           <div className="order-1 col-span-6 col-start-1 md:col-span-3 md:col-start-1 lg:order-2">
             <Image
-              className="m-auto mt-14 max-w-[120px] md:-mt-3 md:max-w-[150px] lg:mt-96 xl:mt-80 lg:max-w-[175px] talllg:-ml-[25px] tallxl:-ml-0"
+              className="m-auto mt-14 max-w-[120px] md:-mt-3 md:max-w-[150px] lg:mt-96 lg:max-w-[175px] xl:mt-80 talllg:-ml-[25px] tallxl:-ml-0"
               src="/img/computer.png"
               alt="Laptop with youtube"
               width={188}

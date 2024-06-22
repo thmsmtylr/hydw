@@ -4,6 +4,7 @@ import { request } from "@/lib/datocms";
 import { VideoPlayer } from "@/components/video-player";
 import { DirectorBySlugQuery } from "@/types/generated";
 import { DIRECTORS_QUERY } from "@/queries/directors-page-query";
+import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 
 async function getPageData(slug: string): Promise<DirectorBySlugQuery> {
   const data = await request({
@@ -21,6 +22,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const name = data.director?.name || "";
   const description = data.director?.description || "";
   const featuredWork = data.director?.featuredWork;
+  const avatarIllustration = data.director?.avatarIllustration || {
+    url: "",
+    alt: "",
+  };
+  const featuredWorks = data.director?.featuredWorks || [];
+  const moreWorkText = data.director?.moreWorkText || "";
+
   return (
     <main className="largepadding wrapper overflow-hidden bg-hydw-yellow text-hydw-charcoal">
       <section className="page-grid">
@@ -38,44 +46,33 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <p dangerouslySetInnerHTML={{ __html: description }}></p>
         </div>
         <div className="relative col-span-12 lg:col-span-3 lg:col-start-9">
-          {/* to replace */}
-          <Image
-            className="m-auto mt-7 max-w-[300px]"
-            src="/img/puppet.png"
-            alt="Puppet"
-            width={129}
-            height={197}
-          />
+          {avatarIllustration.url && (
+            <Image
+              className="m-auto mt-7 max-w-[300px]"
+              src={avatarIllustration.url}
+              alt={avatarIllustration.alt}
+              width={129}
+              height={197}
+            />
+          )}
         </div>
       </section>
       <section className="largespace">
-        {/* note to tom: we're going to work out how to generate the below properly grammatically. Eg when its more appropriate for "have" be used */}
         <h4 className="heading4 mb-7 uppercase text-hydw-blue">
-          More work that {name} has made
+          {moreWorkText}
         </h4>
-        <div className="page-grid gap-2.5 md:gap-5"></div>
+        <div className="page-grid gap-2.5 md:gap-5">
+          {featuredWorks.map((work, index) => (
+            <Link
+              key={work.id}
+              href={work.externalLink?.length ? work.externalLink : "/"}
+              className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
+            >
+              <FeaturedThumbnails index={index} images={work.featuredImages} />
+            </Link>
+          ))}
+        </div>
       </section>
     </main>
   );
 }
-
-// {work.map((work) => (
-//   <Link
-//     key={work.id}
-//     href=""
-//     className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
-//   >
-//     <div className="hoverthumb absolute left-0 top-0 z-20 h-full w-full bg-hydw-pink duration-300">
-//       {/* hover sequence to go here */}
-//     </div>
-//     {/* note to tom: these should be cover images */}
-//     <div className="h-full w-full">
-//       <Image
-//         src={work?.image?.url || ""}
-//         alt={work.title}
-//         width={1152}
-//         height={648}
-//       />
-//     </div>
-//   </Link>
-// ))}

@@ -19,7 +19,7 @@ export const STUDIO_QUERY = gql`
         title
         slug
         description
-        credits
+        distributor
         videoLink {
           url
         }

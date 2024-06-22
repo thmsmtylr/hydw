@@ -17,7 +17,7 @@ export const GROUSE_HOUSE_QUERY = gql`
         id
         title
         description
-        credits
+        distributor
         videoLink {
           url
         }

@@ -22,7 +22,7 @@ export const COMMERCIAL_PAGE_QUERY = gql`
         id
         title
         description
-        credits
+        distributor
         videoLink {
           url
         }

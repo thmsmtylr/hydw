@@ -17,7 +17,7 @@ export const PODCASTS_QUERY = gql`
         id
         title
         description
-        credits
+        distributor
         videoLink {
           url
         }

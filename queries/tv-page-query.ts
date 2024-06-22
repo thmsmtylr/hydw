@@ -19,9 +19,15 @@ export const TV_QUERY = gql`
         title
         slug
         description
-        credits
+        distributor
         videoLink {
           url
+        }
+        featuredImages {
+          image {
+            url
+            alt
+          }
         }
       }
       seo {
