@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { BannerImageProps } from "@/types/homepage";
 import { absurd } from "@/utils/absurd";
 
 const parentVariant: Variants = {
@@ -54,7 +53,7 @@ function handleChildVarient(index: number) {
   }
 }
 
-export function BannerImages({ images }: { images: BannerImageProps }) {
+export function BannerImages({ images }: { images: any }) {
   return (
     <motion.div
       initial="initial"
@@ -63,7 +62,7 @@ export function BannerImages({ images }: { images: BannerImageProps }) {
       className="absolute mt-20 flex h-full w-full items-center justify-center will-change-transform sm:mt-0"
     >
       <AnimatePresence>
-        {images.map((image, index: number) => (
+        {images.map((image: any, index: number) => (
           <motion.div
             key={image.id}
             className="absolute z-10 will-change-transform"

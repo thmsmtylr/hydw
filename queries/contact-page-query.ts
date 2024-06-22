@@ -13,9 +13,6 @@ export const CONTACT_QUERY = gql`
         id
         link
         title
-        icon {
-          url
-        }
       }
       contactEmail
     }

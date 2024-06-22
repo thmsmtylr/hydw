@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { request } from "@/lib/datocms";
 import { HOMEPAGE_QUERY } from "@/queries/homepage-query";
-import { HomepageQueryProps } from "@/types/homepage";
 import { BannerImages } from "@/components/banner-image";
 import { Section } from "@/components/section";
 import { Skew } from "@/components/skew";
@@ -110,7 +109,7 @@ export default async function Page() {
           <div className="relative col-span-4 col-start-9 lg:col-start-8 2xl:col-start-7">
             <Parallax className="">
               <Image
-                className="absolute right-0 top-0 max-w-[450px] -translate-y-[150%] lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 2xl:lg:-translate-y-2/3 2xl:-translate-x-3/4"
+                className="absolute right-0 top-0 max-w-[450px] -translate-y-[150%] lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 2xl:-translate-x-3/4 2xl:lg:-translate-y-2/3"
                 src="/img/toreplace/HYDWP_Website_5.png"
                 alt="alt here"
                 width={450}
@@ -290,7 +289,7 @@ export default async function Page() {
         <div className="page-grid col-span-12">
           <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
             <p className="heading3 text-center text-hydw-blue">{description}</p>
-            <p className={`smallspace body text-center text-hydw-blue`}>
+            <p className={`body smallspace text-center text-hydw-blue`}>
               {/* <Link href={descriptionLink}>{descriptionLinkText}</Link> */}
             </p>
           </div>
@@ -315,7 +314,7 @@ export default async function Page() {
                         href={`${category.slug}/${slug}`}
                         className="relative inline-flex h-full w-full bg-hydw-pink"
                       >
-                        <div className="absolute z-20 h-28 w-28 left-0 -top-[52px] md:-left-[30px] lg:-left-[104px] lg:-top-[104px] lg:h-52 lg:w-52">
+                        <div className="absolute -top-[52px] left-0 z-20 h-28 w-28 md:-left-[30px] lg:-left-[104px] lg:-top-[104px] lg:h-52 lg:w-52">
                           <FeaturedScrollRotate>
                             <Image
                               src="/img/latestcommercials.svg"
@@ -342,7 +341,7 @@ export default async function Page() {
                   <div className="relative col-span-4 col-start-9 lg:col-start-8 2xl:col-start-7">
                     <Parallax>
                       <Image
-                        className="absolute right-0 top-0 max-w-[450px] -translate-y-[150%] lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 2xl:lg:-translate-y-2/3 2xl:-translate-x-3/4"
+                        className="absolute right-0 top-0 max-w-[450px] -translate-y-[150%] lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 2xl:-translate-x-3/4 2xl:lg:-translate-y-2/3"
                         src="/img/toreplace/HYDWP_Website_5.png"
                         alt="alt here"
                         width={450}
@@ -366,7 +365,7 @@ export default async function Page() {
                         href={`${category.slug}/${slug}`}
                         className="relative inline-flex h-full w-full bg-hydw-pink"
                       >
-                        <div className="absolute z-20 h-28 w-28 -top-[100px] right-0 md:-right-[30px] lg:-right-[104px] lg:-top-[104px] lg:h-52 lg:w-52">
+                        <div className="absolute -top-[100px] right-0 z-20 h-28 w-28 md:-right-[30px] lg:-right-[104px] lg:-top-[104px] lg:h-52 lg:w-52">
                           <FeaturedScrollRotate>
                             <Image
                               src="/img/latesttv.svg"

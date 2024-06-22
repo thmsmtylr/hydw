@@ -1,54 +1,58 @@
 export default async function Page() {
   return (
-      <main className="overflow-hidden largepadding bg-hydw-pink wrapper text-hydw-charcoal">
-        <section className="page-grid">
-          <div className="col-span-11 md:col-span-9 xl:col-span-8 text-left midspace">
-              <h1 className="mt-7 lg:mt-0 heading2 uppercase">title</h1>
-              <p className="mt-3 body">Disrtibutor Year eg Listnr 2016 – 2024</p>
-          </div>
-          <div className="smallspace col-span-12 aspect-video bg-test-grey">
-            {/* 16:9 hero to go in here */}
-          </div>
-        </section>
-        <section className="page-grid smallspace">
-          <p className="col-span-12 md:col-span-10 lg:col-span-6 body">
+    <main className="largepadding wrapper overflow-hidden bg-hydw-pink text-hydw-charcoal">
+      <section className="page-grid">
+        <div className="midspace col-span-11 text-left md:col-span-9 xl:col-span-8">
+          <h1 className="heading2 mt-7 uppercase lg:mt-0">title</h1>
+          <p className="body mt-3">Disrtibutor Year eg Listnr 2016 – 2024</p>
+        </div>
+        <div className="smallspace col-span-12 aspect-video bg-test-grey">
+          {/* vimeo link to go in here */}
+        </div>
+      </section>
+      <section className="smallspace page-grid">
+        <p className="body col-span-12 md:col-span-10 lg:col-span-6">
           Description here.
-          </p>
-          <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
-            {/* dev note: should this be some kind of repeater that they can add any credit line for? */}
-            <div className="mt-7 lg:mt-0">
-                <h6 className="smallbody uppercase">Title</h6>
-                <p className="body">Credit</p>
-            </div>
-            <div className="mt-7">
-                <h6 className="smallbody uppercase">Title</h6>
-                <p className="body"><a href="">Credit</a></p>
-            </div>
+        </p>
+        <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
+          {/* dev note: should this be some kind of repeater that they can add any credit line for? */}
+          <div className="mt-7 lg:mt-0">
+            <h6 className="smallbody uppercase">Title</h6>
+            <p className="body">Credit</p>
           </div>
-        </section>
-        <section className="largespace">
-          <h4 className="heading4 uppercase mb-7">More podcasts that we've made</h4>
-          <div className="page-grid gap-2.5 md:gap-5">
-            <div className="col-span-6 lg:col-span-4 bg-test-grey aspect-square thumbnail relative">
-                <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
-                  {/* hover sequence to go here */}
-                </div>
-                <a href="/">{/* img thumbnail to go here here */}</a>
-            </div>
-            <div className="col-span-6 lg:col-span-4 bg-test-grey aspect-square thumbnail relative">
-                <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
-                  {/* hover sequence to go here */}
-                </div>
-                <a href="/">{/* img thumbnail to go here here */}</a>
-            </div>
-            <div className="col-span-6 lg:col-span-4 bg-test-grey aspect-square thumbnail relative">
-                <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
-                  {/* hover sequence to go here */}
-                </div>
-                <a href="/">{/* img thumbnail to go here here */}</a>
-            </div>
+          <div className="mt-7">
+            <h6 className="smallbody uppercase">Title</h6>
+            <p className="body">
+              <a href="">Credit</a>
+            </p>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+      <section className="largespace">
+        <h4 className="heading4 mb-7 uppercase">
+          More podcasts that we&apos;ve made
+        </h4>
+        <div className="page-grid gap-2.5 md:gap-5">
+          <div className="thumbnail relative col-span-6 aspect-square bg-test-grey lg:col-span-4">
+            <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
+              {/* hover sequence to go here */}
+            </div>
+            <a href="/">{/* img thumbnail to go here here */}</a>
+          </div>
+          <div className="thumbnail relative col-span-6 aspect-square bg-test-grey lg:col-span-4">
+            <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
+              {/* hover sequence to go here */}
+            </div>
+            <a href="/">{/* img thumbnail to go here here */}</a>
+          </div>
+          <div className="thumbnail relative col-span-6 aspect-square bg-test-grey lg:col-span-4">
+            <div className="hoverthumb absolute left-0 top-0 h-full w-full bg-hydw-pink duration-300">
+              {/* hover sequence to go here */}
+            </div>
+            <a href="/">{/* img thumbnail to go here here */}</a>
+          </div>
+        </div>
+      </section>
+    </main>
   );
-  }
+}

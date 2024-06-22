@@ -12,6 +12,7 @@ export const WEB_SERIES_QUERY = gql`
       id
       slug
       title
+      subtitle
       description
       work {
         id

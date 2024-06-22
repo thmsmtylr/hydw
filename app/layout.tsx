@@ -42,13 +42,14 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   const data = await getRootLayoutData();
-  const { logo, socialLinks, contactEmail } = data.props.layoutData.global;
+  const { logo, socialLinks, contactEmail, acknowledgementOfCountry } =
+    data.props.layoutData.global;
   const { siteName } = data.props.layoutData._site.globalSeo;
   const { navigation } = data.props.navData.global;
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="font-ambit text-mbbase lg:text-dtbase bg-hydw-vanilla">
+      <body className="bg-hydw-vanilla font-ambit text-mbbase lg:text-dtbase">
         <HeaderProvider>
           <Header logo={logo} siteName={siteName} navItems={navigation} />
           {children}
@@ -58,6 +59,7 @@ export default async function RootLayout({
           siteName={siteName}
           socialLinks={socialLinks}
           contactEmail={contactEmail}
+          acknowledgementOfCountry={acknowledgementOfCountry}
         />
         <Analytics />
       </body>

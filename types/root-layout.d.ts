@@ -2,9 +2,6 @@ export type SocialLinks = {
   id: string;
   link: string;
   title: string;
-  icon: {
-    url: string;
-  };
 }[];
 
 export interface RootLayoutQueryProps {
@@ -19,5 +16,6 @@ export interface RootLayoutQueryProps {
     };
     socialLinks: SocialLinks;
     contactEmail: string;
+    acknowledgementOfCountry: string;
   };
 }

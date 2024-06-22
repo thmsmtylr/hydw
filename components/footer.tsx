@@ -1,14 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FooterProps } from "@/types/footer";
-import { ambitFont } from "@/fonts";
 import { Fragment } from "react";
 
 export function Footer(props: FooterProps) {
-  const { logo, siteName, socialLinks, contactEmail } = props;
+  const {
+    logo,
+    siteName,
+    socialLinks,
+    contactEmail,
+    acknowledgementOfCountry,
+  } = props;
 
   return (
-    <footer className="wrapper page-grid bg-hydw-blue py-10">
+    <footer className="page-grid wrapper bg-hydw-blue py-10">
       <div className="order-1 col-span-6 max-w-[210px] md:col-span-4 lg:col-span-3">
         <Link href="/" aria-label="Home">
           <Image
@@ -22,8 +27,8 @@ export function Footer(props: FooterProps) {
       </div>
 
       <div className="order-4 col-span-12 mt-5 md:order-2 md:col-span-6 md:col-start-5 md:mt-0 lg:col-span-5 lg:col-start-4 xl:col-span-4">
-        <p className={`smallbody text-white`}>
-          <a className={`hover:text-hydw-pink`} href={`mailto:${contactEmail}`}>
+        <p className="smallbody text-white">
+          <a className="hover:text-hydw-pink" href={`mailto:${contactEmail}`}>
             {contactEmail}
           </a>
         </p>
@@ -60,10 +65,7 @@ export function Footer(props: FooterProps) {
       </div>
 
       <div className="order-2 col-span-10 mt-5 md:order-3 md:col-span-8 lg:col-span-3 lg:col-start-9 lg:mt-0 lg:max-w-[260px] xl:col-span-3 xl:col-start-8 2xl:col-span-2 2xl:col-start-8">
-        <p className={`smallbody text-white`}>
-          Living, creating and working in Naarm on the lands of the Wurundieri
-          and Bunurong People of the Kulin Nation.
-        </p>
+        <p className="smallbody text-white">{acknowledgementOfCountry}</p>
       </div>
 
       <div className="order-3 col-span-12 mt-5 md:order-4 xl:col-span-2 xl:col-start-11 xl:mt-0">
@@ -77,8 +79,7 @@ export function Footer(props: FooterProps) {
                   href={link.link}
                   target="_blank"
                 >
-                  Name here
-                  {/* Note need name added and image removed */}
+                  {link.title}
                 </a>
               </li>
             </Fragment>
