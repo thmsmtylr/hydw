@@ -84,7 +84,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </section>
       <section className="largespace">
         <h4 className="heading4 mb-7 uppercase text-hydw-blue">
-          More television that we&apos;ve made
+          More{" "}
+          {category.slug
+            .split("-") // Split by dashes
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter of each word
+            .join(" ")}{" "}
+          that we&apos;ve made
         </h4>
         <div className="page-grid gap-2.5 md:gap-5">
           {allWorks.map((work, index) => {
