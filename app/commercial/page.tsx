@@ -103,14 +103,14 @@ export default async function Page() {
           className="col-span-12 col-start-1 flex flex-wrap text-hydw-charcoal md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3"
         >
           <li className="heading5 pointer-events-auto mr-3">
-            <Link href="#directors" className="underline">
+            <Link href="#directors" className="underline hover:text-hydw-blue">
               Directors
             </Link>
           </li>
           <li className="heading5 pointer-events-auto ml-3">
             <Link
               href="studio"
-              className="no-underline duration-300 hover:underline"
+              className="no-underline duration-300 hover:underline hover:text-hydw-blue"
             >
               Studio
             </Link>
