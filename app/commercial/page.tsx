@@ -51,7 +51,7 @@ export default async function Page() {
             dangerouslySetInnerHTML={{ __html: description }}
           />
         </div>
-        <div className="page-grid pointer-events-none left-0 top-0 col-span-12 mt-7 h-full w-full lg:wrapper lg:absolute lg:mt-0">
+        <div className="page-grid left-0 top-0 col-span-12 mt-7 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="col-span-6 col-start-6 md:order-1 md:col-span-3 md:col-start-4 lg:order-1 lg:col-start-6">
             <Image
               className="m-auto max-w-[50px] rotate-45 md:mt-4 md:max-w-[80px] lg:-mt-2 xl:max-w-[100px]"
@@ -96,21 +96,21 @@ export default async function Page() {
       </div>
       <nav
         role="navigation"
-        className="smallerspace page-grid wrapper pointer-events-none sticky top-[66px] z-[30] md:top-[16px] lg:top-[8px]"
+        className="smallerspace page-grid wrapper sticky top-[66px] z-[30] md:top-[16px] lg:top-[8px]"
       >
         <ul
           role="list"
           className="col-span-12 col-start-1 flex flex-wrap text-hydw-charcoal md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3"
         >
-          <li className="heading5 pointer-events-auto mr-3">
-            <Link href="#directors" className="underline hover:text-hydw-blue">
+          <li className="heading5 mr-3">
+            <Link href="#directors" className="underline">
               Directors
             </Link>
           </li>
-          <li className="heading5 pointer-events-auto ml-3">
+          <li className="heading5 ml-3">
             <Link
               href="studio"
-              className="no-underline duration-300 hover:underline hover:text-hydw-blue"
+              className="no-underline duration-300 hover:text-hydw-blue hover:underline"
             >
               Studio
             </Link>
@@ -122,18 +122,24 @@ export default async function Page() {
           return (
             <div
               key={director.id}
-              className="director page-grid relative text-left mt-14 first:mt-0 md:mt-0"
+              className="director page-grid relative mt-14 text-left first:mt-0 md:mt-0"
             >
-              <h2 className="group heading2 relative z-[10] col-span-12 mt-4 uppercase text-hydw-blue hover:text-hydw-pink page-grid">
-                <Link className="z-[10] col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4 order-2 md:order-1 mt-7" href={`directors/${director.slug}`}>{director.name}</Link>
-                <div className="pointer-events-none directorthumbwrap relative md:absolute md:left-0 w-full duration-200 md:opacity-0 md:group-hover:opacity-100 order-1 md:order-2 col-span-12 page-grid">
-                  <div className="directorthumb aspect-video col-span-12 md:col-span-8 lg:col-span-6 relative">
-                  {(director.featuredWork?.featuredImages?.length ?? 0) > 0 && (
-                    <FeaturedThumbnails
-                      index={index}
-                      images={director.featuredWork?.featuredImages || []}
-                    />
-                  )}
+              <h2 className="group heading2 page-grid relative z-[10] col-span-12 mt-4 uppercase text-hydw-blue hover:text-hydw-pink">
+                <Link
+                  className="z-[10] order-2 col-span-12 mt-7 md:order-1 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-4"
+                  href={`directors/${director.slug}`}
+                >
+                  {director.name}
+                </Link>
+                <div className="directorthumbwrap page-grid pointer-events-none relative order-1 col-span-12 w-full duration-200 md:absolute md:left-0 md:order-2 md:opacity-0 md:group-hover:opacity-100">
+                  <div className="directorthumb relative col-span-12 aspect-video md:col-span-8 lg:col-span-6">
+                    {(director.featuredWork?.featuredImages?.length ?? 0) >
+                      0 && (
+                      <FeaturedThumbnails
+                        index={index}
+                        images={director.featuredWork?.featuredImages || []}
+                      />
+                    )}
                   </div>
                 </div>
               </h2>

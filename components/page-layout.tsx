@@ -9,13 +9,13 @@ export function PageLayout({
 }: {
   title: string;
   description: string;
-  items: any[];
+  items: any;
   pageSlug?: string;
 }) {
   return (
     <section className="bg-hydw-vanilla thumbnaillayout">
       <div className="page-grid wrapper -mb-14 -translate-y-14 lg:-mb-28 lg:-translate-y-28">
-        {items.map((item, index) => {
+        {items.map((item: any, index: number) => {
           const { id, slug, title } = item;
           return (
             <Link

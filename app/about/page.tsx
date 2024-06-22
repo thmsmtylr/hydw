@@ -50,7 +50,7 @@ export default async function Page() {
         <div className="largespace extraheight col-span-12 text-hydw-blue md:col-span-10 md:col-start-2">
           {title && <PageHeading title={title} />}
         </div>
-        <div className="page-grid wrapper pointer-events-none left-0 top-0 col-span-12 mt-7 h-full w-full md:absolute md:mt-0">
+        <div className="page-grid wrapper left-0 top-0 col-span-12 mt-7 h-full w-full md:absolute md:mt-0">
           <div className="col-span-6 md:col-span-3 md:col-start-7">
             <Image
               className="max-w-[120px] rotate-12 md:m-auto md:-mt-14 md:max-w-[150px] lg:-mt-4 lg:max-w-[200px]"

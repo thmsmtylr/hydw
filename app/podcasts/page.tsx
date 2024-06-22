@@ -36,44 +36,44 @@ export default async function Page() {
   const works = data.page?.work || [];
 
   return (
-    <main className="overflow-hidden largepadding bg-hydw-vanilla podcastlayout">
-      <section className="wrapper page-grid min-h-screen py-10 bg-hydw-pink relative shortlg:pb-80">
-        <div className="col-span-12 xl:col-span-10 xl:col-start-2 text-center items-center justify-center largespace extraheight">
-            <PageHeading title={title} />
+    <main className="podcastlayout largepadding overflow-hidden bg-hydw-vanilla">
+      <section className="page-grid wrapper relative min-h-screen bg-hydw-pink py-10 shortlg:pb-80">
+        <div className="largespace extraheight col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
+          <PageHeading title={title} />
         </div>
         <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
-          <h4 className={`heading4 smallspace`}>Subtitle.</h4> 
-          {/* Note: Need Subtitle */}
-            <p className={`body smallestspace`}>{description}</p>
+          <h4 className="smallspace heading4">Subtitle.</h4>
+          <p className="smallestspace body">{description}</p>
         </div>
-        <div className="lg:wrapper lg:mt-0 pointer-events-none col-span-12 lg:absolute w-full h-full top-0 left-0 page-grid">
-          <div className="order-2 lg:order-1 col-span-6 col-start-7 md:col-span-3 md:col-start-9 lg:col-span-3 lg:col-start-9">
-                <Image className="rotate-12 max-w-[100px] md:max-w-[120px] lg:max-w-[140px] m-auto mt-14 lg:mt-4"
-                  src="/img/thefooty.png"
-                  alt="The Footy"
-                  width={127}
-                  height={140}
-                />
-              </div>
-            <div className="order-1 lg:order-2 col-span-6 col-start-1 md:col-span-3 md:col-start-3 lg:col-span-3 lg:col-start-2">
-              <Image className="-rotate-12 max-w-[160px] md:max-w-[180px] lg:max-w-[200px] m-auto mt-7 md:mt-4 lg:mt-96 talllg:mt-[550px]"
-                src="/img/lancomp.png"
-                alt="Lan Party"
-                width={201}
-                height={197}
+        <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
+          <div className="order-2 col-span-6 col-start-7 md:col-span-3 md:col-start-9 lg:order-1 lg:col-span-3 lg:col-start-9">
+            <Image
+              className="m-auto mt-14 max-w-[100px] rotate-12 md:max-w-[120px] lg:mt-4 lg:max-w-[140px]"
+              src="/img/thefooty.png"
+              alt="The Footy"
+              width={127}
+              height={140}
             />
           </div>
-            <div className="order-3 lg:order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-2 lg:col-span-2 lg:col-start-11">
-                <Image className="-rotate-45 max-w-[120px] md:max-w-[140px] lg:max-w-[160px] md:m-auto lg:text-right xl:mx-auto relative mt-20 lg:mt-80"
-                  src="/img/ham.png"
-                  alt="Bertocchi Ham"
-                  width={160}
-                  height={150}
-              />
-            </div>
-            
+          <div className="order-1 col-span-6 col-start-1 md:col-span-3 md:col-start-3 lg:order-2 lg:col-span-3 lg:col-start-2">
+            <Image
+              className="m-auto mt-7 max-w-[160px] -rotate-12 md:mt-4 md:max-w-[180px] lg:mt-96 lg:max-w-[200px] talllg:mt-[550px]"
+              src="/img/lancomp.png"
+              alt="Lan Party"
+              width={201}
+              height={197}
+            />
+          </div>
+          <div className="order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-2 lg:order-3 lg:col-span-2 lg:col-start-11">
+            <Image
+              className="relative mt-20 max-w-[120px] -rotate-45 md:m-auto md:max-w-[140px] lg:mt-80 lg:max-w-[160px] lg:text-right xl:mx-auto"
+              src="/img/ham.png"
+              alt="Bertocchi Ham"
+              width={160}
+              height={150}
+            />
+          </div>
         </div>
-        
       </section>
       <PageLayout title={title} description={description} items={works} />
     </main>

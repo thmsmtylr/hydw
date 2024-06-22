@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 
-export const TV_BY_SLUG_QUERY = gql`
+export const WEB_SERIES_BY_SLUG_QUERY = gql`
   query TvBySlug($slug: String) {
     work(
       filter: {

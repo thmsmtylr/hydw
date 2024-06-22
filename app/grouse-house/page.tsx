@@ -42,11 +42,11 @@ export default async function Page() {
           <PageHeading title={title} />
         </div>
         <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
-          <h4 className="smallspace heading4">Subtitle.</h4>
+          <h4 className="heading4 smallspace">Subtitle.</h4>
           {/* Note: Need Subtitle */}
           <p className="smallestspace body">{description}</p>
         </div>
-        <div className="page-grid pointer-events-none left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
+        <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-3 lg:order-1 lg:col-span-3 lg:col-start-7">
             <Image
               className="ml-4 mt-7 max-w-[100px] rotate-[24deg] md:mx-auto md:mt-9 md:max-w-[110px] lg:mt-0 lg:max-w-[120px]"

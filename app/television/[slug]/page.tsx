@@ -1,10 +1,11 @@
+import Link from "next/link";
+import { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 import { VideoPlayer } from "@/components/video-player";
 import { TV_BY_SLUG_QUERY } from "@/queries/tv-by-slug-query";
 import { TvBySlugQuery } from "@/types/generated";
-import Link from "next/link";
 
 async function getPageData(slug: string): Promise<TvBySlugQuery> {
   const data = await request({
@@ -15,6 +16,25 @@ async function getPageData(slug: string): Promise<TvBySlugQuery> {
   });
 
   return { ...(data as TvBySlugQuery) };
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const data = await getPageData(params.slug);
+  const title = data.work?.title || "";
+  const description = data.work?.description || "";
+  const url = data.allWorks[0]?.featuredImages[0]?.image?.url || "";
+
+  return {
+    title: `${title}`,
+    description: description,
+    openGraph: {
+      images: url,
+    },
+  };
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {

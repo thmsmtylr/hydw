@@ -16,7 +16,7 @@ export function VideoPlayer({
   controls?: boolean;
 }) {
   return (
-    <div className="pointer-events-none relative w-full h-full">
+    <div className="relative h-full w-full">
       <ReactPlayer
         controls={controls}
         playing={playing}
@@ -25,7 +25,7 @@ export function VideoPlayer({
         url={url}
         width="100%"
         height="100%"
-        className="w-full h-full"
+        className="h-full w-full"
         config={{ youtube: { playerVars: { disablekb: 1 } } }}
       />
     </div>

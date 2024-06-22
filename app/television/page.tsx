@@ -49,7 +49,7 @@ export default async function Page() {
             dangerouslySetInnerHTML={{ __html: description }}
           />
         </div>
-        <div className="page-grid pointer-events-none left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
+        <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="col-span-6 col-start-5 -rotate-[9deg] md:col-span-3 md:col-start-7">
             <Image
               className="m-auto mt-7 max-w-[120px] md:max-w-[140px] lg:mt-0 lg:max-w-[150px]"

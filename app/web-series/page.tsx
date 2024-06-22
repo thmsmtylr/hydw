@@ -1,15 +1,15 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
-import { WEB_SERIES_QUERY } from "@/queries/web-series-page-query";
 import { WebSeriesPageQuery } from "@/types/generated";
 import { PageLayout } from "@/components/page-layout";
 import { PageHeading } from "@/components/page-heading";
 import { Parallax } from "@/components/parallax";
-import Image from "next/image";
+import { WEB_SERIES_PAGE_QUERY } from "@/queries/web-series-page-query";
 
 async function getPageData(): Promise<WebSeriesPageQuery> {
-  const data = await request({ query: WEB_SERIES_QUERY });
+  const data = await request({ query: WEB_SERIES_PAGE_QUERY });
   return { ...(data as WebSeriesPageQuery) };
 }
 
@@ -35,6 +35,7 @@ export default async function Page() {
   const subtitle = data.page?.subtitle || "";
   const description = buildMDX(data.page?.description || "");
   const works = data.page?.work || [];
+  const slug = data.page?.slug || "";
 
   return (
     <main className="layouta addimage1 largepadding overflow-hidden bg-hydw-vanilla">
@@ -44,10 +45,12 @@ export default async function Page() {
         </div>
         <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
           <h4 className="smallspace heading4">{subtitle}</h4>
-          <p className="smallestspace body">{description}</p>
+          <div
+            className="smallestspace body"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         </div>
-
-        <div className="page-grid pointer-events-none left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
+        <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="order-2 col-span-6 col-start-7 md:col-span-3 md:col-start-7 lg:order-1">
             <Image
               className="m-auto mt-7 max-w-[120px] rotate-12 md:max-w-[160px] lg:mt-4 lg:max-w-[190px]"
@@ -88,7 +91,12 @@ export default async function Page() {
           </div>
         </div>
       </section>
-      <PageLayout title={title} description={description} items={works} />
+      <PageLayout
+        title={title}
+        description={description}
+        items={works}
+        pageSlug={slug}
+      />
     </main>
   );
 }
