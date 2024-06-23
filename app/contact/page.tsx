@@ -6,6 +6,8 @@ import { PageHeading } from "@/components/page-heading";
 import { ScrollDownButton } from "@/components/scroll-down-button";
 import { ContactForm } from "@/components/contact-form";
 import { ambitFont, flyerFont } from "@/fonts";
+import { Parallax } from "@/components/parallax";
+import Image from "next/image";
 
 async function getPageData(): Promise<ContactQuery> {
   const data = await request({ query: CONTACT_QUERY });
@@ -32,45 +34,52 @@ export default async function Page() {
   const legals = data.contact?.legals || "";
 
   return (
-    <main>
-      <div className="mb-40 bg-hydw-vanilla">
-        <div className="relative mx-auto -mt-40 flex h-screen max-w-3xl items-center justify-center">
-          <div className="flex flex-col gap-20">
+    <main className="leftheader bg-hydw-yellow wrapper largepadding overflow-hidden">
+      <section className="page-grid largepadding">
+          <div className="col-span-12 md:col-span-8 md:col-start-2 xl:col-span-6 xl:col-start-2 largespace extraheight">
             <PageHeading title={title} />
-            <p
-              className={`text-center text-3xl tracking-[0.02em] text-hydw-charcoal ${ambitFont.className}`}
-            >
-              {subtitle}
-            </p>
           </div>
-          <div className="lef-1/2 absolute bottom-12">
-            <ScrollDownButton target="scrollTarget" />
+          <div className="col-span-4 col-start-9 md:col-span-3 md:col-start-10 xl:col-span-4 xl:col-start-8 md:mt-28 lg:mt-52">
+            <Parallax className="relative">
+              <Image className="max-w-[350px] absolute top-1/2 -translate-y-3/4 md:-translate-y-1/4"
+                    src="/img/toreplace/MB_EP06_Muffins.png"
+                    alt="alt here"
+                    width={398}
+                    height={399}
+                  />
+              </Parallax>
           </div>
-        </div>
-      </div>
-      <div
-        id="scrollTarget"
-        className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-8"
-      >
-        <div>
-          <h2
-            className={`mb-4 text-3xl uppercase text-hydw-charcoal ${flyerFont.className}`}
-          >
-            Contact
-          </h2>
+          
+      </section>
+      <div className="page-grid">
+        <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-5 lg:col-start-2">
+        <h4
+                className={`heading4 text-hydw-blue leading-[100%]`}>
+                {subtitle}
+              </h4>
           <p
-            className={`text-hydw-charcoal ${ambitFont.className} mb-4 text-xl tracking-[-0.02em]`}
+            className={`body text-hydw-blue smallerspace`}
           >
             {description}
           </p>
         </div>
-        <div>
+        <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-4 lg:col-start-8 mt-14 lg:mt-0">
           <ContactForm />
           <p
-            className={`text-hydw-charcoal ${ambitFont.className} mb-4 text-base tracking-[-0.02em]`}
+            className={`smallbody text-hydw-blue smallerspace`}
           >
             {legals}
           </p>
+        </div>
+        <div className="col-span-6 col-start-4 lg:col-span-5 lg:col-start-2 lg:h-[130px] 2xl:h-[80px] mt-7 lg:mt-0 2xl:mb-[120px]">
+            <Parallax className="">
+              <Image className="max-w-[450px] relative lg:-top-[50px] xl:-top-[120px] 2xl:-top-[180px]"
+                    src="/img/toreplace/HYDWP_CoffeeCafe-min.png"
+                    alt="alt here"
+                    width={555}
+                    height={321}
+                  />
+              </Parallax>
         </div>
       </div>
     </main>

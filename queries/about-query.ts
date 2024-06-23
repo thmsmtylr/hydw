@@ -8,6 +8,14 @@ export const ABOUT_QUERY = gql`
       bodyTitle
       skewBodyTitle
       bodyDescription
+      imageRight {
+        url
+        alt
+      }
+      imageBottom {
+        url
+        alt
+      }
       seo {
         title
         description
@@ -21,14 +29,6 @@ export const ABOUT_QUERY = gql`
         skewTitle
         id
         description
-        imageTop {
-          url
-          alt
-        }
-        imageBottom {
-          alt
-          url
-        }
       }
     }
   }

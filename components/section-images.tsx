@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { PageImageProps } from "@/types/homepage";
 import { Parallax } from "./parallax";
 import { absurd } from "@/utils/absurd";
 
@@ -65,12 +64,12 @@ export function SectionImages({
   images,
   animateImages,
 }: {
-  images: PageImageProps;
+  images: any;
   animateImages: boolean;
 }) {
   return (
     <AnimatePresence>
-      {images.map((image, index: number) => (
+      {images.map((image: any, index: number) => (
         <SectionImage
           key={image.id}
           index={index}

@@ -1,7 +1,7 @@
 import { gql } from "graphql-request";
 
 export const HOMEPAGE_QUERY = gql`
-  query HomepageQuery {
+  query Homepage {
     _site {
       globalSeo {
         fallbackSeo {
@@ -10,22 +10,29 @@ export const HOMEPAGE_QUERY = gql`
         }
       }
     }
-    home {
-      description
-      bannerImages {
-        id
-        alt
+    home(filter: { _isValid: { eq: "true" }, _status: { eq: published } }) {
+      posterImage {
         url
       }
-    }
-    allPages(orderBy: position_ASC) {
-      id
-      slug
-      title
-      images {
-        alt
-        id
+      showreel {
         url
+      }
+      description
+      descriptionLink
+      descriptionLinkText
+      featuredWork {
+        id
+        title
+        slug
+        category {
+          slug
+        }
+        featuredImages {
+          id
+          image {
+            url
+          }
+        }
       }
     }
   }

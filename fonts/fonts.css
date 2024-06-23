@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "flyer";
+  src: url("./flyer.woff2") format("woff2"), url("./flyer.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ambit";
+  src: url("./Ambit-Bold.otf") format("otf");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ambit";
+  src: url("./Ambit-Light.otf") format("otf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ambit";
+  src: url("./Ambit-Regular.otf") format("otf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

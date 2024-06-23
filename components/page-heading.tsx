@@ -28,7 +28,7 @@ export function PageHeading({ title }: { title: string }) {
       whileInView="visible"
       variants={variants}
       viewport={{ once: true }}
-      className={`mx-auto flex h-36 items-center overflow-hidden text-center text-12xl uppercase leading-[0.8] text-hydw-charcoal transition-colors duration-200 will-change-transform ${flyerFont.className}`}
+      className={`heading1 mx-auto flex justify-center items-center overflow-hidden uppercase text-hydw-charcoal transition-colors duration-200 will-change-transform`}
     >
       {letters.map((item: string, index: number) => (
         <motion.span

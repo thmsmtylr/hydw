@@ -4,13 +4,14 @@ import { Analytics } from "@vercel/analytics/react";
 import { request } from "@/lib/datocms";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { HeaderProvider } from "@/contexts/header-context";
 import { LAYOUT_QUERY } from "@/queries/layout-query";
 import { NAVIGATION_QUERY } from "@/queries/navigation-query";
-import { HeaderProvider } from "@/contexts/header-context";
 import { RootLayoutQueryProps } from "@/types/root-layout";
 import { NavigationQueryProps } from "@/types/navigation";
 
 import "@/styles/globals.css";
+import "@/fonts/fonts.css";
 
 async function getRootLayoutData(): Promise<{
   props: { navData: any; layoutData: RootLayoutQueryProps };
@@ -41,13 +42,14 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   const data = await getRootLayoutData();
-  const { logo, socialLinks, contactEmail } = data.props.layoutData.global;
+  const { logo, socialLinks, contactEmail, acknowledgementOfCountry } =
+    data.props.layoutData.global;
   const { siteName } = data.props.layoutData._site.globalSeo;
   const { navigation } = data.props.navData.global;
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body>
+      <body className="bg-hydw-vanilla font-ambit text-mbbase lg:text-dtbase">
         <HeaderProvider>
           <Header logo={logo} siteName={siteName} navItems={navigation} />
           {children}
@@ -57,6 +59,7 @@ export default async function RootLayout({
           siteName={siteName}
           socialLinks={socialLinks}
           contactEmail={contactEmail}
+          acknowledgementOfCountry={acknowledgementOfCountry}
         />
         <Analytics />
       </body>

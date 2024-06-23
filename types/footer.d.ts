@@ -5,4 +5,5 @@ export interface FooterProps {
   siteName: string;
   socialLinks: SocialLinks;
   contactEmail: string;
+  acknowledgementOfCountry: string;
 }

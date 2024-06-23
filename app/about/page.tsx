@@ -1,25 +1,23 @@
-import type { Metadata } from "next";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { PageHeading } from "@/components/page-heading";
 import { ABOUT_QUERY } from "@/queries/about-query";
 import { AboutQuery } from "@/types/generated";
 import { buildMDX } from "@/utils/build-mdx";
 import { classNames } from "@/utils/class-names";
 import { Parallax } from "@/components/parallax";
-import { SkewedText } from "@/components/skewed-text";
-import { ScrollDownButton } from "@/components/scroll-down-button";
 import { request } from "@/lib/datocms";
 import { isEven } from "@/utils/is-even";
-import { ambitFont, flyerFont } from "@/fonts";
+import { WiggleOnHover } from "@/components/wiggle-on-hover";
 
-async function getAboutPageData(): Promise<AboutQuery> {
+async function getPageData(): Promise<AboutQuery> {
   const data = await request({ query: ABOUT_QUERY });
 
   return { ...(data as AboutQuery) };
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await getAboutPageData();
+  const data = await getPageData();
   const title = data.about?.seo?.title || data.about?.title || "";
   const description =
     data.about?.seo?.description || data.about?.description || "";
@@ -35,92 +33,128 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const data = await getAboutPageData();
+  const data = await getPageData();
   const title = data.about?.title || "";
   const description = buildMDX(data.about?.description || "");
   const bodyTitle = data.about?.bodyTitle || "";
-  const skewedBodyTitle = data.about?.skewBodyTitle || "";
   const bodyDescription = buildMDX(data.about?.bodyDescription || "");
   const sections = data.about?.section;
+  const imageRight = data.about?.imageRight || { url: "", alt: "" };
+  const imageBottom = data.about?.imageBottom || {
+    url: "",
+    alt: "",
+  };
 
   return (
-    <main>
-      <section className="mb-40 bg-hydw-vanilla">
-        <div className="relative mx-auto -mt-40 flex h-screen max-w-3xl items-center justify-center">
-          <div className="flex flex-col items-center">
-            {title && <PageHeading title={title} />}
-            {description && (
-              <p
-                className={`mt-20 text-center text-4xl tracking-[-0.02em] text-hydw-charcoal ${ambitFont.className}`}
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            )}
+    <main className="largepadding wrapper bg-hydw-vanilla">
+      <section className="page-grid relative">
+        <div className="largespace extraheight col-span-12 text-hydw-blue md:col-span-10 md:col-start-2">
+          {title && <PageHeading title={title} />}
+        </div>
+        <div className="page-grid wrapper left-0 top-0 col-span-12 mt-7 h-full w-full md:absolute md:mt-0">
+          <div className="col-span-6 md:col-span-3 md:col-start-7">
+          <WiggleOnHover>
+          <Image
+              className="max-w-[120px] rotate-12 md:m-auto md:-mt-14 md:max-w-[150px] lg:-mt-4 lg:max-w-[200px]"
+              src="/img/auntydonna.png"
+              alt="Aunty Donna"
+              width={227}
+              height={138}
+            />   
+          </WiggleOnHover>
+            
           </div>
-          <div className="lef-1/2 absolute bottom-12">
-            <ScrollDownButton target="scrollTarget" />
+          <div className="relative col-span-6 md:col-span-3 md:col-start-1">
+          <WiggleOnHover>
+            <Image
+              className="relative mx-auto -mt-7 max-w-[140px] -rotate-[16deg] md:-mt-[10px] md:max-w-[180px] lg:absolute lg:left-1/2 lg:top-1/2 lg:mx-auto lg:mt-4 lg:max-w-[221px] lg:-translate-x-1/2 lg:-translate-y-full"
+              src="/img/largearm.png"
+              alt="Large Arm"
+              width={221}
+              height={120}
+            />
+          </WiggleOnHover>
+          </div>
+          <div className="relative col-span-4 col-start-5 md:col-span-2 md:col-start-11">
+          <WiggleOnHover>
+            <Image
+              className="m-auto mt-4 max-w-[90px] -rotate-12 md:mx-auto md:mt-7 md:max-w-[120px] lg:absolute lg:left-1/2 lg:top-1/2 lg:max-w-[161px] lg:-translate-x-1/2 lg:translate-y-1/2"
+              src="/img/drum.png"
+              alt="Everything's a drum"
+              width={161}
+              height={130}
+            />
+            </WiggleOnHover>
           </div>
         </div>
       </section>
-      <span id="scrollTarget" />
-      <section className="relative mx-auto mb-20 max-w-6xl">
-        {bodyTitle && (
-          <h2
-            className={`mb-8 text-center text-9xl uppercase leading-[0.8] text-hydw-charcoal ${flyerFont.className}`}
-          >
-            <SkewedText text={bodyTitle} skewedWord={skewedBodyTitle} />
-          </h2>
-        )}
-        {bodyDescription && (
-          <p
-            className={`mx-auto max-w-3xl text-center text-2xl tracking-[-0.02em] text-hydw-charcoal ${ambitFont.className}`}
-            dangerouslySetInnerHTML={{ __html: bodyDescription }}
-          />
-        )}
-      </section>
-      {sections?.map((section, index: number) => {
-        const description = buildMDX(section.description);
-        return (
-          <section
-            key={section.id}
-            className={classNames(
-              index === sections.length - 1 ? "mb-28" : "",
-              "relative mx-auto grid w-full max-w-6xl grid-cols-2 py-20"
-            )}
-          >
-            <div
-              className={classNames(
-                isEven(index) ? "order-last" : "order-first",
-                "relative"
-              )}
-            >
-              <div className="relative flex h-full w-full items-center justify-center">
-                <Parallax className="absolute left-0 -z-10 flex h-full w-full items-center justify-center">
-                  <Image
-                    src={section.imageTop.url}
-                    alt={section.imageTop.alt}
-                    width={480}
-                    height={480}
-                  />
-                </Parallax>
-              </div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <h3
-                className={`mb-4 text-7xl uppercase text-hydw-charcoal ${flyerFont.className}`}
+      <section className="largespace page-grid text-hydw-blue">
+        <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2">
+          {description && (
+            <h4
+              className="heading4 leading-[100%] text-hydw-blue"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          )}
+          {bodyTitle && <h3 className="heading3 smallspace">{bodyTitle}</h3>}
+          {bodyDescription && (
+            <p
+              className="body smallerspace"
+              dangerouslySetInnerHTML={{ __html: bodyDescription }}
+            />
+          )}
+
+          {sections?.map((section, index: number) => {
+            const description = buildMDX(section.description);
+            return (
+              <div
+                key={section.id}
+                className={classNames(
+                  index === sections.length - 1 ? "mb-28" : "",
+                  "smallspace col-span-12 md:col-span-10 md:col-start-2 lg:col-span-6 lg:col-start-2"
+                )}
               >
-                <SkewedText
-                  text={section.title}
-                  skewedWord={section.skewTitle || ""}
-                />
-              </h3>
-              <p
-                className="max-w-3xl text-xl tracking-[-0.02em] text-hydw-charcoal"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            </div>
-          </section>
-        );
-      })}
+                <div
+                  className={classNames(
+                    isEven(index) ? "order-last" : "order-first",
+                    "relative"
+                  )}
+                ></div>
+                <div>
+                  <h5 className="heading5 text-hydw-blue">{section.title}</h5>
+                  <p
+                    className="body text-hydw-blue"
+                    dangerouslySetInnerHTML={{ __html: description }}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="col-span-4 flex lg:col-span-4 lg:col-start-9">
+          <Parallax className="relative flex">
+            <Image
+              className="h-[auto] max-w-[450px] self-center"
+              src={imageRight?.url}
+              alt={imageRight.alt}
+              width={398}
+              height={399}
+            />
+          </Parallax>
+        </div>
+
+        <div className="col-span-5 col-start-8 lg:col-span-5 lg:col-start-2">
+          <Parallax>
+            <Image
+              className="max-w-[450px]"
+              src={imageBottom?.url}
+              alt={imageBottom.alt}
+              width={555}
+              height={321}
+            />
+          </Parallax>
+        </div>
+      </section>
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 
-export const WEB_SERIES_QUERY = gql`
+export const WEB_SERIES_PAGE_QUERY = gql`
   query WebSeriesPage {
     page(
       filter: {
@@ -12,14 +12,19 @@ export const WEB_SERIES_QUERY = gql`
       id
       slug
       title
+      subtitle
       description
       work {
         id
         title
         description
-        credits
-        image {
-          url
+        distributor
+        slug
+        featuredImages {
+          image {
+            url
+            alt
+          }
         }
         videoLink {
           url

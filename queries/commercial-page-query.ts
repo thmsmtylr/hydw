@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 
-export const COMMERCIAL_QUERY = gql`
+export const COMMERCIAL_PAGE_QUERY = gql`
   query CommercialPage {
     page(
       filter: {
@@ -12,15 +12,17 @@ export const COMMERCIAL_QUERY = gql`
       id
       slug
       title
+      subtitle
       description
+      featuredImage {
+        url
+        alt
+      }
       work {
         id
         title
         description
-        credits
-        image {
-          url
-        }
+        distributor
         videoLink {
           url
         }
@@ -30,6 +32,23 @@ export const COMMERCIAL_QUERY = gql`
         description
         image {
           url
+        }
+      }
+    }
+    allDirectors(
+      filter: { _status: { eq: published }, _isValid: { eq: "true" } }
+    ) {
+      id
+      name
+      slug
+      featuredWork {
+        id
+        featuredImages {
+          id
+          image {
+            url
+            alt
+          }
         }
       }
     }

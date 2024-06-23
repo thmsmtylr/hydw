@@ -15,11 +15,9 @@ export const LAYOUT_QUERY = gql`
         id
         link
         title
-        icon {
-          url
-        }
       }
       contactEmail
+      acknowledgementOfCountry
     }
   }
 `;
