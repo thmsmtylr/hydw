@@ -96,7 +96,7 @@ export default async function Page() {
       </div>
       <nav
         role="navigation"
-        className="smallerspace page-grid wrapper sticky top-[66px] z-[40] md:top-[16px] lg:top-[8px]"
+        className="smallerspace page-grid wrapper sticky top-[66px] z-40 md:top-4 lg:top-2"
       >
         <ul
           role="list"
