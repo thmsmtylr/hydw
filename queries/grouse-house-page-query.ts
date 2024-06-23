@@ -12,14 +12,22 @@ export const GROUSE_HOUSE_QUERY = gql`
       id
       slug
       title
+      subtitle
       description
       work {
         id
         title
+        slug
         description
         distributor
         videoLink {
           url
+        }
+        featuredImages {
+          image {
+            url
+            alt
+          }
         }
       }
       seo {

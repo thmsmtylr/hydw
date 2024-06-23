@@ -31,7 +31,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const data = await getPageData();
+  const slug = data.page?.slug || "";
   const title = data.page?.title || "";
+  const subtitle = data.page?.subtitle || "";
   const description = buildMDX(data.page?.description || "");
   const works = data.page?.work || [];
 
@@ -42,9 +44,11 @@ export default async function Page() {
           <PageHeading title={title} />
         </div>
         <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
-          <h4 className="heading4 smallspace">Subtitle.</h4>
-          {/* Note: Need Subtitle */}
-          <p className="smallestspace body">{description}</p>
+          <h4 className="smallspace heading4">{subtitle}</h4>
+          <div
+            className="smallestspace body"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         </div>
         <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-3 lg:order-1 lg:col-span-3 lg:col-start-7">
@@ -87,7 +91,12 @@ export default async function Page() {
           </div>
         </div>
       </section>
-      <PageLayout title={title} description={description} items={works} />
+      <PageLayout
+        title={title}
+        description={description}
+        items={works}
+        pageSlug={slug}
+      />
     </main>
   );
 }
