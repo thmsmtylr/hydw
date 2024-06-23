@@ -1312,6 +1312,13 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.15.11.tgz#b3b790f09cb1696cffcec605de025b088fa4225f"
   integrity sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==
 
+"@types/nodemailer@^6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.4.15.tgz#494be695e11c438f7f5df738fb4ab740312a6ed2"
+  integrity sha512-0EBJxawVNjPkng1zm2vopRctuWVCxk34JcIlRuXSf54habUWdz1FB7wHDqOqvDa8Mtpt0Q3LTXQkAs2LNyK5jQ==
+  dependencies:
+    "@types/node" "*"
+
 "@types/prop-types@*":
   version "15.7.5"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
@@ -3825,6 +3832,11 @@ node-releases@^2.0.8:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.10.tgz#c311ebae3b6a148c89b1813fd7c4d3c024ef537f"
   integrity sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==
+
+nodemailer@^6.9.14:
+  version "6.9.14"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.14.tgz#845fda981f9fd5ac264f4446af908a7c78027f75"
+  integrity sha512-Dobp/ebDKBvz91sbtRKhcznLThrKxKt97GI2FAlAyy+fk19j73Uz3sBXolVtmcXjaorivqsbbbjDY+Jkt4/bQA==
 
 normalize-path@^2.1.1:
   version "2.1.1"

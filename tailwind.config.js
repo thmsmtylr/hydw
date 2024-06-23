@@ -53,6 +53,15 @@ module.exports = {
         default: "url(../public/pud.cur), default",
         pointer: "url(../public/eatenpud.cur), pointer",
       },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
     },
   },
   plugins: [
