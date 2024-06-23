@@ -37,13 +37,13 @@ export default async function Page() {
     <main className="layoutb studio bg-hydw-vanilla overflow-hidden largepadding">
       <nav
         role="navigation"
-        className="page-grid wrapper fixed top-[66px] z-[40] md:top-[16px] lg:top-[8px] w-full"
+        className="pointer-events-none page-grid wrapper fixed top-[66px] z-[40] md:top-[16px] lg:top-[8px] w-full"
       >
         <ul
           role="list"
-          className="col-span-12 col-start-1 flex flex-wrap text-hydw-charcoal md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3"
+          className="pointer-events-none col-span-12 col-start-1 flex flex-wrap text-hydw-charcoal md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3"
         >
-          <li className="heading5 mr-3">
+          <li className="pointer-events-auto heading5 mr-3">
             <a
               href="commercial#directors"
               className="no-underline duration-300 hover:underline hover:text-hydw-blue"
@@ -51,7 +51,7 @@ export default async function Page() {
               Directors
             </a>
           </li>
-          <li className="heading5 ml-3">
+          <li className="pointer-events-auto heading5 ml-3">
             <a href="#studio" className="underline hover:text-hydw-blue">
               Studio
             </a>

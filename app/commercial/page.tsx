@@ -96,18 +96,18 @@ export default async function Page() {
       </div>
       <nav
         role="navigation"
-        className="smallerspace page-grid wrapper sticky top-[66px] z-40 md:top-4 lg:top-2"
+        className="pointer-events-none smallerspace page-grid wrapper sticky top-[66px] z-40 md:top-4 lg:top-2"
       >
         <ul
           role="list"
           className="col-span-12 col-start-1 flex flex-wrap text-hydw-charcoal md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3"
         >
-          <li className="heading5 mr-3">
+          <li className="pointer-events-auto heading5 mr-3">
             <Link href="#directors" className="underline">
               Directors
             </Link>
           </li>
-          <li className="heading5 ml-3">
+          <li className="pointer-events-auto heading5 ml-3">
             <Link
               href="studio"
               className="no-underline duration-300 hover:text-hydw-blue hover:underline"
