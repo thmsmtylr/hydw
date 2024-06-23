@@ -44,7 +44,7 @@ module.exports = {
         "hydw-pink": "#FF6CF4",
         "hydw-orange": "#FF9650",
         "hydw-yellow": "#EFE145",
-        "test-grey": "#c1c1c1",
+        // "test-grey": "#c1c1c1",
       },
       skew: {
         40: "-20deg",
