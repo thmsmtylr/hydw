@@ -264,14 +264,16 @@ export default async function Page() {
                       </Link>
                     </p>
                   </div>
-                  <div className="relative col-span-6 col-start-5 md:col-span-6">
+                  <div className="relative col-span-6 col-start-5 md:col-span-6 rotate-45">
+                  <WiggleOnHover>
                     <Image
-                      className="m-auto mt-7 max-w-[110px] rotate-45 md:absolute md:left-1/2 md:top-1/2 md:mt-0 md:-translate-x-1/2 md:-translate-y-1/2 lg:max-w-[168px]"
+                      className="m-auto mt-7 max-w-[110px] md:absolute md:left-1/2 lg:max-w-[168px]"
                       src="/img/manbost.png"
                       alt="Manbost"
                       width={160}
                       height={275}
                     />
+                 </WiggleOnHover>
                   </div>
                 </section>
               );

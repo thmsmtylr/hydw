@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 export function WiggleOnHover({ children }: { children: React.ReactNode }) {
   const wiggleAnimation = {
     hover: {
-      rotate: [0, -5, 5, -5, 5, 0],
+      rotate: [0, -3, 3, -3, 3, 0],
       transition: {
-        duration: 2,
+        duration: 0.75,
         ease: "easeInOut",
       },
     },

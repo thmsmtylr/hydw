@@ -6,6 +6,7 @@ import { VideoPlayer } from "@/components/video-player";
 import { DirectorBySlugQuery } from "@/types/generated";
 import { DIRECTOR_BY_SLUG } from "@/queries/directors-by-slug-query";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
+import { WiggleOnHover } from "@/components/wiggle-on-hover";
 
 async function getPageData(slug: string): Promise<DirectorBySlugQuery> {
   const data = await request({
@@ -71,6 +72,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <div className="relative col-span-12 lg:col-span-3 lg:col-start-9">
           {avatarIllustration.url && (
+            <WiggleOnHover>
             <Image
               className="m-auto mt-7 max-w-[300px]"
               src={avatarIllustration.url}
@@ -78,6 +80,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               width={129}
               height={197}
             />
+            </WiggleOnHover>
           )}
         </div>
       </section>

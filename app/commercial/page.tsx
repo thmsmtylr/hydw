@@ -8,6 +8,7 @@ import { CommercialPageQuery } from "@/types/generated";
 import { Parallax } from "@/components/parallax";
 import { PageHeading } from "@/components/page-heading";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
+import { WiggleOnHover } from "@/components/wiggle-on-hover";
 
 async function getPageData(): Promise<CommercialPageQuery> {
   const data = await request({ query: COMMERCIAL_PAGE_QUERY });
@@ -53,6 +54,7 @@ export default async function Page() {
         </div>
         <div className="page-grid left-0 top-0 col-span-12 mt-7 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="col-span-6 col-start-6 md:order-1 md:col-span-3 md:col-start-4 lg:order-1 lg:col-start-6">
+          <WiggleOnHover>
             <Image
               className="m-auto max-w-[50px] rotate-45 md:mt-4 md:max-w-[80px] lg:-mt-2 xl:max-w-[100px]"
               src="/img/beer.png"
@@ -60,8 +62,10 @@ export default async function Page() {
               width={100}
               height={170}
             />
+            </WiggleOnHover>
           </div>
           <div className="col-span-6 col-start-1 md:order-3 md:col-span-3 md:col-start-1 lg:order-2">
+          <WiggleOnHover>
             <Image
               className="-mt-8 max-w-[90px] -rotate-12 md:max-w-[140px] lg:m-auto lg:-mt-20 xl:-mt-32 xl:max-w-[177px]"
               src="/img/console.png"
@@ -69,8 +73,10 @@ export default async function Page() {
               width={177}
               height={123}
             />
+          </WiggleOnHover>
           </div>
           <div className="col-span-6 col-start-1 mt-14 md:order-4 md:col-span-3 md:col-start-5 md:mt-0 lg:order-3 lg:col-start-1 xl:col-start-2">
+          <WiggleOnHover>
             <Image
               className="m-auto max-w-[80px] md:max-w-[120px] lg:mt-96 xl:max-w-[135px]"
               src="/img/bag.png"
@@ -78,6 +84,7 @@ export default async function Page() {
               width={135}
               height={216}
             />
+          </WiggleOnHover>
           </div>
         </div>
       </section>

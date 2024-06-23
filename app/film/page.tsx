@@ -7,6 +7,7 @@ import { Parallax } from "@/components/parallax";
 import { PageHeading } from "@/components/page-heading";
 import { FILM_PAGE_QUERY } from "@/queries/film-page-query";
 import { FilmPageQuery } from "@/types/generated";
+import { WiggleOnHover } from "@/components/wiggle-on-hover";
 
 async function getPageData(): Promise<FilmPageQuery> {
   const data = await request({ query: FILM_PAGE_QUERY });
@@ -52,6 +53,7 @@ export default async function Page() {
         </div>
         <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-3 lg:order-1 lg:col-span-3 lg:col-start-7">
+          <WiggleOnHover>
             <Image
               className="ml-4 mt-7 max-w-[100px] rotate-[24deg] md:mx-auto md:mt-9 md:max-w-[110px] lg:mt-0 lg:max-w-[120px]"
               src="/img/grousehouse.png"
@@ -59,6 +61,7 @@ export default async function Page() {
               width={137}
               height={179}
             />
+            </WiggleOnHover>
           </div>
           <div className="order-1 col-span-6 col-start-1 md:col-span-3 md:col-start-1 lg:order-2">
             <Image

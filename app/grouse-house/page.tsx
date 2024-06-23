@@ -7,6 +7,7 @@ import { PageLayout } from "@/components/page-layout";
 import { Parallax } from "@/components/parallax";
 import Image from "next/image";
 import { PageHeading } from "@/components/page-heading";
+import { WiggleOnHover } from "@/components/wiggle-on-hover";
 
 async function getPageData(): Promise<GrouseHousePageQuery> {
   const data = await request({ query: GROUSE_HOUSE_QUERY });
@@ -52,6 +53,7 @@ export default async function Page() {
         </div>
         <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="order-3 col-span-6 col-start-1 md:col-span-3 md:col-start-3 lg:order-1 lg:col-span-3 lg:col-start-7">
+          <WiggleOnHover>
             <Image
               className="ml-4 mt-7 max-w-[100px] rotate-[24deg] md:mx-auto md:mt-9 md:max-w-[110px] lg:mt-0 lg:max-w-[120px]"
               src="/img/grousehouse.png"
@@ -59,8 +61,10 @@ export default async function Page() {
               width={137}
               height={179}
             />
+          </WiggleOnHover>
           </div>
           <div className="order-1 col-span-6 col-start-1 md:col-span-3 md:col-start-1 lg:order-2">
+          <WiggleOnHover>
             <Image
               className="m-auto mt-14 max-w-[120px] md:-mt-3 md:max-w-[150px] lg:mt-96 lg:max-w-[175px] xl:mt-80 talllg:-ml-[25px] tallxl:-ml-0"
               src="/img/computer.png"
@@ -68,8 +72,10 @@ export default async function Page() {
               width={188}
               height={175}
             />
+            </WiggleOnHover>
           </div>
           <div className="order-2 col-span-6 col-start-7 md:col-start-10 lg:order-3 lg:col-span-3 lg:col-start-11">
+          <WiggleOnHover>
             <Image
               className="relative m-auto mt-7 max-w-[120px] rotate-[17deg] md:max-w-[140px] lg:mt-80 lg:max-w-[166px] lg:text-right xl:mx-auto talllg:-mr-[25px] tallxl:mx-auto"
               src="/img/subscribers.png"
@@ -77,6 +83,7 @@ export default async function Page() {
               width={166}
               height={92}
             />
+            </WiggleOnHover>
           </div>
           <div className="z-30 order-4 col-span-6 col-start-7 md:col-span-5 md:col-start-8 lg:col-span-5 lg:col-start-8">
             <Parallax className="relative">

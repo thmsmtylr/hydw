@@ -6,6 +6,7 @@ import { TV_QUERY } from "@/queries/tv-page-query";
 import { TvPageQuery } from "@/types/generated";
 import { PageLayout } from "@/components/page-layout";
 import { PageHeading } from "@/components/page-heading";
+import { WiggleOnHover } from "@/components/wiggle-on-hover";
 
 async function getPageData(): Promise<TvPageQuery> {
   const data = await request({ query: TV_QUERY });
@@ -51,6 +52,7 @@ export default async function Page() {
         </div>
         <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="col-span-6 col-start-5 -rotate-[9deg] md:col-span-3 md:col-start-7">
+          <WiggleOnHover>
             <Image
               className="m-auto mt-7 max-w-[120px] md:max-w-[140px] lg:mt-0 lg:max-w-[150px]"
               src="/img/frog.png"
@@ -58,8 +60,10 @@ export default async function Page() {
               width={168}
               height={206}
             />
+           </WiggleOnHover>
           </div>
           <div className="col-span-6 col-start-1 mt-14 md:col-span-2 md:col-start-1 md:mt-0">
+          <WiggleOnHover>
             <Image
               className="m-auto max-w-[80px] rotate-12 md:max-w-[100px] lg:mt-[100px] lg:max-w-[111px]"
               src="/img/egg.png"
@@ -67,8 +71,10 @@ export default async function Page() {
               width={111}
               height={173}
             />
+          </WiggleOnHover>
           </div>
           <div className="col-span-6 col-start-7 md:col-span-3 md:col-start-10">
+          <WiggleOnHover>
             <Image
               className="m-auto max-w-[150px] rotate-[25deg] md:max-w-[170px] lg:mt-[300px] lg:max-w-[210px] talllg:mt-96"
               src="/img/cowdoy.png"
@@ -76,6 +82,7 @@ export default async function Page() {
               width={210}
               height={227}
             />
+            </WiggleOnHover>
           </div>
         </div>
       </section>
