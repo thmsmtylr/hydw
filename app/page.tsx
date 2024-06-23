@@ -9,6 +9,7 @@ import { HomepageQuery } from "@/types/generated";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 import { FeaturedScrollRotate } from "@/components/featured-scroll-rotate";
 import { HOMEPAGE_QUERY } from "@/queries/homepage-query";
+import { WiggleOnHover } from "@/components/wiggle-on-hover";
 
 async function getPageData(): Promise<HomepageQuery> {
   const data = await request({ query: HOMEPAGE_QUERY });
@@ -58,13 +59,15 @@ export default async function Page() {
             )}
           </div>
           <div className="relative col-span-6 col-start-4 lg:col-span-2 lg:col-start-11">
-            <Image
-              className="m-auto mt-7 max-w-[90px] lg:absolute lg:left-1/2 lg:top-0 lg:mb-0 lg:max-w-[129px] lg:-translate-x-1/2 lg:translate-y-[200%]"
-              src="/img/puppet.png"
-              alt="Puppet"
-              width={129}
-              height={197}
-            />
+            <WiggleOnHover>
+              <Image
+                className="m-auto mt-7 max-w-[90px] lg:absolute lg:left-1/2 lg:top-0 lg:mb-0 lg:max-w-[129px] lg:-translate-x-1/2 lg:translate-y-[200%]"
+                src="/img/puppet.png"
+                alt="Puppet"
+                width={129}
+                height={197}
+              />
+            </WiggleOnHover>
           </div>
           {featuredWork.map((work, index) => {
             const { id, title, slug, category, featuredImages } = work;
