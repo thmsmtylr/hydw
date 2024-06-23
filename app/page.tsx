@@ -68,7 +68,7 @@ export default async function Page() {
           </div>
           {featuredWork.map((work, index) => {
             const { id, title, slug, category, featuredImages } = work;
-            if (category.slug === "commercial" && featuredImages.length > 0) {
+            if (category.slug === "studio" && featuredImages.length > 0) {
               return (
                 <section key={id} className="largespace page-grid col-span-12">
                   <div className="relative z-20 col-span-3 md:col-span-2" />
