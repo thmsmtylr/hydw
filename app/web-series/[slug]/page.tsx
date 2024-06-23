@@ -74,13 +74,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
         />
         <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
           {watchOn.length > 0 && (
-            <p className="body mt-7 lg:mt-0">
+            <p className="body mt-7 lg:mt-0 mb-7">
               Watch on <span dangerouslySetInnerHTML={{ __html: watchOn }} />
             </p>
           )}
           {credits.length > 0 &&
             credits.map((credit) => (
-              <div key={credit.id} className="mt-7">
+              <div key={credit.id} className="mt-7 first:mt-0">
                 <h6 className="smallbody uppercase">{credit.title}</h6>
                 <p className="body">{credit.credit}</p>
               </div>
