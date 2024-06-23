@@ -44,7 +44,7 @@ export default async function Page() {
         <div className="largespace extraheight col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
           <PageHeading title={title} />
         </div>
-        <div className="col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
+        <div className="z-[10] col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
           <h4 className="smallspace heading4">{subtitle}</h4>
           <div
             className="smallestspace body"
@@ -104,6 +104,12 @@ export default async function Page() {
         items={works}
         pageSlug={slug}
       />
+      <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
+            <p className="heading3 text-center text-hydw-blue">Like What You've Seen?</p>
+              <p className="smallspace body text-center text-hydw-blue">
+                <a href="https://www.youtube.com/channel/UCNuaFLcbAeycQAIAW5s7T0Q" target="_blank">Head over to Grouse House</a>
+              </p>
+          </div>
     </main>
   );
 }
