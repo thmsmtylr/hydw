@@ -9,6 +9,11 @@ export function BouncingLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
 
+  const getRandomColor = () => {
+    const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+
   useEffect(() => {
     const container = containerRef.current;
     const logo = logoRef.current;
@@ -51,19 +56,16 @@ export function BouncingLogo() {
       requestAnimationFrame(bounce);
     };
 
-    setTimeout(() => {
+    const startAnimation = () => {
       controls.start({
         opacity: 1,
         transition: { duration: 3 }, // Slower fade-in duration
       });
       bounce();
-    }, 1000); // Delay before starting the animation
-  }, [controls]);
+    };
 
-  const getRandomColor = () => {
-    const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
+    setTimeout(startAnimation, 1000); // Delay before starting the animation
+  }, [controls]);
 
   return (
     <div

@@ -39,11 +39,7 @@ export default async function Page() {
       <section className="relative z-20 h-[60vh] w-full overflow-hidden lg:h-screen">
         <VideoPlayer
           // Test link
-          url={
-            process.env.NODE_ENV === "development"
-              ? "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-              : showreel?.url || ""
-          }
+          url={showreel?.url || ""}
           playing={true}
           controls={false}
           muted={true}
@@ -264,16 +260,16 @@ export default async function Page() {
                       </Link>
                     </p>
                   </div>
-                  <div className="relative col-span-6 col-start-5 md:col-span-6 rotate-45">
-                  <WiggleOnHover>
-                    <Image
-                      className="m-auto mt-7 max-w-[110px] md:absolute md:left-1/2 lg:max-w-[168px]"
-                      src="/img/manbost.png"
-                      alt="Manbost"
-                      width={160}
-                      height={275}
-                    />
-                 </WiggleOnHover>
+                  <div className="relative col-span-6 col-start-5 rotate-45 md:col-span-6">
+                    <WiggleOnHover>
+                      <Image
+                        className="m-auto mt-7 max-w-[110px] md:absolute md:left-1/2 lg:max-w-[168px]"
+                        src="/img/manbost.png"
+                        alt="Manbost"
+                        width={160}
+                        height={275}
+                      />
+                    </WiggleOnHover>
                   </div>
                 </section>
               );
