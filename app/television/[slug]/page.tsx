@@ -82,36 +82,38 @@ export default async function Page({ params }: { params: { slug: string } }) {
             ))}
         </div>
       </section>
-      <section className="largespace">
-        <h4 className="heading4 mb-7 uppercase text-hydw-blue">
-          More{" "}
-          {category.slug
-            .split("-") // Split by dashes
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter of each word
-            .join(" ")}{" "}
-          that we&apos;ve made
-        </h4>
-        <div className="page-grid gap-2.5 md:gap-5">
-          {allWorks.map((work, index) => {
-            if (work.category.slug === category.slug) {
-              return (
-                <Link
-                  href={`/${work.category.slug}/${work.slug}`}
-                  key={work.id}
-                  className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
-                >
-                  <div className="absolute left-0 top-0 h-full w-full duration-300">
-                    <FeaturedThumbnails
-                      index={index}
-                      images={work.featuredImages}
-                    />
-                  </div>
-                </Link>
-              );
-            }
-          })}
-        </div>
-      </section>
+      {allWorks.length === 0 && (
+        <section className="largespace">
+          <h4 className="heading4 mb-7 uppercase text-hydw-blue">
+            More{" "}
+            {category.slug
+              .split("-") // Split by dashes
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter of each word
+              .join(" ")}{" "}
+            that we&apos;ve made
+          </h4>
+          <div className="page-grid gap-2.5 md:gap-5">
+            {allWorks.map((work, index) => {
+              if (work.category.slug === category.slug) {
+                return (
+                  <Link
+                    href={`/${work.category.slug}/${work.slug}`}
+                    key={work.id}
+                    className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
+                  >
+                    <div className="absolute left-0 top-0 h-full w-full duration-300">
+                      <FeaturedThumbnails
+                        index={index}
+                        images={work.featuredImages}
+                      />
+                    </div>
+                  </Link>
+                );
+              }
+            })}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

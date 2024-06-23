@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
+import { VideoBanner } from "@/components/video-banner";
 import { Parallax } from "@/components/parallax";
 import { VideoPlayer } from "@/components/video-player";
 import { HomepageQuery } from "@/types/generated";
@@ -34,7 +35,7 @@ export default async function Page() {
 
   return (
     <main className="home largepadding overflow-hidden bg-hydw-vanilla">
-      <section className="relative z-20 h-[60vh] w-full overflow-hidden lg:h-screen">
+      <VideoBanner>
         <VideoPlayer
           // Test link
           url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
@@ -52,7 +53,7 @@ export default async function Page() {
           width={400}
           height={144}
         />
-      </section>
+      </VideoBanner>
       <div className="page-grid wrapper bg-hydw-vanilla">
         <div className="page-grid col-span-12">
           <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
