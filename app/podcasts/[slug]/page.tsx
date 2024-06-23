@@ -69,7 +69,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         />
         <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
           <p className="body mt-7 lg:mt-0">
-            Watch on <span dangerouslySetInnerHTML={{ __html: watchOn }} />
+            Listen: <span dangerouslySetInnerHTML={{ __html: watchOn }} />
           </p>
           {credits.length > 0 &&
             credits.map((credit) => (
