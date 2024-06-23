@@ -26,7 +26,7 @@ export async function generateMetadata({
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const description = data.work?.description || "";
-  const url = data.allWorks[0]?.featuredImages[0]?.image?.url || "";
+  const url = "";
 
   return {
     title: `${title}`,
@@ -45,7 +45,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const description = data.work?.description || "";
   const watchOn = buildMDX(data.work?.watchOn || "");
   const credits = data.work?.credits || [];
-  const allWorks = data.allWorks || [];
+  const allWorks = data.page?.work || [];
   const category = data.work?.category || { slug: "" };
 
   return (
@@ -92,7 +92,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </h4>
           <div className="page-grid gap-2.5 md:gap-5">
             {allWorks.map((work, index) => {
-              if (work.category.slug === category.slug) {
+              if (work.id !== data.work?.id) {
                 return (
                   <Link
                     href={`/${work.category.slug}/${work.slug}`}

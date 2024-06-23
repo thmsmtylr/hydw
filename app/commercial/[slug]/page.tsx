@@ -4,18 +4,18 @@ import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 import { VideoPlayer } from "@/components/video-player";
-import { STUDIO_BY_SLUG_QUERY } from "@/queries/studio-by-slug-query";
-import { StudioBySlugQuery } from "@/types/generated";
+import { COMMERCIAL_BY_SLUG_QUERY } from "@/queries/commerical-by-slug-query";
+import { CommercialBySlugQuery } from "@/types/generated";
 
-async function getPageData(slug: string): Promise<StudioBySlugQuery> {
+async function getPageData(slug: string): Promise<CommercialBySlugQuery> {
   const data = await request({
-    query: STUDIO_BY_SLUG_QUERY,
+    query: COMMERCIAL_BY_SLUG_QUERY,
     variables: {
       slug: slug,
     },
   });
 
-  return { ...(data as StudioBySlugQuery) };
+  return { ...(data as CommercialBySlugQuery) };
 }
 
 export async function generateMetadata({
@@ -70,9 +70,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
           dangerouslySetInnerHTML={{ __html: description }}
         />
         <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
-          <p className="body mt-7 lg:mt-0">
-            Watch on <span dangerouslySetInnerHTML={{ __html: watchOn }} />
-          </p>
+          {watchOn.length > 0 && (
+            <p className="body mt-7 lg:mt-0">
+              Watch on <span dangerouslySetInnerHTML={{ __html: watchOn }} />
+            </p>
+          )}
           {credits.length > 0 &&
             credits.map((credit) => (
               <div key={credit.id} className="mt-7">
@@ -82,7 +84,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             ))}
         </div>
       </section>
-      {allWorks.length === 0 && (
+      {allWorks.length > 0 && (
         <section className="largespace">
           <h4 className="heading4 mb-7 uppercase text-hydw-blue">
             More{" "}
@@ -94,7 +96,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </h4>
           <div className="page-grid gap-2.5 md:gap-5">
             {allWorks.map((work, index) => {
-              if (work.category.slug === category.slug) {
+              if (work.id !== data.work?.id) {
                 return (
                   <Link
                     href={`/${work.category.slug}/${work.slug}`}

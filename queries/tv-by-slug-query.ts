@@ -2,6 +2,38 @@ import { gql } from "graphql-request";
 
 export const TV_BY_SLUG_QUERY = gql`
   query TvBySlug($slug: String) {
+    page(
+      filter: {
+        _isValid: { eq: "true" }
+        _status: { eq: published }
+        slug: { eq: "television" }
+      }
+    ) {
+      id
+      slug
+      title
+      subtitle
+      description
+      work {
+        id
+        title
+        description
+        distributor
+        slug
+        featuredImages {
+          image {
+            url
+            alt
+          }
+        }
+        videoLink {
+          url
+        }
+        category {
+          slug
+        }
+      }
+    }
     work(
       filter: {
         slug: { eq: $slug }
@@ -24,27 +56,6 @@ export const TV_BY_SLUG_QUERY = gql`
       }
       category {
         slug
-      }
-    }
-    allWorks(
-      filter: {
-        _status: { eq: published }
-        _isValid: { eq: "true" }
-        slug: { neq: $slug }
-      }
-      orderBy: _publishedAt_DESC
-    ) {
-      id
-      slug
-      title
-      category {
-        slug
-      }
-      featuredImages {
-        image {
-          url
-          alt
-        }
       }
     }
   }

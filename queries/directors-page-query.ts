@@ -27,6 +27,10 @@ export const DIRECTORS_QUERY = gql`
       featuredWorks {
         id
         externalLink
+        slug
+        category {
+          slug
+        }
         featuredImages {
           id
           image {

@@ -5,9 +5,9 @@ import { buildMDX } from "@/utils/build-mdx";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 import { VideoPlayer } from "@/components/video-player";
 import { WEB_SERIES_BY_SLUG_QUERY } from "@/queries/web-series-by-slug-query";
-import { TvBySlugQuery } from "@/types/generated";
+import { WebSeriesBySlugQuery } from "@/types/generated";
 
-async function getPageData(slug: string): Promise<TvBySlugQuery> {
+async function getPageData(slug: string): Promise<WebSeriesBySlugQuery> {
   const data = await request({
     query: WEB_SERIES_BY_SLUG_QUERY,
     variables: {
@@ -15,7 +15,7 @@ async function getPageData(slug: string): Promise<TvBySlugQuery> {
     },
   });
 
-  return { ...(data as TvBySlugQuery) };
+  return { ...(data as WebSeriesBySlugQuery) };
 }
 
 export async function generateMetadata({
@@ -26,7 +26,7 @@ export async function generateMetadata({
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const description = data.work?.description || "";
-  const url = data.allWorks[0]?.featuredImages[0]?.image?.url || "";
+  const url = ""; // TODO: Add image URL
 
   return {
     title: `${title}`,
@@ -45,7 +45,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const description = data.work?.description || "";
   const watchOn = buildMDX(data.work?.watchOn || "");
   const credits = data.work?.credits || [];
-  const allWorks = data.allWorks || [];
+  const allWorks = data.page?.work || [];
   const category = data.work?.category || { slug: "" };
 
   return (
@@ -70,9 +70,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
           dangerouslySetInnerHTML={{ __html: description }}
         />
         <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
-          <p className="body mt-7 lg:mt-0">
-            Watch on <span dangerouslySetInnerHTML={{ __html: watchOn }} />
-          </p>
+          {watchOn.length > 0 && (
+            <p className="body mt-7 lg:mt-0">
+              Watch on <span dangerouslySetInnerHTML={{ __html: watchOn }} />
+            </p>
+          )}
           {credits.length > 0 &&
             credits.map((credit) => (
               <div key={credit.id} className="mt-7">
@@ -94,7 +96,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </h4>
           <div className="page-grid gap-2.5 md:gap-5">
             {allWorks.map((work, index) => {
-              if (work.category.slug === category.slug) {
+              if (work.id !== data.work?.id) {
                 return (
                   <Link
                     href={`/${work.category.slug}/${work.slug}`}

@@ -27,11 +27,7 @@ export const STUDIO_BY_SLUG_QUERY = gql`
       }
     }
     allWorks(
-      filter: {
-        _status: { eq: published }
-        _isValid: { eq: "true" }
-        slug: { neq: $slug }
-      }
+      filter: { _status: { eq: published }, _isValid: { eq: "true" } }
       orderBy: _publishedAt_DESC
     ) {
       id

@@ -2,6 +2,38 @@ import { gql } from "graphql-request";
 
 export const GROUSE_HOUSE_BY_SLUG_QUERY = gql`
   query GrouseHouseBySlug($slug: String) {
+    page(
+      filter: {
+        _isValid: { eq: "true" }
+        _status: { eq: published }
+        slug: { eq: "grouse-house" }
+      }
+    ) {
+      id
+      slug
+      title
+      subtitle
+      description
+      work {
+        id
+        title
+        description
+        distributor
+        slug
+        featuredImages {
+          image {
+            url
+            alt
+          }
+        }
+        videoLink {
+          url
+        }
+        category {
+          slug
+        }
+      }
+    }
     work(
       filter: {
         slug: { eq: $slug }
@@ -24,27 +56,6 @@ export const GROUSE_HOUSE_BY_SLUG_QUERY = gql`
       }
       category {
         slug
-      }
-    }
-    allWorks(
-      filter: {
-        _status: { eq: published }
-        _isValid: { eq: "true" }
-        slug: { neq: $slug }
-      }
-      orderBy: _publishedAt_DESC
-    ) {
-      id
-      slug
-      title
-      category {
-        slug
-      }
-      featuredImages {
-        image {
-          url
-          alt
-        }
       }
     }
   }

@@ -26,7 +26,7 @@ export async function generateMetadata({
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const description = data.work?.description || "";
-  const url = data.allWorks[0]?.featuredImages[0]?.image?.url || "";
+  const url = "";
 
   return {
     title: `${title}`,
@@ -45,7 +45,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const description = data.work?.description || "";
   const watchOn = buildMDX(data.work?.watchOn || "");
   const credits = data.work?.credits || [];
-  const allWorks = data.allWorks || [];
+  const allWorks = data.page?.work || [];
   const category = data.work?.category || { slug: "" };
 
   return (
@@ -70,9 +70,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
           dangerouslySetInnerHTML={{ __html: description }}
         />
         <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
-          <p className="body mt-7 lg:mt-0">
-            Watch on <span dangerouslySetInnerHTML={{ __html: watchOn }} />
-          </p>
+          {watchOn.length > 0 && (
+            <p className="body mt-7 lg:mt-0">
+              Watch on <span dangerouslySetInnerHTML={{ __html: watchOn }} />
+            </p>
+          )}
           {credits.length > 0 &&
             credits.map((credit) => (
               <div key={credit.id} className="mt-7">
@@ -82,7 +84,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             ))}
         </div>
       </section>
-      {allWorks.length === 0 && (
+      {allWorks.length > 0 && (
         <section className="largespace">
           <h4 className="heading4 mb-7 uppercase text-hydw-blue">
             More{" "}
@@ -94,7 +96,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </h4>
           <div className="page-grid gap-2.5 md:gap-5">
             {allWorks.map((work, index) => {
-              if (work.category.slug === category.slug) {
+              if (work.id !== data.work?.id) {
                 return (
                   <Link
                     href={`/${work.category.slug}/${work.slug}`}

@@ -62,15 +62,36 @@ export default async function Page({ params }: { params: { slug: string } }) {
           {moreWorkText}
         </h4>
         <div className="page-grid gap-2.5 md:gap-5">
-          {featuredWorks.map((work, index) => (
-            <Link
-              key={work.id}
-              href={work.externalLink?.length ? work.externalLink : "/"}
-              className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
-            >
-              <FeaturedThumbnails index={index} images={work.featuredImages} />
-            </Link>
-          ))}
+          {featuredWorks.map((work, index) => {
+            if (work.externalLink?.length) {
+              return (
+                <a
+                  key={work.id}
+                  target="_blank"
+                  href={work.externalLink}
+                  className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
+                >
+                  <FeaturedThumbnails
+                    index={index}
+                    images={work.featuredImages}
+                  />
+                </a>
+              );
+            }
+
+            return (
+              <Link
+                key={work.id}
+                href={`/${work.category.slug}/${work.slug}`}
+                className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
+              >
+                <FeaturedThumbnails
+                  index={index}
+                  images={work.featuredImages}
+                />
+              </Link>
+            );
+          })}
         </div>
       </section>
     </main>

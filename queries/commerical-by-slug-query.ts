@@ -1,12 +1,12 @@
 import { gql } from "graphql-request";
 
-export const PODCAST_BY_SLUG_QUERY = gql`
-  query PodcastBySlug($slug: String) {
+export const COMMERCIAL_BY_SLUG_QUERY = gql`
+  query CommercialBySlug($slug: String) {
     page(
       filter: {
         _isValid: { eq: "true" }
         _status: { eq: published }
-        slug: { eq: "podcasts" }
+        slug: { eq: "commercial" }
       }
     ) {
       id
