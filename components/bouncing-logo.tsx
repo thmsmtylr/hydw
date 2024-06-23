@@ -6,8 +6,8 @@ import { motion, useAnimation } from "framer-motion";
 export function BouncingLogo() {
   const controls = useAnimation();
   const [color, setColor] = useState("blue");
-  const containerRef = useRef(null);
-  const logoRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLElement>(null); // Use HTMLImageElement if logo is specifically an image
 
   useEffect(() => {
     const container = containerRef.current;
