@@ -37,7 +37,7 @@ export default async function Page() {
     <main className="layoutb studio bg-hydw-vanilla overflow-hidden largepadding">
       <nav
         role="navigation"
-        className="page-grid wrapper fixed top-[66px] z-[30] md:top-[16px] lg:top-[8px] w-full"
+        className="page-grid wrapper fixed top-[66px] z-[40] md:top-[16px] lg:top-[8px] w-full"
       >
         <ul
           role="list"
