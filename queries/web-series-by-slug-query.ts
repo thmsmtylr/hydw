@@ -57,6 +57,16 @@ export const WEB_SERIES_BY_SLUG_QUERY = gql`
       category {
         slug
       }
+      seo {
+        image {
+          url
+        }
+      }
+      featuredImages {
+        image {
+          url
+        }
+      }
     }
   }
 `;

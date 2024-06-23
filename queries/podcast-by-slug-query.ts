@@ -48,6 +48,10 @@ export const PODCAST_BY_SLUG_QUERY = gql`
       videoLink {
         url
       }
+      heroImage {
+        url
+        alt
+      }
       watchOn
       credits {
         id
@@ -56,6 +60,11 @@ export const PODCAST_BY_SLUG_QUERY = gql`
       }
       category {
         slug
+      }
+      seo {
+        image {
+          url
+        }
       }
     }
   }

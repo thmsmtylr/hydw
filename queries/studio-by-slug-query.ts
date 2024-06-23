@@ -2,6 +2,38 @@ import { gql } from "graphql-request";
 
 export const STUDIO_BY_SLUG_QUERY = gql`
   query StudioBySlug($slug: String) {
+    page(
+      filter: {
+        _isValid: { eq: "true" }
+        _status: { eq: published }
+        slug: { eq: "studio" }
+      }
+    ) {
+      id
+      slug
+      title
+      subtitle
+      description
+      work {
+        id
+        title
+        description
+        distributor
+        slug
+        featuredImages {
+          image {
+            url
+            alt
+          }
+        }
+        videoLink {
+          url
+        }
+        category {
+          slug
+        }
+      }
+    }
     work(
       filter: {
         slug: { eq: $slug }
@@ -25,21 +57,14 @@ export const STUDIO_BY_SLUG_QUERY = gql`
       category {
         slug
       }
-    }
-    allWorks(
-      filter: { _status: { eq: published }, _isValid: { eq: "true" } }
-      orderBy: _publishedAt_DESC
-    ) {
-      id
-      slug
-      title
-      category {
-        slug
+      seo {
+        image {
+          url
+        }
       }
       featuredImages {
         image {
           url
-          alt
         }
       }
     }

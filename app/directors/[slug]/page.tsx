@@ -1,20 +1,44 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { VideoPlayer } from "@/components/video-player";
 import { DirectorBySlugQuery } from "@/types/generated";
-import { DIRECTORS_QUERY } from "@/queries/directors-page-query";
+import { DIRECTOR_BY_SLUG } from "@/queries/directors-by-slug-query";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 
 async function getPageData(slug: string): Promise<DirectorBySlugQuery> {
   const data = await request({
-    query: DIRECTORS_QUERY,
+    query: DIRECTOR_BY_SLUG,
     variables: {
       slug: slug,
     },
   });
 
   return { ...(data as DirectorBySlugQuery) };
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const data = await getPageData(params.slug);
+  const title = data.director?.name || "";
+  const description = data.director?.description || "";
+  const url =
+    data.director?.seo?.image?.url ||
+    data.director?.avatarIllustration?.url ||
+    data.director?.featuredWorks?.[0]?.featuredImages?.[0]?.image?.url ||
+    "";
+
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      images: url,
+    },
+  };
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {

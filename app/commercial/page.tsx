@@ -39,7 +39,7 @@ export default async function Page() {
   const directors = data.allDirectors || [];
 
   return (
-    <main className="largepadding bg-hydw-vanilla">
+    <main className="largepadding overflow-hidden bg-hydw-vanilla">
       <section className="page-grid wrapper relative min-h-screen overflow-hidden bg-hydw-yellow py-10 shortlg:pb-80">
         <div className="largespace extraheight col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
           <PageHeading title={title} />
@@ -96,18 +96,18 @@ export default async function Page() {
       </div>
       <nav
         role="navigation"
-        className="pointer-events-none smallerspace page-grid wrapper sticky top-[66px] z-40 md:top-4 lg:top-2"
+        className="smallerspace page-grid wrapper pointer-events-none sticky top-[66px] z-40 md:top-4 lg:top-2"
       >
         <ul
           role="list"
           className="col-span-12 col-start-1 flex flex-wrap text-hydw-charcoal md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3"
         >
-          <li className="pointer-events-auto heading5 mr-3">
+          <li className="heading5 pointer-events-auto mr-3">
             <Link href="#directors" className="underline">
               Directors
             </Link>
           </li>
-          <li className="pointer-events-auto heading5 ml-3">
+          <li className="heading5 pointer-events-auto ml-3">
             <Link
               href="studio"
               className="no-underline duration-300 hover:text-hydw-blue hover:underline"

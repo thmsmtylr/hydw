@@ -54,8 +54,18 @@ export const GROUSE_HOUSE_BY_SLUG_QUERY = gql`
         title
         credit
       }
+      featuredImages {
+        image {
+          url
+        }
+      }
       category {
         slug
+      }
+      seo {
+        image {
+          url
+        }
       }
     }
   }

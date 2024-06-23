@@ -26,10 +26,13 @@ export async function generateMetadata({
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const description = data.work?.description || "";
-  const url = "";
+  const url =
+    data.work?.seo?.image?.url ||
+    data.work?.featuredImages?.[0]?.image?.url ||
+    "";
 
   return {
-    title: `${title}`,
+    title: title,
     description: description,
     openGraph: {
       images: url,

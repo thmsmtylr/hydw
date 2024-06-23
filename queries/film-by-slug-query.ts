@@ -49,6 +49,11 @@ export const FILM_BY_SLUG_QUERY = gql`
         url
       }
       watchOn
+      featuredImages {
+        image {
+          url
+        }
+      }
       credits {
         id
         title
@@ -56,6 +61,11 @@ export const FILM_BY_SLUG_QUERY = gql`
       }
       category {
         slug
+      }
+      seo {
+        image {
+          url
+        }
       }
     }
   }

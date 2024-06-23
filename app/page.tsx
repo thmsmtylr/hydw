@@ -38,8 +38,8 @@ export default async function Page() {
       <section className="relative z-20 h-[60vh] w-full overflow-hidden lg:h-screen">
         <VideoPlayer
           // Test link
-          url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          // url={showreel?.url || ""}
+          // url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          url={showreel?.url || ""}
           playing={true}
           controls={false}
           muted={true}

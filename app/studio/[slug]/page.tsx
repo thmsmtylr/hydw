@@ -26,7 +26,10 @@ export async function generateMetadata({
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const description = data.work?.description || "";
-  const url = data.allWorks[0]?.featuredImages[0]?.image?.url || "";
+  const url =
+    data.work?.seo?.image?.url ||
+    data.work?.featuredImages?.[0]?.image?.url ||
+    "";
 
   return {
     title: `${title}`,
@@ -45,7 +48,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const description = data.work?.description || "";
   const watchOn = buildMDX(data.work?.watchOn || "");
   const credits = data.work?.credits || [];
-  const allWorks = data.allWorks || [];
+  const allWorks = data.page?.work || [];
   const category = data.work?.category || { slug: "" };
 
   return (

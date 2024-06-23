@@ -26,7 +26,10 @@ export async function generateMetadata({
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const description = data.work?.description || "";
-  const url = ""; // TODO: Add image URL
+  const url =
+    data.work?.seo?.image?.url ||
+    data.work?.featuredImages?.[0]?.image?.url ||
+    "";
 
   return {
     title: `${title}`,

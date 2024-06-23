@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
-import { VideoPlayer } from "@/components/video-player";
 import { PODCAST_BY_SLUG_QUERY } from "@/queries/podcast-by-slug-query";
 import { PodcastBySlugQuery } from "@/types/generated";
 
@@ -26,7 +26,8 @@ export async function generateMetadata({
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const description = data.work?.description || "";
-  const url = "";
+  const heroImage = data.work?.heroImage || { url: "", alt: "" };
+  const url = data.work?.seo?.image?.url || heroImage.url;
 
   return {
     title: `${title}`,
@@ -41,7 +42,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const distributor = buildMDX(data.work?.distributor || "");
-  const videoUrl = data.work?.videoLink?.url || "";
+  const heroImage = data.work?.heroImage || { url: "", alt: "" };
   const description = data.work?.description || "";
   const watchOn = buildMDX(data.work?.watchOn || "");
   const credits = data.work?.credits || [];
@@ -59,7 +60,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           />
         </div>
         <div className="smallspace col-span-12 aspect-video">
-          <VideoPlayer url={videoUrl} />
+          <Image src={heroImage.url} alt={heroImage.alt || title} />
         </div>
       </section>
       <section className="smallspace page-grid">
@@ -68,9 +69,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
           dangerouslySetInnerHTML={{ __html: description }}
         />
         <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
-          <p className="body mt-7 lg:mt-0">
-            Listen: <span dangerouslySetInnerHTML={{ __html: watchOn }} />
-          </p>
+          {watchOn.length > 0 && (
+            <p className="body mt-7 lg:mt-0">
+              Listen: <span dangerouslySetInnerHTML={{ __html: watchOn }} />
+            </p>
+          )}
           {credits.length > 0 &&
             credits.map((credit) => (
               <div key={credit.id} className="mt-7">

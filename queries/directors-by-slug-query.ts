@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 
-export const DIRECTORS_QUERY = gql`
+export const DIRECTOR_BY_SLUG = gql`
   query DirectorBySlug($slug: String) {
     director(
       filter: {
@@ -37,6 +37,11 @@ export const DIRECTORS_QUERY = gql`
             url
             alt
           }
+        }
+      }
+      seo {
+        image {
+          url
         }
       }
     }
