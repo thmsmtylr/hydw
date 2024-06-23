@@ -60,7 +60,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
           />
         </div>
         <div className="smallspace col-span-12 aspect-video">
-          <Image src={heroImage.url} alt={heroImage.alt || title} />
+          <Image 
+          src={heroImage.url} 
+          alt={heroImage.alt || title} 
+          width={1920}
+          height={1080}
+              />
         </div>
       </section>
       <section className="smallspace page-grid">
