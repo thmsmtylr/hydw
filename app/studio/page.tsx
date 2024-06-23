@@ -30,28 +30,30 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const data = await getPageData();
+  const slug = data.page?.slug || "";
   const title = data.page?.title || "";
   const description = data.page?.description || "";
   const works = data.page?.work || [];
+
   return (
-    <main className="layoutb studio bg-hydw-vanilla overflow-hidden largepadding">
+    <main className="layoutb studio largepadding overflow-hidden bg-hydw-vanilla">
       <nav
         role="navigation"
-        className="pointer-events-none page-grid wrapper fixed top-[66px] z-[40] md:top-[16px] lg:top-[8px] w-full"
+        className="page-grid wrapper pointer-events-none fixed top-[66px] z-[40] w-full md:top-[16px] lg:top-[8px]"
       >
         <ul
           role="list"
           className="pointer-events-none col-span-12 col-start-1 flex flex-wrap text-hydw-charcoal md:col-span-8 md:col-start-4 lg:col-span-4 lg:col-start-3"
         >
-          <li className="pointer-events-auto heading5 mr-3">
+          <li className="heading5 pointer-events-auto mr-3">
             <a
               href="commercial#directors"
-              className="no-underline duration-300 hover:underline hover:text-hydw-blue"
+              className="no-underline duration-300 hover:text-hydw-blue hover:underline"
             >
               Directors
             </a>
           </li>
-          <li className="pointer-events-auto heading5 ml-3">
+          <li className="heading5 pointer-events-auto ml-3">
             <a href="#studio" className="underline hover:text-hydw-blue">
               Studio
             </a>
@@ -60,21 +62,21 @@ export default async function Page() {
       </nav>
       <section
         id="studio"
-        className="pt-14 md:pt-[108px] midspace largepadding page-grid wrapper"
+        className="midspace largepadding page-grid wrapper pt-14 md:pt-[108px]"
       >
         <h1 className="heading3 col-span-12 mt-7 text-hydw-blue md:col-span-10 md:col-start-2 md:mt-0 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3">
           {title}
         </h1>
         {description && (
           <div
-            className="midspace body col-span-12 text-hydw-blue md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3"
+            className="body midspace col-span-12 text-hydw-blue md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3"
             dangerouslySetInnerHTML={{ __html: description }}
           />
         )}
         <h4 className="largespace heading4 col-span-5 text-hydw-blue md:col-start-2">
           Our Work
         </h4>
-        <div className="largespace relative col-span-5 col-start-6 md:col-span-4 md:col-start-8 lg:col-span-5 lg:col-start-9 z-10">
+        <div className="largespace relative z-10 col-span-5 col-start-6 md:col-span-4 md:col-start-8 lg:col-span-5 lg:col-start-9">
           <Parallax className="relative h-[50px]">
             <Image
               className="absolute -top-[100px] right-0 max-w-[450px] rotate-12 md:-top-[100px] lg:-top-[200px] xl:-top-[400px]"
@@ -86,7 +88,12 @@ export default async function Page() {
           </Parallax>
         </div>
       </section>
-      <PageLayout title={title} description={description} items={works} />
+      <PageLayout
+        title={title}
+        description={description}
+        items={works}
+        pageSlug={slug}
+      />
     </main>
   );
 }

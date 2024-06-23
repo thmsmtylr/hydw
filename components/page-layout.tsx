@@ -13,7 +13,7 @@ export function PageLayout({
   pageSlug?: string;
 }) {
   return (
-    <section className="bg-hydw-vanilla thumbnaillayout">
+    <section className="thumbnaillayout bg-hydw-vanilla">
       <div className="page-grid wrapper -mb-14 -translate-y-14 lg:-mb-28 lg:-translate-y-28">
         {items.map((item: any, index: number) => {
           const { id, slug, title } = item;

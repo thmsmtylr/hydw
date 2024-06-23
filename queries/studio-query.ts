@@ -23,6 +23,12 @@ export const STUDIO_QUERY = gql`
         videoLink {
           url
         }
+        featuredImages {
+          image {
+            url
+            alt
+          }
+        }
       }
       seo {
         title

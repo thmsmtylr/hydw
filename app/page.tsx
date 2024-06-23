@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
+import { BouncingLogo } from "@/components/bouncing-logo";
 import { Parallax } from "@/components/parallax";
 import { VideoPlayer } from "@/components/video-player";
 import { HomepageQuery } from "@/types/generated";
@@ -44,21 +45,14 @@ export default async function Page() {
           muted={true}
           loop={true}
         />
-
-        <Image
-          className="absolute left-1/2 top-1/2 w-[200px] -translate-x-1/2 -translate-y-1/2 -rotate-45 lg:w-[400px]"
-          src="/img/logo.svg"
-          alt="Haven't You Done Well logo"
-          width={400}
-          height={144}
-        />
+        <BouncingLogo />
       </section>
       <div className="page-grid wrapper bg-hydw-vanilla">
         <div className="page-grid col-span-12">
           <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
             <p className="heading3 text-center text-hydw-blue">{description}</p>
             {descriptionLink && descriptionLinkText && (
-              <p className="body smallspace text-center text-hydw-blue">
+              <p className="smallspace body text-center text-hydw-blue">
                 <Link href={descriptionLink}>{descriptionLinkText}</Link>
               </p>
             )}
