@@ -46,7 +46,7 @@ export function Header(props: HeaderProps) {
   }, [pathname]);
 
   return (
-    <header className="wrapper fixed left-0 top-0 z-40 flex w-full items-center justify-between">
+    <header className="wrapper fixed left-0 top-0 z-40 flex w-full items-center justify-between pointer-events-none">
       <motion.div
         ref={brandRef}
         initial={{ opacity: 0 }}
@@ -61,12 +61,12 @@ export function Header(props: HeaderProps) {
             height={44}
             src={logo.url}
             alt={siteName}
-            className="w-[120px]"
+            className="w-[120px] pointer-events-auto"
           />
         </Link>
       </motion.div>
       <motion.div
-        className="relative flex items-center justify-center gap-x-4"
+        className="relative flex items-center justify-center gap-x-4 pointer-events-auto"
         ref={menuRef}
         animate={{ x: menuX, y: menuY }}
         transition={{ type: "tween" }}
