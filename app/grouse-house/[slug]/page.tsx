@@ -5,9 +5,9 @@ import { buildMDX } from "@/utils/build-mdx";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 import { VideoPlayer } from "@/components/video-player";
 import { GROUSE_HOUSE_BY_SLUG_QUERY } from "@/queries/grouse-house-by-slug-query";
-import { TvBySlugQuery } from "@/types/generated";
+import { GrouseHouseBySlugQuery } from "@/types/generated";
 
-async function getPageData(slug: string): Promise<TvBySlugQuery> {
+async function getPageData(slug: string): Promise<GrouseHouseBySlugQuery> {
   const data = await request({
     query: GROUSE_HOUSE_BY_SLUG_QUERY,
     variables: {
@@ -15,7 +15,7 @@ async function getPageData(slug: string): Promise<TvBySlugQuery> {
     },
   });
 
-  return { ...(data as TvBySlugQuery) };
+  return { ...(data as GrouseHouseBySlugQuery) };
 }
 
 export async function generateMetadata({
@@ -82,36 +82,38 @@ export default async function Page({ params }: { params: { slug: string } }) {
             ))}
         </div>
       </section>
-      <section className="largespace">
-        <h4 className="heading4 mb-7 uppercase text-hydw-blue">
-          More{" "}
-          {category.slug
-            .split("-") // Split by dashes
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter of each word
-            .join(" ")}{" "}
-          that we&apos;ve made
-        </h4>
-        <div className="page-grid gap-2.5 md:gap-5">
-          {allWorks.map((work, index) => {
-            if (work.category.slug === category.slug) {
-              return (
-                <Link
-                  href={`/${work.category.slug}/${work.slug}`}
-                  key={work.id}
-                  className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
-                >
-                  <div className="absolute left-0 top-0 h-full w-full duration-300">
-                    <FeaturedThumbnails
-                      index={index}
-                      images={work.featuredImages}
-                    />
-                  </div>
-                </Link>
-              );
-            }
-          })}
-        </div>
-      </section>
+      {allWorks.length === 0 && (
+        <section className="largespace">
+          <h4 className="heading4 mb-7 uppercase text-hydw-blue">
+            More{" "}
+            {category.slug
+              .split("-") // Split by dashes
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter of each word
+              .join(" ")}{" "}
+            that we&apos;ve made
+          </h4>
+          <div className="page-grid gap-2.5 md:gap-5">
+            {allWorks.map((work, index) => {
+              if (work.category.slug === category.slug) {
+                return (
+                  <Link
+                    href={`/${work.category.slug}/${work.slug}`}
+                    key={work.id}
+                    className="thumbnail relative col-span-6 aspect-video lg:col-span-4"
+                  >
+                    <div className="absolute left-0 top-0 h-full w-full duration-300">
+                      <FeaturedThumbnails
+                        index={index}
+                        images={work.featuredImages}
+                      />
+                    </div>
+                  </Link>
+                );
+              }
+            })}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

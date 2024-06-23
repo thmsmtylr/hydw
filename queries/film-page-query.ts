@@ -14,6 +14,22 @@ export const FILM_PAGE_QUERY = gql`
       title
       subtitle
       description
+      work {
+        id
+        title
+        slug
+        description
+        distributor
+        videoLink {
+          url
+        }
+        featuredImages {
+          image {
+            url
+            alt
+          }
+        }
+      }
       seo {
         title
         description

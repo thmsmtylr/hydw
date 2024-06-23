@@ -58,7 +58,7 @@ export default async function Page() {
           <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
             <p className="heading3 text-center text-hydw-blue">{description}</p>
             {descriptionLink && descriptionLinkText && (
-              <p className="smallspace body text-center text-hydw-blue">
+              <p className="body smallspace text-center text-hydw-blue">
                 <Link href={descriptionLink}>{descriptionLinkText}</Link>
               </p>
             )}
