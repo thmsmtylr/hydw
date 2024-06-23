@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/navigation";
 import { HeaderProps } from "@/types/header";
@@ -17,11 +18,39 @@ export function Header(props: HeaderProps) {
   const { x: brandX, y: brandY } = useFollowPointer(brandRef);
   const { x: menuX, y: menuY } = useFollowPointer(menuRef);
 
+  const pathname = usePathname();
+  const [brandVisible, setBrandVisible] = useState<boolean>(pathname !== "/");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const screenHeight = window.innerHeight;
+      const scrollPosition = window.scrollY;
+
+      if (pathname === "/") {
+        if (scrollPosition > screenHeight) {
+          setBrandVisible(true);
+        } else {
+          setBrandVisible(false);
+        }
+      } else {
+        setBrandVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
+
   return (
     <header className="wrapper fixed left-0 top-0 z-40 flex w-full items-center justify-between">
       <motion.div
         ref={brandRef}
-        animate={{ x: brandX, y: brandY }}
+        initial={{ opacity: 0 }}
+        animate={{ x: brandX, y: brandY, opacity: brandVisible ? 1 : 0 }}
         transition={{ type: "tween" }}
         whileTap={{ scale: 0.9 }}
       >
