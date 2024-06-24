@@ -37,14 +37,16 @@ export default async function Page() {
   return (
     <main className="home largepadding overflow-hidden bg-hydw-vanilla">
       <section className="relative z-20 h-[60vh] w-full overflow-hidden lg:h-screen">
-        <VideoPlayer
-          // Test link
-          url={showreel?.url || ""}
-          playing={true}
-          controls={false}
-          muted={true}
-          loop={true}
-        />
+        <div className="pointer-events-none touch-none">
+          <VideoPlayer
+            // Test link
+            url={showreel?.url || ""}
+            playing={true}
+            controls={false}
+            muted={true}
+            loop={true}
+          />
+        </div>
         <BouncingLogo />
       </section>
       <div className="page-grid wrapper bg-hydw-vanilla">
