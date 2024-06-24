@@ -25,7 +25,7 @@ export function VideoPlayer({
         url={url}
         width="100%"
         height="100%"
-        className="h-full w-full"
+        className="pointer-events-none h-full w-full"
         config={{
           youtube: { playerVars: { disablekb: 1 } },
           file: {
