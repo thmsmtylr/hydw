@@ -6,11 +6,15 @@ import { FeaturedThumbnails } from "./featured-thumbnails";
 export function PageLayout({
   items,
   pageSlug = "",
+  image1,
+  image2,
 }: {
   title: string;
   description: string;
   items: any;
   pageSlug?: string;
+  image1?: any;
+  image2?: any;
 }) {
   return (
     <section className="thumbnaillayout bg-hydw-vanilla">
@@ -35,30 +39,32 @@ export function PageLayout({
             </Link>
           );
         })}
-        {/* image needs to upload from dato */}
-        <div className="image1">
-          <Parallax className="relative">
-            <Image
-              className="h-[auto] max-w-[450px] self-center"
-              src="/img/toreplace/HYDWP_Website_3.png"
-              alt="alt here"
-              width={400}
-              height={400}
-            />
-          </Parallax>
-        </div>
-        {/* image needs to upload from dato */}
-        <div className="image2">
-          <Parallax className="relative">
-            <Image
-              className="h-[auto] max-w-[450px] self-center"
-              src="/img/toreplace/HYDWP_Website_3.png"
-              alt="alt here"
-              width={400}
-              height={400}
-            />
-          </Parallax>
-        </div>
+        {image1 && (
+          <div className="image1">
+            <Parallax className="relative">
+              <Image
+                className="h-[auto] max-w-[450px] self-center"
+                src={image1.url}
+                alt={image1.alt}
+                width={400}
+                height={400}
+              />
+            </Parallax>
+          </div>
+        )}
+        {image2 && (
+          <div className="image2">
+            <Parallax className="relative">
+              <Image
+                className="h-[auto] max-w-[450px] self-center"
+                src={image2.url}
+                alt={image2.alt}
+                width={400}
+                height={400}
+              />
+            </Parallax>
+          </div>
+        )}
       </div>
     </section>
   );

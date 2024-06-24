@@ -14,6 +14,14 @@ export const COMMERCIAL_PAGE_QUERY = gql`
       title
       subtitle
       description
+      parallaxImage1 {
+        url
+        alt
+      }
+      parallaxImage2 {
+        url
+        alt
+      }
       featuredImage {
         url
         alt
