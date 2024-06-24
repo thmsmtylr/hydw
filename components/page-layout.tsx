@@ -35,11 +35,7 @@ export function PageLayout({
             </Link>
           );
         })}
-        {/* 
-          User should be able to upload iamge from dato, if uploaded, it adds class "addimage1" to main className
-          For .layouta if there are less than 5 entries it doesnt appear and .layoutb if there are less than two entries it doesnt appear 
-          For .layoutb we also need something written that adds +1 to order in the css for child folowing 2
-        */}
+        {/* image needs to upload from dato */}
         <div className="image1">
           <Parallax className="relative">
             <Image
@@ -51,10 +47,7 @@ export function PageLayout({
             />
           </Parallax>
         </div>
-        {/* 
-          User should be able to upload iamge from dato, if uploaded, it adds class "addimage2" to main className
-          Should only appear on pages using .layoutb and should only appear if there are 5 or more projects
-        */}
+        {/* image needs to upload from dato */}
         <div className="image2">
           <Parallax className="relative">
             <Image

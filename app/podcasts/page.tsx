@@ -38,7 +38,7 @@ export default async function Page() {
   const works = data.page?.work || [];
 
   return (
-    <main className="podcastlayout largepadding overflow-hidden bg-hydw-vanilla">
+    <main className="podcastlayout addimage1 largepadding overflow-hidden bg-hydw-vanilla">
       <section className="page-grid wrapper relative min-h-screen bg-hydw-pink py-10 shortlg:pb-80">
         <div className="largespace extraheight col-span-12 items-center justify-center text-center xl:col-span-10 xl:col-start-2">
           <PageHeading title={title} />

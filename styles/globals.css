@@ -157,12 +157,20 @@
     @apply col-span-6 col-start-4 mt-28 block md:col-span-3 lg:col-span-3 lg:mt-52;
   }
 
+  .podcastlayout.addimage1 .image1{
+    @apply col-span-6 col-start-4 mt-28 block md:order-3 md:col-span-3 md:col-start-1 lg:col-span-3 lg:col-start-1 lg:mt-52;
+  }
+
   .layouta.addimage1 .layoutthumbs {
     @apply md:[&:nth-child(5)]:order-7;
   }
 
   .layoutb.addimage1 .layoutthumbs {
     @apply md:[&:nth-child(2)]:order-3;
+  }
+
+  .podcastlayout.addimage1 .layoutthumbs {
+    @apply md:[&:nth-child(3)]:order-4;
   }
 
   /* Commercial */
