@@ -80,7 +80,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           )}
           {credits.length > 0 &&
             credits.map((credit) => (
-              <div key={credit.id} className="mt-7 first:mt-0">
+              <div key={credit.id} className="mt-7 lg:first:mt-0">
                 <h6 className="smallbody uppercase">{credit.title}</h6>
                 <p className="body">{credit.credit}</p>
               </div>
