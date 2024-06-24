@@ -31,6 +31,7 @@ export function VideoPlayer({
           file: {
             attributes: {
               controlsList: "nofullscreen",
+              disablePictureInPicture: true,
             },
           },
         }}
