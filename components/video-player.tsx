@@ -8,12 +8,16 @@ export function VideoPlayer({
   loop = false,
   muted = false,
   controls = true,
+  className = "",
+  playsinline = false,
 }: {
   url: string;
   playing?: boolean;
   loop?: boolean;
   muted?: boolean;
   controls?: boolean;
+  className?: string;
+  playsinline?: boolean;
 }) {
   return (
     <div className="relative h-full w-full">
@@ -25,7 +29,8 @@ export function VideoPlayer({
         url={url}
         width="100%"
         height="100%"
-        className="h-full w-full"
+        className={className.length > 0 ? className : "h-full w-full"}
+        playsinline={playsinline}
         config={{
           youtube: { playerVars: { disablekb: 1 } },
           file: {
