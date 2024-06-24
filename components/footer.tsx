@@ -72,7 +72,7 @@ export function Footer(props: FooterProps) {
         <ul className="smallbody flex flex-wrap uppercase text-white xl:block">
           {socialLinks.map((link) => (
             <Fragment key={link.id}>
-              <li className="ml-2 first:ml-0 xl:ml-0">
+              <li className="mr-2 xl:mr-0">
                 <a
                   className="hover:text-hydw-pink"
                   key={link.id}

@@ -2657,6 +2657,8 @@ export type PageModelFilter = {
   description?: InputMaybe<TextFilter>;
   featuredImage?: InputMaybe<FileFilter>;
   id?: InputMaybe<ItemIdFilter>;
+  parallaxImage1?: InputMaybe<FileFilter>;
+  parallaxImage2?: InputMaybe<FileFilter>;
   position?: InputMaybe<PositionFilter>;
   seo?: InputMaybe<SeoFilter>;
   slug?: InputMaybe<SlugFilter>;
@@ -2714,6 +2716,8 @@ export type PageRecord = RecordInterface & {
   description: Scalars['String']['output'];
   featuredImage: AltFileField;
   id: Scalars['ItemId']['output'];
+  parallaxImage1?: Maybe<AltFileField>;
+  parallaxImage2?: Maybe<AltFileField>;
   position?: Maybe<Scalars['IntType']['output']>;
   seo?: Maybe<SeoField>;
   slug: Scalars['String']['output'];
