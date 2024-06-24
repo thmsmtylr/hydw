@@ -44,6 +44,8 @@ export default async function Page() {
           controls={false}
           muted={true}
           loop={true}
+          playsinline={true}
+          className="-z-0"
         />
         <BouncingLogo />
       </section>

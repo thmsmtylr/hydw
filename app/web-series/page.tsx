@@ -37,6 +37,8 @@ export default async function Page() {
   const description = buildMDX(data.page?.description || "");
   const works = data.page?.work || [];
   const slug = data.page?.slug || "";
+  const image1 = data.page?.parallaxImage1 || "";
+  const image2 = data.page?.parallaxImage2 || "";
 
   return (
     <main className="layouta addimage1 largepadding overflow-hidden bg-hydw-vanilla">
@@ -53,36 +55,36 @@ export default async function Page() {
         </div>
         <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="order-2 col-span-6 col-start-7 md:col-span-3 md:col-start-7 lg:order-1">
-          <WiggleOnHover>
-            <Image
-              className="m-auto mt-7 max-w-[120px] rotate-12 md:max-w-[160px] lg:mt-4 lg:max-w-[190px]"
-              src="/img/sun.png"
-              alt="Sun"
-              width={190}
-              height={160}
-            />
+            <WiggleOnHover>
+              <Image
+                className="m-auto mt-7 max-w-[120px] rotate-12 md:max-w-[160px] lg:mt-4 lg:max-w-[190px]"
+                src="/img/sun.png"
+                alt="Sun"
+                width={190}
+                height={160}
+              />
             </WiggleOnHover>
           </div>
           <div className="order-1 col-span-6 col-start-1 md:col-span-2 md:col-start-1 lg:order-2">
-          <WiggleOnHover>
-            <Image
-              className="m-auto mt-14 max-w-[80px] -rotate-12 md:-mt-14 md:max-w-[90px] lg:mt-40 lg:max-w-[102px] xl:mt-14"
-              src="/img/youtube.png"
-              alt="Youtube"
-              width={102}
-              height={102}
-            />
-          </WiggleOnHover>
+            <WiggleOnHover>
+              <Image
+                className="m-auto mt-14 max-w-[80px] -rotate-12 md:-mt-14 md:max-w-[90px] lg:mt-40 lg:max-w-[102px] xl:mt-14"
+                src="/img/youtube.png"
+                alt="Youtube"
+                width={102}
+                height={102}
+              />
+            </WiggleOnHover>
           </div>
           <div className="order-4 col-span-6 col-start-7 md:col-span-3 md:col-start-9 lg:order-3 lg:col-start-11">
-          <WiggleOnHover>
-            <Image
-              className="relative m-auto mt-32 max-w-[102px] rotate-12 md:max-w-[140px] lg:mt-80 lg:max-w-[170px] lg:text-right xl:mx-auto"
-              src="/img/yeezus.png"
-              alt="Finding Yeezus"
-              width={170}
-              height={126}
-            />
+            <WiggleOnHover>
+              <Image
+                className="relative m-auto mt-32 max-w-[102px] rotate-12 md:max-w-[140px] lg:mt-80 lg:max-w-[170px] lg:text-right xl:mx-auto"
+                src="/img/yeezus.png"
+                alt="Finding Yeezus"
+                width={170}
+                height={126}
+              />
             </WiggleOnHover>
           </div>
           <div className="z-30 order-3 col-span-6 col-start-1 md:col-start-1 lg:order-4 lg:col-span-5 lg:col-start-1">
@@ -103,6 +105,8 @@ export default async function Page() {
         description={description}
         items={works}
         pageSlug={slug}
+        image1={image1}
+        image2={image2}
       />
     </main>
   );

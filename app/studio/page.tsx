@@ -34,6 +34,8 @@ export default async function Page() {
   const title = data.page?.title || "";
   const description = data.page?.description || "";
   const works = data.page?.work || [];
+  const image1 = data.page?.parallaxImage1 || "";
+  const image2 = data.page?.parallaxImage2 || "";
 
   return (
     <main className="layoutb studio largepadding overflow-hidden bg-hydw-vanilla">
@@ -69,7 +71,7 @@ export default async function Page() {
         </h1>
         {description && (
           <div
-            className="body midspace col-span-12 text-hydw-blue md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3"
+            className="midspace body col-span-12 text-hydw-blue md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-3"
             dangerouslySetInnerHTML={{ __html: description }}
           />
         )}
@@ -93,6 +95,8 @@ export default async function Page() {
         description={description}
         items={works}
         pageSlug={slug}
+        image1={image1}
+        image2={image2}
       />
     </main>
   );

@@ -129,7 +129,7 @@
   }
 
   .podcastlayout .layoutthumbs {
-    @apply largespace col-span-8 first:mt-0 md:col-span-6 lg:col-span-4 [&:nth-child(1n)]:col-start-4 [&:nth-child(1n)]:md:col-start-7 [&:nth-child(2n)]:col-start-2 [&:nth-child(2n)]:after:-right-[20px] [&:nth-child(2n)]:after:-top-[20px] [&:nth-child(2n)]:after:h-[281px] [&:nth-child(2n)]:after:w-[337px] [&:nth-child(2n)]:after:bg-[url('/img/scribble1_yellow.png')] [&:nth-child(2n)]:md:col-start-4 [&:nth-child(2n)]:after:md:h-[375px] [&:nth-child(2n)]:after:md:w-[450px] [&:nth-child(2n)]:after:lg:-right-[40px] [&:nth-child(2n)]:after:lg:-top-[40px] [&:nth-child(2n)]:after:xl:h-[560px] [&:nth-child(2n)]:after:xl:w-[675px] [&:nth-child(3n)]:col-start-7 [&:nth-child(3n)]:after:-right-[20px] [&:nth-child(3n)]:after:-top-[20px] [&:nth-child(3n)]:after:h-[281px] [&:nth-child(3n)]:after:w-[337px] [&:nth-child(3n)]:after:bg-[url('/img/scribble2_blue.png')] [&:nth-child(3n)]:after:md:h-[375px] [&:nth-child(3n)]:after:md:w-[450px] [&:nth-child(3n)]:after:lg:-right-[40px] [&:nth-child(3n)]:after:lg:-top-[40px] [&:nth-child(3n)]:after:xl:h-[560px] [&:nth-child(3n)]:after:xl:w-[675px] [&:nth-child(4n)]:col-start-2 [&:nth-child(5n)]:col-start-5 [&:nth-child(5n)]:after:-right-[20px] [&:nth-child(5n)]:after:-top-[20px] [&:nth-child(5n)]:after:bg-[url('/img/scribble1_pink.png')] [&:nth-child(5n)]:after:md:h-[375px] [&:nth-child(5n)]:after:md:w-[450px] [&:nth-child(5n)]:after:lg:-right-[40px] [&:nth-child(5n)]:after:lg:-top-[40px] [&:nth-child(5n)]:after:xl:h-[560px] [&:nth-child(5n)]:after:xl:w-[675px];
+    @apply largespace col-span-8 first:mt-0 md:col-span-6 lg:col-span-4 [&:nth-child(1n)]:col-start-4 [&:nth-child(1n)]:md:col-start-7 [&:nth-child(2n)]:col-start-2 [&:nth-child(2n)]:after:-right-[20px] [&:nth-child(2n)]:after:-top-[20px] [&:nth-child(2n)]:after:h-[281px] [&:nth-child(2n)]:after:w-[337px] [&:nth-child(2n)]:after:bg-[url('/img/scribble1_yellow.png')] [&:nth-child(2n)]:md:col-start-4 [&:nth-child(2n)]:after:md:h-[375px] [&:nth-child(2n)]:after:md:w-[450px] [&:nth-child(2n)]:after:lg:-right-[40px] [&:nth-child(2n)]:after:lg:-top-[40px] [&:nth-child(2n)]:after:xl:h-[560px] [&:nth-child(2n)]:after:xl:w-[675px] [&:nth-child(3n)]:col-start-7 [&:nth-child(3n)]:after:-right-[20px] [&:nth-child(3n)]:after:-top-[20px] [&:nth-child(3n)]:after:h-[281px] [&:nth-child(3n)]:after:w-[337px] [&:nth-child(3n)]:after:bg-[url('/img/scribble2_blue.png')] [&:nth-child(3n)]:after:md:h-[375px] [&:nth-child(3n)]:after:md:w-[450px] [&:nth-child(3n)]:after:xl:-right-[40px] [&:nth-child(3n)]:after:lg:-top-[40px] [&:nth-child(3n)]:after:2xl:h-[560px] [&:nth-child(3n)]:after:2xl:w-[675px] [&:nth-child(4n)]:col-start-2 [&:nth-child(5n)]:col-start-5 [&:nth-child(5n)]:after:-right-[20px] [&:nth-child(5n)]:after:-top-[20px] [&:nth-child(5n)]:after:bg-[url('/img/scribble1_pink.png')] [&:nth-child(5n)]:after:md:h-[375px] [&:nth-child(5n)]:after:md:w-[450px] [&:nth-child(5n)]:after:lg:-right-[40px] [&:nth-child(5n)]:after:lg:-top-[40px] [&:nth-child(5n)]:after:xl:h-[560px] [&:nth-child(5n)]:after:xl:w-[675px];
   }
 
   /* Studio Layout */
@@ -157,12 +157,20 @@
     @apply col-span-6 col-start-4 mt-28 block md:col-span-3 lg:col-span-3 lg:mt-52;
   }
 
+  .podcastlayout.addimage1 .image1{
+    @apply col-span-6 col-start-4 mt-28 block md:order-3 md:col-span-3 md:col-start-1 lg:col-span-3 lg:col-start-1 lg:mt-52;
+  }
+
   .layouta.addimage1 .layoutthumbs {
     @apply md:[&:nth-child(5)]:order-7;
   }
 
   .layoutb.addimage1 .layoutthumbs {
     @apply md:[&:nth-child(2)]:order-3;
+  }
+
+  .podcastlayout.addimage1 .layoutthumbs {
+    @apply md:[&:nth-child(3)]:order-4;
   }
 
   /* Commercial */

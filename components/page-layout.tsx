@@ -6,11 +6,15 @@ import { FeaturedThumbnails } from "./featured-thumbnails";
 export function PageLayout({
   items,
   pageSlug = "",
+  image1,
+  image2,
 }: {
   title: string;
   description: string;
   items: any;
   pageSlug?: string;
+  image1?: any;
+  image2?: any;
 }) {
   return (
     <section className="thumbnaillayout bg-hydw-vanilla">
@@ -35,37 +39,32 @@ export function PageLayout({
             </Link>
           );
         })}
-        {/* 
-          User should be able to upload iamge from dato, if uploaded, it adds class "addimage1" to main className
-          For .layouta if there are less than 5 entries it doesnt appear and .layoutb if there are less than two entries it doesnt appear 
-          For .layoutb we also need something written that adds +1 to order in the css for child folowing 2
-        */}
-        <div className="image1">
-          <Parallax className="relative">
-            <Image
-              className="h-[auto] max-w-[450px] self-center"
-              src="/img/toreplace/HYDWP_Website_3.png"
-              alt="alt here"
-              width={400}
-              height={400}
-            />
-          </Parallax>
-        </div>
-        {/* 
-          User should be able to upload iamge from dato, if uploaded, it adds class "addimage2" to main className
-          Should only appear on pages using .layoutb and should only appear if there are 5 or more projects
-        */}
-        <div className="image2">
-          <Parallax className="relative">
-            <Image
-              className="h-[auto] max-w-[450px] self-center"
-              src="/img/toreplace/HYDWP_Website_3.png"
-              alt="alt here"
-              width={400}
-              height={400}
-            />
-          </Parallax>
-        </div>
+        {image1 && (
+          <div className="image1">
+            <Parallax className="relative">
+              <Image
+                className="h-[auto] max-w-[450px] self-center"
+                src={image1.url}
+                alt={image1.alt}
+                width={400}
+                height={400}
+              />
+            </Parallax>
+          </div>
+        )}
+        {image2 && (
+          <div className="image2">
+            <Parallax className="relative">
+              <Image
+                className="h-[auto] max-w-[450px] self-center"
+                src={image2.url}
+                alt={image2.alt}
+                width={400}
+                height={400}
+              />
+            </Parallax>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -36,6 +36,8 @@ export default async function Page() {
   const subtitle = data.page?.subtitle || "";
   const description = buildMDX(data.page?.description || "");
   const works = data.page?.work || [];
+  const image1 = data.page?.parallaxImage1 || "";
+  const image2 = data.page?.parallaxImage2 || "";
 
   return (
     <main className="layoutb addimage1 largepadding overflow-hidden bg-hydw-vanilla">
@@ -52,36 +54,36 @@ export default async function Page() {
         </div>
         <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="col-span-6 col-start-5 -rotate-[9deg] md:col-span-3 md:col-start-7">
-          <WiggleOnHover>
-            <Image
-              className="m-auto mt-7 max-w-[120px] md:max-w-[140px] lg:mt-0 lg:max-w-[150px]"
-              src="/img/frog.png"
-              alt="Frog"
-              width={168}
-              height={206}
-            />
-           </WiggleOnHover>
+            <WiggleOnHover>
+              <Image
+                className="m-auto mt-7 max-w-[120px] md:max-w-[140px] lg:mt-0 lg:max-w-[150px]"
+                src="/img/frog.png"
+                alt="Frog"
+                width={168}
+                height={206}
+              />
+            </WiggleOnHover>
           </div>
           <div className="col-span-6 col-start-1 mt-14 md:col-span-2 md:col-start-1 md:mt-0">
-          <WiggleOnHover>
-            <Image
-              className="m-auto max-w-[80px] rotate-12 md:max-w-[100px] lg:mt-[100px] lg:max-w-[111px]"
-              src="/img/egg.png"
-              alt="Egg"
-              width={111}
-              height={173}
-            />
-          </WiggleOnHover>
+            <WiggleOnHover>
+              <Image
+                className="m-auto max-w-[80px] rotate-12 md:max-w-[100px] lg:mt-[100px] lg:max-w-[111px]"
+                src="/img/egg.png"
+                alt="Egg"
+                width={111}
+                height={173}
+              />
+            </WiggleOnHover>
           </div>
           <div className="col-span-6 col-start-7 md:col-span-3 md:col-start-10">
-          <WiggleOnHover>
-            <Image
-              className="m-auto max-w-[150px] rotate-[25deg] md:max-w-[170px] lg:mt-[300px] lg:max-w-[210px] talllg:mt-96"
-              src="/img/cowdoy.png"
-              alt="Cowdoy"
-              width={210}
-              height={227}
-            />
+            <WiggleOnHover>
+              <Image
+                className="m-auto max-w-[150px] rotate-[25deg] md:max-w-[170px] lg:mt-[300px] lg:max-w-[210px] talllg:mt-96"
+                src="/img/cowdoy.png"
+                alt="Cowdoy"
+                width={210}
+                height={227}
+              />
             </WiggleOnHover>
           </div>
         </div>
@@ -91,6 +93,8 @@ export default async function Page() {
         description={description}
         items={works}
         pageSlug={slug}
+        image1={image1}
+        image2={image2}
       />
     </main>
   );

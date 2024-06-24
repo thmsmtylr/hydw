@@ -52,37 +52,37 @@ export default async function Page() {
           />
         </div>
         <div className="page-grid left-0 top-0 col-span-12 h-full w-full lg:wrapper lg:absolute lg:mt-0">
-        <div className="order-2 col-span-6 col-start-7 lg:order-1 lg:col-span-3 lg:col-start-9">
-          <WiggleOnHover>
-            <Image
-              className="relative m-auto mt-4 max-w-[120px] -rotate-12 md:top-[100px] md:max-w-[150px] lg:mb-0 lg:max-w-[190px]"
-              src="/img/camera.png"
-              alt="camera"
-              width={190}
-              height={160}
-            />
+          <div className="order-2 col-span-6 col-start-7 lg:order-1 lg:col-span-3 lg:col-start-9">
+            <WiggleOnHover>
+              <Image
+                className="relative m-auto mt-4 max-w-[120px] -rotate-12 md:top-[100px] md:max-w-[150px] lg:mb-0 lg:max-w-[190px]"
+                src="/img/camera.png"
+                alt="camera"
+                width={190}
+                height={160}
+              />
             </WiggleOnHover>
           </div>
           <div className="order-1 col-span-6 col-start-1 mt-14 lg:order-2 lg:col-span-3 lg:col-start-2 lg:mt-0">
-          <WiggleOnHover>
-            <Image
-              className="m-auto mt-4 max-w-[120px] -rotate-12 md:max-w-[150px] lg:mb-0 lg:max-w-[184px]"
-              src="/img/ticket.png"
-              alt="Film ticket"
-              width={184}
-              height={85}
-            />
+            <WiggleOnHover>
+              <Image
+                className="m-auto mt-4 max-w-[120px] -rotate-12 md:max-w-[150px] lg:mb-0 lg:max-w-[184px]"
+                src="/img/ticket.png"
+                alt="Film ticket"
+                width={184}
+                height={85}
+              />
             </WiggleOnHover>
           </div>
           <div className="order-3 col-span-6 col-start-7 md:order-4 lg:col-span-2 lg:col-start-11">
-          <WiggleOnHover>
-            <Image
-              className="relative m-auto mt-4 max-w-[55px] rotate-12 md:mt-[100px] md:max-w-[80px] lg:mt-[200px] lg:max-w-[97px]"
-              src="/img/popcorn.png"
-              alt="popcorn"
-              width={97}
-              height={172}
-            />
+            <WiggleOnHover>
+              <Image
+                className="relative m-auto mt-4 max-w-[55px] rotate-12 md:mt-[100px] md:max-w-[80px] lg:mt-[200px] lg:max-w-[97px]"
+                src="/img/popcorn.png"
+                alt="popcorn"
+                width={97}
+                height={172}
+              />
             </WiggleOnHover>
           </div>
           <div className="relative order-4 col-span-6 col-start-4 md:order-3 md:col-start-1 lg:col-span-5 lg:col-start-1 lg:mt-0">

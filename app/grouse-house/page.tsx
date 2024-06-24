@@ -37,6 +37,8 @@ export default async function Page() {
   const subtitle = data.page?.subtitle || "";
   const description = buildMDX(data.page?.description || "");
   const works = data.page?.work || [];
+  const image1 = data.page?.parallaxImage1 || "";
+  const image2 = data.page?.parallaxImage2 || "";
 
   return (
     <main className="layoutb largepadding overflow-hidden bg-hydw-vanilla">
@@ -103,6 +105,8 @@ export default async function Page() {
         description={description}
         items={works}
         pageSlug={slug}
+        image1={image1}
+        image2={image2}
       />
       <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
         <p className="heading3 text-center text-hydw-blue">

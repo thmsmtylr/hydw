@@ -14,6 +14,14 @@ export const PODCASTS_QUERY = gql`
       title
       subtitle
       description
+      parallaxImage1 {
+        url
+        alt
+      }
+      parallaxImage2 {
+        url
+        alt
+      }
       work {
         id
         title
