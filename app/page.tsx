@@ -38,7 +38,6 @@ export default async function Page() {
     <main className="home largepadding overflow-hidden bg-hydw-vanilla">
       <section className="relative z-20 h-[60vh] w-full overflow-hidden lg:h-screen">
         <VideoPlayer
-          // Test link
           url={showreel?.url || ""}
           playing={true}
           controls={false}
