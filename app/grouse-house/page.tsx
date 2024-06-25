@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = data.page?.seo?.title || data.page?.title || "";
   const description =
     data.page?.seo?.description || data.page?.description || "";
-  const url = data.page?.seo?.image?.url || "";
+  const url = data.page?.seo?.image?.webp || "";
 
   return {
     title: `${title}`,
@@ -47,7 +47,7 @@ export default async function Page() {
           <PageHeading title={title} />
         </div>
         <div className="z-[10] col-span-10 col-start-2 text-center text-hydw-charcoal md:col-span-8 md:col-start-3 lg:col-span-8 lg:col-start-3 xl:col-span-6 xl:col-start-4 2xl:col-span-4  2xl:col-start-5">
-          <h4 className="smallspace heading4">{subtitle}</h4>
+          <h4 className="heading4 smallspace">{subtitle}</h4>
           <div
             className="smallestspace body"
             dangerouslySetInnerHTML={{ __html: description }}

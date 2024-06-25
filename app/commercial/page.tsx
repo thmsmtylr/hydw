@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = data.page?.seo?.title || data.page?.title || "";
   const description =
     data.page?.seo?.description || data.page?.description || "";
-  const url = data.page?.seo?.image?.url || "";
+  const url = data.page?.seo?.image?.webp || "";
 
   return {
     title: `${title}`,
@@ -36,7 +36,7 @@ export default async function Page() {
   const title = data.page?.title || "";
   const subtitle = data.page?.subtitle || "";
   const description = buildMDX(data.page?.description || "");
-  const featuredImage = data.page?.featuredImage || { url: "", alt: "" };
+  const featuredImage = data.page?.featuredImage || { webp: "", alt: "" };
   const directors = data.allDirectors || [];
 
   return (
@@ -54,37 +54,37 @@ export default async function Page() {
         </div>
         <div className="page-grid left-0 top-0 col-span-12 mt-7 h-full w-full lg:wrapper lg:absolute lg:mt-0">
           <div className="col-span-6 col-start-6 md:order-1 md:col-span-3 md:col-start-4 lg:order-1 lg:col-start-6">
-          <WiggleOnHover>
-            <Image
-              className="m-auto max-w-[50px] rotate-45 md:mt-4 md:max-w-[80px] lg:-mt-2 xl:max-w-[100px]"
-              src="/img/beer.png"
-              alt="beer"
-              width={100}
-              height={170}
-            />
+            <WiggleOnHover>
+              <Image
+                className="m-auto max-w-[50px] rotate-45 md:mt-4 md:max-w-[80px] lg:-mt-2 xl:max-w-[100px]"
+                src="/img/beer.png"
+                alt="beer"
+                width={100}
+                height={170}
+              />
             </WiggleOnHover>
           </div>
           <div className="col-span-6 col-start-1 md:order-3 md:col-span-3 md:col-start-1 lg:order-2">
-          <WiggleOnHover>
-            <Image
-              className="-mt-8 max-w-[90px] -rotate-12 md:max-w-[140px] lg:m-auto lg:-mt-20 xl:-mt-32 xl:max-w-[177px]"
-              src="/img/console.png"
-              alt="Gaming controller"
-              width={177}
-              height={123}
-            />
-          </WiggleOnHover>
+            <WiggleOnHover>
+              <Image
+                className="-mt-8 max-w-[90px] -rotate-12 md:max-w-[140px] lg:m-auto lg:-mt-20 xl:-mt-32 xl:max-w-[177px]"
+                src="/img/console.png"
+                alt="Gaming controller"
+                width={177}
+                height={123}
+              />
+            </WiggleOnHover>
           </div>
           <div className="col-span-6 col-start-1 mt-14 md:order-4 md:col-span-3 md:col-start-5 md:mt-0 lg:order-3 lg:col-start-1 xl:col-start-2">
-          <WiggleOnHover>
-            <Image
-              className="m-auto max-w-[80px] md:max-w-[120px] lg:mt-96 xl:max-w-[135px]"
-              src="/img/bag.png"
-              alt="Takeaway Bag"
-              width={135}
-              height={216}
-            />
-          </WiggleOnHover>
+            <WiggleOnHover>
+              <Image
+                className="m-auto max-w-[80px] md:max-w-[120px] lg:mt-96 xl:max-w-[135px]"
+                src="/img/bag.png"
+                alt="Takeaway Bag"
+                width={135}
+                height={216}
+              />
+            </WiggleOnHover>
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ export default async function Page() {
           <Parallax className="relative">
             <Image
               className="absolute -top-[300px] left-0 m-auto max-w-[450px] rotate-12 md:-top-[450px] lg:-top-[300px]"
-              src={featuredImage.url}
+              src={featuredImage.webp}
               alt={featuredImage.alt}
               width={450}
               height={388}

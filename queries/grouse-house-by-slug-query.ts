@@ -22,7 +22,7 @@ export const GROUSE_HOUSE_BY_SLUG_QUERY = gql`
         slug
         featuredImages {
           image {
-            url
+            webp: url(imgixParams: { fm: webp, q: 50 })
             alt
           }
         }
@@ -56,7 +56,7 @@ export const GROUSE_HOUSE_BY_SLUG_QUERY = gql`
       }
       featuredImages {
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
       category {
@@ -64,7 +64,7 @@ export const GROUSE_HOUSE_BY_SLUG_QUERY = gql`
       }
       seo {
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
     }

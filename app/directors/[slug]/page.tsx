@@ -28,9 +28,9 @@ export async function generateMetadata({
   const title = data.director?.name || "";
   const description = data.director?.description || "";
   const url =
-    data.director?.seo?.image?.url ||
-    data.director?.avatarIllustration?.url ||
-    data.director?.featuredWorks?.[0]?.featuredImages?.[0]?.image?.url ||
+    data.director?.seo?.image?.webp ||
+    data.director?.avatarIllustration?.webp ||
+    data.director?.featuredWorks?.[0]?.featuredImages?.[0]?.image?.webp ||
     "";
 
   return {
@@ -48,7 +48,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const description = data.director?.description || "";
   const featuredWork = data.director?.featuredWork;
   const avatarIllustration = data.director?.avatarIllustration || {
-    url: "",
+    webp: "",
     alt: "",
   };
   const featuredWorks = data.director?.featuredWorks || [];
@@ -71,15 +71,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <p dangerouslySetInnerHTML={{ __html: description }}></p>
         </div>
         <div className="relative col-span-12 lg:col-span-3 lg:col-start-9">
-          {avatarIllustration.url && (
+          {avatarIllustration.webp && (
             <WiggleOnHover>
-            <Image
-              className="m-auto mt-7 max-w-[300px]"
-              src={avatarIllustration.url}
-              alt={avatarIllustration.alt}
-              width={129}
-              height={197}
-            />
+              <Image
+                className="m-auto mt-7 max-w-[300px]"
+                src={avatarIllustration.webp}
+                alt={avatarIllustration.alt}
+                width={129}
+                height={197}
+              />
             </WiggleOnHover>
           )}
         </div>

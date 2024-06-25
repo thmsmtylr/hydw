@@ -26,8 +26,8 @@ export async function generateMetadata({
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const description = data.work?.description || "";
-  const heroImage = data.work?.heroImage || { url: "", alt: "" };
-  const url = data.work?.seo?.image?.url || heroImage.url;
+  const heroImage = data.work?.heroImage || { webp: "", alt: "" };
+  const url = data.work?.seo?.image?.webp || heroImage.webp;
 
   return {
     title: `${title}`,
@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const data = await getPageData(params.slug);
   const title = data.work?.title || "";
   const distributor = buildMDX(data.work?.distributor || "");
-  const heroImage = data.work?.heroImage || { url: "", alt: "" };
+  const heroImage = data.work?.heroImage || { webp: "", alt: "" };
   const description = data.work?.description || "";
   const watchOn = buildMDX(data.work?.watchOn || "");
   const credits = data.work?.credits || [];
@@ -60,12 +60,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
           />
         </div>
         <div className="smallspace col-span-12 aspect-video">
-          <Image 
-          src={heroImage.url} 
-          alt={heroImage.alt || title} 
-          width={1920}
-          height={1080}
-              />
+          <Image
+            src={heroImage.webp}
+            alt={heroImage.alt || title}
+            width={1920}
+            height={1080}
+          />
         </div>
       </section>
       <section className="smallspace page-grid">
@@ -75,7 +75,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         />
         <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
           {watchOn.length > 0 && (
-            <p className="body mt-7 lg:mt-0 mb-7">
+            <p className="body mb-7 mt-7 lg:mt-0">
               Listen: <span dangerouslySetInnerHTML={{ __html: watchOn }} />
             </p>
           )}

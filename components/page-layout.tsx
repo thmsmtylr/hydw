@@ -44,7 +44,7 @@ export function PageLayout({
             <Parallax className="relative">
               <Image
                 className="h-[auto] max-w-[450px] self-center"
-                src={image1.url}
+                src={image1.webp}
                 alt={image1.alt}
                 width={400}
                 height={400}
@@ -57,7 +57,7 @@ export function PageLayout({
             <Parallax className="relative">
               <Image
                 className="h-[auto] max-w-[450px] self-center"
-                src={image2.url}
+                src={image2.webp}
                 alt={image2.alt}
                 width={400}
                 height={400}

@@ -22,7 +22,7 @@ export const PODCAST_BY_SLUG_QUERY = gql`
         slug
         featuredImages {
           image {
-            url
+            webp: url(imgixParams: { fm: webp, q: 50 })
             alt
           }
         }
@@ -49,7 +49,7 @@ export const PODCAST_BY_SLUG_QUERY = gql`
         url
       }
       heroImage {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       watchOn
@@ -63,7 +63,7 @@ export const PODCAST_BY_SLUG_QUERY = gql`
       }
       seo {
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
     }

@@ -22,7 +22,7 @@ export const FILM_BY_SLUG_QUERY = gql`
         slug
         featuredImages {
           image {
-            url
+            webp: url(imgixParams: { fm: webp, q: 50 })
             alt
           }
         }
@@ -51,7 +51,7 @@ export const FILM_BY_SLUG_QUERY = gql`
       watchOn
       featuredImages {
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
       credits {
@@ -64,7 +64,7 @@ export const FILM_BY_SLUG_QUERY = gql`
       }
       seo {
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
     }

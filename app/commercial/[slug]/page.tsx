@@ -27,8 +27,8 @@ export async function generateMetadata({
   const title = data.work?.title || "";
   const description = data.work?.description || "";
   const url =
-    data.work?.seo?.image?.url ||
-    data.work?.featuredImages?.[0]?.image?.url ||
+    data.work?.seo?.image?.webp ||
+    data.work?.featuredImages?.[0]?.image?.webp ||
     "";
 
   return {

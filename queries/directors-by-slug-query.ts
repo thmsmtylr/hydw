@@ -13,7 +13,7 @@ export const DIRECTOR_BY_SLUG = gql`
       description
       name
       avatarIllustration {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       featuredWork {
@@ -34,14 +34,14 @@ export const DIRECTOR_BY_SLUG = gql`
         featuredImages {
           id
           image {
-            url
+            webp: url(imgixParams: { fm: webp, q: 50 })
             alt
           }
         }
       }
       seo {
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
     }

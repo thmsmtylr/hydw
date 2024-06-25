@@ -11,9 +11,6 @@ export const HOMEPAGE_QUERY = gql`
       }
     }
     home(filter: { _isValid: { eq: "true" }, _status: { eq: published } }) {
-      posterImage {
-        url
-      }
       showreel {
         url
       }
@@ -30,7 +27,7 @@ export const HOMEPAGE_QUERY = gql`
         featuredImages {
           id
           image {
-            url
+            webp: url(imgixParams: { fm: webp, q: 50 })
           }
         }
       }

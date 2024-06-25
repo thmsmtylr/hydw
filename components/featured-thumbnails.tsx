@@ -9,11 +9,13 @@ export function FeaturedThumbnails({
   images: any[];
   index: number;
 }) {
-  const [currentImage, setCurrentImage] = useState(images[0]?.image?.url || "");
+  const [currentImage, setCurrentImage] = useState(
+    images[0]?.image?.webp || ""
+  );
   const [imageUrls, setImageUrls] = useState<string[]>([]);
 
   useEffect(() => {
-    const urls = images.map((image) => image.image?.url);
+    const urls = images.map((image) => image.image?.webp);
     setImageUrls(urls);
 
     // Preload images
@@ -39,7 +41,7 @@ export function FeaturedThumbnails({
   const handleMouseLeave = () => {
     if (timer.current) {
       clearInterval(timer.current);
-      setCurrentImage(images[0]?.image?.url || "");
+      setCurrentImage(images[0]?.image?.webp || "");
     }
   };
 

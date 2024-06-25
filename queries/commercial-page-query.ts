@@ -15,15 +15,15 @@ export const COMMERCIAL_PAGE_QUERY = gql`
       subtitle
       description
       parallaxImage1 {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       parallaxImage2 {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       featuredImage {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       work {
@@ -39,7 +39,7 @@ export const COMMERCIAL_PAGE_QUERY = gql`
         title
         description
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
     }
@@ -54,7 +54,7 @@ export const COMMERCIAL_PAGE_QUERY = gql`
         featuredImages {
           id
           image {
-            url
+            webp: url(imgixParams: { fm: webp, q: 50 })
             alt
           }
         }

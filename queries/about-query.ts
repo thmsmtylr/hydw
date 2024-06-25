@@ -9,18 +9,18 @@ export const ABOUT_QUERY = gql`
       skewBodyTitle
       bodyDescription
       imageRight {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       imageBottom {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       seo {
         title
         description
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
       _status

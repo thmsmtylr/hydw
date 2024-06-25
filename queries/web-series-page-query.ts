@@ -15,11 +15,11 @@ export const WEB_SERIES_PAGE_QUERY = gql`
       subtitle
       description
       parallaxImage1 {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       parallaxImage2 {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       work {
@@ -30,7 +30,7 @@ export const WEB_SERIES_PAGE_QUERY = gql`
         slug
         featuredImages {
           image {
-            url
+            webp: url(imgixParams: { fm: webp, q: 50 })
             alt
           }
         }
@@ -42,7 +42,7 @@ export const WEB_SERIES_PAGE_QUERY = gql`
         title
         description
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
     }

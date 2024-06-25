@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = data.page?.seo?.title || data.page?.title || "";
   const description =
     data.page?.seo?.description || data.page?.description || "";
-  const url = data.page?.seo?.image?.url || "";
+  const url = data.page?.seo?.image?.webp || "";
 
   return {
     title: `${title}`,

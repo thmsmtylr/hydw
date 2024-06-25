@@ -22,7 +22,7 @@ export const TV_BY_SLUG_QUERY = gql`
         slug
         featuredImages {
           image {
-            url
+            webp: url(imgixParams: { fm: webp, q: 50 })
             alt
           }
         }
@@ -59,12 +59,12 @@ export const TV_BY_SLUG_QUERY = gql`
       }
       seo {
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
       featuredImages {
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
     }

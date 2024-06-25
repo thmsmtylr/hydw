@@ -15,11 +15,11 @@ export const GROUSE_HOUSE_QUERY = gql`
       subtitle
       description
       parallaxImage1 {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       parallaxImage2 {
-        url
+        webp: url(imgixParams: { fm: webp, q: 50 })
         alt
       }
       work {
@@ -33,7 +33,7 @@ export const GROUSE_HOUSE_QUERY = gql`
         }
         featuredImages {
           image {
-            url
+            webp: url(imgixParams: { fm: webp, q: 50 })
             alt
           }
         }
@@ -42,7 +42,7 @@ export const GROUSE_HOUSE_QUERY = gql`
         title
         description
         image {
-          url
+          webp: url(imgixParams: { fm: webp, q: 50 })
         }
       }
     }

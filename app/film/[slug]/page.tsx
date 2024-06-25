@@ -27,8 +27,8 @@ export async function generateMetadata({
   const title = data.work?.title || "";
   const description = data.work?.description || "";
   const url =
-    data.work?.seo?.image?.url ||
-    data.work?.featuredImages?.[0]?.image?.url ||
+    data.work?.seo?.image?.webp ||
+    data.work?.featuredImages?.[0]?.image?.webp ||
     "";
 
   return {
@@ -74,7 +74,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         />
         <div className="col-span-12 md:col-span-10 lg:col-span-4 lg:col-start-9">
           {watchOn.length > 0 && (
-            <p className="body mt-7 lg:mt-0 mb-7">
+            <p className="body mb-7 mt-7 lg:mt-0">
               Watch on <span dangerouslySetInnerHTML={{ __html: watchOn }} />
             </p>
           )}
