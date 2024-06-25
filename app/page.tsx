@@ -5,11 +5,11 @@ import { request } from "@/lib/datocms";
 import { BouncingLogo } from "@/components/bouncing-logo";
 import { Parallax } from "@/components/parallax";
 import { VideoPlayer } from "@/components/video-player";
-import { HomepageQuery } from "@/types/generated";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 import { FeaturedScrollRotate } from "@/components/featured-scroll-rotate";
-import { HOMEPAGE_QUERY } from "@/queries/homepage-query";
 import { WiggleOnHover } from "@/components/wiggle-on-hover";
+import { HOMEPAGE_QUERY } from "@/queries/homepage-query";
+import { HomepageQuery } from "@/types/generated";
 
 async function getPageData(): Promise<HomepageQuery> {
   const data = await request({ query: HOMEPAGE_QUERY });
@@ -38,7 +38,7 @@ export default async function Page() {
     <main className="home largepadding overflow-hidden bg-hydw-vanilla">
       <section className="relative z-20 h-[60vh] w-full overflow-hidden lg:h-screen">
         <VideoPlayer
-          url={showreel?.url || ""}
+          url={showreel?.video?.streamingUrl || ""}
           playing={true}
           controls={false}
           muted={true}
@@ -53,7 +53,7 @@ export default async function Page() {
           <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
             <p className="heading3 text-center text-hydw-blue">{description}</p>
             {descriptionLink && descriptionLinkText && (
-              <p className="smallspace body text-center text-hydw-blue">
+              <p className="body smallspace text-center text-hydw-blue">
                 <Link href={descriptionLink}>{descriptionLinkText}</Link>
               </p>
             )}

@@ -12,7 +12,9 @@ export const HOMEPAGE_QUERY = gql`
     }
     home(filter: { _isValid: { eq: "true" }, _status: { eq: published } }) {
       showreel {
-        url
+        video {
+          streamingUrl
+        }
       }
       description
       descriptionLink

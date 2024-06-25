@@ -29,7 +29,7 @@
     "nodemailer": "^6.9.14",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
-    "react-datocms": "^4.0.10",
+    "react-datocms": "^7.0.1",
     "react-dom": "^18.2.0",
     "react-player": "^2.12.0",
     "react-scroll-rotate": "^0.0.7",
