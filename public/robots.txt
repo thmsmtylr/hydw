@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://haventyoudonewell.com
+
+# Sitemaps
+Sitemap: https://haventyoudonewell.com/sitemap.xml
