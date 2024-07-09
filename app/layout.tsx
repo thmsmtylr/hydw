@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
 import { request } from "@/lib/datocms";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -62,7 +61,6 @@ export default async function RootLayout({
           contactEmail={contactEmail}
           acknowledgementOfCountry={acknowledgementOfCountry}
         />
-        <Analytics />
         <GoogleAnalytics gaId="G-M45SP3T5X1" />
       </body>
     </html>
