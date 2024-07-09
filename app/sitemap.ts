@@ -1,33 +1,30 @@
 import { MetadataRoute } from "next";
+const ROOT_URL = "https://haventyoudonewell.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://haventyoudonewell.com",
+      url: ROOT_URL,
       lastModified: new Date(),
     },
     {
-      url: "https://haventyoudonewell.com/about",
+      url: `${ROOT_URL}/about`,
       lastModified: new Date(),
     },
     {
-      url: "https://haventyoudonewell.com/tv-film",
+      url: `${ROOT_URL}/television`,
       lastModified: new Date(),
     },
     {
-      url: "https://haventyoudonewell.com/commercial",
+      url: `${ROOT_URL}/commercial"`,
       lastModified: new Date(),
     },
     {
-      url: "https://haventyoudonewell.com/web-series",
+      url: `${ROOT_URL}/grouse-house`,
       lastModified: new Date(),
     },
     {
-      url: "https://haventyoudonewell.com/grouse-house",
-      lastModified: new Date(),
-    },
-    {
-      url: "https://haventyoudonewell.com/contact",
+      url: `${ROOT_URL}/contact`,
       lastModified: new Date(),
     },
   ];
