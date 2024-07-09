@@ -5,6 +5,7 @@ import { request } from "@/lib/datocms";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { HeaderProvider } from "@/contexts/header-context";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { LAYOUT_QUERY } from "@/queries/layout-query";
 import { NAVIGATION_QUERY } from "@/queries/navigation-query";
 import { RootLayoutQueryProps } from "@/types/root-layout";
@@ -62,6 +63,7 @@ export default async function RootLayout({
           acknowledgementOfCountry={acknowledgementOfCountry}
         />
         <Analytics />
+        <GoogleAnalytics gaId="G-M45SP3T5X1" />
       </body>
     </html>
   );
