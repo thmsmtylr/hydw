@@ -16,11 +16,11 @@ async function getPageData(): Promise<ContactQuery> {
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getPageData();
   const title = data?.contact?.title || "";
-  const description = data?.contact?.description || "";
+  const subtitle = data.contact?.subtitle || "";
 
   return {
     title: title,
-    description: description,
+    description: subtitle,
   };
 }
 
@@ -51,14 +51,12 @@ export default async function Page() {
       </section>
       <div className="page-grid">
         <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-5 lg:col-start-2">
-          <h4 className={`heading4 leading-[100%] text-hydw-blue`}>
-            {subtitle}
-          </h4>
-          <p className={`body smallerspace text-hydw-blue`}>{description}</p>
+          <h4 className="heading4 leading-[100%] text-hydw-blue">{subtitle}</h4>
+          <p className="body smallerspace text-hydw-blue">{description}</p>
         </div>
         <div className="col-span-12 mt-14 md:col-span-10 md:col-start-2 lg:col-span-4 lg:col-start-8 lg:mt-0">
           <ContactForm />
-          <p className={`smallbody smallerspace text-hydw-blue`}>{legals}</p>
+          <p className="smallbody smallerspace text-hydw-blue">{legals}</p>
         </div>
         <div className="col-span-6 col-start-4 mt-7 lg:col-span-5 lg:col-start-2 lg:mt-0 lg:h-[130px] 2xl:mb-[120px] 2xl:h-[80px]">
           <Parallax className="">
