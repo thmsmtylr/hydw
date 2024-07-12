@@ -59,7 +59,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     "@context": "https://schema.org",
     "@type": "Person",
     name: name,
-    url: `https://www.haventyoudonewell.com/directors/${params.slug}`,
+    url: `${process.env.SITE_URL}/directors/${params.slug}`,
     jobTitle: "Director",
   };
 

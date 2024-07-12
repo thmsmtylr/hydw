@@ -10,6 +10,7 @@ import { FeaturedScrollRotate } from "@/components/featured-scroll-rotate";
 import { WiggleOnHover } from "@/components/wiggle-on-hover";
 import { HOMEPAGE_QUERY } from "@/queries/homepage-query";
 import { HomepageQuery } from "@/types/generated";
+import { Organization, WithContext } from "schema-dts";
 
 async function getPageData(): Promise<HomepageQuery> {
   const data = await request({ query: HOMEPAGE_QUERY });
@@ -28,14 +29,36 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const data = await getPageData();
+  const title = data?._site.globalSeo?.fallbackSeo?.title ?? "";
+  const logo = data.global?.logo.url || "";
+  const socialLinks = data.global?.socialLinks || [];
   const showreel = data.home?.showreel;
   const description = data.home?.description;
   const descriptionLink = data.home?.descriptionLink;
   const descriptionLinkText = data.home?.descriptionLinkText;
   const featuredWork = data.home?.featuredWork || [];
 
+  const jsonLd: WithContext<Organization> = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: title,
+    legalName: "Haven't You Done Well Productions PTY LTD",
+    description: description,
+    url: process.env.SITE_URL,
+    logo: logo,
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "hello@haventyoudonewell.com",
+    },
+    sameAs: [...socialLinks.map((link) => link.link)],
+  };
+
   return (
     <main className="home largepadding overflow-hidden bg-hydw-vanilla">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="relative z-20 h-[60vh] w-full overflow-hidden lg:h-screen">
         <VideoPlayer
           url={showreel?.video?.streamingUrl || ""}
@@ -53,7 +76,7 @@ export default async function Page() {
           <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
             <p className="heading3 text-center text-hydw-blue">{description}</p>
             {descriptionLink && descriptionLinkText && (
-              <p className="body smallspace text-center text-hydw-blue">
+              <p className="smallspace body text-center text-hydw-blue">
                 <Link href={descriptionLink}>{descriptionLinkText}</Link>
               </p>
             )}

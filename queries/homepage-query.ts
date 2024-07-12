@@ -10,6 +10,14 @@ export const HOMEPAGE_QUERY = gql`
         }
       }
     }
+    global {
+      logo {
+        url
+      }
+      socialLinks {
+        link
+      }
+    }
     home(filter: { _isValid: { eq: "true" }, _status: { eq: published } }) {
       showreel {
         video {
