@@ -3,10 +3,11 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { VideoPlayer } from "@/components/video-player";
-import { DirectorBySlugQuery } from "@/types/generated";
-import { DIRECTOR_BY_SLUG } from "@/queries/directors-by-slug-query";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 import { WiggleOnHover } from "@/components/wiggle-on-hover";
+import { DirectorBySlugQuery } from "@/types/generated";
+import { DIRECTOR_BY_SLUG } from "@/queries/directors-by-slug-query";
+import { Person, WithContext } from "schema-dts";
 
 async function getPageData(slug: string): Promise<DirectorBySlugQuery> {
   const data = await request({
@@ -54,8 +55,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const featuredWorks = data.director?.featuredWorks || [];
   const moreWorkText = data.director?.moreWorkText || "";
 
-  const jsonLd = {
-    "@context": "http://schema.org",
+  const jsonLd: WithContext<Person> = {
+    "@context": "https://schema.org",
     "@type": "Person",
     name: name,
     url: `https://www.haventyoudonewell.com/directors/${params.slug}`,
