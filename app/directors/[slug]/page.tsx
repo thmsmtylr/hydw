@@ -54,8 +54,20 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const featuredWorks = data.director?.featuredWorks || [];
   const moreWorkText = data.director?.moreWorkText || "";
 
+  const jsonLd = {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    name: name,
+    url: `https://www.haventyoudonewell.com/directors/${params.slug}`,
+    jobTitle: "Director",
+  };
+
   return (
     <main className="largepadding wrapper overflow-hidden bg-hydw-yellow text-hydw-charcoal">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="page-grid">
         <div className="midspace col-span-11 text-left md:col-span-9 xl:col-span-8">
           <h1 className="heading2 mt-7 uppercase text-hydw-blue lg:mt-0">
