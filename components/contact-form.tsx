@@ -52,6 +52,7 @@ export function ContactForm() {
 
     try {
       const formData = new FormData(event.currentTarget);
+      if (formData.get("address") !== "") return null; // Honeypot field
       const formObject = Object.fromEntries(formData.entries());
       const response = await fetch("/api/email", {
         method: "POST",
@@ -109,6 +110,7 @@ export function ContactForm() {
           value={email}
           onChange={handleEmailChange}
         />
+        <input type="hidden" name="address" value="" />
         <textarea
           className="smallbody flex border-[5px] border-solid border-hydw-blue bg-[unset] p-4 text-hydw-blue outline-none placeholder:text-hydw-blue"
           name="message"
