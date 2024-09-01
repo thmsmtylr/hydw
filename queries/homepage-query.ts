@@ -24,6 +24,7 @@ export const HOMEPAGE_QUERY = gql`
           streamingUrl
         }
       }
+      showreelUrl
       description
       descriptionLink
       descriptionLinkText

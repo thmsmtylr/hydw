@@ -33,6 +33,7 @@ export default async function Page() {
   const logo = data.global?.logo.url || "";
   const socialLinks = data.global?.socialLinks || [];
   const showreel = data.home?.showreel;
+  const showreelUrl = data.home?.showreelUrl;
   const description = data.home?.description;
   const descriptionLink = data.home?.descriptionLink;
   const descriptionLinkText = data.home?.descriptionLinkText;
@@ -62,7 +63,7 @@ export default async function Page() {
       />
       <section className="relative z-20 h-[60vh] w-full overflow-hidden lg:h-screen">
         <VideoPlayer
-          url={showreel?.video?.streamingUrl || ""}
+          url={showreelUrl || ""}
           playing={true}
           controls={false}
           muted={true}
@@ -77,7 +78,7 @@ export default async function Page() {
           <div className="largespace col-span-12 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
             <p className="heading3 text-center text-hydw-blue">{description}</p>
             {descriptionLink && descriptionLinkText && (
-              <p className="body smallspace text-center text-hydw-blue">
+              <p className="smallspace body text-center text-hydw-blue">
                 <Link href={descriptionLink}>{descriptionLinkText}</Link>
               </p>
             )}
