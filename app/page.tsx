@@ -32,7 +32,6 @@ export default async function Page() {
   const title = data?._site.globalSeo?.fallbackSeo?.title ?? "";
   const logo = data.global?.logo.url || "";
   const socialLinks = data.global?.socialLinks || [];
-  const showreel = data.home?.showreel;
   const showreelUrl = data.home?.showreelUrl;
   const description = data.home?.description;
   const descriptionLink = data.home?.descriptionLink;

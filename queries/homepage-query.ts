@@ -19,11 +19,6 @@ export const HOMEPAGE_QUERY = gql`
       }
     }
     home(filter: { _isValid: { eq: "true" }, _status: { eq: published } }) {
-      showreel {
-        video {
-          streamingUrl
-        }
-      }
       showreelUrl
       description
       descriptionLink
