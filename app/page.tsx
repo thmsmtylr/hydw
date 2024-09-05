@@ -95,6 +95,56 @@ export default async function Page() {
           </div>
           {featuredWork.map((work, index) => {
             const { id, title, slug, category, featuredImages } = work;
+            if (category.slug === "commercial" && featuredImages.length > 0) {
+              return (
+                <section key={id} className="largespace page-grid col-span-12">
+                  <div className="relative z-20 col-span-3 md:col-span-2" />
+                  <div className="relative col-span-11 md:col-span-9 md:col-start-1 lg:col-span-8 lg:col-start-2 2xl:col-span-6 2xl:col-start-2">
+                    <div className="thumbnail group relative aspect-video">
+                      <Link
+                        href={`${category.slug}/${slug}`}
+                        className="relative inline-flex h-full w-full"
+                      >
+                        <div className="absolute -top-[52px] left-0 z-20 h-28 w-28 md:-left-[30px] lg:-left-[104px] lg:-top-[104px] lg:h-52 lg:w-52">
+                          <FeaturedScrollRotate>
+                            <Image
+                              src="/img/latestcommercials.svg"
+                              alt="Latest Commercials"
+                              width={208}
+                              height={208}
+                              className="h-28 w-28 lg:h-52 lg:w-52"
+                            />
+                          </FeaturedScrollRotate>
+                        </div>
+                        <FeaturedThumbnails
+                          index={index}
+                          images={featuredImages}
+                        />
+                      </Link>
+                      <h4 className="heading4 smallerspace text-center text-hydw-blue group-hover:text-hydw-pink">
+                        <Link href={`${category.slug}/${slug}`}>{title}</Link>
+                      </h4>
+                    </div>
+                    <p className="body smallerspace text-center text-hydw-blue">
+                      <Link href={`${category.slug}`}>
+                        See all our Commercials
+                      </Link>
+                    </p>
+                  </div>
+                  <div className="relative col-span-4 col-start-9 lg:col-start-8 2xl:col-start-7">
+                    <Parallax>
+                      <Image
+                        className="absolute right-0 top-0 max-w-[450px] -translate-y-[150%] lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 2xl:-translate-x-3/4 2xl:lg:-translate-y-2/3"
+                        src="/img/toreplace/HYDWP_Hug-min.png"
+                        alt="alt here"
+                        width={450}
+                        height={388}
+                      />
+                    </Parallax>
+                  </div>
+                </section>
+              );
+            }
             if (category.slug === "studio" && featuredImages.length > 0) {
               return (
                 <section key={id} className="largespace page-grid col-span-12">
