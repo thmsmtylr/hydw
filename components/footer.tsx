@@ -56,9 +56,9 @@ export function Footer(props: FooterProps) {
           <a
             className="transition-colors duration-150 hover:text-hydw-pink"
             target="_blank"
-            href="https://srrycmpny.com/"
+            href="https://ikkansei.studio/"
           >
-            Sorry Company
+            Ikkansei
           </a>
           .
         </p>
