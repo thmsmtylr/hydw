@@ -8,6 +8,7 @@ import { Navigation } from "@/components/navigation";
 import { HeaderProps } from "@/types/header";
 import { useHeaderContext } from "@/contexts/header-context";
 import { useFollowPointer } from "@/hooks/use-follow-pointer";
+import { classNames } from "@/utils/class-names";
 
 export function Header(props: HeaderProps) {
   const { logo, siteName, navItems } = props;
@@ -46,7 +47,7 @@ export function Header(props: HeaderProps) {
   }, [pathname]);
 
   return (
-    <header className="wrapper fixed left-0 top-0 z-40 flex w-full items-center justify-between pointer-events-none">
+    <header className="wrapper pointer-events-none fixed left-0 top-0 z-40 flex w-full items-center justify-between">
       <motion.div
         ref={brandRef}
         initial={{ opacity: 0 }}
@@ -61,19 +62,22 @@ export function Header(props: HeaderProps) {
             height={44}
             src={logo.url}
             alt={siteName}
-            className="w-[120px] pointer-events-auto"
+            className="pointer-events-auto w-[120px]"
           />
         </Link>
       </motion.div>
       <motion.div
-        className="relative flex items-center justify-center gap-x-4 pointer-events-auto"
+        className="pointer-events-auto relative flex items-center justify-center gap-x-4"
         ref={menuRef}
         animate={{ x: menuX, y: menuY }}
         transition={{ type: "tween" }}
         whileTap={{ scale: 0.9 }}
       >
         <button
-          className="heading5 uppercase text-hydw-charcoal transition-colors duration-150 hover:text-hydw-blue"
+          className={classNames(
+            "heading5 uppercase transition-colors duration-150 hover:text-hydw-blue",
+            brandVisible ? "text-hydw-charcoal" : "text-hydw-yellow"
+          )}
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="menu"
