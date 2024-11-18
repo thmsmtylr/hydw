@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 export function BouncingLogo() {
@@ -10,6 +10,10 @@ export function BouncingLogo() {
   const logoRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const animationRef = useRef<number>();
+  const lastTimeRef = useRef<number>(0);
+  const fpsInterval = useRef<number>(1000 / 60); // Target 60 FPS
+  const positionRef = useRef({ x: 0, y: 0 });
+  const velocityRef = useRef({ x: 3, y: 3 });
   const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
   const currentColorIndex = useRef(0);
   const lastCollisionTime = useRef(0);
@@ -32,34 +36,120 @@ export function BouncingLogo() {
     return hueValues[color] || 0;
   };
 
-  const handleCollision = (wall: string) => {
+  const handleCollision = useCallback((wall: string) => {
     const now = Date.now();
-    // Only change color if it's a different wall or enough time has passed
     if (
       wall !== lastCollisionWall.current ||
       now - lastCollisionTime.current > 100
     ) {
       const newColor = getNextColor();
-      console.log("Color change:", {
-        from: color,
-        to: newColor,
-        wall: wall,
-        time: now,
-        timeSinceLastCollision: now - lastCollisionTime.current,
-      });
-
       setColor(newColor);
+
+      if (logoRef.current) {
+        logoRef.current.style.transition = "filter 0.3s ease-in-out";
+      }
+
       lastCollisionTime.current = now;
       lastCollisionWall.current = wall;
-    } else {
-      console.log("Collision ignored:", {
-        wall: wall,
-        lastWall: lastCollisionWall.current,
-        timeSince: now - lastCollisionTime.current,
-        currentColor: color,
-      });
     }
-  };
+  }, []);
+
+  const bounce = useCallback(
+    (timestamp: number) => {
+      const container = containerRef.current;
+      const logo = logoRef.current;
+      if (!container || !logo) return;
+
+      const containerRect = container.getBoundingClientRect();
+      const logoRect = logo.getBoundingClientRect();
+      const collisionThreshold = 5;
+
+      // Calculate elapsed time since last frame
+      if (!lastTimeRef.current) lastTimeRef.current = timestamp;
+      const elapsed = timestamp - lastTimeRef.current;
+
+      // Only update if enough time has passed for target FPS
+      if (elapsed > fpsInterval.current) {
+        // Update last time and adjust for any excess time
+        lastTimeRef.current = timestamp - (elapsed % fpsInterval.current);
+
+        // Calculate movement based on elapsed time
+        const timeScale = elapsed / 16.67; // Normalize to 60fps
+        const nextX = positionRef.current.x + velocityRef.current.x * timeScale;
+        const nextY = positionRef.current.y + velocityRef.current.y * timeScale;
+
+        let movingRight = velocityRef.current.x > 0;
+        let movingDown = velocityRef.current.y > 0;
+
+        // Right wall collision
+        if (
+          movingRight &&
+          nextX + logoRect.width >= containerRect.width - collisionThreshold
+        ) {
+          velocityRef.current.x = -Math.abs(velocityRef.current.x);
+          movingRight = false;
+          positionRef.current.x = containerRect.width - logoRect.width;
+          handleCollision("right");
+        }
+        // Left wall collision
+        else if (!movingRight && nextX <= collisionThreshold) {
+          velocityRef.current.x = Math.abs(velocityRef.current.x);
+          movingRight = true;
+          positionRef.current.x = 0;
+          handleCollision("left");
+        } else {
+          positionRef.current.x = nextX;
+        }
+
+        // Bottom wall collision
+        if (
+          movingDown &&
+          nextY + logoRect.height >= containerRect.height - collisionThreshold
+        ) {
+          velocityRef.current.y = -Math.abs(velocityRef.current.y);
+          movingDown = false;
+          positionRef.current.y = containerRect.height - logoRect.height;
+          handleCollision("bottom");
+        }
+        // Top wall collision
+        else if (!movingDown && nextY <= collisionThreshold) {
+          velocityRef.current.y = Math.abs(velocityRef.current.y);
+          movingDown = true;
+          positionRef.current.y = 0;
+          handleCollision("top");
+        } else {
+          positionRef.current.y = nextY;
+        }
+
+        // Ensure position stays within bounds
+        positionRef.current.x = Math.max(
+          0,
+          Math.min(positionRef.current.x, containerRect.width - logoRect.width)
+        );
+        positionRef.current.y = Math.max(
+          0,
+          Math.min(
+            positionRef.current.y,
+            containerRect.height - logoRect.height
+          )
+        );
+
+        // Apply smooth transform
+        controls.set({
+          x: positionRef.current.x,
+          y: positionRef.current.y,
+          transition: {
+            type: "tween",
+            ease: "linear",
+            duration: fpsInterval.current / 1000,
+          },
+        });
+      }
+
+      animationRef.current = requestAnimationFrame(bounce);
+    },
+    [controls, handleCollision]
+  );
 
   useEffect(() => {
     const container = containerRef.current;
@@ -69,73 +159,11 @@ export function BouncingLogo() {
 
     const containerRect = container.getBoundingClientRect();
     const logoRect = logo.getBoundingClientRect();
-    const collisionThreshold = 5;
 
-    let x = Math.random() * (containerRect.width - logoRect.width);
-    let y = Math.random() * (containerRect.height - logoRect.height);
-    let xVelocity = 3;
-    let yVelocity = 3;
-    let movingRight = xVelocity > 0;
-    let movingDown = yVelocity > 0;
-
-    const bounce = () => {
-      const nextX = x + xVelocity;
-      const nextY = y + yVelocity;
-
-      // Right wall collision
-      if (
-        movingRight &&
-        nextX + logoRect.width >= containerRect.width - collisionThreshold
-      ) {
-        console.log("Right wall collision");
-        xVelocity = -Math.abs(xVelocity);
-        movingRight = false;
-        x = containerRect.width - logoRect.width;
-        handleCollision("right");
-      }
-      // Left wall collision
-      else if (!movingRight && nextX <= collisionThreshold) {
-        console.log("Left wall collision");
-        xVelocity = Math.abs(xVelocity);
-        movingRight = true;
-        x = 0;
-        handleCollision("left");
-      } else {
-        x = nextX;
-      }
-
-      // Bottom wall collision
-      if (
-        movingDown &&
-        nextY + logoRect.height >= containerRect.height - collisionThreshold
-      ) {
-        console.log("Bottom wall collision");
-        yVelocity = -Math.abs(yVelocity);
-        movingDown = false;
-        y = containerRect.height - logoRect.height;
-        handleCollision("bottom");
-      }
-      // Top wall collision
-      else if (!movingDown && nextY <= collisionThreshold) {
-        console.log("Top wall collision");
-        yVelocity = Math.abs(yVelocity);
-        movingDown = true;
-        y = 0;
-        handleCollision("top");
-      } else {
-        y = nextY;
-      }
-
-      // Ensure position stays within bounds
-      x = Math.max(0, Math.min(x, containerRect.width - logoRect.width));
-      y = Math.max(0, Math.min(y, containerRect.height - logoRect.height));
-
-      controls.set({
-        x: x,
-        y: y,
-      });
-
-      animationRef.current = requestAnimationFrame(bounce);
+    // Initialize position
+    positionRef.current = {
+      x: Math.random() * (containerRect.width - logoRect.width),
+      y: Math.random() * (containerRect.height - logoRect.height),
     };
 
     const startAnimation = () => {
@@ -143,7 +171,8 @@ export function BouncingLogo() {
         opacity: 1,
         transition: { duration: 1 },
       });
-      bounce();
+      lastTimeRef.current = 0;
+      requestAnimationFrame(bounce);
     };
 
     startAnimation();
@@ -153,7 +182,7 @@ export function BouncingLogo() {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isLoaded]);
+  }, [isLoaded, controls, bounce]);
 
   return (
     <div
@@ -163,9 +192,15 @@ export function BouncingLogo() {
     >
       <motion.div
         ref={logoRef}
-        className="absolute"
+        className="absolute will-change-transform"
         initial={{ opacity: 0 }}
         animate={controls}
+        style={{
+          transform: "translate3d(0,0,0)", // Force GPU acceleration
+          backfaceVisibility: "hidden",
+          perspective: 1000,
+          transition: "filter 0.3s ease-in-out",
+        }}
       >
         <Image
           className="w-[200px] lg:w-[400px]"
