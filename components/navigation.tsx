@@ -22,7 +22,7 @@ export function Navigation(props: NavigationComponentProps) {
     <DialogPrimitive.Root open={menuOpen} onOpenChange={onOpenChange}>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="fixed inset-0 z-50 overflow-scroll bg-hydw-blue">
-          <DialogPrimitive.Content>
+          <DialogPrimitive.Content title="Navigation">
             <div className="flex w-full items-center justify-end p-11">
               <motion.button
                 className={`heading5 relative z-50 uppercase text-white transition-colors duration-150 hover:text-hydw-yellow`}
