@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { request } from "@/lib/datocms";
 import { buildMDX } from "@/utils/build-mdx";
@@ -15,17 +16,23 @@ async function getPageData(): Promise<ShortsPageQuery> {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await getPageData();
-  const title = data.page?.seo?.title || data.page?.title || "";
-  const description =
-    data.page?.seo?.description || data.page?.description || "";
-  const url = data.page?.seo?.image?.webp || "";
+  // const data = await getPageData();
+  // const title = data.page?.seo?.title || data.page?.title || "";
+  // const description =
+  //   data.page?.seo?.description || data.page?.description || "";
+  // const url = data.page?.seo?.image?.webp || "";
 
+  // return {
+  //   title: `${title}`,
+  //   description: description,
+  //   openGraph: {
+  //     images: url,
+  //   },
+  // };
   return {
-    title: `${title}`,
-    description: description,
-    openGraph: {
-      images: url,
+    robots: {
+      index: false,
+      follow: false,
     },
   };
 }
@@ -39,6 +46,8 @@ export default async function Page() {
   const slug = data.page?.slug || "";
   const image1 = data.page?.parallaxImage1 || "";
   const image2 = data.page?.parallaxImage2 || "";
+
+  redirect("/");
 
   return (
     <main className="layouta addimage1 largepadding overflow-hidden bg-hydw-vanilla">
