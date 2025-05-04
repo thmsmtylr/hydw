@@ -119,7 +119,7 @@ export default async function Page() {
               href="studio"
               className="no-underline duration-300 hover:text-hydw-blue hover:underline"
             >
-              Studio
+              Grouse House Studios
             </Link>
           </li>
         </ul>
