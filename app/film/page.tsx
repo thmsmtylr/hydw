@@ -1,13 +1,13 @@
-import Image from "next/image";
-import type { Metadata } from "next";
-import { request } from "@/lib/datocms";
-import { buildMDX } from "@/utils/build-mdx";
+import { PageHeading } from "@/components/page-heading";
 import { PageLayout } from "@/components/page-layout";
 import { Parallax } from "@/components/parallax";
-import { PageHeading } from "@/components/page-heading";
+import { WiggleOnHover } from "@/components/wiggle-on-hover";
+import { request } from "@/lib/datocms";
 import { FILM_PAGE_QUERY } from "@/queries/film-page-query";
 import { FilmPageQuery } from "@/types/generated";
-import { WiggleOnHover } from "@/components/wiggle-on-hover";
+import { buildMDX } from "@/utils/build-mdx";
+import type { Metadata } from "next";
+import Image from "next/image";
 
 async function getPageData(): Promise<FilmPageQuery> {
   const data = await request({ query: FILM_PAGE_QUERY });

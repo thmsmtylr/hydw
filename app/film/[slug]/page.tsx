@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { Metadata } from "next";
-import { request } from "@/lib/datocms";
-import { buildMDX } from "@/utils/build-mdx";
 import { FeaturedThumbnails } from "@/components/featured-thumbnails";
 import { VideoPlayer } from "@/components/video-player";
+import { request } from "@/lib/datocms";
 import { FILM_BY_SLUG_QUERY } from "@/queries/film-by-slug-query";
 import { FilmBySlugQuery } from "@/types/generated";
+import { buildMDX } from "@/utils/build-mdx";
+import { Metadata } from "next";
+import Link from "next/link";
 
 async function getPageData(slug: string): Promise<FilmBySlugQuery> {
   const data = await request({

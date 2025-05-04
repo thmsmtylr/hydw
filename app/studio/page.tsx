@@ -1,10 +1,10 @@
-import Image from "next/image";
-import type { Metadata } from "next";
-import { request } from "@/lib/datocms";
-import { Parallax } from "@/components/parallax";
 import { PageLayout } from "@/components/page-layout";
+import { Parallax } from "@/components/parallax";
+import { request } from "@/lib/datocms";
 import { STUDIO_QUERY } from "@/queries/studio-query";
 import { StudioPageQuery } from "@/types/generated";
+import type { Metadata } from "next";
+import Image from "next/image";
 
 async function getPageData(): Promise<any> {
   const data = await request({ query: STUDIO_QUERY });
@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = data.page?.seo?.title || data.page?.title || "";
   const description =
     data.page?.seo?.description || data.page?.description || "";
-  const url = data.page.seo?.image?.url || "";
+  const url = data.page?.seo?.image?.url || "";
 
   return {
     title: title,
@@ -57,7 +57,7 @@ export default async function Page() {
           </li>
           <li className="heading5 pointer-events-auto ml-3">
             <a href="#studio" className="underline hover:text-hydw-blue">
-              Studio
+              Grouse House Studios
             </a>
           </li>
         </ul>
