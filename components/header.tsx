@@ -1,14 +1,14 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { Navigation } from "@/components/navigation";
-import { HeaderProps } from "@/types/header";
 import { useHeaderContext } from "@/contexts/header-context";
 import { useFollowPointer } from "@/hooks/use-follow-pointer";
+import { HeaderProps } from "@/types/header";
 import { classNames } from "@/utils/class-names";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export function Header(props: HeaderProps) {
   const { logo, siteName, navItems } = props;
@@ -44,7 +44,7 @@ export function Header(props: HeaderProps) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [pathname]);
+  }, [pathname, setBrandVisible]);
 
   return (
     <header className="wrapper pointer-events-none fixed left-0 top-0 z-40 flex w-full items-center justify-between">

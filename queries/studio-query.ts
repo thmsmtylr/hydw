@@ -6,7 +6,7 @@ export const STUDIO_QUERY = gql`
       filter: {
         _isValid: { eq: "true" }
         _status: { eq: published }
-        slug: { eq: "studio" }
+        slug: { eq: "grousehousestudios" }
       }
     ) {
       id
