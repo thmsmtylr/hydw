@@ -6,7 +6,7 @@ export const COMMERCIAL_PAGE_QUERY = gql`
       filter: {
         _isValid: { eq: "true" }
         _status: { eq: published }
-        slug: { eq: "commercial" }
+        slug: { eq: "branded" }
       }
     ) {
       id

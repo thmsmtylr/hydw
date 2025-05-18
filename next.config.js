@@ -15,7 +15,17 @@ const nextConfig = {
         source: '/studio/:slug',
         destination: '/grousehousestudios/:slug',
         permanent: true,
-      }
+      },
+      {
+        source: '/commercial',
+        destination: '/branded',
+        permanent: true,
+      },
+      {
+        source: '/commercial/:slug',
+        destination: '/branded/:slug',
+        permanent: true,
+      },
     ]
   },
 };
