@@ -1,10 +1,10 @@
 "use client";
-import { ScrollRotate } from "react-scroll-rotate";
+import { ScrollRotate, ScrollRotateProps } from "react-scroll-rotate";
 
 export function FeaturedScrollRotate({
   children,
 }: {
-  children: React.ReactNode;
+  children: ScrollRotateProps["children"] | any;
 }) {
   return <ScrollRotate animationDuration={0.5} loops={1}>{children}</ScrollRotate>;
 }
