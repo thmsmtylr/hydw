@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
 import { FooterProps } from "@/types/footer";
+import Image from "next/image";
+import Link from "next/link";
 import { Fragment } from "react";
 
 export function Footer(props: FooterProps) {
@@ -56,9 +56,9 @@ export function Footer(props: FooterProps) {
           <a
             className="transition-colors duration-150 hover:text-hydw-pink"
             target="_blank"
-            href="https://ikkansei.studio/"
+            href="https://srrycmpny.com/"
           >
-            Ikkansei
+            Sorry Company
           </a>
           .
         </p>

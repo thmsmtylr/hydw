@@ -1,18 +1,18 @@
+import { FeaturedThumbnails } from "@/components/featured-thumbnails";
+import { PageHeading } from "@/components/page-heading";
+import { Parallax } from "@/components/parallax";
+import { WiggleOnHover } from "@/components/wiggle-on-hover";
+import { request } from "@/lib/datocms";
+import { BRANDED_PAGE_QUERY } from "@/queries/branded-page-query";
+import { BrandedPageQuery } from "@/types/generated";
+import { buildMDX } from "@/utils/build-mdx";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
-import { request } from "@/lib/datocms";
-import { buildMDX } from "@/utils/build-mdx";
-import { COMMERCIAL_PAGE_QUERY } from "@/queries/commercial-page-query";
-import { CommercialPageQuery } from "@/types/generated";
-import { Parallax } from "@/components/parallax";
-import { PageHeading } from "@/components/page-heading";
-import { FeaturedThumbnails } from "@/components/featured-thumbnails";
-import { WiggleOnHover } from "@/components/wiggle-on-hover";
 
-async function getPageData(): Promise<CommercialPageQuery> {
-  const data = await request({ query: COMMERCIAL_PAGE_QUERY });
-  return { ...(data as CommercialPageQuery) };
+async function getPageData(): Promise<BrandedPageQuery> {
+  const data = await request({ query: BRANDED_PAGE_QUERY });
+  return { ...(data as BrandedPageQuery) };
 }
 
 export async function generateMetadata(): Promise<Metadata> {

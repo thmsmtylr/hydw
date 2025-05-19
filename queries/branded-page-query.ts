@@ -1,7 +1,7 @@
 import { gql } from "graphql-request";
 
-export const COMMERCIAL_PAGE_QUERY = gql`
-  query CommercialPage {
+export const BRANDED_PAGE_QUERY = gql`
+  query BrandedPage {
     page(
       filter: {
         _isValid: { eq: "true" }
