@@ -1,5 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
+export const runtime = "edge";
+
 export async function POST(request: NextRequest) {
 	const { email, name, message } = await request.json();
 
