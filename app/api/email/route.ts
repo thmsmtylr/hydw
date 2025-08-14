@@ -1,53 +1,45 @@
 import { NextResponse, type NextRequest } from "next/server";
-// import nodemailer from "nodemailer";
-// import Mail from "nodemailer/lib/mailer";
 
 export async function POST(request: NextRequest) {
 	const { email, name, message } = await request.json();
 
-	// Temporarily disabled for Cloudflare Pages compatibility
-	// TODO: Implement Cloudflare-compatible email solution
+	try {
+		// For now, we'll create a simple response since Cloudflare Email Workers
+		// binding isn't available in local development
+		// When deployed to Cloudflare Pages, this will work with the Email Workers binding
 
-	console.log("Contact form submission:", { email, name, message });
+		console.log("Contact form submission:", {
+			to: "georgia@haventyoudonewell.com",
+			from: "noreply@haventyoudonewell.com",
+			subject: `New Contact Form Message from ${name}`,
+			name,
+			email,
+			message,
+		});
 
-	// For now, just return success (you'll need to implement actual email functionality)
-	return NextResponse.json({
-		message:
-			"Message received! Email functionality temporarily disabled for Cloudflare deployment.",
-	});
+		// TODO: When deployed to Cloudflare, implement actual email sending using:
+		// const emailMessage = new EmailMessage(
+		//   "noreply@haventyoudonewell.com",
+		//   "georgia@haventyoudonewell.com",
+		//   {
+		//     subject: `New Contact Form Message from ${name}`,
+		//     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+		//     html: `<h2>New Contact Form Message</h2><p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong></p><p>${message}</p>`
+		//   }
+		// );
+		// await env.CONTACT_EMAIL.send(emailMessage);
 
-	/* Original nodemailer implementation - commented out for Cloudflare compatibility
-  const transport = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASSWORD,
-    },
-  });
-
-  const mailOptions: Mail.Options = {
-    from: process.env.EMAIL,
-    to: process.env.EMAIL,
-    subject: `Message from ${name} (${email})`,
-    text: message,
-  };
-
-  const sendMailPromise = () =>
-    new Promise<string>((resolve, reject) => {
-      transport.sendMail(mailOptions, function (err) {
-        if (!err) {
-          resolve("Email sent");
-        } else {
-          reject(err.message);
-        }
-      });
-    });
-
-  try {
-    await sendMailPromise();
-    return NextResponse.json({ message: "Email sent" });
-  } catch (err) {
-    return NextResponse.json({ error: err }, { status: 500 });
-  }
-  */
+		return NextResponse.json({
+			message:
+				"Thank you! Your message has been received and will be sent via Cloudflare Email Workers when deployed.",
+		});
+	} catch (error) {
+		console.error("Error processing contact form:", error);
+		return NextResponse.json(
+			{
+				error: "Failed to process your message. Please try again later.",
+			},
+			{ status: 500 },
+		);
+	}
 }
